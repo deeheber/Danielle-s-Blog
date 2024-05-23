@@ -1,0 +1,63 @@
+---
+import { SOCIALS } from "@config";
+import LinkButton from "./LinkButton.astro";
+import socialIcons from "@assets/socialIcons";
+
+export interface Props {
+  centered?: boolean;
+}
+
+const { centered = false } = Astro.props;
+---
+
+<div class={`social-icons ${centered ? "flex" : ""}`}>
+  {
+    SOCIALS.filter(social => social.active).map(social => (
+      <LinkButton
+        href={social.href}
+        className="link-button"
+        title={social.linkTitle}
+      >
+        <Fragment set:html={socialIcons[social.name]} />
+        <span class="sr-only">{social.linkTitle}</span>
+      </LinkButton>
+    ))
+  }
+  <a
+    class={`group inline-block hover:text-skin-accent`}
+    target="_blank"
+    href="/rss.xml"
+    aria-label="rss feed"
+    title="RSS Feed"
+  >
+    <svg
+      stroke="currentColor"
+      fill="currentColor"
+      stroke-width="0"
+      class="rss-icon"
+      viewBox="0 0 448 512"
+      height="35"
+      width="35"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M0 64C0 46.3 14.3 32 32 32c229.8 0 416 186.2 416 416c0 17.7-14.3 32-32 32s-32-14.3-32-32C384 253.6 226.4 96 32 96C14.3 96 0 81.7 0 64zM0 416a64 64 0 1 1 128 0A64 64 0 1 1 0 416zM32 160c159.1 0 288 128.9 288 288c0 17.7-14.3 32-32 32s-32-14.3-32-32c0-123.7-100.3-224-224-224c-17.7 0-32-14.3-32-32s14.3-32 32-32z"
+      ></path>
+    </svg>
+    <span class="sr-only">RSS Feed</span>
+  </a>
+</div>
+
+<style>
+  .social-icons {
+    @apply flex-wrap justify-center gap-1;
+  }
+
+  .link-button .rss-icon {
+    @apply p-2 hover:rotate-6 sm:p-1;
+  }
+  .rss-icon {
+    width: 24px;
+    height: 24px;
+  }
+</style>
