@@ -2,14 +2,14 @@
 author: Simon Smale
 pubDatetime: 2024-01-03T20:40:08Z
 modDatetime: 2024-01-08T18:59:05Z
-title: How to use Git Hooks to set Created and Modified Dates
+title: I'm Worried About Generative AI
 featured: false
 draft: false
 tags:
   - docs
   - FAQ
 canonicalURL: https://smale.codes/posts/setting-dates-via-git-hooks/
-description: How to use Git Hooks to set your Created and Modified Dates on AstroPaper
+description: I'm Worried About Generative AI
 ---
 
 In this post I will explain how to use the pre-commit Git hook to automate the input of the created (`pubDatetime`) and modified (`modDatetime`) in the AstroPaper blog theme frontmatter

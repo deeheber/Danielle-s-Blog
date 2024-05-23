@@ -24,7 +24,7 @@ const { centered = false } = Astro.props;
     ))
   }
   <a
-    class={`group inline-block hover:text-skin-accent`}
+    class="link-button"
     target="_blank"
     href="/rss.xml"
     aria-label="rss feed"
@@ -53,11 +53,7 @@ const { centered = false } = Astro.props;
     @apply flex-wrap justify-center gap-1;
   }
 
-  .link-button .rss-icon {
+  .link-button {
     @apply p-2 hover:rotate-6 sm:p-1;
-  }
-  .rss-icon {
-    width: 24px;
-    height: 24px;
   }
 </style>

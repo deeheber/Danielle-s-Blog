@@ -1,5 +1,5 @@
 ---
-title: How to add an estimated reading time in AstroPaper
+title: Dear New Code School Grad
 author: Sat Naing
 pubDatetime: 2023-07-21T10:11:06.130Z
 modDatetime: 2024-01-03T14:53:25Z

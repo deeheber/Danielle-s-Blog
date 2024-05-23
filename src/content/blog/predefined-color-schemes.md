@@ -2,7 +2,7 @@
 author: Sat Naing
 pubDatetime: 2022-09-26T12:13:24Z
 modDatetime: 2024-01-04T09:09:06Z
-title: Predefined color schemes
+title: The Collab Lab Team 66 Recap
 slug: predefined-color-schemes
 featured: false
 draft: false
