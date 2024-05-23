@@ -5,22 +5,62 @@ import postOgImage from "./og-templates/post";
 import siteOgImage from "./og-templates/site";
 
 const fetchFonts = async () => {
-  // Regular Font
-  const fontFileRegular = await fetch(
+  // IBM Plex Mono Regular Font
+  const fontFileIBMRegular = await fetch(
     "https://www.1001fonts.com/download/font/ibm-plex-mono.regular.ttf"
   );
-  const fontRegular: ArrayBuffer = await fontFileRegular.arrayBuffer();
+  const fontIBMRegular: ArrayBuffer = await fontFileIBMRegular.arrayBuffer();
 
-  // Bold Font
-  const fontFileBold = await fetch(
+  // IBM Plex Mono Bold Font
+  const fontFileIBMBold = await fetch(
     "https://www.1001fonts.com/download/font/ibm-plex-mono.bold.ttf"
   );
-  const fontBold: ArrayBuffer = await fontFileBold.arrayBuffer();
+  const fontIBMBold: ArrayBuffer = await fontFileIBMBold.arrayBuffer();
 
-  return { fontRegular, fontBold };
+  // Merriweather Regular Font
+  const fontFileMerriweatherRegular = await fetch(
+    "https://fonts.gstatic.com/s/merriweather/v21/u-4n0qyriQwlOrhSvowK_l52xwNZWMfF.ttf"
+  );
+  const fontMerriweatherRegular: ArrayBuffer =
+    await fontFileMerriweatherRegular.arrayBuffer();
+
+  // Merriweather Bold Font
+  const fontFileMerriweatherBold = await fetch(
+    "https://fonts.gstatic.com/s/merriweather/v21/u-4l0qyriQwlOrhSvowK_l52xwNZWMfF7wM.ttf"
+  );
+  const fontMerriweatherBold: ArrayBuffer =
+    await fontFileMerriweatherBold.arrayBuffer();
+
+  // Lato Regular Font
+  const fontFileLatoRegular = await fetch(
+    "https://fonts.gstatic.com/s/lato/v17/S6uyw4BMUTPHjxAwWw.ttf"
+  );
+  const fontLatoRegular: ArrayBuffer = await fontFileLatoRegular.arrayBuffer();
+
+  // Lato Bold Font
+  const fontFileLatoBold = await fetch(
+    "https://fonts.gstatic.com/s/lato/v17/S6u9w4BMUTPHh6UVSwaPGR_p.ttf"
+  );
+  const fontLatoBold: ArrayBuffer = await fontFileLatoBold.arrayBuffer();
+
+  return {
+    fontIBMRegular,
+    fontIBMBold,
+    fontMerriweatherRegular,
+    fontMerriweatherBold,
+    fontLatoRegular,
+    fontLatoBold,
+  };
 };
 
-const { fontRegular, fontBold } = await fetchFonts();
+const {
+  fontIBMRegular,
+  fontIBMBold,
+  fontMerriweatherRegular,
+  fontMerriweatherBold,
+  fontLatoRegular,
+  fontLatoBold,
+} = await fetchFonts();
 
 const options: SatoriOptions = {
   width: 1200,
@@ -28,15 +68,27 @@ const options: SatoriOptions = {
   embedFont: true,
   fonts: [
     {
-      name: "IBM Plex Mono",
-      data: fontRegular,
+      name: "Title",
+      data: fontMerriweatherRegular,
       weight: 400,
       style: "normal",
     },
     {
-      name: "IBM Plex Mono",
-      data: fontBold,
-      weight: 600,
+      name: "Title",
+      data: fontMerriweatherBold,
+      weight: 700,
+      style: "normal",
+    },
+    {
+      name: "Paragraph",
+      data: fontLatoRegular,
+      weight: 400,
+      style: "normal",
+    },
+    {
+      name: "Paragraph",
+      data: fontLatoBold,
+      weight: 700,
       style: "normal",
     },
   ],
