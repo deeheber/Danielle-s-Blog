@@ -68,25 +68,25 @@ const options: SatoriOptions = {
   embedFont: true,
   fonts: [
     {
-      name: "Title",
+      name: "Merriweather",
       data: fontMerriweatherRegular,
       weight: 400,
       style: "normal",
     },
     {
-      name: "Title",
+      name: "Merriweather",
       data: fontMerriweatherBold,
       weight: 700,
       style: "normal",
     },
     {
-      name: "Paragraph",
+      name: "Lato",
       data: fontLatoRegular,
       weight: 400,
       style: "normal",
     },
     {
-      name: "Paragraph",
+      name: "Lato",
       data: fontLatoBold,
       weight: 700,
       style: "normal",

@@ -2,10 +2,10 @@ import type { Site, SocialObjects } from "./types";
 
 export const SITE: Site = {
   website: "https://danielleheberling.xyz/", // replace this with your deployed domain
-  author: "Yufa Li",
+  author: "Danielle Heberling",
   desc: "Danielle's Blog",
-  title: "Danielle Heberling",
-  ogImage: "astropaper-og.jpg",
+  title: "Danielle's Blog",
+  ogImage: "Logo1(D).png",
   lightAndDarkMode: true,
   postPerPage: 3,
   scheduledPostMargin: 15 * 60 * 1000, // 15 minutes

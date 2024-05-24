@@ -16,7 +16,7 @@ Hot new platform? Niche corner of the internet? Or one specific to your area? Th
 
 ## Merging back to the theme
 
-The maintainer of the theme [Sat Naing](https://github.com/satnaing) has said that he intends to only
+The maintainer of the theme [Danielle Heberling](https://github.com/satnaing) has said that he intends to only
 
 > keep the project supporting only a specific set of popular social icons.
 

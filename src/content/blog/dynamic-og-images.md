@@ -1,5 +1,5 @@
 ---
-author: Sat Naing
+author: Danielle Heberling
 pubDatetime: 2022-12-28T04:59:04.866Z
 title: Dynamic OG image generation in AstroPaper blog posts
 slug: dynamic-og-image-generation-in-astropaper-blog-posts

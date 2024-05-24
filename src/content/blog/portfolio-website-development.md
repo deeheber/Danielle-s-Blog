@@ -1,6 +1,6 @@
 ---
 title: How Do I Develop My Portfolio Website & Blog
-author: Sat Naing
+author: Danielle Heberling
 pubDatetime: 2022-03-25T16:55:12.000+00:00
 slug: how-do-i-develop-my-portfolio-and-blog
 featured: false
@@ -55,7 +55,7 @@ The following are certain features of my portfolio and blog
 
 The entire project is developed with SEO focus in mind. I've used proper meta tags, descriptions and heading alignments. This website is now indexed by Google.
 
-> You can search this website on google by using keywords like 'sat naing dev'
+> You can search this website on google by using keywords like 'Danielle Heberling dev'
 
 ![searching satnaing.dev on google](https://res.cloudinary.com/noezectz/image/upload/v1648231400/SatNaing/satnaing-on-google_asflq6.png "satnaing.dev is indexed")
 
