@@ -8,6 +8,7 @@ import Hr from "@components/Hr.astro";
 import Card from "@components/Card";
 import Socials from "@components/Socials.astro";
 import getSortedPosts from "@utils/getSortedPosts";
+import speakingData from "../data/speakingData.json";
 import { SOCIALS } from "@config";
 
 const posts = await getCollection("blog");
@@ -17,6 +18,20 @@ const featuredPosts = sortedPosts.filter(({ data }) => data.featured);
 const recentPosts = sortedPosts.filter(({ data }) => !data.featured);
 
 const socialCount = SOCIALS.filter(social => social.active).length;
+
+// Flatten and sort the speaking data
+const flattenedData: { title: string; link: string; year: string }[] =
+  speakingData.flatMap(yearData =>
+    yearData.content.map(content => ({
+      ...content,
+      year: yearData.year,
+    }))
+  );
+
+const sortedData = flattenedData.sort(
+  (a, b) => Number(b.year) - Number(a.year)
+);
+const latestFive = sortedData.slice(0, 5);
 ---
 
 <Layout>
@@ -44,29 +59,41 @@ const socialCount = SOCIALS.filter(social => social.active).length;
       )
     }
 
+    <div class="all-posts-btn-wrapper">
+      <LinkButton href="/posts/">
+        All Posts
+        <svg xmlns="http://www.w3.org/2000/svg"
+          ><path
+            d="m11.293 17.293 1.414 1.414L19.414 12l-6.707-6.707-1.414 1.414L15.586 11H6v2h9.586z"
+          ></path>
+        </svg>
+      </LinkButton>
+    </div>
+
     {
-      recentPosts.length > 0 && (
-        <section id="recent-posts">
+      (
+        <section id="recent-talks">
           <h2>Recent Talks</h2>
           <ul>
-            {recentPosts.map(
-              ({ data, slug }, index) =>
-                index < 5 && (
-                  <Card
-                    href={`/posts/${slug}/`}
-                    frontmatter={data}
-                    secHeading={false}
-                  />
-                )
-            )}
+            {latestFive.map(content => (
+              <li class="talk-list">
+                <a
+                  href={content.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {content.title} ({content.year})
+                </a>
+              </li>
+            ))}
           </ul>
         </section>
       )
     }
 
     <div class="all-posts-btn-wrapper">
-      <LinkButton href="/posts/">
-        All Posts
+      <LinkButton href="/talks/">
+        All Talks
         <svg xmlns="http://www.w3.org/2000/svg"
           ><path
             d="m11.293 17.293 1.414 1.414L19.414 12l-6.707-6.707-1.414 1.414L15.586 11H6v2h9.586z"
@@ -105,11 +132,13 @@ const socialCount = SOCIALS.filter(social => social.active).length;
 
   /* ===== Featured & Recent Posts Sections ===== */
   #featured,
-  #recent-posts {
+  #recent-posts,
+  .talk-list {
     @apply pb-6 pt-12;
   }
   #featured h2,
-  #recent-posts h2 {
+  #recent-posts h2,
+  #recent-talks h2 {
     @apply text-2xl tracking-wide;
   }
   .all-posts-btn-wrapper {
