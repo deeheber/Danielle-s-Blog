@@ -1,8 +1,8 @@
 ---
-title: How Do I Develop My Terminal Portfolio Website with React
+title: The Job Seeker's Jungle
 author: Danielle Heberling
 pubDatetime: 2022-06-09T03:42:51Z
-slug: how-do-i-develop-my-terminal-portfolio-website-with-react
+slug: The-Job-Seeker's-Jungle
 featured: false
 draft: false
 tags:

@@ -1,7 +1,7 @@
 ---
 author: Danielle Heberling
 pubDatetime: 2022-09-25T15:20:35Z
-title: Customizing AstroPaper theme color schemes
+title: Serverless Weather Reporting with AWS Step Functions and CDK
 featured: false
 draft: false
 tags:

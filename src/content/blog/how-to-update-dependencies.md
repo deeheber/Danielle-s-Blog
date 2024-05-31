@@ -1,8 +1,8 @@
 ---
-title: How to update dependencies of AstroPaper
+title: Career Reflections
 author: Danielle Heberling
 pubDatetime: 2023-07-20T15:33:05.569Z
-slug: how-to-update-dependencies
+slug: "Career-Reflections"
 featured: false
 draft: false
 ogImage: /assets/forrest-gump-quote.webp

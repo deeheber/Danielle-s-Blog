@@ -1,5 +1,5 @@
 ---
-title: How to connect AstroPaper blog with Forestry CMS
+title: AWS Application Composer, the App Building Future We Need
 author: Danielle Heberling
 pubDatetime: 2022-09-21T05:17:19Z
 slug: how-to-connect-astro-paper-blog-with-forestry-cms

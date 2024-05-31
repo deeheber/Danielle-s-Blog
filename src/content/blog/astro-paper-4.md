@@ -1,8 +1,8 @@
 ---
 author: Danielle Heberling
 pubDatetime: 2024-01-04T09:30:41.816Z
-title: AstroPaper 4.0
-slug: "astro-paper-v4"
+title: My Personal Blog Site's CI/CD
+slug: "My-Personal-Blog-Site's-CI-CD"
 featured: true
 ogImage: ../../assets/images/AstroPaper-v4.png
 tags:

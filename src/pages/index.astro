@@ -76,7 +76,7 @@ const latestFive = sortedData.slice(0, 5);
           <h2>Recent Talks</h2>
           <ul>
             {latestFive.map(content => (
-              <li class="talk-list">
+              <li id="talk-list">
                 <a
                   href={content.link}
                   target="_blank"
@@ -143,5 +143,9 @@ const latestFive = sortedData.slice(0, 5);
   }
   .all-posts-btn-wrapper {
     @apply my-8 text-center;
+  }
+
+  #talk-list {
+    @apply font-merri my-4 inline-block sm:my-8 sm:text-xl;
   }
 </style>

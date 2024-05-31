@@ -1,5 +1,5 @@
 ---
-title: Tailwind Typography Plugin
+title: Improved git workflows with graphite.dev
 author: Danielle Heberling
 pubDatetime: 2022-07-05T02:05:51Z
 featured: false
