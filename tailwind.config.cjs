@@ -34,6 +34,9 @@ module.exports = {
           "card-muted": withOpacity("--color-card-muted"),
         },
       },
+      maxWidth: {
+        '350px': '350px',
+      },
       outlineColor: {
         skin: {
           fill: withOpacity("--color-accent"),

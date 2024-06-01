@@ -137,6 +137,6 @@ h1, h2, h3 {
     @apply hidden;
   }
   .focus-outline {
-    @apply outline-2 outline-offset-1 outline-skin-fill focus-visible:no-underline focus-visible:outline-dashed;
+    @apply focus-visible:outline-dashed;
   }
 }
