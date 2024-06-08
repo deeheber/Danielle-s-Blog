@@ -1,182 +1,77 @@
 ---
 author: Danielle Heberling
-pubDatetime: 2022-09-26T12:13:24Z
-modDatetime: 2024-01-04T09:09:06Z
+pubDatetime: 2024-04-07T22:12:03.284Z
 title: The Collab Lab Team 66 Recap
 slug: predefined-color-schemes
 featured: false
 draft: false
-tags:
-  - color-schemes
-description:
-  Some of the well-crafted, predefined color schemes for AstroPaper blog
-  theme.
+description: The Collab Lab Team 66 Recap
 ---
 
-I've crafted some predefined color schemes for this AstroPaper blog theme. You can replace these color schemes with the original ones.
+## Overview
 
-If you don't know how you can configure color schemes, check [this blog post](https://astro-paper.pages.dev/posts/customizing-astropaper-theme-color-schemes/).
+[The Collab Lab](https://the-collab-lab.codes/) is a non-profit organization that runs a program where early career developers can apply to work together on a team to complete a project led by mentors who work in the field.
 
-## Table of contents
+## The Team
 
-## Light color schemes
+![A screenshot of us in a sync](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/s9ye4cuh77old5ec8pe2.png)
 
-Light color scheme has to be defined using the css selector `:root` and `html[data-theme="light"]`.
+### Participants
 
-### Lobster
+- [Aloe Nelson](https://www.linkedin.com/in/aloenelson/)
+- [Emilio Campos](https://www.linkedin.com/in/emilio-campos-jr/)
+- [Hannah Wohl-Machado](https://www.linkedin.com/in/hannah-wohl-machado/)
+- [Stefanie Caffarel](https://www.linkedin.com/in/stefanie-caffarel-888209113/)
 
-![lobster-color-scheme](https://user-images.githubusercontent.com/53733092/192282447-1d222faf-a3ce-44a9-9cfe-ac873155e5a9.png)
+### Mentors
 
-```css
-:root,
-html[data-theme="light"] {
-  --color-fill: 246, 238, 225;
-  --color-text-base: 1, 44, 86;
-  --color-accent: 225, 74, 57;
-  --color-card: 217, 209, 195;
-  --color-card-muted: 239, 216, 176;
-  --color-border: 220, 152, 145;
-}
-```
+- [Danielle Heberling](https://www.linkedin.com/in/deeheber/)
+- [Jeremiah Fallin](https://www.linkedin.com/in/jeremiah-fallin/)
+- [Nick Zanetti](https://www.linkedin.com/in/nickzanetti/)
 
-### Leaf Blue
+## The Project
 
-![leaf-blue-color-scheme](https://user-images.githubusercontent.com/53733092/192318782-e80e3c39-54b5-423e-8f4b-9ae60402fc8d.png)
+We were tasked to build a "smart" shopping list over the course of 10 weeks. During this time there was lots of pair programming, async communication over slack, code review, demos, and retrospectives.
 
-```css
-:root,
-html[data-theme="light"] {
-  --color-fill: 242, 245, 236;
-  --color-text-base: 53, 53, 56;
-  --color-accent: 17, 88, 209;
-  --color-card: 206, 213, 180;
-  --color-card-muted: 187, 199, 137;
-  --color-border: 124, 173, 255;
-}
-```
+### Features
 
-### Pinky light
+- Login and customized views based off of whom logged in
+- Create a new list
+- Add an item to the list and set the urgency level (soon, kind of soon, not so soon)
+- Delete an item from the list
+- Mark an item as purchased
+- Search a list for an item
+- Share a list with another user
 
-![pinky-color-scheme](https://user-images.githubusercontent.com/53733092/192286510-892d0042-2d6d-471e-bb72-954221ae2d17.png)
+### Tech Stack
 
-```css
-:root,
-html[data-theme="light"] {
-  --color-fill: 250, 252, 252;
-  --color-text-base: 34, 46, 54;
-  --color-accent: 211, 0, 106;
-  --color-card: 234, 206, 219;
-  --color-card-muted: 241, 186, 212;
-  --color-border: 227, 169, 198;
-}
-```
+JavaScript
+[React](https://react.dev/)
+[Flowbite](https://flowbite.com/)
+[Tailwind](https://tailwindcss.com/)
+[Firebase](https://firebase.google.com/) - Auth, Database, and Hosting
+[Vite](https://vitejs.dev/)
 
-## Dark color schemes
+## The Finished Project
 
-Dark color scheme has to be defined as `html[data-theme="dark"]`.
+### Login Page
 
-### AstroPaper 1 original Dark Theme
+![login page](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/h0tyrbjmrs7eq3j1wdze.png)
 
-![AstroPaper 1 default dark theme](https://user-images.githubusercontent.com/53733092/215769153-13b0ad8d-5ba2-44b1-af06-e5ae61293f62.png)
+### Landing Page - select a list to view/edit
 
-```css
-html[data-theme="dark"] {
-  --color-fill: 47, 55, 65;
-  --color-text-base: 230, 230, 230;
-  --color-accent: 26, 217, 217;
-  --color-card: 63, 75, 90;
-  --color-card-muted: 89, 107, 129;
-  --color-border: 59, 70, 85;
-}
-```
+![landing page](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/m9mzi71tldh18rio5dfw.png)
 
-### Deep Oyster
+### A Specific List Page
 
-![deep-oyster-color-scheme](https://user-images.githubusercontent.com/53733092/192314524-45ec5904-3d8f-450a-9edf-1e32c5e11d6c.png)
+![view a list](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/s671ot4yj9xh9ue21wsq.png)
 
-```css
-html[data-theme="dark"] {
-  --color-fill: 33, 35, 61;
-  --color-text-base: 244, 247, 245;
-  --color-accent: 255, 82, 86;
-  --color-card: 57, 60, 102;
-  --color-card-muted: 74, 78, 134;
-  --color-border: 177, 47, 50;
-}
-```
+The source code for the app can be found on [our GitHub repo](https://github.com/the-collab-lab/tcl-66-smart-shopping-list).
 
-### Pikky dark
+You can view this app live at https://tcl-66-smart-shopping-list.web.app/.
 
-![pinky-dark-color-scheme](https://user-images.githubusercontent.com/53733092/192307050-fbd55326-911c-4001-87c6-a8ad9378ac2e.png)
+## Closing
 
-```css
-html[data-theme="dark"] {
-  --color-fill: 53, 54, 64;
-  --color-text-base: 233, 237, 241;
-  --color-accent: 255, 120, 200;
-  --color-card: 75, 76, 89;
-  --color-card-muted: 113, 85, 102;
-  --color-border: 134, 67, 107;
-}
-```
+We had a great 10 weeks learning from each other and are looking forward to continuing to build fun projects.
 
-### Astro dark (High Contrast)
-
-![astro-dark-color-scheme](https://user-images.githubusercontent.com/53733092/215680520-59427bb0-f4cb-48c0-bccc-f182a428d72d.svg)
-
-```css
-html[data-theme="dark"] {
-  --color-fill: 16, 23, 42; /* higher contrast bgColor */
-  --color-fill: 33, 39, 55;
-  --color-text-base: 234, 237, 243;
-  --color-accent: 255, 107, 1;
-  --color-card: 27, 39, 70;
-  --color-card-muted: 138, 51, 2;
-  --color-border: 171, 75, 8;
-}
-```
-
-### Astro dark (New default dark theme in AstroPaper 2)
-
-![new dark color scheme - low contrast](https://user-images.githubusercontent.com/53733092/215772856-d5b7ae35-ddaa-4ed6-b0bf-3fa5dbcf834c.png)
-
-```css
-html[data-theme="dark"] {
-  --color-fill: 33, 39, 55; /* lower contrast bgColor */
-  --color-text-base: 234, 237, 243;
-  --color-accent: 255, 107, 1;
-  --color-card: 52, 63, 96;
-  --color-card-muted: 138, 51, 2;
-  --color-border: 171, 75, 8;
-}
-```
-
-### Astro Deep Purple (New dark theme in AstroPaper 3)
-
-![AstroPaper v3 new theme](https://github.com/satnaing/astro-paper/assets/53733092/c8b5d7e1-a3bc-4852-a5ad-4abf7b3cec79)
-
-```css
-html[data-theme="dark"] {
-  --color-fill: 33, 39, 55;
-  --color-text-base: 234, 237, 243;
-  --color-accent: 235, 63, 211;
-  --color-card: 52, 63, 96;
-  --color-card-muted: 125, 79, 124;
-  --color-border: 100, 36, 81;
-}
-```
-
-### AstroPaper v4 Special (New dark theme in AstroPaper 4)
-
-![AstroPaper v4 new theme](https://github.com/satnaing/astro-paper/assets/53733092/66eb74dc-7a0e-4f2e-982d-25f5c443b25a)
-
-```css
-html[data-theme="dark"] {
-  --color-fill: 0, 1, 35;
-  --color-accent: 97, 123, 255;
-  --color-text-base: 234, 237, 243;
-  --color-card: 33, 34, 83;
-  --color-card-muted: 12, 14, 79;
-  --color-border: 48, 63, 138;
-}
-```
+**If you're looking to hire early career developers, I would highly encourage you to take a look at these folks' LinkedIn profiles.**

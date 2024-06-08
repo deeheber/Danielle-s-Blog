@@ -4,13 +4,10 @@ title: Tips for Getting Started in Cloud
 pubDatetime: 2024-04-12T09:12:03.284Z
 featured: false
 draft: false
-ogImage: https://images.unsplash.com/photo-1501630834273-4b5604d2ee31?q=80&w=3270&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
-tags:
-  - cloud
 description: Tips for Getting Started in Cloud
 ---
 
-![Clouds Image](https://images.unsplash.com/photo-1501630834273-4b5604d2ee31?q=80&w=3270&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)
+![Clouds Image](/assets/clouds.jpg)
 
 > Photo by <a href="https://unsplash.com/@billy_huy?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Billy Huynh</a> on <a href="https://unsplash.com/photos/cloudy-sky-at-daytime-v9bnfMCyKbg?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
 
