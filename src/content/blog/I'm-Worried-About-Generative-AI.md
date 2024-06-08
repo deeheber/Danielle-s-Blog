@@ -1,5 +1,5 @@
 ---
-author: Simon Smale
+author: Danielle Heberling
 pubDatetime: 2024-05-04T22:12:03.284Z
 title: I'm Worried About Generative AI
 featured: false
