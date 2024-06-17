@@ -42,7 +42,7 @@ const latestFive = sortedData.slice(0, 5);
     {
       recentPosts.length > 0 && (
         <section id="recent-posts">
-          <h2>Recent Posts</h2>
+          <h2 tabindex="0">Recent Posts</h2>
           <ul>
             {recentPosts.map(
               ({ data, slug }, index) =>
@@ -73,7 +73,7 @@ const latestFive = sortedData.slice(0, 5);
     {
       (
         <section id="recent-talks">
-          <h2>Recent Talks</h2>
+          <h2 tabindex="0">Recent Talks</h2>
           <ul>
             {latestFive.map(content => (
               <li id="talk-list">
