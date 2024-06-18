@@ -5,57 +5,41 @@ import postOgImage from "./og-templates/post";
 import siteOgImage from "./og-templates/site";
 
 const fetchFonts = async () => {
-  // IBM Plex Mono Regular Font
-  const fontFileIBMRegular = await fetch(
-    "https://www.1001fonts.com/download/font/ibm-plex-mono.regular.ttf"
-  );
-  const fontIBMRegular: ArrayBuffer = await fontFileIBMRegular.arrayBuffer();
-
-  // IBM Plex Mono Bold Font
-  const fontFileIBMBold = await fetch(
-    "https://www.1001fonts.com/download/font/ibm-plex-mono.bold.ttf"
-  );
-  const fontIBMBold: ArrayBuffer = await fontFileIBMBold.arrayBuffer();
-
-  // Merriweather Regular Font
-  const fontFileMerriweatherRegular = await fetch(
-    "https://fonts.gstatic.com/s/merriweather/v21/u-4n0qyriQwlOrhSvowK_l52xwNZWMfF.ttf"
-  );
-  const fontMerriweatherRegular: ArrayBuffer =
-    await fontFileMerriweatherRegular.arrayBuffer();
-
-  // Merriweather Bold Font
-  const fontFileMerriweatherBold = await fetch(
-    "https://fonts.gstatic.com/s/merriweather/v21/u-4l0qyriQwlOrhSvowK_l52xwNZWMfF7wM.ttf"
-  );
-  const fontMerriweatherBold: ArrayBuffer =
-    await fontFileMerriweatherBold.arrayBuffer();
-
-  // Lato Regular Font
-  const fontFileLatoRegular = await fetch(
-    "https://fonts.gstatic.com/s/lato/v17/S6uyw4BMUTPHjxAwWw.ttf"
-  );
-  const fontLatoRegular: ArrayBuffer = await fontFileLatoRegular.arrayBuffer();
-
-  // Lato Bold Font
-  const fontFileLatoBold = await fetch(
-    "https://fonts.gstatic.com/s/lato/v17/S6u9w4BMUTPHh6UVSwaPGR_p.ttf"
-  );
-  const fontLatoBold: ArrayBuffer = await fontFileLatoBold.arrayBuffer();
+  const fetchFont = async (url: string) => {
+    try {
+      const response = await fetch(url);
+      if (!response.ok) {
+        throw new Error(`Failed to fetch font: ${response.statusText}`);
+      }
+      const buffer = await response.arrayBuffer();
+      console.log(
+        `Fetched font from ${url}:`,
+        new Uint8Array(buffer).slice(0, 100)
+      ); // Log the first 100 bytes for verification
+      return buffer;
+    } catch (error) {
+      console.error(`Error fetching font from URL: ${url}`, error);
+      throw error;
+    }
+  };
 
   return {
-    fontIBMRegular,
-    fontIBMBold,
-    fontMerriweatherRegular,
-    fontMerriweatherBold,
-    fontLatoRegular,
-    fontLatoBold,
+    fontMerriweatherRegular: await fetchFont(
+      "https://www.1001fonts.com/download/font/merriweather.regular.ttf"
+    ),
+    fontMerriweatherBold: await fetchFont(
+      "https://www.1001fonts.com/download/font/merriweather.bold.ttf"
+    ),
+    fontLatoRegular: await fetchFont(
+      "https://www.1001fonts.com/download/font/lato.regular.ttf"
+    ),
+    fontLatoBold: await fetchFont(
+      "https://www.1001fonts.com/download/font/lato.bold.ttf"
+    ),
   };
 };
 
 const {
-  fontIBMRegular,
-  fontIBMBold,
   fontMerriweatherRegular,
   fontMerriweatherBold,
   fontLatoRegular,
@@ -93,7 +77,6 @@ const options: SatoriOptions = {
     },
   ],
 };
-
 function svgBufferToPngBuffer(svg: string) {
   const resvg = new Resvg(svg);
   const pngData = resvg.render();
