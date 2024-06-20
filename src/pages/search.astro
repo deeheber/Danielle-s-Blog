@@ -6,7 +6,7 @@ import Main from "@layouts/Main.astro";
 import Header from "@components/Header.astro";
 import Footer from "@components/Footer.astro";
 import SearchBar from "@components/Search";
-import getsortedblog from "@utils/getSortedBlogblog";
+import getsortedblog from "@utils/getSortedBlogPosts";
 
 // Retrieve all published articles
 const blog = await getCollection("blog", ({ data }) => !data.draft);

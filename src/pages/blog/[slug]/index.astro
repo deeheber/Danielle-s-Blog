@@ -1,8 +1,8 @@
 ---
 import { type CollectionEntry, getCollection } from "astro:content";
-import blog from "@layouts/Blog.astro";
-import PostDetails from "@layouts/BlogDetails.astro";
-import getsortedblog from "@utils/getSortedBlogblog";
+import Blog from "@layouts/Blog.astro";
+import BlogDetails from "@layouts/BlogDetails.astro";
+import getSortedBlog from "@utils/getSortedBlogPosts";
 import getPageNumbers from "@utils/getBlogPageNumbers";
 import getPagination from "@utils/getBlogPagination";
 
@@ -15,7 +15,6 @@ export async function getStaticPaths() {
 
   const postResult = blog.map(post => ({
     params: { slug: post.slug },
-    props: { post },
   }));
 
   const pagePaths = getPageNumbers(blog.length).map(pageNum => ({
@@ -26,16 +25,13 @@ export async function getStaticPaths() {
 }
 
 const { slug } = Astro.params;
-const { post } = Astro.props;
-
-const blog = await getCollection("blog");
-
-const sortedblog = getsortedblog(blog);
-
+const blogPosts = await getCollection("blog");
+const sortedBlogPosts = getSortedBlog(blogPosts);
+const post = sortedBlogPosts.find(post => post.slug === slug);
 const pagination = getPagination({
-  blog: sortedblog,
+  blog: sortedBlogPosts,
   page: slug,
 });
 ---
 
-{post ? <PostDetails post={post} /> : <blog {...pagination} />}
+{post ? <BlogDetails post={post} /> : <Blog {...pagination} />}
