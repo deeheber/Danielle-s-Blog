@@ -1,8 +1,8 @@
 ---
 import { type CollectionEntry, getCollection } from "astro:content";
-import Posts from "@layouts/Blog.astro";
+import blog from "@layouts/Blog.astro";
 import PostDetails from "@layouts/BlogDetails.astro";
-import getSortedPosts from "@utils/getSortedBlogPosts";
+import getsortedblog from "@utils/getSortedBlogblog";
 import getPageNumbers from "@utils/getBlogPageNumbers";
 import getPagination from "@utils/getBlogPagination";
 
@@ -11,14 +11,14 @@ export interface Props {
 }
 
 export async function getStaticPaths() {
-  const posts = await getCollection("blog", ({ data }) => !data.draft);
+  const blog = await getCollection("blog", ({ data }) => !data.draft);
 
-  const postResult = posts.map(post => ({
+  const postResult = blog.map(post => ({
     params: { slug: post.slug },
     props: { post },
   }));
 
-  const pagePaths = getPageNumbers(posts.length).map(pageNum => ({
+  const pagePaths = getPageNumbers(blog.length).map(pageNum => ({
     params: { slug: String(pageNum) },
   }));
 
@@ -28,14 +28,14 @@ export async function getStaticPaths() {
 const { slug } = Astro.params;
 const { post } = Astro.props;
 
-const posts = await getCollection("blog");
+const blog = await getCollection("blog");
 
-const sortedPosts = getSortedPosts(posts);
+const sortedblog = getsortedblog(blog);
 
 const pagination = getPagination({
-  posts: sortedPosts,
+  blog: sortedblog,
   page: slug,
 });
 ---
 
-{post ? <PostDetails post={post} /> : <Posts {...pagination} />}
+{post ? <PostDetails post={post} /> : <blog {...pagination} />}

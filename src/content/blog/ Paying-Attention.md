@@ -15,7 +15,7 @@ The endless scrolling and constant notifications are designed to make users open
 
 Free social media sites in particular are probably the worst offenders. The model of how they make money is through advertisers, so they're incentivized to keep you on their site as long as they can in order to collect as much data about you to share with advertisers. They're also hoping your eyes read the ads to prompt you to purchase something you normally wouldn't. In this case you're truly "paying" with your attention.
 
-Outrage and arguing drives the most engagement, so many of these sites will prioritize posts in your feed that will outrage you into engaging. On top of that, everything just feels dehumanized because we're communicating in text and can't actually see the person we are communicating with. Excluding the bots, there are humans on the other side of these posts. It's easy to forget that.
+Outrage and arguing drives the most engagement, so many of these sites will prioritize blog in your feed that will outrage you into engaging. On top of that, everything just feels dehumanized because we're communicating in text and can't actually see the person we are communicating with. Excluding the bots, there are humans on the other side of these blog. It's easy to forget that.
 
 As far as I'm concerned, I'd love to see surveilance capitalism end because it is ruining many people's ability to pay attention to what's really important in life. The first step is realizing what is going on, so we can work together to create meaningful change in society.
 
@@ -37,7 +37,7 @@ Taking some time out of the day to just focus on breathing has been helpful for 
 
 ### Read books and physically write down notes
 
-The medium in which you consume content influences how you consume it. For example social media posts are generally short blips of thoughts. So your mind spends time hopping around from thought to thought. I've found reading entire books to be helpful. A book is one cohesive thought and they're generally free of distractions such as advertising.
+The medium in which you consume content influences how you consume it. For example social media blog are generally short blips of thoughts. So your mind spends time hopping around from thought to thought. I've found reading entire books to be helpful. A book is one cohesive thought and they're generally free of distractions such as advertising.
 
 Whenever I need to take notes, I find physically writing things down helps me to retain the information. If I type it out on my computer, I find myself opening a second tab and navigating to various websites.
 

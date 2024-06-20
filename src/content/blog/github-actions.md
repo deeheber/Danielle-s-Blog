@@ -17,7 +17,7 @@ I decided to embark on the the journey of getting mine set up and wanted the fol
 - Interests within the Software Engineering realm i.e. what languages, frameworks, etc I enjoy
 - What I'm currently excited about learning
 - Links to my website and twitter
-- Showcase my three most recent blog posts
+- Showcase my three most recent blog blog
 
 ## Getting Started Building
 
@@ -27,7 +27,7 @@ The base idea is that you create a repository named the same as your username, a
 
 ## Going Beyond Markdown
 
-I decided I didn't want to manually update my `README` file everytime I published a new post. I decided to automate it in order to ensure my three most recently published posts were showcased. Becuase I wanted a relatively lightweight solution that would be quick to implement, I decided to try out Github actions.
+I decided I didn't want to manually update my `README` file everytime I published a new post. I decided to automate it in order to ensure my three most recently published blog were showcased. Becuase I wanted a relatively lightweight solution that would be quick to implement, I decided to try out Github actions.
 
 So the idea was to setup a job that runs once a day that does the following:
 

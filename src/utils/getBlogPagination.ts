@@ -2,17 +2,17 @@ import { SITE } from "@config";
 import getPageNumbers from "./getBlogPageNumbers";
 
 interface GetPaginationProps<T> {
-  posts: T;
+  blog: T;
   page: string | number;
   isIndex?: boolean;
 }
 
 const getPagination = <T>({
-  posts,
+  blog,
   page,
   isIndex = false,
 }: GetPaginationProps<T[]>) => {
-  const totalPagesArray = getPageNumbers(posts.length);
+  const totalPagesArray = getPageNumbers(blog.length);
   const totalPages = totalPagesArray.length;
 
   const currentPage = isIndex
@@ -23,12 +23,12 @@ const getPagination = <T>({
 
   const lastPost = isIndex ? SITE.postPerPage : currentPage * SITE.postPerPage;
   const startPost = isIndex ? 0 : lastPost - SITE.postPerPage;
-  const paginatedPosts = posts.slice(startPost, lastPost);
+  const paginatedblog = blog.slice(startPost, lastPost);
 
   return {
     totalPages,
     currentPage,
-    paginatedPosts,
+    paginatedblog,
   };
 };
 

@@ -1,8 +1,8 @@
 import type { CollectionEntry } from "astro:content";
 import postFilter from "./postFilter";
 
-const getSortedPosts = (posts: CollectionEntry<"blog">[]) => {
-  return posts
+const getsortedblog = (blog: CollectionEntry<"blog">[]) => {
+  return blog
     .filter(postFilter)
     .sort(
       (a, b) =>
@@ -15,4 +15,4 @@ const getSortedPosts = (posts: CollectionEntry<"blog">[]) => {
     );
 };
 
-export default getSortedPosts;
+export default getsortedblog;

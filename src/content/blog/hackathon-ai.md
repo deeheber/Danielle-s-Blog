@@ -19,7 +19,7 @@ Johannes had the idea that we agreed to implement. We ended up building an AWS c
 
 This post focuses on how we utilized the Hugging Face transformers agent to add functionality to our speaker directory.
 
-Here's links to posts by my teammates on other topics related to the project
+Here's links to blog by my teammates on other topics related to the project
 
 - [Overview](https://dev.to/aws-builders/presenting-aws-speakers-directory-an-ai-hackathon-project-19je)
 - [How we used Amplify/Flutter](https://dev.to/aws-builders/amplify-sdk-for-flutter-developer-experience-and-challenges-in-a-hackathon-2e15)

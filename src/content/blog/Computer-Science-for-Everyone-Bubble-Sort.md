@@ -15,7 +15,7 @@ As an individual that is a professional software engineer and does not have a co
 
 After being in the industry for a while, I've found my inner voice to be partially factual. The technical interviewing process is broken. As an individual who's had to interview others and had to write some coding challenges...I can totally understand why interviewers sometimes gravitate toward asking these types of questions beyond the aforementioned gatekeeping. It's nearly impossible to find a perfect set of coding questions to test one's knowledge...sometimes it's just easier to ask these types of questions to see how someone thinks through problems.
 
-While I don't have a solution to how we can fix the broken coding interview process, I decided to focus on what I can control. I felt a sense of imposter syndrome, because I could not answer those types of questions in interviews...it was downright embarassing. Once an interviewer asked me to write a linked list and at the time I didn't even know what a linked list was. For those reasons, I decided to learn a bit about these concepts and hope to share over a series of posts what I've learned in hopes that it may help others.
+While I don't have a solution to how we can fix the broken coding interview process, I decided to focus on what I can control. I felt a sense of imposter syndrome, because I could not answer those types of questions in interviews...it was downright embarassing. Once an interviewer asked me to write a linked list and at the time I didn't even know what a linked list was. For those reasons, I decided to learn a bit about these concepts and hope to share over a series of blog what I've learned in hopes that it may help others.
 
 ## Let's get onto the first topic
 
@@ -80,4 +80,4 @@ It has a good space complexity of O(1) or "constant time".
 
 ## Go forth and sort the bubbles
 
-I hope to be back with some similar posts explaining other computer science concepts in the future.
+I hope to be back with some similar blog explaining other computer science concepts in the future.

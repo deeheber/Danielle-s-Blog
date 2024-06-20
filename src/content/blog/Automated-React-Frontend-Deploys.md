@@ -77,4 +77,4 @@ export default {
 
 Hopefully this post gave you a nice example of how to implement an automated build/deploy of your frontend code with every stack deploy. You can see all of the code I referenced this this post here: https://github.com/deeheber/text-to-speech-converter/tree/blog-post-2.
 
-If you want something more customized or complex, I’d recommend checking out AWS’s <a href="https://aws.amazon.com/codebuild/" target="_blank" rel="noopener noreferrer">code-build</a> and/or <a href="https://aws.amazon.com/codepipeline/" target="_blank" rel="noopener noreferrer">code-pipeline</a> services. If time permits, perhaps I’ll do another blog post or posts on those services.
+If you want something more customized or complex, I’d recommend checking out AWS’s <a href="https://aws.amazon.com/codebuild/" target="_blank" rel="noopener noreferrer">code-build</a> and/or <a href="https://aws.amazon.com/codepipeline/" target="_blank" rel="noopener noreferrer">code-pipeline</a> services. If time permits, perhaps I’ll do another blog post or blog on those services.

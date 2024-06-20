@@ -17,7 +17,7 @@ As someone who used to support the Squarespace developer platform, I'm very awar
 
 ## Requirements
 
-I wanted something that was minimalist, accessible, looks great on various screen sizes, customizable, and easy to add more posts. I also wanted full access and ownership of all of the code. This way, I could have the freedom to easily move my entire site elsewhere if I so chose to.
+I wanted something that was minimalist, accessible, looks great on various screen sizes, customizable, and easy to add more blog. I also wanted full access and ownership of all of the code. This way, I could have the freedom to easily move my entire site elsewhere if I so chose to.
 
 ## Enter Gatsby
 
@@ -58,4 +58,4 @@ In addition to my issues listed on GitHub, I also think I'd like to deploy the s
 
 Working with Gatsby has been a joy. The community is so kind and helpful, and the docs are very detailed/searchable. Anytime I had a question 99% of the time, I could find it through a quick search since someone else had already asked the same question I was.
 
-Gatsby is a great tool that can be used for various things such as a personal blog or a documentation site. In my opinion, it really shines with the various CMS options that you can connect to a Gatsby frontend. This is very helpful if you have people who don't know how to code or don't want to code updating or adding new blog posts or other content. They can add their content while the developer can work on customizing how the website or web app looks. I give Gatsby a 10/10...would use again.
+Gatsby is a great tool that can be used for various things such as a personal blog or a documentation site. In my opinion, it really shines with the various CMS options that you can connect to a Gatsby frontend. This is very helpful if you have people who don't know how to code or don't want to code updating or adding new blog blog or other content. They can add their content while the developer can work on customizing how the website or web app looks. I give Gatsby a 10/10...would use again.
