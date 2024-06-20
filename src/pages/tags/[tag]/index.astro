@@ -1,8 +1,8 @@
 ---
 import { getCollection } from "astro:content";
-import TagPosts from "@layouts/TagPosts.astro";
+import TagPosts from "@layouts/TagBlog.astro";
 import getPostsByTag from "@utils/getPostsByTag";
-import getPagination from "@utils/getPagination";
+import getPagination from "@utils/getBlogPagination";
 import getUniqueTags from "@utils/getUniqueTags";
 
 export async function getStaticPaths() {
