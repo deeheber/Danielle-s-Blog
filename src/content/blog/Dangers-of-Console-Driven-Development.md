@@ -3,6 +3,7 @@ author: Danielle Heberling
 pubDatetime: 2020-10-15T22:12:03.284Z
 title: Dangers of Console-Driven Development
 description: Dangers of Console-Driven Development
+canonicalURL: https://www.stackery.io/blog/dangers-of-console-driven-development
 ---
 
 ## What is Console Driven Development (CDD)?

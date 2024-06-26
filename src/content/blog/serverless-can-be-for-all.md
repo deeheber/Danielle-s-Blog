@@ -3,6 +3,7 @@ author: Danielle Heberling
 title: Serverless *Can* be for Everyone - Let's Build it that Way
 pubDatetime: 2019-12-23T22:12:03.284Z
 description: Serverless *Can* be for Everyone - Let's Build it that Way
+canonicalURL: https://www.stackery.io/blog/serverless-can-be-for-everyone
 ---
 
 ![AWS re:Invent Booth Picture](/assets/boothpic.jpg)

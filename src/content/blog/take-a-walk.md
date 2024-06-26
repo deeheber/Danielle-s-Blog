@@ -3,6 +3,7 @@ title: The Secret to Getting More Done
 author: Danielle Heberling
 pubDatetime: 2021-07-14T22:12:03.284Z
 description: The Secret to Getting More Done
+canonicalURL: https://dev.to/koan/the-secret-to-getting-more-done-5hjh
 ---
 
 ![Coffee and Cookies](/assets/coffee-cookies.jpg)

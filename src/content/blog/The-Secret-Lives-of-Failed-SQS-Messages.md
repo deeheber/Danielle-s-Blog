@@ -3,6 +3,7 @@ author: Danielle Heberling
 pubDatetime: 2019-09-18T22:12:03.284Z
 title: The Secret Lives of Failed SQS Messages
 description: The Secret Lives of Failed SQS Messages
+canonicalURL: https://www.stackery.io/blog/secret-lives-of-failed-sqs-messages
 ---
 
 ![Mailbox](/assets/mailbox.jpg)

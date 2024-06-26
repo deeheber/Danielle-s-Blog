@@ -3,6 +3,7 @@ author: Danielle Heberling
 pubDatetime: 2019-05-21T22:12:03.284Z
 title: Building a Better Product through Customer Service
 description: Building a Better Product through Customer Service
+canonicalURL: https://www.stackery.io/blog/building-a-better-product-through-customer-service
 ---
 
 ![Teamwork](/assets/teamwork.png)

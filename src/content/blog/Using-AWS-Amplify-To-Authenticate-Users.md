@@ -3,6 +3,7 @@ author: Danielle Heberling
 pubDatetime: 2018-10-24T22:12:03.284Z
 title: Using AWS Amplify To Authenticate Users
 description: Using AWS Amplify To Authenticate Users
+canonicalURL: https://www.stackery.io/blog/serverlessaws-amplify
 ---
 
 ![Amplify](/assets/amplify.jpg)
