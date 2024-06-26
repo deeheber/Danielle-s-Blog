@@ -14,4 +14,4 @@ Since technology is always evolving, disclaimer that older content might contain
 
 All opinions expressed on this site are mine and don't represent organizations that I am affiliated with.
 
-![waterfall](/public/assets/waterfall.jpg)
+![waterfall](/assets/waterfall.jpg)
