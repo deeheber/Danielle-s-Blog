@@ -7,7 +7,7 @@ const URL = Astro.url;
 const shareLinks = [
   {
     name: "LinkedIn",
-    href: "https://www.linkedin.com/sharing/share-offsite/?url=",
+    href: "https://www.linkedin.com/shareArticle?mini=true&url=",
     linkTitle: "Share this post via LinkedIn",
   },
   {
@@ -39,7 +39,7 @@ const shareLinks = [
     {
       shareLinks.map(social => (
         <LinkButton
-          href={`${social.href}${URL}`}
+          href={`${social.href}${URL.href}`}
           className="link-button"
           title={social.linkTitle}
         >
