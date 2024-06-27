@@ -21,7 +21,7 @@ const {
   author = SITE.author,
   description = SITE.desc,
   ogImage = SITE.ogImage,
-  canonicalURL = new URL(Astro.url.pathname, Astro.site).href,
+  canonicalURL,
   pubDatetime,
   modDatetime,
   scrollSmooth = false,
@@ -42,7 +42,7 @@ const socialImageURL = new URL(
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/Logo1(D).png" />
-    <link rel="canonical" href={canonicalURL} />
+    {canonicalURL && <link rel="canonical" href={canonicalURL} />}
     <meta name="generator" content={Astro.generator} />
 
     <!-- General Meta Tags -->
