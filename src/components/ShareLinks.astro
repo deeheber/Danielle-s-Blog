@@ -22,13 +22,8 @@ const shareLinks = [
   },
   {
     name: "Dev",
-    href: "https://dev.to/share?url=",
+    href: "https://dev.to/new?url=",
     linkTitle: "Share this post via Dev",
-  },
-  {
-    name: "Pinterest",
-    href: "https://pinterest.com/pin/create/button/?url=",
-    linkTitle: `Share this post on Pinterest`,
   },
   {
     name: "Mail",
@@ -44,7 +39,7 @@ const shareLinks = [
     {
       shareLinks.map(social => (
         <LinkButton
-          href={`${social.href + URL}`}
+          href={`${social.href}${URL}`}
           className="link-button"
           title={social.linkTitle}
         >
