@@ -4,25 +4,25 @@
 
 @layer base {
   :root,
-    html[data-theme="light"] {
-      --color-fill: 238, 232, 205;
-      /* Light background color */
-      --color-text-base: 4, 47, 46;
-      --color-accent: 4, 47, 46;
-      --color-card: 217, 209, 195;
-      --color-card-muted: 239, 216, 176;
-      --color-border: 4, 47, 46;
-    }
-  
-    html[data-theme="dark"] {
-      --color-fill: 4, 47, 46;
-      /* Dark background color */
-      --color-text-base: 238, 232, 205;
-      --color-accent:238, 232, 205;
-      --color-card: 63, 75, 90;
-      --color-card-muted: 89, 107, 129;
-      --color-border: 59, 70, 85;
-    }
+  html[data-theme="light"] {
+    --color-fill: 238, 232, 205;
+    /* Light background color */
+    --color-text-base: 4, 47, 46;
+    --color-accent: 4, 47, 46;
+    --color-card: 217, 209, 195;
+    --color-card-muted: 239, 216, 176;
+    --color-border: 4, 47, 46;
+  }
+
+  html[data-theme="dark"] {
+    --color-fill: 4, 47, 46;
+    /* Dark background color */
+    --color-text-base: 238, 232, 205;
+    --color-accent: 238, 232, 205;
+    --color-card: 63, 75, 90;
+    --color-card-muted: 89, 107, 129;
+    --color-border: 59, 70, 85;
+  }
   #sun-svg,
   html[data-theme="dark"] #moon-svg {
     display: none;
@@ -36,9 +36,11 @@
     selection:bg-skin-accent selection:bg-opacity-70 selection:text-skin-inverted;
   }
 
-h1, h2, h3 {
-    @apply font-merri font-bold
-  } 
+  h1,
+  h2,
+  h3 {
+    @apply font-merri font-bold;
+  }
   section,
   footer {
     @apply mx-auto max-w-3xl px-4;
