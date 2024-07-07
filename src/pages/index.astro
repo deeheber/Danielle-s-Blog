@@ -42,7 +42,7 @@ const latestFive = sortedData.slice(0, 5);
     {
       recentblog.length > 0 && (
         <section id="recent-blog">
-          <h2 tabindex="0">Recent blog</h2>
+          <h2 tabindex="0">Recent Blog Posts</h2>
           <ul>
             {recentblog.map(
               ({ data, slug }, index) =>
@@ -147,6 +147,6 @@ const latestFive = sortedData.slice(0, 5);
   }
 
   #talk-list {
-    @apply font-merri my-4 inline-block sm:my-8 sm:text-xl;
+    @apply my-4 inline-block font-merri sm:my-8 sm:text-xl;
   }
 </style>

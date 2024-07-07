@@ -1,18 +1,18 @@
 ---
-import type { CollectionEntry } from "astro:content";
 import Layout from "@layouts/Layout.astro";
 import Main from "@layouts/Main.astro";
 import Header from "@components/Header.astro";
 import Footer from "@components/Footer.astro";
-import Pagination from "@components/Pagination.astro";
 import Speaking from "@components/Speaking.astro";
-import Card from "@components/Card";
 import { SITE } from "@config";
 ---
 
 <Layout title={`Talks | ${SITE.title}`}>
   <Header activeNav="talks" />
-  <Main pageTitle="Talks" pageDesc="A selection of the talks I've given." />
+  <Main
+    pageTitle="Talks"
+    pageDesc="A selection of talks and public appearances."
+  />
   <Speaking />
 
   <Footer />
