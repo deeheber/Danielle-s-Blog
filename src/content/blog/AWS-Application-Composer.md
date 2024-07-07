@@ -5,6 +5,7 @@ pubDatetime: 2022-09-21T05:17:19Z
 featured: false
 draft: false
 description: AWS Application Composer, the App Building Future We Need
+slug: aws-application-composer
 ---
 
 ![AWS Application Composer](/assets/app-composer.png)

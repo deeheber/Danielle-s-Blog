@@ -5,6 +5,7 @@ pubDatetime: 2024-04-12T09:12:03.284Z
 featured: false
 draft: false
 description: Tips for Getting Started in Cloud
+slug: get-started-in-cloud
 ---
 
 ![Clouds Image](/assets/clouds.jpg)

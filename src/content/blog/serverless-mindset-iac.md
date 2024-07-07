@@ -3,6 +3,7 @@ author: Danielle Heberling
 title: The Serverless Mindset and Infrastructure as Code
 pubDatetime: 2023-12-05T12:12:03.284Z
 description: The Serverless Mindset and Infrastructure as Code
+slug: serverless-mindset-iac
 ---
 
 ![AWS Application Composer Canvas](/assets/app-composer-canvas.png)

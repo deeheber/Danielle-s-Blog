@@ -3,6 +3,7 @@ author: Danielle Heberling
 pubDatetime: 2023-09-24T07:12:03.284Z
 title: EventBridge Emoji Event Patterns
 description: EventBridge Emoji Event Patterns
+slug: eventbridge-emoji
 ---
 
 ![emoji](/assets/emoji.jpg)

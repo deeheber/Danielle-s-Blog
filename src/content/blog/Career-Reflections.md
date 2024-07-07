@@ -3,6 +3,7 @@ author: Danielle Heberling
 pubDatetime: 2023-07-07T22:12:03.284Z
 title: Career Reflections
 description: Career Reflections
+slug: career-refelctions
 ---
 
 ![Hands](/assets/hands.jpg)

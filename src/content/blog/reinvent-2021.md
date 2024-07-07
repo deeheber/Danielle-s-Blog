@@ -3,6 +3,7 @@ author: Danielle Heberling
 title: My Top Three AWS re:Invent 2021 Announcements
 pubDatetime: 2021-12-09T22:12:03.284Z
 description: My Top Three AWS re:Invent 2021 Announcements
+slug: reinvent-2021
 ---
 
 Disclaimer that this post contains my individual opinions and yours might differ. Let's get started!

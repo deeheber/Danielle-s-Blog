@@ -5,6 +5,7 @@ pubDatetime: 2022-10-02T09:12:03.284Z
 featured: false
 draft: false
 description: Improved git workflows with graphite.dev
+slug: git-collaboration
 ---
 
 ![Clouds Image](/assets/github-screen.jpg)

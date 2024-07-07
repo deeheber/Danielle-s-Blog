@@ -3,6 +3,7 @@ author: Danielle Heberling
 title: The Problem with "It Works on My Computer"
 pubDatetime: 2023-03-20T10:12:03.284Z
 description: The Problem with "It Works on My Computer"
+slug: works-on-my-computer
 ---
 
 > Disclaimer: This is an opinionated post based off of my own experience. Your experience and opinions may differ and that is okay. I welcome your respectful and engaged conversation. Most of my cloud experience is with Amazon Web Services, so this post will be AWS heavy. A lot of this applicable to other cloud providers though.

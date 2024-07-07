@@ -3,6 +3,7 @@ author: Danielle Heberling
 pubDatetime: 2022-08-04T10:12:03.284Z
 title: Making the Switch - Software Development on Pop!_OS
 description: Making the Switch - Software Development on Pop!_OS
+slug: desktop-linux-development
 ---
 
 ![Pop_OS Logo](/assets/pop_os.png)

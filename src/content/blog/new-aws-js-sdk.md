@@ -3,6 +3,7 @@ author: Danielle Heberling
 pubDatetime: 2021-02-04T22:12:03.284Z
 title: Upgrading to the AWS SDK for JavaScript v3
 description: Upgrading to the AWS SDK for JavaScript v3
+slug: new-aws-js-sdk
 ---
 
 ![Three Dice](/assets/three-dice.jpg)

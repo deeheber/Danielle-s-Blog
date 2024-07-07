@@ -2,7 +2,7 @@
 title: The Job Seeker's Jungle
 author: Danielle Heberling
 pubDatetime: 2022-09-18T05:12:03.284Z
-slug: The-Job-Seeker's-Jungle
+slug: jobseekers-jungle
 featured: false
 draft: false
 description: The Job Seeker's Jungle

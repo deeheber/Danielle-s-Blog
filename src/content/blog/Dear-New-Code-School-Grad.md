@@ -3,6 +3,7 @@ author: Danielle Heberling
 pubDatetime: 2024-02-22T22:12:03.284Z
 title: Dear New Code School Grad
 description: Dear New Code School Grad
+slug: career-change-advice
 ---
 
 ![Diploma](/assets/diploma.jpg)

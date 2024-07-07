@@ -5,6 +5,7 @@ title: I'm Worried About Generative AI
 featured: false
 draft: false
 description: I'm Worried About Generative AI
+slug: generative-ai
 ---
 
 ![Clouds Image](/assets/drawer.jpg)
