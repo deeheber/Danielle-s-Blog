@@ -1,18 +1,19 @@
-# Welcome to your new blog, Danielle! 
+# Welcome to your new blog, Danielle!
 
 #Demo
 
 https://github.com/01001101CK/Danielle-s-Blog/assets/112290188/75d6d0b4-fc8f-44e4-9e48-c69d75fab494
 
-
-
 # Content
+
 ## 🎨 Blog updates
+
 - All blog posts are stored in `src/content/blog` directory.
 - Add Posts - [markdown](src/content/blog/adding-new-post.md)
-  
+
 ## 📣 Talks updates
-Update the `SpeakingData.json` file in `src/data` directory. 
+
+Update the `SpeakingData.json` file in `src/data` directory.
 
 ## 🎖️ Commands
 
@@ -31,8 +32,9 @@ All commands are run from the root of the project, from a terminal:
 | `npm run sync`                       | Generates TypeScript types for all Astro modules. [Learn more](https://docs.astro.build/en/reference/cli-reference/#astro-sync). |
 | `npm run cz`                         | Commit code changes with commitizen                                                                                              |
 | `npm run lint`                       | Lint with ESLint                                                                                                                 |
-| `docker compose up -d`               | Run on docker, You can access with the same hostname and port informed on `dev` command.                              |
+| `docker compose up -d`               | Run on docker, You can access with the same hostname and port informed on `dev` command.                                         |
 | `docker compose run app npm install` | You can run any command above into the docker container.                                                                         |
+
 ## 💻 Tech Stack
 
 **Main Framework** - [Astro](https://astro.build/)  

@@ -6,18 +6,13 @@ import Footer from "@components/Footer.astro";
 import LinkButton from "@components/LinkButton.astro";
 import Hr from "@components/Hr.astro";
 import Card from "@components/Card";
-import Socials from "@components/Socials.astro";
 import getsortedblog from "@utils/getSortedBlogPosts";
 import speakingData from "../data/speakingData.json";
-import { SOCIALS } from "@config";
 
 const blog = await getCollection("blog");
 
 const sortedblog = getsortedblog(blog);
-const featuredblog = sortedblog.filter(({ data }) => data.featured);
 const recentblog = sortedblog.filter(({ data }) => !data.featured);
-
-const socialCount = SOCIALS.filter(social => social.active).length;
 
 // Flatten and sort the speaking data
 const flattenedData: { title: string; link: string; year: string }[] =
@@ -61,7 +56,7 @@ const latestFive = sortedData.slice(0, 5);
 
     <div class="all-blog-btn-wrapper">
       <LinkButton href="/blog/">
-        All blog
+        All blog posts
         <svg xmlns="http://www.w3.org/2000/svg"
           ><path
             d="m11.293 17.293 1.414 1.414L19.414 12l-6.707-6.707-1.414 1.414L15.586 11H6v2h9.586z"

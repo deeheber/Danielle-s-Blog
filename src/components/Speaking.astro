@@ -1,28 +1,5 @@
 ---
 import speakingData from "../data/speakingData.json";
-
-interface Talk {
-  title: string;
-  link: string;
-}
-
-interface YearData {
-  year: string;
-  content: Talk[];
-}
-
-interface SiteMetadata {
-  title: string;
-  author: string;
-}
-
-const siteMetadata: SiteMetadata = {
-  title: "Your Site Title",
-  author: "Your Author Name",
-};
-
-// Ensure speakingData is typed
-const typedSpeakingData: YearData[] = speakingData;
 ---
 
 <section>
@@ -56,7 +33,7 @@ const typedSpeakingData: YearData[] = speakingData;
       @apply text-2xl font-semibold sm:text-3xl;
     }
     #all-talks li {
-      @apply mb-6 mt-2 italic text-xl font-medium focus-visible:outline-dashed;
+      @apply mb-6 mt-2 text-xl font-medium italic focus-visible:outline-dashed;
     }
   </style>
 </section>
