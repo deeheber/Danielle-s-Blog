@@ -114,3 +114,6 @@ Thank you to Netlify, Gatsby, and GitHub for having a very permissive free tier 
 
 > Edit October 8, 2023:
 > Sadly Netlify is amongst the many tech companies [that laid off a lot of employees](https://www.netlify.com/blog/ceo-announcement-to-the-netlify-team/) including folks on the Gatsby team. My thoughts are with those who lost their jobs. I hope they find new opportunities soon. I'm not sure what this means for the future of Netlify and Gatsby, but I hope they can continue to provide a great service to their customers. Time will tell.
+
+> Edit July 8, 2024
+> Update: The blog website mentioned in this post has been retired. It has been rebuilt using Astro and deployed to Cloudflare Pages.
