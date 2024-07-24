@@ -74,7 +74,7 @@ const { activeNav } = Astro.props;
               About
             </a>
           </li>
-          <li>
+          <!-- <li>
             <LinkButton
               href="/search/"
               className={`focus-outline p-3 sm:p-1 ${
@@ -95,7 +95,7 @@ const { activeNav } = Astro.props;
               </svg>
               <span class="sr-only">Search</span>
             </LinkButton>
-          </li>
+          </li> -->
           {
             SITE.lightAndDarkMode && (
               <li>
@@ -228,7 +228,7 @@ const { activeNav } = Astro.props;
     @apply opacity-100;
   }
   .logo {
-    @apply w-full max-w-350px h-auto;
+    @apply h-auto w-full max-w-350px;
   }
 
   @media (max-width: 640px) {
