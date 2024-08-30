@@ -66,7 +66,7 @@ I would advise investing time in learning and using these new AI tools. Learn wh
 Anyway, these are some thoughts I've had over the past few months. I'm just another person on the internet with opinions, giving unsolicited advice. What you do or do not do with it is up to you. I welcome polite engaged feedback and conversation on this topic.
 
 <br />
-<sup>1</sup> Note that this is not commentary from me saying that I like the status-quo. This is a comment plainly stating the status quo.
+<sup>1</sup> Note that this is not commentary from me saying that I like the status quo. This is a comment plainly stating the status quo.
 
 <br />
 <br />
