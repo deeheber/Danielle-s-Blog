@@ -37,7 +37,7 @@ I am excited about the potential for AI to do boring and mundane tasks for us hu
 
 What does matter if you want to be employed as a software engineer in this industry is the opinion of those who are in positions of power that make the budget and hiring decisions.
 
-## Unsolicted Advice
+## Unsolicited Advice
 
 If you want to be hired and maintain a job in this industry as a software engineer, you need to figure out the motivations of people in positions of power and do the work to be able to effectively and genuinely sell yourself to them.
 
@@ -63,7 +63,7 @@ I would advise investing time in learning and using these new AI tools. Learn wh
 
 ## Closing
 
-Anyway, these are some thoughts I've had over the past few months. I'm just another person on the internet with opinions, giving unsolicted advice. What you do or do not do with it is up to you. I welcome polite engaged feedback and conversation on this topic.
+Anyway, these are some thoughts I've had over the past few months. I'm just another person on the internet with opinions, giving unsolicited advice. What you do or do not do with it is up to you. I welcome polite engaged feedback and conversation on this topic.
 
 <br />
 <sup>1</sup> Note that this is not commentary from me saying that I like the status-quo. This is a comment plainly stating the status quo.
