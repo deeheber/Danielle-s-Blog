@@ -1,12 +1,11 @@
 ---
 author: Danielle Heberling
-pubDatetime: 2024-09-07T22:12:03.284Z
+pubDatetime: 2024-08-28T22:12:03.284Z
 title: Devs are Not the Target Market for AI
 description: Devs are Not the Target Market for AI
-slug: devs-not-the-target-market-for-ai
 ---
 
-// TODO add AI generated image here. Maybe a robot or something. 🤣
+![robot devs](/assets/robotDevs.png)
 
 ## Background
 
