@@ -55,9 +55,9 @@ export const SOCIALS: SocialObjects = [
     active: false,
   },
   {
-    name: "Twitter",
+    name: "X",
     href: "https://x.com/deeheber",
-    linkTitle: `${SITE.title} on Twitter`,
+    linkTitle: `${SITE.title} on X`,
     active: true,
   },
   {
