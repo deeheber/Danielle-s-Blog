@@ -1,37 +1,37 @@
 ---
-import { type CollectionEntry, getCollection } from "astro:content";
-import Blog from "@layouts/Blog.astro";
-import BlogDetails from "@layouts/BlogDetails.astro";
-import getSortedBlog from "@utils/getSortedBlogPosts";
-import getPageNumbers from "@utils/getBlogPageNumbers";
-import getPagination from "@utils/getBlogPagination";
+import { type CollectionEntry, getCollection } from "astro:content"
+import Blog from "@layouts/Blog.astro"
+import BlogDetails from "@layouts/BlogDetails.astro"
+import getSortedBlog from "@utils/getSortedBlogPosts"
+import getPageNumbers from "@utils/getBlogPageNumbers"
+import getPagination from "@utils/getBlogPagination"
 
 export interface Props {
-  post: CollectionEntry<"blog">;
+  post: CollectionEntry<"blog">
 }
 
 export async function getStaticPaths() {
-  const blog = await getCollection("blog", ({ data }) => !data.draft);
+  const blog = await getCollection("blog", ({ data }) => !data.draft)
 
   const postResult = blog.map(post => ({
     params: { slug: post.slug },
-  }));
+  }))
 
   const pagePaths = getPageNumbers(blog.length).map(pageNum => ({
     params: { slug: String(pageNum) },
-  }));
+  }))
 
-  return [...postResult, ...pagePaths];
+  return [...postResult, ...pagePaths]
 }
 
-const { slug } = Astro.params;
-const blogPosts = await getCollection("blog");
-const sortedBlogPosts = getSortedBlog(blogPosts);
-const post = sortedBlogPosts.find(post => post.slug === slug);
+const { slug } = Astro.params
+const blogPosts = await getCollection("blog")
+const sortedBlogPosts = getSortedBlog(blogPosts)
+const post = sortedBlogPosts.find(post => post.slug === slug)
 const pagination = getPagination({
   blog: sortedBlogPosts,
   page: slug,
-});
+})
 ---
 
 {post ? <BlogDetails post={post} /> : <Blog {...pagination} />}

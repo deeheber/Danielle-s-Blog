@@ -251,17 +251,17 @@ def save_tags(image, tags):
 This is triggered whenever a new tag is inserted into our table. As you'll see in the recommend talks Function, these aggregations support that feature. Because we don't need to utilize the Hugging Face transformers in this Function, we decided to do this one in Typescript rather than Python.
 
 ```typescript
-import { UpdateCommand } from "@aws-sdk/lib-dynamodb";
-import { type DynamoDBStreamEvent } from "aws-lambda";
+import { UpdateCommand } from "@aws-sdk/lib-dynamodb"
+import { type DynamoDBStreamEvent } from "aws-lambda"
 
-import { docClient, tableName } from "../util/docClient";
+import { docClient, tableName } from "../util/docClient"
 
 export const handler = async (event: DynamoDBStreamEvent): Promise<void> => {
   for (const record of event.Records) {
-    const image = record.dynamodb?.NewImage;
-    if (!image?.tagName.S) continue;
+    const image = record.dynamodb?.NewImage
+    if (!image?.tagName.S) continue
 
-    const tagName = image.tagName.S;
+    const tagName = image.tagName.S
 
     const command = new UpdateCommand({
       ExpressionAttributeNames: {
@@ -289,11 +289,11 @@ export const handler = async (event: DynamoDBStreamEvent): Promise<void> => {
                              #_ct = if_not_exists(#_ct, :timestamp),
                              #_md = :timestamp
                          `,
-    });
+    })
 
-    await docClient.send(command);
+    await docClient.send(command)
   }
-};
+}
 ```
 
 ### Function Code - Recommend Talks
@@ -301,17 +301,17 @@ export const handler = async (event: DynamoDBStreamEvent): Promise<void> => {
 This Function is set up as a GQL resolver that is called from our Flutter frontend. We decided to set this one up as a Lambda resolver rather than a JS pipeline resolver because this feature is making multiple queries to our table. This Function also does not utilize the Hugging Face transformers, so we decided to write it using Typescript rather than Python.
 
 ```typescript
-import { QueryCommand } from "@aws-sdk/lib-dynamodb";
-import { type AppSyncResolverEvent } from "aws-lambda";
+import { QueryCommand } from "@aws-sdk/lib-dynamodb"
+import { type AppSyncResolverEvent } from "aws-lambda"
 
-import { type Event, type Talk } from "../API";
-import { docClient, tableName } from "../util/docClient";
+import { type Event, type Talk } from "../API"
+import { docClient, tableName } from "../util/docClient"
 
 export const handler = async (
   event: AppSyncResolverEvent<{ event: Event }>
 ): Promise<Talk[]> => {
-  const eventTags = event.arguments.event.tags;
-  const talks: Array<Talk & { matches?: number }> = [];
+  const eventTags = event.arguments.event.tags
+  const talks: Array<Talk & { matches?: number }> = []
   for (const eventTag of eventTags) {
     const queryTagsCommand = new QueryCommand({
       ExpressionAttributeNames: {
@@ -323,9 +323,9 @@ export const handler = async (
       KeyConditionExpression: "#gsi1pk = :gsi1pk",
       IndexName: "gsi1",
       TableName: tableName,
-    });
-    const tagsResult = await docClient.send(queryTagsCommand);
-    if (!tagsResult.Items) continue;
+    })
+    const tagsResult = await docClient.send(queryTagsCommand)
+    if (!tagsResult.Items) continue
 
     for (const tagResult of tagsResult.Items) {
       const queryTalksCommand = new QueryCommand({
@@ -339,14 +339,14 @@ export const handler = async (
         },
         KeyConditionExpression: "#pk = :pk and begins_with(#sk, :talk)",
         TableName: tableName,
-      });
-      const talksResult = await docClient.send(queryTalksCommand);
+      })
+      const talksResult = await docClient.send(queryTalksCommand)
       if (talksResult.Items) {
         talksResult.Items.forEach(talk => {
           if (!talks.find(t => t.pk === talk.pk)) {
-            talks.push(talk as Talk);
+            talks.push(talk as Talk)
           }
-        });
+        })
       }
     }
   }
@@ -354,15 +354,15 @@ export const handler = async (
   talks.forEach(talk => {
     const matchCount = (talk.tags || []).filter(t =>
       eventTags.includes(t)
-    ).length;
-    talk.matches = matchCount;
-  });
+    ).length
+    talk.matches = matchCount
+  })
 
   return talks
     .filter(t => t.matches)
     .sort((a, b) => (a.matches && b.matches && a.matches < b.matches ? 1 : -1))
-    .slice(0, 10);
-};
+    .slice(0, 10)
+}
 ```
 
 ## Trade offs

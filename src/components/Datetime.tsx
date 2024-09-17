@@ -1,13 +1,13 @@
-import { LOCALE } from "@config";
+import { LOCALE } from "@config"
 
 interface DatetimesProps {
-  pubDatetime: string | Date;
-  modDatetime: string | Date | undefined | null;
+  pubDatetime: string | Date
+  modDatetime: string | Date | undefined | null
 }
 
 interface Props extends DatetimesProps {
-  size?: "sm" | "lg";
-  className?: string;
+  size?: "sm" | "lg"
+  className?: string
 }
 
 export default function Datetime({
@@ -42,24 +42,24 @@ export default function Datetime({
         />
       </span>
     </div>
-  );
+  )
 }
 
 const FormattedDatetime = ({ pubDatetime, modDatetime }: DatetimesProps) => {
   const myDatetime = new Date(
     modDatetime && modDatetime > pubDatetime ? modDatetime : pubDatetime
-  );
+  )
 
   const date = myDatetime.toLocaleDateString(LOCALE.langTag, {
     year: "numeric",
     month: "short",
     day: "numeric",
-  });
+  })
 
   const time = myDatetime.toLocaleTimeString(LOCALE.langTag, {
     hour: "2-digit",
     minute: "2-digit",
-  });
+  })
 
   return (
     <>
@@ -68,5 +68,5 @@ const FormattedDatetime = ({ pubDatetime, modDatetime }: DatetimesProps) => {
       <span className="sr-only">&nbsp;at&nbsp;</span> */}
       {/* <span className="text-nowrap">{time}</span> */}
     </>
-  );
-};
+  )
+}

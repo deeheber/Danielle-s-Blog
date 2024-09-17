@@ -49,25 +49,25 @@ Since a lot of computer science example material seems to be Java-centric, here'
 
 ```javascript
 function bubbleSort(nums) {
-  let wasSwapped = false;
+  let wasSwapped = false
   do {
-    wasSwapped = false;
+    wasSwapped = false
     for (let i = 0; i <= nums.length - 1; i++) {
-      const firstNum = nums[i];
-      const secondNum = nums[i + 1];
+      const firstNum = nums[i]
+      const secondNum = nums[i + 1]
 
       if (secondNum < firstNum) {
-        nums[i] = secondNum;
-        nums[i + 1] = firstNum;
-        wasSwapped = true;
+        nums[i] = secondNum
+        nums[i + 1] = firstNum
+        wasSwapped = true
       }
     }
-  } while (wasSwapped);
-  return nums;
+  } while (wasSwapped)
+  return nums
 }
 
 // Test case
-console.log(bubbleSort([8, 6, 7, 5, 3, 0, 9]));
+console.log(bubbleSort([8, 6, 7, 5, 3, 0, 9]))
 ```
 
 ## Time and Space Complexity

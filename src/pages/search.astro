@@ -1,16 +1,16 @@
 ---
-import { getCollection } from "astro:content";
-import { SITE } from "@config";
-import Layout from "@layouts/Layout.astro";
-import Main from "@layouts/Main.astro";
-import Header from "@components/Header.astro";
-import Footer from "@components/Footer.astro";
-import SearchBar from "@components/Search";
-import getsortedblog from "@utils/getSortedBlogPosts";
+import { getCollection } from "astro:content"
+import { SITE } from "@config"
+import Layout from "@layouts/Layout.astro"
+import Main from "@layouts/Main.astro"
+import Header from "@components/Header.astro"
+import Footer from "@components/Footer.astro"
+import SearchBar from "@components/Search"
+import getsortedblog from "@utils/getSortedBlogPosts"
 
 // Retrieve all published articles
-const blog = await getCollection("blog", ({ data }) => !data.draft);
-const sortedblog = getsortedblog(blog);
+const blog = await getCollection("blog", ({ data }) => !data.draft)
+const sortedblog = getsortedblog(blog)
 
 // List of items to search in
 const searchList = sortedblog.map(({ data, slug }) => ({
@@ -18,7 +18,7 @@ const searchList = sortedblog.map(({ data, slug }) => ({
   description: data.description,
   data,
   slug,
-}));
+}))
 ---
 
 <Layout title={`Search | ${SITE.title}`}>

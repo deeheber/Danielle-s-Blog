@@ -1,18 +1,18 @@
 ---
-import { getCollection } from "astro:content";
-import Layout from "@layouts/Layout.astro";
-import Header from "@components/Header.astro";
-import Footer from "@components/Footer.astro";
-import LinkButton from "@components/LinkButton.astro";
-import Hr from "@components/Hr.astro";
-import Card from "@components/Card";
-import getsortedblog from "@utils/getSortedBlogPosts";
-import speakingData from "../data/speakingData.json";
+import { getCollection } from "astro:content"
+import Layout from "@layouts/Layout.astro"
+import Header from "@components/Header.astro"
+import Footer from "@components/Footer.astro"
+import LinkButton from "@components/LinkButton.astro"
+import Hr from "@components/Hr.astro"
+import Card from "@components/Card"
+import getsortedblog from "@utils/getSortedBlogPosts"
+import speakingData from "../data/speakingData.json"
 
-const blog = await getCollection("blog");
+const blog = await getCollection("blog")
 
-const sortedblog = getsortedblog(blog);
-const recentblog = sortedblog.filter(({ data }) => !data.featured);
+const sortedblog = getsortedblog(blog)
+const recentblog = sortedblog.filter(({ data }) => !data.featured)
 
 // Flatten and sort the speaking data
 const flattenedData: { title: string; link: string; year: string }[] =
@@ -21,12 +21,10 @@ const flattenedData: { title: string; link: string; year: string }[] =
       ...content,
       year: yearData.year,
     }))
-  );
+  )
 
-const sortedData = flattenedData.sort(
-  (a, b) => Number(b.year) - Number(a.year)
-);
-const latestFive = sortedData.slice(0, 5);
+const sortedData = flattenedData.sort((a, b) => Number(b.year) - Number(a.year))
+const latestFive = sortedData.slice(0, 5)
 ---
 
 <Layout>

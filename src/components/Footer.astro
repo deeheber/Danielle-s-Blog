@@ -1,12 +1,12 @@
 ---
-import Hr from "./Hr.astro";
-import Socials from "./Socials.astro";
+import Hr from "./Hr.astro"
+import Socials from "./Socials.astro"
 
 export interface Props {
-  noMarginTop?: boolean;
+  noMarginTop?: boolean
 }
 
-const { noMarginTop = false } = Astro.props;
+const { noMarginTop = false } = Astro.props
 ---
 
 <footer class={`${noMarginTop ? "" : "mt-auto"}`}>
