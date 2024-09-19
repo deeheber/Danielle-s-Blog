@@ -1,15 +1,15 @@
 ---
 // Remove current url path and remove trailing slash if exists
-const currentUrlPath = Astro.url.pathname.replace(/\/+$/, "");
+const currentUrlPath = Astro.url.pathname.replace(/\/+$/, "")
 
 // Get url array from path
 // eg: /tags/tailwindcss => ['tags', 'tailwindcss']
-const breadcrumbList = currentUrlPath.split("/").slice(1);
+const breadcrumbList = currentUrlPath.split("/").slice(1)
 
 // if breadcrumb is Home > blog > 1 <etc>
 // replace blog with blog (page number)
 breadcrumbList[0] === "blog" &&
-  breadcrumbList.splice(0, 2, `blog (page ${breadcrumbList[1] || 1})`);
+  breadcrumbList.splice(0, 2, `blog (page ${breadcrumbList[1] || 1})`)
 
 // if breadcrumb is Home > Tags > [tag] > [page] <etc>
 // replace [tag] > [page] with [tag] (page number)
@@ -21,7 +21,7 @@ breadcrumbList[0] === "tags" &&
     `${breadcrumbList[1]} ${
       Number(breadcrumbList[2]) === 1 ? "" : "(page " + breadcrumbList[2] + ")"
     }`
-  );
+  )
 ---
 
 <nav class="breadcrumb" aria-label="breadcrumb">

@@ -1,32 +1,32 @@
 ---
-import { getCollection } from "astro:content";
-import Tagblog from "@layouts/TagBlog.astro";
-import getBlogByTag from "@utils/getBlogByTag";
-import getPagination from "@utils/getBlogPagination";
-import getUniqueTags from "@utils/getUniqueTags";
+import { getCollection } from "astro:content"
+import Tagblog from "@layouts/TagBlog.astro"
+import getBlogByTag from "@utils/getBlogByTag"
+import getPagination from "@utils/getBlogPagination"
+import getUniqueTags from "@utils/getUniqueTags"
 
 export async function getStaticPaths() {
-  const blog = await getCollection("blog");
+  const blog = await getCollection("blog")
 
-  const tags = getUniqueTags(blog);
+  const tags = getUniqueTags(blog)
 
   return tags.map(({ tag, tagName }) => {
     return {
       params: { tag },
       props: { tag, tagName, blog },
-    };
-  });
+    }
+  })
 }
 
-const { tag, tagName, blog } = Astro.props;
+const { tag, tagName, blog } = Astro.props
 
-const blogByTag = getBlogByTag(blog, tag);
+const blogByTag = getBlogByTag(blog, tag)
 
 const pagination = getPagination({
   blog: blogByTag,
   page: 1,
   isIndex: true,
-});
+})
 ---
 
 <Tagblog {...pagination} {tag} {tagName} />

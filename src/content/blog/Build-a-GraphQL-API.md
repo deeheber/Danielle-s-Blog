@@ -29,10 +29,10 @@ import {
   RemovalPolicy,
   Stack,
   StackProps,
-} from "@aws-cdk/core";
-import { FieldLogLevel, GraphqlApi, Schema } from "@aws-cdk/aws-appsync";
-import { AttributeType, BillingMode, Table } from "@aws-cdk/aws-dynamodb";
-import { Code, Function, Runtime } from "@aws-cdk/aws-lambda";
+} from "@aws-cdk/core"
+import { FieldLogLevel, GraphqlApi, Schema } from "@aws-cdk/aws-appsync"
+import { AttributeType, BillingMode, Table } from "@aws-cdk/aws-dynamodb"
+import { Code, Function, Runtime } from "@aws-cdk/aws-lambda"
 ```
 
 The notes will be persisted in DynamoDB, so let's also add the following CDK code to create a notes-table.
@@ -43,7 +43,7 @@ const notesTable = new Table(this, "NotesTable", {
   partitionKey: { name: "id", type: AttributeType.STRING },
   removalPolicy: RemovalPolicy.DESTROY,
   tableName: "notes-table",
-});
+})
 ```
 
 ## Create the API
@@ -57,7 +57,7 @@ const api = new GraphqlApi(this, "NotesApi", {
     fieldLogLevel: FieldLogLevel.ERROR,
   },
   schema: Schema.fromAsset("src/graphql/schema.graphql"),
-});
+})
 ```
 
 The schema property points to a file in the repository. You can also provide this inline if your prefer. The schema needs to be well formed in order to have a successful deploy of the stack.
@@ -107,7 +107,7 @@ const getLambda = new Function(this, "GetLambda", {
   handler: "get.handler",
   code: Code.fromAsset("src/get"),
   memorySize: 3008,
-});
+})
 ```
 
 The `code` property points to the source code for this function in `src/get`. This will contain the code necessary to retrieve our note from DynamoDB.
@@ -115,7 +115,7 @@ The `code` property points to the source code for this function in `src/get`. Th
 We'll then want to add this Lambda as a data source to the api we previously created.
 
 ```typescript
-const getDs = api.addLambdaDataSource("getDatasource", getLambda);
+const getDs = api.addLambdaDataSource("getDatasource", getLambda)
 ```
 
 Next let's create a resolver to resolve the `getNote` Query field in our schema to our Lambda data source.
@@ -124,14 +124,14 @@ Next let's create a resolver to resolve the `getNote` Query field in our schema 
 getDs.createResolver({
   typeName: "Query",
   fieldName: "getNote",
-});
+})
 ```
 
 The final step is to ensure our Lamba has proper permissions to perform operations on DynamoDB, so let's send it the table name as an environment variable and grant it read permissions.
 
 ```typescript
-getLambda.addEnvironment("TABLE_NAME", notesTable.tableName);
-notesTable.grantReadData(getLambda);
+getLambda.addEnvironment("TABLE_NAME", notesTable.tableName)
+notesTable.grantReadData(getLambda)
 ```
 
 ## Finished Project

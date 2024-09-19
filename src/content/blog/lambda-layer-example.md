@@ -43,8 +43,8 @@ The reverse.js file looks like this
 
 ```javascript
 module.exports = function (phrase) {
-  return phrase.split("").reverse().join("");
-};
+  return phrase.split("").reverse().join("")
+}
 ```
 
 Note that `palindrome` and `nodejs` are folders. The nodejs folder naming and placement is very important because it affects how the layer delivers the code to functions.
@@ -100,21 +100,21 @@ Also keep in mind that as of my writing this, AWS has a limit of 5 layers per fu
 The code in your index.js should look like this:
 
 ```javascript
-const palindrome = require("/opt/nodejs/palindrome");
+const palindrome = require("/opt/nodejs/palindrome")
 
 exports.handler = async (event, context) => {
   // Log the event argument for debugging and for use in local development.
-  console.log(JSON.stringify(event, undefined, 2));
+  console.log(JSON.stringify(event, undefined, 2))
 
-  const words = "This string should be reversed";
-  const response = palindrome(words);
+  const words = "This string should be reversed"
+  const response = palindrome(words)
 
   return {
     statusCode: 200,
     headers: {},
     response: JSON.stringify(response),
-  };
-};
+  }
+}
 ```
 
 The important thing to note here is the first line where we require from `/opt/nodejs`, otherwise you can use your library like you normally would when developing outside of Lambda.

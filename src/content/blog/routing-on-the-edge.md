@@ -49,16 +49,16 @@ Whenever someone makes an HTTP request to the CDN, the CDN then sends an event o
 We then pull the `pathname` off of that event object:
 
 ```javascript
-const url = require("url");
+const url = require("url")
 
 exports.handler = (event, ctx, cb) => {
-  const { request } = event.Records[0].cf;
-  const { uri } = request;
-  const urlString = url.parse(uri);
-  const { pathname } = urlString;
+  const { request } = event.Records[0].cf
+  const { uri } = request
+  const urlString = url.parse(uri)
+  const { pathname } = urlString
 
   // ...more code here
-};
+}
 ```
 
 Now that we have our `pathname` (including the optional `commit/<commit sha>` fragment), we can extract our git commit hash by calling a `getHash` helper function.
@@ -67,12 +67,12 @@ If there isn’t a hash present in the `pathname` this means that we just want t
 
 ```javascript
 const getHash = pathname => {
-  const components = pathname.split("/").filter(Boolean);
+  const components = pathname.split("/").filter(Boolean)
   if (components[0] !== "commit") {
-    return null;
+    return null
   }
-  return components[1];
-};
+  return components[1]
+}
 ```
 
 ...
@@ -86,37 +86,37 @@ The variables that start with `process.env` are NodeJS's way of referencing envi
 If the S3 object (index.html file) is missing, we handle that in the `catch` and log the error.
 
 ```javascript
-const AWS = require("aws-sdk");
+const AWS = require("aws-sdk")
 
 const s3 = new AWS.S3({
   apiVersion: "2006-03-01",
   region: "us-west-2",
-});
+})
 
 const getIndexFile = hash => {
-  let key = `${process.env.ENV}.html`;
+  let key = `${process.env.ENV}.html`
   if (hash) {
-    key = `commit/${hash}/index.html`;
+    key = `commit/${hash}/index.html`
   }
   const params = {
     Bucket: process.env.BUCKET,
     Key: key,
-  };
+  }
   return s3
     .getObject(params)
     .promise()
     .then(result => {
       if (!result || !result.Body || !Buffer.isBuffer(result.Body)) {
-        console.error("null data");
-        return null;
+        console.error("null data")
+        return null
       }
-      return result.Body.toString("utf8");
+      return result.Body.toString("utf8")
     })
     .catch(err => {
-      console.error(err);
-      return null;
-    });
-};
+      console.error(err)
+      return null
+    })
+}
 ```
 
 A possible next step to improve this might be using Lambda@Edge memory. Since the index file is immutable, we should only need to retrieve it from S3 once (or if Edge memory is dumped). https://aws.amazon.com/blogs/networking-and-content-delivery/leveraging-external-data-in-lambdaedge/
@@ -128,82 +128,82 @@ A possible next step to improve this might be using Lambda@Edge memory. Since th
 All together the function's code will look something like this
 
 ```javascript
-const AWS = require("aws-sdk");
-const url = require("url");
+const AWS = require("aws-sdk")
+const url = require("url")
 
 const s3 = new AWS.S3({
   apiVersion: "2006-03-01",
   region: "us-west-2",
-});
+})
 
 const RESPONSE_HEADERS = {
   // Add desired headers here
-};
+}
 
 const getIndexFile = hash => {
-  let key = `${process.env.ENV}.html`;
+  let key = `${process.env.ENV}.html`
   if (hash) {
-    key = `commit/${hash}/index.html`;
+    key = `commit/${hash}/index.html`
   }
   const params = {
     Bucket: process.env.BUCKET,
     Key: key,
-  };
+  }
   return s3
     .getObject(params)
     .promise()
     .then(result => {
       if (!result || !result.Body || !Buffer.isBuffer(result.Body)) {
-        console.error("null data");
-        return null;
+        console.error("null data")
+        return null
       }
-      return result.Body.toString("utf8");
+      return result.Body.toString("utf8")
     })
     .catch(err => {
-      console.error(err);
-      return null;
-    });
-};
+      console.error(err)
+      return null
+    })
+}
 
 const getHash = pathname => {
-  const components = pathname.split("/").filter(Boolean);
+  const components = pathname.split("/").filter(Boolean)
   if (components[0] !== "commit") {
-    return null;
+    return null
   }
-  return components[1];
-};
+  return components[1]
+}
 
 // The main handler function code
 exports.handler = (event, ctx, cb) => {
-  const { request } = event.Records[0].cf;
-  const { uri } = request;
-  const urlString = url.parse(uri);
-  const { pathname } = urlString;
+  const { request } = event.Records[0].cf
+  const { uri } = request
+  const urlString = url.parse(uri)
+  const { pathname } = urlString
 
-  const hash = getHash(pathname);
+  const hash = getHash(pathname)
 
   return getIndexFile(hash)
     .then(body => {
       if (!body) {
-        console.error(`could not find file: ${uri}`);
+        console.error(`could not find file: ${uri}`)
         cb(null, {
           status: "404",
           statusDescription: "not found",
-        });
-        return;
+        })
+        return
       }
       cb(null, {
         status: "200",
         statusDescription: "OK",
         headers: RESPONSE_HEADERS,
         body,
-      });
+      })
     })
     .catch(err => {
-      console.error(err, `error with request uri: ${uri}`);
-      cb(err);
-    });
-};
+      console.error(err, `error with request uri: ${uri}`)
+      cb(err)
+    })
+}
 ```
 
 ### Closing

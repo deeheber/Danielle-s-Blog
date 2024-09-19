@@ -70,7 +70,7 @@ As a note, if you want to work on the react frontend locally, you’ll need to a
 ```javascript
 export default {
   backendAPI: "ENTER YOUR API GATEWAY URL HERE",
-};
+}
 ```
 
 ## Closing

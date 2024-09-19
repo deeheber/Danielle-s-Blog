@@ -1,5 +1,5 @@
-import type { CollectionEntry } from "astro:content";
-import postFilter from "./postFilter";
+import type { CollectionEntry } from "astro:content"
+import postFilter from "./postFilter"
 
 const getsortedblog = (blog: CollectionEntry<"blog">[]) => {
   return blog
@@ -12,7 +12,7 @@ const getsortedblog = (blog: CollectionEntry<"blog">[]) => {
         Math.floor(
           new Date(a.data.modDatetime ?? a.data.pubDatetime).getTime() / 1000
         )
-    );
-};
+    )
+}
 
-export default getsortedblog;
+export default getsortedblog

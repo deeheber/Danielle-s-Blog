@@ -114,18 +114,18 @@ So now the user is looking at the confirmation form and has their confirmation c
 
 ```javascript
 handleConfirmationSubmit = async event => {
-  event.preventDefault();
+  event.preventDefault()
 
   try {
-    await Auth.confirmSignUp(this.state.email, this.state.confirmationCode);
-    await Auth.signIn(this.state.email, this.state.password);
+    await Auth.confirmSignUp(this.state.email, this.state.confirmationCode)
+    await Auth.signIn(this.state.email, this.state.password)
 
-    this.props.isAuthenticated(true);
-    this.props.history.push("/");
+    this.props.isAuthenticated(true)
+    this.props.history.push("/")
   } catch (event) {
-    alert(event.message);
+    alert(event.message)
   }
-};
+}
 ```
 
 So it is taking in the form data, using Amplify to confirm the user’s email address via the conformation code and signing in the user if successful. You can then verify if a user is signed in via props at the route level if you’d like. In this case, I arbitrarily named it `isAuthenticated` and redirected the user to the root path.
