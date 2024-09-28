@@ -1,16 +1,18 @@
 ---
 author: Danielle Heberling
-pubDatetime: 2024-09-24T05:12:03.284Z
+pubDatetime: 2024-09-28T05:12:03.284Z
 title: Playdate Review
 description: Playdate review
 slug: playdate-review
 ---
 
-<!-- TODO add hero image -->
-
 ## What is a Playdate?
 
-The Playdate is a small hand held game system with a crank, buttons (D-pad, a, b), and a small black and white screen (similar to e-ink).
+The Playdate is a small hand held game system with a crank, buttons (D-pad, a, b), and a small black and white screen (similar to e-paper).
+
+With dimensions of 76 × 74 × 9 mm, the console can easily fit into most pockets for on the go game playing.
+
+![playdate](/assets/playdate.jpeg)
 
 [Panic](https://panic.com/) is the company that created the Playdate. You might have heard of Panic from playing [Untitled Goose Game](https://goose.game/) or [Firewatch](https://www.firewatchgame.com/). Or you might have used Mac apps such as [Transmit](https://panic.com/transmit/) or [Coda (renamed to Nova)](https://nova.app/).
 
