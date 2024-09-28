@@ -51,8 +51,8 @@ Also anything Panic creates, I know will be high quality and well thought out.
 
 ## Side story
 
-Panic holds a special place in my heart. Back when I recently relocated to Portland, OR I was looking to get out of my current company and saw that they had an open customer support role. I was currently working in customer support, but moonlighting by taking night/weekend classes at a local code school to switch into being a software engineer. I went into their office and did the full interview round (including an interview with their CEO, Cabel Sasser). The next day I received the nicest rejection email from Cabel stating that they really liked me, but think that I would be better suited to becoming a software engineer that I should continue on that path.
+Panic holds a special place in my heart. Back when I recently relocated to Portland, OR I was looking to get out of my current company and saw that they had an open customer support role. I was currently working in customer support, but moonlighting by taking night/weekend classes at a local code school to switch into being a software engineer. I went into their office and did the full interview round (including an interview with their CEO, Cabel Sasser). The next day I received the nicest rejection email from Cabel stating that they really liked me, but think that I would be better suited to becoming a software engineer and recommended that I continue down that path.
 
-Anyway would highly recommend the Playdate and anything that Panic creates, because I know it will be high quality in terms of the aesthetics and story telling.
+Anyway I highly recommend the Playdate and anything that Panic creates, because I know it will be high quality in terms of the aesthetics and story telling.
 <br />
 <br />
