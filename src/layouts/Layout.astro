@@ -45,6 +45,15 @@ const socialImageURL = new URL(
     {canonicalURL && <link rel="canonical" href={canonicalURL} />}
     <meta name="generator" content={Astro.generator} />
 
+    <!-- RSS feed auto discovery -->
+    <!-- https://docs.astro.build/en/guides/rss/#enabling-rss-feed-auto-discovery -->
+    <link
+      rel="alternate"
+      type="application/rss+xml"
+      title={title}
+      href={new URL("rss.xml", Astro.site)}
+    />
+
     <!-- General Meta Tags -->
     <title>{title}</title>
     <meta name="title" content={title} />
