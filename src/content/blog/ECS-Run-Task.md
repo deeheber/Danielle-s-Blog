@@ -1,6 +1,6 @@
 ---
 author: Danielle Heberling
-pubDatetime: 2024-11-06T22:12:03.284Z
+pubDatetime: 2024-11-07T15:12:03.284Z
 title: Ephemeral Jobs Longer than the Lambda Timeout
 description: Ephemeral Jobs Longer than the Lambda Timeout
 slug: ecs-run-task
