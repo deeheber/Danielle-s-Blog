@@ -14,9 +14,9 @@ slug: ecs-run-task
 
 There's an ad-hoc job that runs in the background that doesn't have a client waiting for a synchronous response.
 
-You could run this in AWS Lambda to save money. The huge benefit with an ephemeral job run is that AWS only charges for when the Lambda is running.
+You could run this in AWS Lambda to save money. A benefit with an ephemeral job run is that AWS only charges for when the Lambda is running.
 
-Problem is that this specific job runs longer than the Lambda timeout (at the time of writing this it is 15 minutes). Lambda and Serverless solutions are great; however, in this specific case it is not the right tool. We could write extra logic to make it work, but that adds unecessary complexity.
+Problem is that this specific job runs longer than the Lambda timeout (at the time of writing this it is 15 minutes). We could write extra logic to make it work, but that adds unnecessary complexity.
 
 You still want to run this ephemerally to save money and resources...so what can you do?
 
