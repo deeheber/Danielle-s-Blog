@@ -1,8 +1,8 @@
 ---
 author: Danielle Heberling
 pubDatetime: 2024-11-06T22:12:03.284Z
-title: Run Ephemeral Jobs for Longer than the Lambda Timeout
-description: Run Ephemeral Jobs for Longer than the Lambda Timeout
+title: Ephemeral Jobs Longer than the Lambda Timeout
+description: Ephemeral Jobs Longer than the Lambda Timeout
 slug: ecs-run-task
 ---
 
@@ -12,11 +12,11 @@ slug: ecs-run-task
 
 ## The Problem
 
-You have an ad-hoc job that runs in the background that doesn't have a client waiting for a synchronous response.
+There's an ad-hoc job that runs in the background that doesn't have a client waiting for a synchronous response.
 
 You could run this in AWS Lambda to save money. The huge benefit with an ephemeral job run is that AWS only charges for when the Lambda is running.
 
-Problem is that this specific job runs longer than the Lambda timeout (at the time of writing this it is 15 minutes). Lambda and serverless solutions are great; however, in this specific case it is not the right tool for the job. We could write extra logic to make it work, but that adds unecessary complexity.
+Problem is that this specific job runs longer than the Lambda timeout (at the time of writing this it is 15 minutes). Lambda and Serverless solutions are great; however, in this specific case it is not the right tool. We could write extra logic to make it work, but that adds unecessary complexity.
 
 You still want to run this ephemerally to save money and resources...so what can you do?
 
@@ -30,7 +30,7 @@ AWS Resources Needed:
 - [A Task Definition](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definitions.html) - a blueprint for your application which contains one or more containers and parameters to run
 - [A Container](https://aws.amazon.com/what-is/cloud-containers/) - a lightweight, standalone, executable package of software that includes everything needed to run an application. This is commonly used with [Docker](https://www.docker.com/).
 
-Once those resources are deployed, the container can be trigger to run via `ECS run-task`. Once the code is done running and the container exits, then the ECS Task will spin down for in order to avoid being charged for a running container that isn't actively being used.
+Once those resources are deployed, the container can be triggered to run on demand with `ECS run-task`. Once the code is done running and the container exits, then the running ECS Task will disappear. The benefit is that you'll no longer be charged money for a running Fargate task.
 
 There's a few ways to run an ECS task on demand:
 
@@ -72,6 +72,8 @@ aws ecs run-task \
 ```
 
 I've seen this used for one off commands that need to run every now and then such as database migrations, though I'm certain there are other good use cases. Here's [the full list](https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_TaskOverride.html) of what can be overridden.
+
+Special thanks to [Chase Douglas](https://www.linkedin.com/in/chasedouglas/) for giving me this idea. 🙌🏻
 
 <br />
 <br />
