@@ -3,16 +3,20 @@
     "year": "2024",
     "content": [
       {
+        "title": "Step Up Your GameDay! re:Invent",
+        "link": "https://www.youtube.com/watch?v=MvY-c6BY82Y"
+      },
+      {
+        "title": "Step Up Your GameDay!",
+        "link": "https://www.twitch.tv/awsonair/video/2285211749"
+      },
+      {
         "title": "Rethinking Serverless",
-        "link": "https://www.youtube.com/watch?v=Kcp03SCyE_o"
+        "link": "https://youtu.be/Kcp03SCyE_o?si=fAORUHxb5L3NrJny"
       },
       {
         "title": "This is an enterprise-grade podcast",
         "link": "https://youtu.be/THojb0cOwvk?si=ykXrHIZ5rMLVjiIb"
-      },
-      {
-        "title": "Build On Weekly | S03 E23",
-        "link": "https://www.twitch.tv/videos/2207028053"
       },
       {
         "title": "Livestream: Trying out Cloudflare for the first time",
@@ -24,7 +28,7 @@
       },
       {
         "title": "Ready. Set. Cloud Podcast - All about the Believe in Serverless community",
-        "link": "https://www.readysetcloud.io/podcast/season-2/8/"
+        "link": "https://creators.spotify.com/pod/show/readysetcloud/episodes/All-about-the-Believe-in-Serverless-community-e2jf6a3/a-ab8i8d4"
       },
       {
         "title": "Modernizing Healthcare Delivery with AWS Serverless Services",
@@ -36,11 +40,11 @@
       },
       {
         "title": "Getting Started with AWS by Using Application Composer",
-        "link": "https://youtube/GmWY7weQI84?si=oy9fAhvnhH9toRCb"
+        "link": "https://youtu.be/GmWY7weQI84?si=otfZ6qiXI3MDa2dn"
       },
       {
         "title": "Talking Serverless Podcast #55",
-        "link": "https://youtube/vcIjKz3b5CM?si=00ze0ReuwSE-hGf7"
+        "link": "https://youtu.be/vcIjKz3b5CM?si=I_zfRJV5bv6qJn6Z"
       }
     ]
   },
