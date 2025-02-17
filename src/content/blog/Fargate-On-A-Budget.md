@@ -6,6 +6,10 @@ description: Fargate on a Budget
 slug: fargate-on-a-budget
 ---
 
+![Money counting](/assets/budget.jpg)
+
+> Photo by <a href="https://unsplash.com/@sharonmccutcheon?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Alexander Grey</a> on <a href="https://unsplash.com/photos/focus-photography-of-person-counting-dollar-banknotes--8a5eJ1-mmQ?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
+
 ## The Business Problem
 
 At the day job, we have an application that needs to meet the following requirements for deploying to production
