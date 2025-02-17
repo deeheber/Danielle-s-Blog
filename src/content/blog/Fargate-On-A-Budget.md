@@ -8,24 +8,24 @@ slug: fargate-on-a-budget
 
 ## The Business Problem
 
-At the day job, we had an internal use application that needed cloud infrastructure to meet the following requirements
+At the day job, we have an application that needs to meet the following requirements for deploying to production
 
-- the code is server side and it needs to be able to run for longer than 15 minutes (aka no Lambda because the timeout is limited to 15 min or under)
-- since this is an internal use app, it can tolerate occasional disruptions
-- non-engineering stakeholders need to have an easy way to access this application
-- the application will only be used by a few people (less than 10) and there will be periods of time where no one will be actively using it
-- we do a lot of things on AWS, so it is faster to get approval if we use AWS
+- the code is server side and it should be able to run for longer than 15 minutes
+- this is an internal use app, it can tolerate occasional disruptions
+- non-engineering stakeholders need to have a way to access this application
+- the application will be used by fewer then 10 people and there will be periods of time where no one will be using it
+- it is faster to get approval if we use AWS, because we currently use AWS heavily
 
 ## A Solution
 
-For NDA and security reasons this is a variation of the solution that I came up with, not the exact solution.
+For non-disclosure agreement and security reasons this is a variation of the solution, not the exact solution.
 
 It includes the following:
 
-1. A single Fargate spot instance behind an Application Load Balancer
-2. Two EventBridge Scheduler schedules that turn the Fargate spot instances on at a specified time and off at a specified time
+1. A Fargate Spot instance behind an Application Load Balancer
+2. Two EventBridge Scheduler schedules that turn the Fargate Spot instances on at a specified time and off at a specified time
 
-Disclaimer that other solutions exist, this is not the only way to accomplish this.
+Disclaimer: other solutions exist, this is not the only way to accomplish this.
 
 ## Architecture Diagram and Example Code
 
@@ -35,7 +35,7 @@ Here's the high level architecture diagram of this solution.
 
 Example code with instructions on how to deploy this into your AWS account, can be found in [this GitHub repo](https://github.com/deeheber/fargate-on-a-budget-demo).
 
-**Disclaimer that in this example, we are using a demo Docker image. If you are setting up an application that contains proprietary information that shouldn't be open to the public internet, please ensure that authentication is in place. Because authentication is not the focus of this article, it has been intentionally omitted.**
+**Disclaimer: in this example, we are using a demo Docker image. If you are setting up an application that contains information that shouldn't be open to the public internet, ensure that authentication is in place. Authentication has been intentionally omitted, because it is not the focus of this article.**
 
 Let's zoom in a bit closer on the two major components of this solution:
 
@@ -46,21 +46,21 @@ Let's zoom in a bit closer on the two major components of this solution:
 
 With Fargate there are two capacity provider types: Fargate and Fargate Spot.
 
-Fargate is the standard which gives you on-demand access to containerized computer.
+Fargate is the standard which gives you on-demand access to containerized compute.
 
 Fargate Spot is simililar to Fargate, but cheaper (advertised as up to 70% discounted) and can be interrupted by AWS to take the capacity back. The reason for this is because AWS operates at a massive scale and lots of times there are instances available that will run and cost AWS money regardless. In order to make money off of this extra capacity, AWS offers this extra capacity as Spot instances at a discounted rate. Because AWS might need this capacity back as demand rises, they reserve the right to give you a two minute warning before shutting down your instance to put it back into the regular Fargate on-demand pool.
 
-[The launch blog post](https://aws.amazon.com/blogs/aws/aws-fargate-spot-now-generally-available/) has a pretty good overview and explaination for an official description.
+[The launch blog post](https://aws.amazon.com/blogs/aws/aws-fargate-spot-now-generally-available/) has an excellent overview for an AWS official description.
 
-So launching a Fargate Spot instance involves 1. launching it and 2. setting up your application to handle a graceful shutdown given a two minute warning from AWS.
+Launching a Fargate Spot instance involves 1. launching it and 2. setting up the container to handle a graceful shutdown given a two minute warning from AWS.
 
 ### Launching the Instance
 
-In the example code, we're using the [`ApplicationLoadBalancedFargateService`](https://docs.aws.amazon.com/cdk/api/v2/docs/aws-cdk-lib.aws_ecs_patterns.ApplicationLoadBalancedFargateService.html) CDK construct.
+The example code uses the [`ApplicationLoadBalancedFargateService`](https://docs.aws.amazon.com/cdk/api/v2/docs/aws-cdk-lib.aws_ecs_patterns.ApplicationLoadBalancedFargateService.html) CDK construct.
 
-You can specify one or multiple capacity providers with the `capacityProviderStrategies` property with weights. The higher the weight the more often that launch type will be utilized.
+You can specify one or multiple capacity providers with the `capacityProviderStrategies` property with weights. The higher the weight, the more often that launch type will be utilized.
 
-In the example code, I've set it up to prefer Spot, but it also has a regular Fargate launch type as a back up in case there is not Spot availability.
+The example code sets things up to prefer Spot, but to use a regular Fargate launch type in case there is no Spot availability.
 
 ```typescript
 capacityProviderStrategies: [
@@ -76,35 +76,38 @@ capacityProviderStrategies: [
         ],
 ```
 
-### Enable Graceful Shutdowns
+### Handle Graceful Shutdowns
 
-In the example code, I've done this in two places.
+In the example code, this is done in two places:
 
-1. Add a `stopTimeout` to the container on the Fargate Task ensuring it is two minutes long or under
-2. Set the deregistration delay on the Application Load Balancer to be lower than two minutes to give the instance time to seperate from the LB before terminating
+1. Adds a `stopTimeout` to the container on the Fargate Task for 120 seconds (needs to be at or below 2 minutes)
+2. Sets the deregistration delay on the Application Load Balancer at 30 seconds to give the instance time to seperate from the Load Balancer before terminating (also needs to be at or below 2 minutes)
 
 ## EventBridge Scheduler
 
-In the example, we have two Schedules. One to turn the Fargate instance "on" and a second one to turn it "off."
+In the example, there are two EventBridge Scheduler schedules - "up" and "down".
 
-This is accomplished by using an AWS CLI command to set the `desiredCount` on the service to either `1` (on) or `0` (off). Here's [https://awscli.amazonaws.com/v2/documentation/api/2.1.21/reference/ecs/update-service.html](the official documentation for the command).
+This is accomplished by using an AWS CLI command to set the `desiredCount` on the ECS Service to either `1` (on/up) or `0` (off/down). Here's [https://awscli.amazonaws.com/v2/documentation/api/2.1.21/reference/ecs/update-service.html](the official documentation for the command).
 
-If this command were run string on the CLI via the command line it would look something like:
+If this command were run on the command line via the AWS CLI it would look something like:
 
 ```bash
 aws ecs update-service --cluster <cluster-name> --service <service-name> --desired-count <desired-count-int>
 ```
 
-We aren't doing that in this case though...we're using [EventBridge's Universal Targets](https://docs.aws.amazon.com/scheduler/latest/UserGuide/managing-targets-universal.html) feature. Universal Targets allow you to run most (not all - see the link to view unsupported commands) AWS CLI commands directly in an EventBridge Schedule without the need to add compute such as Lambda.
+We aren't doing that exact thing in this case...we're using [EventBridge's Universal Targets](https://docs.aws.amazon.com/scheduler/latest/UserGuide/managing-targets-universal.html) feature. Universal Targets allow you to run most (not all - see the link to view unsupported commands) AWS CLI commands directly in an EventBridge Schedule without the need to add compute (such as Lambda).
 
-In our example, we have one Schedule that sets the `desiredCount` to `1` (on) at 9am PT Mon-Fri and it sets the `desiredCount` to `0` (off) at 5pm PT Mon-Fri.
+In our example, we have one Schedule that sets the `desiredCount` to `1` (on/up) at 9am PT Mon-Fri and it sets the `desiredCount` to `0` (off/down) at 5pm PT Mon-Fri.
 
-These cron expressions can be adjusted...be sure to ask your stakeholder who will be using the app when they will not be using it to ensure that it is not shut down when they need it.
+These cron expressions can be adjusted...be sure to ask your stakeholder(s) that use the app when they will be using it to ensure that it is not shut down when it is needed.
 
 ## Summary
 
-This was a walkthrough for a solution for ways to deploy a Fargate instance on a budget.
+This was a walkthrough of a solution that allows us to run a Fargate instance on a budget. The solution utilizes Fargate Spot and EventBridge Scheduler to periodically shut down the Fargate Tasks during periods of no usage.
 
-The example code repository can be found [on GitHub here](https://github.com/deeheber/fargate-on-a-budget-demo).
+The example code repository can be found [on GitHub](https://github.com/deeheber/fargate-on-a-budget-demo).
 
 What tips and tricks do you have for saving money with Fargate?
+
+<br />
+<br />
