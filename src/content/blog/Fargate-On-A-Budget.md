@@ -1,6 +1,6 @@
 ---
 author: Danielle Heberling
-pubDatetime: 2025-02-17T15:12:03.284Z
+pubDatetime: 2025-02-18T11:12:03.284Z
 title: AWS Fargate on a Budget
 description: AWS Fargate on a Budget
 slug: fargate-on-a-budget
@@ -52,7 +52,7 @@ With Fargate there are two capacity provider types: Fargate and Fargate Spot.
 
 Fargate is the standard which gives you on-demand access to containerized compute.
 
-Fargate Spot is simililar to Fargate, but cheaper (advertised as up to 70% discounted) and can be interrupted by AWS. The reason for this is because AWS operates at a massive scale and lots of times there are instances available that will run and cost AWS money regardless. In order to make money off of this extra capacity, AWS offers this extra capacity as Spot instances at a discounted rate. Because AWS might need this capacity back as demand rises, they reserve the right to give you a two minute warning before shutting down your instance to put it back into the regular Fargate on-demand pool.
+Fargate Spot is similar to Fargate, but cheaper (advertised as up to 70% discounted) and can be interrupted by AWS. The reason for this is because AWS operates at a massive scale and lots of times there are instances available that will run and cost AWS money regardless. In order to make money off of this extra capacity, AWS offers this extra capacity as Spot instances at a discounted rate. Because AWS might need this capacity back as demand rises, they reserve the right to give you a two minute warning before shutting down your instance to put it back into the regular Fargate on-demand pool.
 
 [The launch blog post](https://aws.amazon.com/blogs/aws/aws-fargate-spot-now-generally-available/) has an excellent overview for an AWS official description.
 
@@ -85,13 +85,13 @@ capacityProviderStrategies: [
 In the example code, this is done in two places:
 
 1. Adds a `stopTimeout` to the container on the Fargate Task for 120 seconds (needs to be <= 2 minutes)
-2. Sets the deregistration delay on the Application Load Balancer at 30 seconds to give the instance time to seperate from the Load Balancer before terminating (also needs to be <= 2 minutes)
+2. Sets the deregistration delay on the Application Load Balancer at 30 seconds to give the instance time to separate from the Load Balancer before terminating (also needs to be <= 2 minutes)
 
 ## EventBridge Scheduler
 
 In the example, there are two EventBridge Scheduler schedules - "up" and "down".
 
-This is accomplished by using an AWS CLI command to set the `desiredCount` on the ECS Service to either `1` (on/up) or `0` (off/down). Here's [https://awscli.amazonaws.com/v2/documentation/api/2.1.21/reference/ecs/update-service.html](the official documentation for the command).
+This is accomplished by using an AWS CLI command to set the `desiredCount` on the ECS Service to either `1` (on/up) or `0` (off/down). Here's [the official documentation for the command](https://awscli.amazonaws.com/v2/documentation/api/2.1.21/reference/ecs/update-service.html).
 
 If this command were run on the command line via the AWS CLI it would look something like:
 
@@ -99,7 +99,7 @@ If this command were run on the command line via the AWS CLI it would look somet
 aws ecs update-service --cluster <cluster-name> --service <service-name> --desired-count <desired-count-int>
 ```
 
-We aren't doing that exact thing in this case...we're using [EventBridge's Universal Targets](https://docs.aws.amazon.com/scheduler/latest/UserGuide/managing-targets-universal.html) feature. Universal Targets allow you to run most (not all - see the link to view unsupported commands) AWS CLI commands directly in an EventBridge Schedule without the need to add (and pay for) compute (such as Lambda).
+For this app, we're using [EventBridge's Universal Targets](https://docs.aws.amazon.com/scheduler/latest/UserGuide/managing-targets-universal.html) feature. Universal Targets allow you to run most (not all - see the link to view unsupported commands) AWS CLI commands directly in an EventBridge Schedule without the need to add (and pay for) compute (such as Lambda).
 
 In our example, we have one Schedule that sets the `desiredCount` to `1` (on/up) at 9am PT Mon-Fri and another that sets the `desiredCount` to `0` (off/down) at 5pm PT Mon-Fri.
 
