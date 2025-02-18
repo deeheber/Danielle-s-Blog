@@ -1,8 +1,8 @@
 ---
 author: Danielle Heberling
 pubDatetime: 2025-02-17T15:12:03.284Z
-title: Fargate on a Budget
-description: Fargate on a Budget
+title: AWS Fargate on a Budget
+description: AWS Fargate on a Budget
 slug: fargate-on-a-budget
 ---
 
@@ -12,13 +12,13 @@ slug: fargate-on-a-budget
 
 ## The Business Problem
 
-At the day job, we have an application that needs to meet the following requirements for deploying to production
+At the day job, there's a new application that needs to be deployed in a manner that meets these requirements:
 
-- the code is server side and it should be able to run for longer than 15 minutes
+- the code is server side and it needs to run longer than 15 minutes
 - this is an internal use app, it can tolerate occasional disruptions
-- non-engineering stakeholders need to have a way to access this application
+- non-engineering stakeholders should be able to access this application
 - the application will be used by fewer then 10 people and there will be periods of time where no one will be using it
-- it is faster to get approval if we use AWS, because we currently use AWS heavily
+- it is faster to get approval if we use Amazon Web Services, because we currently use AWS heavily
 
 ## A Solution
 
@@ -26,10 +26,10 @@ For non-disclosure agreement and security reasons this is a variation of the sol
 
 It includes the following:
 
-1. A Fargate Spot instance behind an Application Load Balancer
+1. One Fargate Spot instance behind an Application Load Balancer
 2. Two EventBridge Scheduler schedules that turn the Fargate Spot instances on at a specified time and off at a specified time
 
-Disclaimer: other solutions exist, this is not the only way to accomplish this.
+Disclaimer: this is not the only way to accomplish this.
 
 ## Architecture Diagram and Example Code
 
@@ -52,13 +52,13 @@ With Fargate there are two capacity provider types: Fargate and Fargate Spot.
 
 Fargate is the standard which gives you on-demand access to containerized compute.
 
-Fargate Spot is simililar to Fargate, but cheaper (advertised as up to 70% discounted) and can be interrupted by AWS to take the capacity back. The reason for this is because AWS operates at a massive scale and lots of times there are instances available that will run and cost AWS money regardless. In order to make money off of this extra capacity, AWS offers this extra capacity as Spot instances at a discounted rate. Because AWS might need this capacity back as demand rises, they reserve the right to give you a two minute warning before shutting down your instance to put it back into the regular Fargate on-demand pool.
+Fargate Spot is simililar to Fargate, but cheaper (advertised as up to 70% discounted) and can be interrupted by AWS. The reason for this is because AWS operates at a massive scale and lots of times there are instances available that will run and cost AWS money regardless. In order to make money off of this extra capacity, AWS offers this extra capacity as Spot instances at a discounted rate. Because AWS might need this capacity back as demand rises, they reserve the right to give you a two minute warning before shutting down your instance to put it back into the regular Fargate on-demand pool.
 
 [The launch blog post](https://aws.amazon.com/blogs/aws/aws-fargate-spot-now-generally-available/) has an excellent overview for an AWS official description.
 
 Launching a Fargate Spot instance involves 1. launching it and 2. setting up the container to handle a graceful shutdown given a two minute warning from AWS.
 
-### Launching the Instance
+### Launch the Instance
 
 The example code uses the [`ApplicationLoadBalancedFargateService`](https://docs.aws.amazon.com/cdk/api/v2/docs/aws-cdk-lib.aws_ecs_patterns.ApplicationLoadBalancedFargateService.html) CDK construct.
 
@@ -84,8 +84,8 @@ capacityProviderStrategies: [
 
 In the example code, this is done in two places:
 
-1. Adds a `stopTimeout` to the container on the Fargate Task for 120 seconds (needs to be at or below 2 minutes)
-2. Sets the deregistration delay on the Application Load Balancer at 30 seconds to give the instance time to seperate from the Load Balancer before terminating (also needs to be at or below 2 minutes)
+1. Adds a `stopTimeout` to the container on the Fargate Task for 120 seconds (needs to be <= 2 minutes)
+2. Sets the deregistration delay on the Application Load Balancer at 30 seconds to give the instance time to seperate from the Load Balancer before terminating (also needs to be <= 2 minutes)
 
 ## EventBridge Scheduler
 
@@ -99,11 +99,11 @@ If this command were run on the command line via the AWS CLI it would look somet
 aws ecs update-service --cluster <cluster-name> --service <service-name> --desired-count <desired-count-int>
 ```
 
-We aren't doing that exact thing in this case...we're using [EventBridge's Universal Targets](https://docs.aws.amazon.com/scheduler/latest/UserGuide/managing-targets-universal.html) feature. Universal Targets allow you to run most (not all - see the link to view unsupported commands) AWS CLI commands directly in an EventBridge Schedule without the need to add compute (such as Lambda).
+We aren't doing that exact thing in this case...we're using [EventBridge's Universal Targets](https://docs.aws.amazon.com/scheduler/latest/UserGuide/managing-targets-universal.html) feature. Universal Targets allow you to run most (not all - see the link to view unsupported commands) AWS CLI commands directly in an EventBridge Schedule without the need to add (and pay for) compute (such as Lambda).
 
-In our example, we have one Schedule that sets the `desiredCount` to `1` (on/up) at 9am PT Mon-Fri and it sets the `desiredCount` to `0` (off/down) at 5pm PT Mon-Fri.
+In our example, we have one Schedule that sets the `desiredCount` to `1` (on/up) at 9am PT Mon-Fri and another that sets the `desiredCount` to `0` (off/down) at 5pm PT Mon-Fri.
 
-These cron expressions can be adjusted...be sure to ask your stakeholder(s) that use the app when they will be using it to ensure that it is not shut down when it is needed.
+These cron expressions can be adjusted...be sure to ask your stakeholder(s) when they plan to use the app to ensure it is available.
 
 ## Summary
 
