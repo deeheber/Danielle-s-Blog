@@ -64,13 +64,13 @@ export const SOCIALS: SocialObjects = [
     name: "X",
     href: "https://x.com/deeheber",
     linkTitle: `${SITE.title} on X`,
-    active: true,
+    active: false,
   },
   {
     name: "Dev",
     href: "https://dev.to/deeheber",
     linkTitle: `${SITE.title} on Dev`,
-    active: true,
+    active: false,
   },
   {
     name: "YouTube",
