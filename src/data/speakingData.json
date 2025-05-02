@@ -1,5 +1,14 @@
 [
   {
+    "year": "2025",
+    "content": [
+      {
+        "title": "CI/CD with the AWS CDK and GitHub Actions at a Startup",
+        "link": "https://www.youtube.com/watch?v=Q7I4YqwpX5M"
+      }
+    ]
+  },
+  {
     "year": "2024",
     "content": [
       {
