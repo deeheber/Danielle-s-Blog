@@ -5,7 +5,9 @@ pubDatetime: 2025-06-20T10:12:03.284Z
 description: Security -- The Most Important Work You’ll Never See in a Sprint Demo
 ---
 
-// TODO: Add a hero image
+![Computer Lock](/assets/computer-padlock.jpg)
+
+> Photo by <a href="https://unsplash.com/@flyd2069?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">FlyD</a> on <a href="https://unsplash.com/photos/pink-and-silver-padlock-on-black-computer-keyboard-F7aZ8G7gGBQ?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
 
 ## The Problem
 
