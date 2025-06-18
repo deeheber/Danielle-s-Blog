@@ -9,42 +9,40 @@ description: Security -- The Most Important Work You’ll Never See in a Sprint 
 
 ## The Problem
 
-In many organizations there is friction between building out new features and the foundations necessary to ship those new features. By foundations, I'm referring to things such as but not limited to: security, testing, CI/CD (Continuous Integration/Continuous Delivery), observability, and IaC (Infrastructure as Code).
+Tale as old as time: thefriction between building out new features and the foundations necessary to deliver those features. By foundations, I'm referring to things such as but not limited to: security, testing, Continuous Integration/Continuous Delivery, observability, and Infrastructure as Code.
 
-Recently, I was lucky enough to attend AWS re:Inforce, an AWS security focused conference. Speaking with fellow attendees it was very common for people ask some variant of "how can I get people in my organization to care about security?"
+Recently I attended [AWS re:Inforce](https://reinforce.awsevents.com/), an AWS security focused conference. Speaking with fellow attendees it was very common for people ask some variant of "how can I get people in my organization to care about security?"
 
-Disclaimer that I do not consider myself a security person, but I do champion security initiatives often. Security should be everyone in the organization's responsibility. Sometimes in the real world people while well intentioned get super excited about new features and forget about less visible things such as security.
+Disclaimer that I do not consider myself a security person™️, but I do champion security initiatives often. Security is everyone's responsibility. Sometimes in the real world people get excited about new features and forget about less visible things such as security.
 
-Here are some of my thoughts in the form of unsolicited advice on how I try to navigate this. Sometimes I'm successful and other times I am not, but I refuse to stop trying.
+Here are some of my thoughts in the form of unsolicited advice on how I attempt to navigate this.
 
 ## 1. Just Do It
 
-If you work in an orgnization that gives you the freedom to allocate your time and/or doing some extra security upgrades won't prevent you from delivering on your other tasks, just do it. Then once it's finished, you can share with your team what you did, how it works, and why it's important.
+If you work in an orgnization that gives you the freedom to allocate your time to projects beyond what is officially committed to in the sprint, just do it. Then once it's finished, you can share with your team what you did, how it works, and why it's important.
 
-It is often faster to just do it rather than spend the same amount of time asking for permission. Especially at smaller early stage startups, actions and delivering results speak louder than words.
+It is often faster to just do it rather than spend the same amount of time asking for permission. Especially at smaller early stage startups, delivering results speak louder than words.
 
 ## 2. View Yourself as an Enabler
 
-Security is (incorrectly) viewed as this thing that slows down feature development. I would advise you flip this script and talk about security as enabler that allows the team to ship more features faster.
+Security is often (and mistakenly) seen as an obstacle to rapid feature development. I suggest reframing the conversation to highlight how security actually empowers the team to deliver features more quickly.
 
-Many security things don't feel important now, but when they become important it is too late. Work towards messaging that encourages being proactive rather than reactive.
-
-A good example of this could be adding security scans to your CI/CD pipeline.
+Many security measures may not seem urgent now, but by the time they are, it’s often too late. Focus on communicating the value of being proactive instead of reactive.
 
 ## 3. Learn Incentives
 
-Incentives shape how all of us view the world and rank what is important. Take the time to talk to key stakeholders, specifically those who are in positions of power that get to make the final call on things. Learn what makes them tick and what they care about.
+Incentives influence our perspectives and priorities. Invest time in understanding key stakeholders, especially decision-makers, to learn what drives them and what matters most to them.
 
-You can then use that information to help shape your positioning when bringing up the need for something that is not a flashy new feature.
+This understanding will help you frame your arguments more effectively when proposing needs that don’t have the allure of a shiny new feature.
 
 ## Bonus: Get Involved in the Community
 
-As tech professionals, we often work in the silos of our companies. The more that I talk to people outside of that silo, the more I realize that someone else already solved the problem that I'm currently experiencing. Why not just learn from them and also share my experiences to help others learn? Talk with people to get ideas. Do not be afraid to ask "stupid" questions.
+As tech professionals, it’s easy to find ourselves working in silos within our organizations. But the more I reach out and connect with colleagues beyond my immediate team, the more I discover that the challenges I’m facing have often already been solved by someone else. Why reinvent the wheel when we can learn from each other’s experiences—and share our own insights to help others grow? Engage in conversations, exchange ideas, and don’t hesitate to ask questions, even if they seem basic. Often, those “simple” questions lead to the most valuable discussions and solutions.
 
 ## Closing
 
-At the end of the day, the most important thing when building software is trust. When it exists, you don't think about it. When it is not there, it is all you think about. Once lost, it is very challenging to earn back. This is highly important when working at an early stage startup that does not have name brand recognition (yet). If your users do not trust you, they will not use your software.
+Ultimately, trust is the foundation of successful software. When it’s present, it’s invisible; when it’s missing, it becomes impossible to ignore. Once broken, trust is incredibly difficult to rebuild—especially for early-stage startups still working to establish their reputation. If users can’t trust your product, they won’t use it.
 
-I don't claim to be a security expert, but hopefully at least me making these thoughts public helps someone. At the very least, hopefully it is comforting to know that you aren't alone and that I think your efforts toward security matter. Keep on fighting the good fight.
+I’m not claiming to have all the answers when it comes to security, but I hope sharing these thoughts sparks reflection or helps someone else feel less alone in facing these challenges. Your efforts to prioritize security truly matter, even when they go unseen. Keep pushing forward and championing the importance of strong foundations.
 
-What are some of your tips/tricks while navigating the friction between features and foundations?
+I’d love to hear from you: What strategies or insights have helped you balance the tension between shipping new features and building secure, reliable products?
