@@ -1,6 +1,6 @@
 ---
 author: Danielle Heberling
-title: Security -- The Most Important Work You’ll Never See in a Sprint Demo
+title: Most Valuable When Least Visible | The Security Paradox
 pubDatetime: 2025-06-20T10:12:03.284Z
 description: Security -- The Most Important Work You’ll Never See in a Sprint Demo
 ---
@@ -9,7 +9,7 @@ description: Security -- The Most Important Work You’ll Never See in a Sprint 
 
 ## The Problem
 
-Tale as old as time: thefriction between building out new features and the foundations necessary to deliver those features. By foundations, I'm referring to things such as but not limited to: security, testing, Continuous Integration/Continuous Delivery, observability, and Infrastructure as Code.
+Tale as old as time: the friction between building out new features and the foundations necessary to deliver those features. By foundations, I'm referring to things such as but not limited to: security, testing, Continuous Integration/Continuous Delivery, observability, and Infrastructure as Code.
 
 Recently I attended [AWS re:Inforce](https://reinforce.awsevents.com/), an AWS security focused conference. Speaking with fellow attendees it was very common for people ask some variant of "how can I get people in my organization to care about security?"
 
@@ -38,6 +38,8 @@ This understanding will help you frame your arguments more effectively when prop
 ## Bonus: Get Involved in the Community
 
 As tech professionals, it’s easy to find ourselves working in silos within our organizations. But the more I reach out and connect with colleagues beyond my immediate team, the more I discover that the challenges I’m facing have often already been solved by someone else. Why reinvent the wheel when we can learn from each other’s experiences—and share our own insights to help others grow? Engage in conversations, exchange ideas, and don’t hesitate to ask questions, even if they seem basic. Often, those “simple” questions lead to the most valuable discussions and solutions.
+
+Shameless plug to check out the [Believe in Serverless community on Discord](https://www.believeinserverless.com/)!
 
 ## Closing
 
