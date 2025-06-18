@@ -48,3 +48,5 @@ Ultimately, trust is the foundation of successful software. When it’s present,
 I’m not claiming to have all the answers when it comes to security, but I hope sharing these thoughts sparks reflection or helps someone else feel less alone in facing these challenges. Your efforts to prioritize security truly matter, even when they go unseen. Keep pushing forward and championing the importance of strong foundations.
 
 I’d love to hear from you: What strategies or insights have helped you balance the tension between shipping new features and building secure, reliable products?
+<br />
+<br />
