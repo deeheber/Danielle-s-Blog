@@ -21,7 +21,7 @@ Here are some of my thoughts in the form of unsolicited advice on how I attempt 
 
 ## 1. Just Do It
 
-If you work in an orgnization that gives you the freedom to allocate your time to projects beyond what is officially committed to in the sprint, just do it. Then once it's finished, you can share with your team what you did, how it works, and why it's important.
+If you work in an organization that gives you the freedom to allocate your time to projects beyond what is officially committed to in the sprint, just do it. Then once it's finished, you can share with your team what you did, how it works, and why it's important.
 
 It is often faster to just do it rather than spend the same amount of time asking for permission. Especially at smaller early stage startups, delivering results speak louder than words.
 
