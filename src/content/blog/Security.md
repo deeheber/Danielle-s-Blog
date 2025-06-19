@@ -1,7 +1,7 @@
 ---
 author: Danielle Heberling
 title: Most Valuable When Least Visible | The Security Paradox
-pubDatetime: 2025-06-20T10:12:03.284Z
+pubDatetime: 2025-06-18T10:12:03.284Z
 description: Security -- The Most Important Work You’ll Never See in a Sprint Demo
 ---
 
@@ -39,9 +39,13 @@ This understanding will help you frame your arguments more effectively when prop
 
 ## Bonus: Get Involved in the Community
 
-As tech professionals, it’s easy to find ourselves working in silos within our organizations. But the more I reach out and connect with colleagues beyond my immediate team, the more I discover that the challenges I’m facing have often already been solved by someone else. Why reinvent the wheel when we can learn from each other’s experiences—and share our own insights to help others grow? Engage in conversations, exchange ideas, and don’t hesitate to ask questions, even if they seem basic. Often, those “simple” questions lead to the most valuable discussions and solutions.
+![AWS Community at Reinforce](/assets/reinforce-aws-community.jpg)
 
-Shameless plug to check out the [Believe in Serverless community on Discord](https://www.believeinserverless.com/)!
+As tech professionals, it’s easy to find ourselves working in silos within our organizations. But the more I connect with colleagues outside of my current company, the more I discover that the challenges I’m facing have often already been solved by someone else.
+
+Why reinvent the wheel when we can learn from each other’s experiences - and share our own insights to help others grow? Engage in conversations, exchange ideas, and don’t hesitate to ask questions, even if they seem basic. Often, those “simple” questions lead to the most valuable discussions and solutions.
+
+In person conferences aren't your thing? Shameless plug to check out the [Believe in Serverless Community on Discord](https://www.believeinserverless.com/)!
 
 ## Closing
 
