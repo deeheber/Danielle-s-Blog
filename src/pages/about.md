@@ -7,7 +7,7 @@ title: "About"
 
 🎮 Talk to me and other Serverless enthusiasts on the [Believe in Serverless Discord](https://www.believeinserverless.com/)
 
-⭐️ I was recognized by Amazon Web Services as a [Serverless Hero](https://aws.amazon.com/developer/community/heroes/danielle-heberling/).
+⭐️ I was recognized by Amazon Web Services as a [Serverless Hero](https://builder.aws.com/community/@deeheber).
 
 💼 Day job: Founding Infrastucture Engineer at [Bronson](https://bronson.com/).
 
