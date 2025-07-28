@@ -3,6 +3,10 @@
     "year": "2025",
     "content": [
       {
+        "title": "AWSOnAir at re:Inforce",
+        "link": "https://www.youtube.com/watch?v=7fe036ZwSqw"
+      },
+      {
         "title": "CI/CD with the AWS CDK and GitHub Actions at a Startup",
         "link": "https://www.youtube.com/watch?v=Q7I4YqwpX5M"
       }
