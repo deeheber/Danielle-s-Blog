@@ -8,7 +8,6 @@ description: A framework for deciding when it's time to leave your current compa
 ![Exit sign](/assets/exit.jpg)
 
 > Photo by <a href="https://unsplash.com/@theandrewteoh?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Andrew Teoh</a> on <a href="https://unsplash.com/photos/white-and-green-exit-sign-SKrgZQgYy2g?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
-      
 
 ## The Framework
 
