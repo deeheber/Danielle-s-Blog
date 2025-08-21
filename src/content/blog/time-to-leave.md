@@ -19,7 +19,7 @@ Disclaimer: what works for me might not work for you, but I hope sharing it help
 
 My framework is inspired by the iron triangle: fast, cheap, good—pick two out of three.
 
-![Iron Triange](/assets/iron-triangle.png)
+![Iron Triangle](/assets/iron-triangle.png)
 
 For career decisions, my triangle has three sides: **what I'm building**, **who I'm working with**, and **what tech I'm using**.
 
