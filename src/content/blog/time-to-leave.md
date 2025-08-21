@@ -5,23 +5,30 @@ title: Should I Stay or Should I Go?
 description: A framework for deciding when it's time to leave your current company, based on evaluating what you're building, who you're working with, and the technology you use.
 ---
 
-// TODO: add hero image here
+![Exit sign](/assets/exit.jpg)
+
+> Photo by <a href="https://unsplash.com/@theandrewteoh?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Andrew Teoh</a> on <a href="https://unsplash.com/photos/white-and-green-exit-sign-SKrgZQgYy2g?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
+      
 
 ## The Framework
 
 "How do you know when it's time to leave your current company?"
 
-This question has come up throughout my career. After years of reflection, I've developed a framework that works for me. What works for me might not work for you, but I hope sharing it helps you think about what's right for your situation.
+This question has come up throughout my career. After years of reflection, I've developed a framework that works for me.
+
+Disclaimer: what works for me might not work for you, but I hope sharing it helps you think about what's right for your situation.
 
 My framework is inspired by the iron triangle: fast, cheap, good—pick two out of three.
 
-// TODO: add image
+![Iron Triange](/assets/iron-triangle.png)
 
 For career decisions, my triangle has three sides: **what I'm building**, **who I'm working with**, and **what tech I'm using**.
 
-// TODO: add image
+![Time To Leave Triangle](/assets/leave-triangle.png)
 
-My rule: I need at least two out of three to stay at a company. Here's what each side means to me:
+My rule 👉🏻 I need at least two out of three to stay at a company.
+
+Here's what each side means to me 👇🏻
 
 ### What I'm Building
 
@@ -37,6 +44,6 @@ This matters least, but I want to feel excited about the technology. Does it hel
 
 ## Closing
 
-This framework continues to evolve as I grow. I'd love to hear from you: How do you decide when it's time to leave? What makes you want to stay?
+This framework continues to evolve as I grow. I'd love to hear from you! How do you decide when it's time to leave? What makes you want to stay?
 
 &nbsp;
