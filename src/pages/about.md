@@ -2,6 +2,7 @@
 layout: ../layouts/AboutLayout.astro
 title: "About"
 ---
+
 Nice to meet you, my name is Danielle. I'm a software engineer who loves to learn new things and created this blog in the hopes that putting my learnings and thoughts in a written public place might help others learn too!
 
 💡 Current tech interests: Serverless, Cloud, Infrastructure as Code, TypeScript, Python, AI
