@@ -3,13 +3,15 @@ layout: ../layouts/AboutLayout.astro
 title: "About"
 ---
 
-💡 Current tech interests: Serverless, Cloud, Infrastructure as Code, TypeScript, Python, AI
+Nice to meet you, my name is Danielle. I'm a software engineer who loves to learn new things and created this blog in the hopes that putting my learnings and thoughts in a written public place might help others learn too!
 
-🎮 Talk to me and other Serverless enthusiasts on the <a href="https://www.believeinserverless.com/" target="_blank">Believe in Serverless Discord</a>
+💡 Current tech interests: Serverless, Cloud, Infrastructure as Code, TypeScript, Python, AI
 
 ⭐️ I was recognized by Amazon Web Services as a <a href="https://builder.aws.com/community/@deeheber" target="_blank">Serverless Hero</a>.
 
-💼 Day job: Founding Infrastucture Engineer at <a href="https://bronson.com/" target="_blank">Bronson</a>.
+🎮 Talk to me and other Serverless enthusiasts on the <a href="https://www.believeinserverless.com/" target="_blank">Believe in Serverless Discord</a>.
+
+💼 Day job: Founding Infrastucture Engineer at a startup</a>.
 
 👋🏻 Some former day jobs: AAPL, SQSP, Tech Support, K-8 Music Teacher
 
