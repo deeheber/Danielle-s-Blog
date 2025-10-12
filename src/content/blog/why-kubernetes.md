@@ -1,42 +1,61 @@
 ---
 author: Danielle Heberling
-title: On Kubernetes
+title: Learning Outside Your Specialty - Why I Got a Kubernetes Cert
 pubDatetime: 2025-10-12T10:12:03.284Z
-description: Danielle answering why she wanted to get a Kubernetes certificate
+description: On learning K8s as a serverless developer and why specialization doesn't mean staying in one lane forever
 ---
 
 Earlier this month I took the exam for the <a href="https://training.linuxfoundation.org/certification/kubernetes-cloud-native-associate/" target="_blank">Kubernetes and Cloud Native Associate (KCNA) certification</a> and passed.
 
-After years of working in AWS Serverless, this certification raised some eyebrows. People asked: why?
+After years of working in AWS Serverless, this raised some eyebrows. People asked: why?
 
-## Here's my list of reasons why I got this certificate
+Here's the honest answer: I've passed on applying to jobs because I didn't know Kubernetes. That needed to change.
 
-### 1. Using the best tool for the job
+## The Reality of Job Postings
 
-The philosophy here is "serverless first", but not "serverless always." There are cases where other tools are a better choice for your workload. Most of my container orchestration work has been with AWS ECS/Fargate. It seemed worth exploring what a non-proprietary container orchestration tool has to offer.
+Look at DevOps and platform engineering roles today. Many of them want AWS experience, serverless knowledge, AND Kubernetes expertise. Not all, but enough that it's a pattern.
 
-### 2. Understanding the systems and how they work at a deeper level
+Specializing deeply in serverless has been valuable for my career. But at some point, gaps in your knowledge start closing doors. When I'm scanning job postings and thinking "I could do this role, except for that one requirement," it's time to consider filling the gap.
 
-Serverless removes the undifferentiated heavy lifting. But sometimes customization is needed beyond what managed services offer. K8s is a natural choice for that.
+This isn't about chasing every new technology. It's about recognizing when a skill has become common enough in your field that not having it limits options.
 
-Think of it like when your car breaks down. You can take it to the repair shop and pay someone else to fix it (serverless), or you can pop open the hood, buy the parts, and do the repair yourself (K8s). Being able to do both has value.
+## What "Best Tool for the Job" Actually Means
 
-### 3. Kubernetes is everywhere
+I still believe in "serverless first." But here's what I've learned: the best tool depends on context.
 
-It's inevitable that a future job will require interacting with a K8s system. Having baseline knowledge will help get things done faster.
+At the end of the day, users care that what you build is reliable, works, and solves their problem. Unless they're an engineer or tech geek, they don't care if you used Kubernetes or serverless. They care about the outcome.
 
-This isn't a value judgment on whether all these companies actually need K8s. That's a whole other conversation.
+Tech decisions are made by people. People make choices based on their experiences and what they know. A lot of teams use Kubernetes. Whether they "need" it is a value judgment that depends entirely on your perspective and experience. That's not what this post is about.
 
-## What is the KCNA
+What I've realized: if I'm working with a team that's chosen K8s, fighting against that to use serverless creates friction. Understanding their world helps me work with them effectively, even if I'd make different choices.
 
-You can read all about it on the Linux Foundation website, but to me it was the basic fundamentals of all of the moving parts of K8s, how they interact, and when you would need to use them.
+This isn't about one technology being better than the other. It's about understanding enough of both to collaborate with different teams and make informed decisions when I do have a choice.
 
-It was rather surface level and introductory much like I envision the AWS Cloud Practitioner certification is. If you want depth, this isn't the cert for you, but if you want a high level intro this is an excellent choice.
+## K8s Is Complex, But Learnable
 
-## What Next?
+People aren't wrong when they say Kubernetes is complex. It is. There are a lot of moving parts.
 
-People have asked if this means becoming a "Kubernetes person" now. The plan is to be pragmatic. Learn enough K8s to use the right tool for the job. No abandoning serverless or becoming a K8s evangelist.
+But here's what studying for the KCNA taught me: if you take the time to understand the components and how they fit together, it's not magic. It's learnable. Breaking it down into pieces makes it manageable.
 
-The immediate future includes completing the <a href="https://cloudresumechallenge.dev/docs/extensions/kubernetes-challenge/" target="_blank">Kubernetes Resume Challenge</a> and building some other personal projects to learn.
+The complexity isn't a reason to avoid it. It's just a reason to approach it systematically.
+
+## My Advice: Depth First, Then Breadth
+
+If someone asked me "should I learn Kubernetes?" a year ago, I would have said: **get really good at one thing first.**
+
+Master the fundamentals of whatever stack you're working in. Build that depth. Then expand your toolbelt.
+
+Trying to learn everything at once means you'll be mediocre at many things instead of excellent at one. Depth first, breadth later.
+
+Disclaimer: this is what works for me. Your situation might be different, and that's okay.
+
+That's what this K8s certification represents for me. Not abandoning serverless or becoming a "Kubernetes person." Just adding another tool to solve different problems.
+
+## What's Next
+
+The plan is to complete the <a href="https://cloudresumechallenge.dev/docs/extensions/kubernetes-challenge/" target="_blank">Kubernetes Resume Challenge</a> and build some personal projects. The goal is practical knowledge, not just cert credentials.
 
 Honestly, it's been fun to be a beginner again.
+
+I'd love to hear from you: Have you learned outside your specialty? What pushed you to do it, and what did you learn in the process?
+</br>
