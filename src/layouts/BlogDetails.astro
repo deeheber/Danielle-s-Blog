@@ -112,29 +112,10 @@ const layoutProps = {
 </style>
 
 <script is:inline>
-  /** Create a progress indicator
-   *  at the top */
-  function createProgressBar() {
-    // Create the main container div
-    const progressContainer = document.createElement("div")
-    progressContainer.className =
-      "progress-container fixed top-0 z-10 h-1 w-full bg-skin-fill"
+  // Global reference to scroll handler for cleanup
+  let scrollProgressHandler = null
 
-    // Create the progress bar div
-    const progressBar = document.createElement("div")
-    progressBar.className = "progress-bar h-1 w-0 bg-skin-accent"
-    progressBar.id = "myBar"
-
-    // Append the progress bar to the progress container
-    progressContainer.appendChild(progressBar)
-
-    // Append the progress container to the document body or any other desired parent element
-    document.body.appendChild(progressContainer)
-  }
-  createProgressBar()
-
-  /** Update the progress bar
-   *  when user scrolls */
+  /** Update the progress bar when user scrolls */
   function updateScrollProgress() {
     const winScroll =
       document.body.scrollTop || document.documentElement.scrollTop
@@ -142,80 +123,143 @@ const layoutProps = {
       document.documentElement.scrollHeight -
       document.documentElement.clientHeight
     const scrolled = (winScroll / height) * 100
-    if (document) {
-      const myBar = document.getElementById("myBar")
-      if (myBar) {
-        myBar.style.width = scrolled + "%"
+    const myBar = document.getElementById("myBar")
+    if (myBar) {
+      myBar.style.width = scrolled + "%"
+    }
+  }
+
+  /** Initialize all functionality when DOM is ready */
+  function initializePage() {
+    /** Create a progress indicator at the top */
+    function createProgressBar() {
+      // Remove existing progress bar to avoid duplicates
+      const existingBar = document.querySelector(".progress-container")
+      if (existingBar) {
+        existingBar.remove()
+      }
+
+      // Create the main container div
+      const progressContainer = document.createElement("div")
+      progressContainer.className =
+        "progress-container fixed top-0 z-10 h-1 w-full bg-skin-fill"
+
+      // Create the progress bar div
+      const progressBar = document.createElement("div")
+      progressBar.className = "progress-bar h-1 w-0 bg-skin-accent"
+      progressBar.id = "myBar"
+
+      // Append the progress bar to the progress container
+      progressContainer.appendChild(progressBar)
+
+      // Append the progress container to the document body
+      document.body.appendChild(progressContainer)
+    }
+
+    /** Attaches links to headings in the document,
+     *  allowing sharing of sections easily */
+    function addHeadingLinks() {
+      let headings = Array.from(document.querySelectorAll("h2, h3, h4, h5, h6"))
+      for (let heading of headings) {
+        // Skip if heading link already exists
+        if (heading.querySelector(".heading-link")) {
+          continue
+        }
+
+        heading.classList.add("group")
+        let link = document.createElement("a")
+        link.innerText = "#"
+        link.className = "heading-link hidden group-hover:inline-block ml-2"
+        link.href = "#" + heading.id
+        link.ariaHidden = "true"
+        heading.appendChild(link)
       }
     }
-  }
-  document.addEventListener("scroll", updateScrollProgress)
 
-  /** Attaches links to headings in the document,
-   *  allowing sharing of sections easily */
-  function addHeadingLinks() {
-    let headings = Array.from(document.querySelectorAll("h2, h3, h4, h5, h6"))
-    for (let heading of headings) {
-      heading.classList.add("group")
-      let link = document.createElement("a")
-      link.innerText = "#"
-      link.className = "heading-link hidden group-hover:inline-block ml-2"
-      link.href = "#" + heading.id
-      link.ariaHidden = "true"
-      heading.appendChild(link)
+    /** Attaches copy buttons to code blocks in the document,
+     * allowing users to copy code easily. */
+    function attachCopyButtons() {
+      let copyButtonLabel = "Copy"
+      let codeBlocks = Array.from(document.querySelectorAll("pre"))
+
+      for (let codeBlock of codeBlocks) {
+        // Skip if copy button already exists
+        if (codeBlock.querySelector(".copy-code")) {
+          continue
+        }
+
+        let wrapper = document.createElement("div")
+        wrapper.style.position = "relative"
+
+        let copyButton = document.createElement("button")
+        copyButton.className =
+          "copy-code absolute right-3 -top-3 rounded bg-skin-card px-2 py-1 text-xs leading-4 text-skin-base font-medium"
+        copyButton.innerHTML = copyButtonLabel
+        codeBlock.setAttribute("tabindex", "0")
+        codeBlock.appendChild(copyButton)
+
+        // wrap codebock with relative parent element
+        codeBlock?.parentNode?.insertBefore(wrapper, codeBlock)
+        wrapper.appendChild(codeBlock)
+
+        copyButton.addEventListener("click", async () => {
+          await copyCode(codeBlock, copyButton)
+        })
+      }
+
+      async function copyCode(block, button) {
+        let code = block.querySelector("code")
+        let text = code?.innerText
+
+        await navigator.clipboard.writeText(text ?? "")
+
+        // visual feedback that task is completed
+        button.innerText = "Copied"
+
+        setTimeout(() => {
+          button.innerText = copyButtonLabel
+        }, 700)
+      }
     }
-  }
-  addHeadingLinks()
 
-  /** Attaches copy buttons to code blocks in the document,
-   * allowing users to copy code easily. */
-  function attachCopyButtons() {
-    let copyButtonLabel = "Copy"
-    let codeBlocks = Array.from(document.querySelectorAll("pre"))
-
-    for (let codeBlock of codeBlocks) {
-      let wrapper = document.createElement("div")
-      wrapper.style.position = "relative"
-
-      let copyButton = document.createElement("button")
-      copyButton.className =
-        "copy-code absolute right-3 -top-3 rounded bg-skin-card px-2 py-1 text-xs leading-4 text-skin-base font-medium"
-      copyButton.innerHTML = copyButtonLabel
-      codeBlock.setAttribute("tabindex", "0")
-      codeBlock.appendChild(copyButton)
-
-      // wrap codebock with relative parent element
-      codeBlock?.parentNode?.insertBefore(wrapper, codeBlock)
-      wrapper.appendChild(codeBlock)
-
-      copyButton.addEventListener("click", async () => {
-        await copyCode(codeBlock, copyButton)
-      })
+    /** Scrolls the document to the top when
+     * the "Back to Top" button is clicked. */
+    function backToTop() {
+      const backToTopButton = document.querySelector("#back-to-top")
+      if (
+        backToTopButton &&
+        !backToTopButton.hasAttribute("data-initialized")
+      ) {
+        backToTopButton.setAttribute("data-initialized", "true")
+        backToTopButton.addEventListener("click", () => {
+          document.body.scrollTop = 0 // For Safari
+          document.documentElement.scrollTop = 0 // For Chrome, Firefox, IE and Opera
+        })
+      }
     }
 
-    async function copyCode(block, button) {
-      let code = block.querySelector("code")
-      let text = code?.innerText
+    // Initialize all functionality
+    createProgressBar()
+    addHeadingLinks()
+    attachCopyButtons()
+    backToTop()
 
-      await navigator.clipboard.writeText(text ?? "")
-
-      // visual feedback that task is completed
-      button.innerText = "Copied"
-
-      setTimeout(() => {
-        button.innerText = copyButtonLabel
-      }, 700)
+    // Clean up existing scroll listener and set up new one
+    if (scrollProgressHandler) {
+      document.removeEventListener("scroll", scrollProgressHandler)
     }
+    scrollProgressHandler = updateScrollProgress
+    document.addEventListener("scroll", scrollProgressHandler)
   }
-  attachCopyButtons()
 
-  /** Scrolls the document to the top when
-   * the "Back to Top" button is clicked. */
-  function backToTop() {
-    document.querySelector("#back-to-top")?.addEventListener("click", () => {
-      document.body.scrollTop = 0 // For Safari
-      document.documentElement.scrollTop = 0 // For Chrome, Firefox, IE and Opera
-    })
+  // Run initialization when DOM is ready
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", initializePage)
+  } else {
+    // DOM is already loaded
+    initializePage()
   }
-  backToTop()
+
+  // Runs on view transitions navigation (when navigating between pages)
+  document.addEventListener("astro:after-swap", initializePage)
 </script>
