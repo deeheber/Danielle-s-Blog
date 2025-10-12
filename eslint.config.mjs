@@ -14,7 +14,7 @@ const compat = new FlatCompat({
 });
 
 export default [{
-    ignores: ["**/.vscode", "**/node_modules", "**/public", "**/dist"],
+    ignores: ["**/.vscode", "**/node_modules", "**/public", "**/dist", "**/.astro"],
 }, ...compat.extends("eslint:recommended", "plugin:astro/recommended"), {
     languageOptions: {
         globals: {
