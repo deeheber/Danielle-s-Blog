@@ -3,18 +3,12 @@ layout: ../layouts/AboutLayout.astro
 title: "About"
 ---
 
-Nice to meet you, my name is Danielle. I'm a software engineer who loves to learn new things and created this blog in the hopes that putting my learnings and thoughts in a written public place might help others learn too!
+Hey, I'm Danielle. I build cloud infrastructure and specialize in serverless architecture, but I care just as much about the people and product decisions behind the tech. I write about the real stuff—running infrastructure on a budget, figuring out when it's time to leave a job, advocating for security work that no one demos in sprint reviews. My work touches technical leadership, developer advocacy, product thinking, and team management.
 
-💡 Current tech interests: Serverless, Cloud, Infrastructure as Code, TypeScript, Python, AI
+💻 **What I'm working with:** Serverless, Cloud Infrastructure, Infrastructure as Code, TypeScript, Python, and exploring AI applications in development workflows.
 
-⭐️ I was recognized by Amazon Web Services as a <a href="https://builder.aws.com/community/@deeheber" target="_blank">Serverless Hero</a>.
+📍 **Find me:** I'm an <a href="https://builder.aws.com/community/@deeheber" target="_blank">AWS Serverless Hero</a> and co-organize the <a href="https://www.believeinserverless.com/" target="_blank">Believe in Serverless Discord community</a>. Come say hi.
 
-🎮 Talk to me and other Serverless enthusiasts on the <a href="https://www.believeinserverless.com/" target="_blank">Believe in Serverless Discord</a>.
-
-💼 Day job: Founding Infrastucture Engineer at a startup</a>.
-
-👋🏻 Some former day jobs: AAPL, SQSP, Tech Support, K-8 Music Teacher
-
-All opinions expressed on this site are mine and don't represent organizations that I am affiliated with. Since technology is always evolving, disclaimer that older content might contain out of date information.
+📣 All opinions here are my own and don't represent any organizations I'm affiliated with. Technology evolves quickly, so older posts may contain outdated information.
 
 ![waterfall](/assets/waterfall.jpg)
