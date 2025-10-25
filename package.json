@@ -12,7 +12,8 @@
     "format:check": "prettier --check .",
     "format": "prettier --write .",
     "lint:check": "eslint .",
-    "lint": "eslint . --fix"
+    "lint": "eslint . --fix",
+    "type-check": "tsc --noEmit"
   },
   "dependencies": {
     "@astrojs/rss": "^4.0.11",

@@ -17,5 +17,6 @@
       "@styles/*": ["styles/*"],
       "@utils/*": ["utils/*"]
     }
-  }
+  },
+  "exclude": ["src/pages/**/*.png.ts"]
 }

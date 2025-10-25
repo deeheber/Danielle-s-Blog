@@ -26,6 +26,7 @@ export default [
       "**/public",
       "**/dist",
       "**/.astro",
+      "**/pages/**/*.png.ts",
     ],
   },
   ...compat.extends("eslint:recommended", "plugin:astro/recommended"),
