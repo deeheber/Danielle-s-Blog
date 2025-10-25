@@ -3,6 +3,7 @@ author: Danielle Heberling
 pubDatetime: 2025-08-21T22:12:03.284Z
 title: Should I Stay or Should I Go?
 description: A framework for deciding when it's time to leave your current company, based on evaluating what you're building, who you're working with, and the technology you use.
+draft: true
 ---
 
 ![Compass](/assets/compass-hand.jpg)
