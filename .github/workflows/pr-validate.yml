@@ -55,7 +55,7 @@ jobs:
           fi
 
           # Create new comment
-          gh pr comment ${{ github.event.pull_request.number }} --body "$(cat <<'EOF'
+          gh pr comment ${{ github.event.pull_request.number }} --body-file - <<'EOF'
           <!-- pr-validation-checklist -->
           ## ✅ Build Successful!
 
@@ -70,4 +70,3 @@ jobs:
 
           _Last updated: $(date -u +'%Y-%m-%d %H:%M:%S UTC')_
           EOF
-          )"
