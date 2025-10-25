@@ -42,30 +42,23 @@ jobs:
         if: success()
         env:
           GH_TOKEN: ${{ github.token }}
+          COMMENT_BODY: |
+            <!-- pr-validation-checklist -->
+            ## ✅ Build Successful!
+
+            Please test the following before merging:
+
+            - [ ] Main page
+            - [ ] About page
+            - [ ] Dark/Light mode toggle
+            - [ ] Search functionality
+            - [ ] Individual blog post
+            - [ ] RSS feed
+
+            _Last updated: TIMESTAMP_PLACEHOLDER_
         run: |
-          # Find and delete existing comment(s)
-          COMMENT_IDS=$(gh pr view ${{ github.event.pull_request.number }} --json comments --jq -r '.comments[] | select(.body | contains("<!-- pr-validation-checklist -->")) | .id')
-
-          if [ -n "$COMMENT_IDS" ]; then
-            echo "Found existing comments to delete: $COMMENT_IDS"
-            for COMMENT_ID in $COMMENT_IDS; do
-              echo "Deleting comment: $COMMENT_ID"
-              gh pr comment $COMMENT_ID --delete || echo "Failed to delete comment $COMMENT_ID"
-            done
-          fi
-
-          # Create new comment
           TIMESTAMP=$(date -u +'%Y-%m-%d %H:%M:%S UTC')
-          gh pr comment ${{ github.event.pull_request.number }} --body "<!-- pr-validation-checklist -->
-          ## ✅ Build Successful!
+          FINAL_BODY="${COMMENT_BODY//TIMESTAMP_PLACEHOLDER_/$TIMESTAMP}"
 
-          Please test the following before merging:
-
-          - [ ] Main page
-          - [ ] About page
-          - [ ] Dark/Light mode toggle
-          - [ ] Search functionality
-          - [ ] Individual blog post
-          - [ ] RSS feed
-
-          _Last updated: ${TIMESTAMP}_"
+          # Edit last comment or create new one if none exist
+          gh pr comment ${{ github.event.pull_request.number }} --edit-last --create-if-none --body "$FINAL_BODY"
