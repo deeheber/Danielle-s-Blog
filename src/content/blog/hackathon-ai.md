@@ -308,7 +308,7 @@ import { type Event, type Talk } from "../API"
 import { docClient, tableName } from "../util/docClient"
 
 export const handler = async (
-  event: AppSyncResolverEvent<{ event: Event }>
+  event: AppSyncResolverEvent<{ event: Event }>,
 ): Promise<Talk[]> => {
   const eventTags = event.arguments.event.tags
   const talks: Array<Talk & { matches?: number }> = []
@@ -353,7 +353,7 @@ export const handler = async (
 
   talks.forEach(talk => {
     const matchCount = (talk.tags || []).filter(t =>
-      eventTags.includes(t)
+      eventTags.includes(t),
     ).length
     talk.matches = matchCount
   })

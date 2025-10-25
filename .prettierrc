@@ -5,9 +5,9 @@
   "printWidth": 80,
   "singleQuote": false,
   "jsxSingleQuote": false,
-  "trailingComma": "es5",
-  "bracketSpacing": true,
+  "trailingComma": "all",
   "endOfLine": "lf",
+  "singleAttributePerLine": true,
   "plugins": ["prettier-plugin-astro", "prettier-plugin-tailwindcss"],
   "overrides": [
     {

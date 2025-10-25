@@ -20,7 +20,7 @@ const flattenedData: { title: string; link: string; year: string }[] =
     yearData.content.map(content => ({
       ...content,
       year: yearData.year,
-    }))
+    })),
   )
 
 const sortedData = flattenedData.sort((a, b) => Number(b.year) - Number(a.year))
@@ -45,7 +45,7 @@ const latestFive = sortedData.slice(0, 5)
                     frontmatter={data}
                     secHeading={false}
                   />
-                )
+                ),
             )}
           </ul>
         </section>

@@ -14,7 +14,7 @@ const fetchFonts = async () => {
       const buffer = await response.arrayBuffer()
       console.log(
         `Fetched font from ${url}:`,
-        new Uint8Array(buffer).slice(0, 100)
+        new Uint8Array(buffer).slice(0, 100),
       ) // Log the first 100 bytes for verification
       return buffer
     } catch (error) {
@@ -25,16 +25,16 @@ const fetchFonts = async () => {
 
   return {
     fontMerriweatherRegular: await fetchFont(
-      "https://www.1001fonts.com/download/font/merriweather.regular.ttf"
+      "https://www.1001fonts.com/download/font/merriweather.regular.ttf",
     ),
     fontMerriweatherBold: await fetchFont(
-      "https://www.1001fonts.com/download/font/merriweather.bold.ttf"
+      "https://www.1001fonts.com/download/font/merriweather.bold.ttf",
     ),
     fontLatoRegular: await fetchFont(
-      "https://www.1001fonts.com/download/font/lato.regular.ttf"
+      "https://www.1001fonts.com/download/font/lato.regular.ttf",
     ),
     fontLatoBold: await fetchFont(
-      "https://www.1001fonts.com/download/font/lato.bold.ttf"
+      "https://www.1001fonts.com/download/font/lato.bold.ttf",
     ),
   }
 }

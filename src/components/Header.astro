@@ -11,10 +11,17 @@ const { activeNav } = Astro.props
 ---
 
 <header>
-  <a id="skip-to-content" href="#main-content">Skip to content</a>
+  <a
+    id="skip-to-content"
+    href="#main-content"
+    >Skip to content</a
+  >
   <div class="nav-container">
     <div class="top-nav-wrap">
-      <a href="/" class="logo whitespace-nowrap">
+      <a
+        href="/"
+        class="logo whitespace-nowrap"
+      >
         <img
           id="logo"
           src="/Logo1(D).png"
@@ -46,21 +53,60 @@ const { activeNav } = Astro.props
             stroke-linejoin="round"
             class="menu-icon"
           >
-            <line x1="7" y1="12" x2="21" y2="12" class="line"></line>
-            <line x1="3" y1="6" x2="21" y2="6" class="line"></line>
-            <line x1="12" y1="18" x2="21" y2="18" class="line"></line>
-            <line x1="18" y1="6" x2="6" y2="18" class="close"></line>
-            <line x1="6" y1="6" x2="18" y2="18" class="close"></line>
+            <line
+              x1="7"
+              y1="12"
+              x2="21"
+              y2="12"
+              class="line"
+            ></line>
+            <line
+              x1="3"
+              y1="6"
+              x2="21"
+              y2="6"
+              class="line"
+            ></line>
+            <line
+              x1="12"
+              y1="18"
+              x2="21"
+              y2="18"
+              class="line"
+            ></line>
+            <line
+              x1="18"
+              y1="6"
+              x2="6"
+              y2="18"
+              class="close"
+            ></line>
+            <line
+              x1="6"
+              y1="6"
+              x2="18"
+              y2="18"
+              class="close"
+            ></line>
           </svg>
         </button>
-        <ul id="menu-items" class="display-none sm:flex">
+        <ul
+          id="menu-items"
+          class="display-none sm:flex"
+        >
           <li>
-            <a href="/blog/" class={activeNav === "blog" ? "active" : ""}>
+            <a
+              href="/blog/"
+              class={activeNav === "blog" ? "active" : ""}
+            >
               Blog
             </a>
           </li>
           <li>
-            <a href="/talks/" class={activeNav === "talks" ? "active" : ""}>
+            <a
+              href="/talks/"
+              class={activeNav === "talks" ? "active" : ""}
+            >
               Talks
             </a>
           </li>
@@ -70,7 +116,10 @@ const { activeNav } = Astro.props
             </a>
           </li> -->
           <li>
-            <a href="/about/" class={activeNav === "about" ? "active" : ""}>
+            <a
+              href="/about/"
+              class={activeNav === "about" ? "active" : ""}
+            >
               About
             </a>
           </li>
@@ -228,7 +277,7 @@ const { activeNav } = Astro.props
     @apply opacity-100;
   }
   .logo {
-    @apply w-full max-w-350px h-auto;
+    @apply h-auto w-full max-w-350px;
   }
 
   @media (max-width: 640px) {
@@ -251,7 +300,7 @@ const { activeNav } = Astro.props
       menuBtn.setAttribute("aria-expanded", menuExpanded ? "false" : "true")
       menuBtn.setAttribute(
         "aria-label",
-        menuExpanded ? "Open Menu" : "Close Menu"
+        menuExpanded ? "Open Menu" : "Close Menu",
       )
       menuItems?.classList.toggle("display-none")
     })
