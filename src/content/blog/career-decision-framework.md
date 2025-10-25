@@ -5,9 +5,9 @@ title: Should I Stay or Should I Go?
 description: A framework for deciding when it's time to leave your current company, based on evaluating what you're building, who you're working with, and the technology you use.
 ---
 
-![Exit sign](/assets/exit.jpg)
+![Compass](/assets/compass-hand.jpg)
 
-> Photo by <a href="https://unsplash.com/@theandrewteoh?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Andrew Teoh</a> on <a href="https://unsplash.com/photos/white-and-green-exit-sign-SKrgZQgYy2g?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
+> Photo by <a href="https://unsplash.com/@jamie452?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Jamie Street</a> on <a href="https://unsplash.com/photos/person-holding-compass-facing-towards-green-pine-trees-_94HLr_QXo8?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
 
 ## The Framework
 
