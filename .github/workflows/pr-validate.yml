@@ -14,7 +14,6 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       pull-requests: write
-      issues: write
       contents: read
 
     steps:
@@ -51,7 +50,7 @@ jobs:
             echo "Found existing comments to delete: $COMMENT_IDS"
             for COMMENT_ID in $COMMENT_IDS; do
               echo "Deleting comment: $COMMENT_ID"
-              gh api --method DELETE "/repos/${{ github.repository }}/issues/comments/$COMMENT_ID" || echo "Failed to delete comment $COMMENT_ID"
+              gh pr comment $COMMENT_ID --delete || echo "Failed to delete comment $COMMENT_ID"
             done
           fi
 
