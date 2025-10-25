@@ -34,3 +34,37 @@ jobs:
 
       - name: Run build
         run: npm run build
+
+      - name: Post testing checklist
+        if: success()
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          COMMENT_BODY="<!-- pr-validation-checklist -->
+          ## ✅ Build Successful!
+
+          Please test the following before merging:
+
+          - [ ] Main page
+          - [ ] About page
+          - [ ] Dark/Light mode toggle
+          - [ ] Search functionality
+          - [ ] Individual blog post
+          - [ ] RSS feed
+
+          _Last updated: $(date -u +'%Y-%m-%d %H:%M:%S UTC')_"
+
+          # Find existing comment
+          COMMENT_ID=$(gh pr view ${{ github.event.pull_request.number }} --json comments --jq '.comments[] | select(.body | contains("<!-- pr-validation-checklist -->")) | .id')
+
+          if [ -n "$COMMENT_ID" ]; then
+            # Update existing comment
+            gh api \
+              --method PATCH \
+              -H "Accept: application/vnd.github+json" \
+              "/repos/${{ github.repository }}/issues/comments/$COMMENT_ID" \
+              -f body="$COMMENT_BODY"
+          else
+            # Create new comment
+            gh pr comment ${{ github.event.pull_request.number }} --body "$COMMENT_BODY"
+          fi
