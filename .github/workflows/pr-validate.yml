@@ -56,8 +56,8 @@ jobs:
           fi
 
           # Create new comment
-          gh pr comment ${{ github.event.pull_request.number }} --body-file - <<'EOF'
-          <!-- pr-validation-checklist -->
+          TIMESTAMP=$(date -u +'%Y-%m-%d %H:%M:%S UTC')
+          gh pr comment ${{ github.event.pull_request.number }} --body "<!-- pr-validation-checklist -->
           ## ✅ Build Successful!
 
           Please test the following before merging:
@@ -69,5 +69,4 @@ jobs:
           - [ ] Individual blog post
           - [ ] RSS feed
 
-          _Last updated: $(date -u +'%Y-%m-%d %H:%M:%S UTC')_
-          EOF
+          _Last updated: ${TIMESTAMP}_"
