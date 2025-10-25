@@ -58,9 +58,15 @@ jobs:
           _Last updated: $(date -u +'%Y-%m-%d %H:%M:%S UTC')_"
 
           # Find and delete existing comment(s)
-          gh pr view ${{ github.event.pull_request.number }} --json comments --jq '.comments[] | select(.body | contains("<!-- pr-validation-checklist -->")) | .id' | while read -r COMMENT_ID; do
-            gh api --method DELETE "/repos/${{ github.repository }}/issues/comments/$COMMENT_ID" 2>/dev/null || true
-          done
+          COMMENT_IDS=$(gh pr view ${{ github.event.pull_request.number }} --json comments --jq -r '.comments[] | select(.body | contains("<!-- pr-validation-checklist -->")) | .id')
+
+          if [ -n "$COMMENT_IDS" ]; then
+            echo "Found existing comments to delete: $COMMENT_IDS"
+            for COMMENT_ID in $COMMENT_IDS; do
+              echo "Deleting comment: $COMMENT_ID"
+              gh api --method DELETE "/repos/${{ github.repository }}/issues/comments/$COMMENT_ID" || echo "Failed to delete comment $COMMENT_ID"
+            done
+          fi
 
           # Create new comment
           gh pr comment ${{ github.event.pull_request.number }} --body "$COMMENT_BODY"
