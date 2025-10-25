@@ -20,11 +20,14 @@ breadcrumbList[0] === "tags" &&
     3,
     `${breadcrumbList[1]} ${
       Number(breadcrumbList[2]) === 1 ? "" : "(page " + breadcrumbList[2] + ")"
-    }`
+    }`,
   )
 ---
 
-<nav class="breadcrumb" aria-label="breadcrumb">
+<nav
+  class="breadcrumb"
+  aria-label="breadcrumb"
+>
   <ul>
     <li>
       <a href="/">Home</a>
@@ -47,7 +50,7 @@ breadcrumbList[0] === "tags" &&
             <a href={`/${breadcrumb}/`}>{breadcrumb}</a>
             <span aria-hidden="true">&raquo;</span>
           </li>
-        )
+        ),
       )
     }
   </ul>

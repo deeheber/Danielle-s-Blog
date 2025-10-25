@@ -3,39 +3,25 @@ import { Resvg } from "@resvg/resvg-js"
 import { type CollectionEntry } from "astro:content"
 import postOgImage from "./og-templates/post"
 import siteOgImage from "./og-templates/site"
+import { readFileSync } from "fs"
+import { resolve } from "path"
 
-const fetchFonts = async () => {
-  const fetchFont = async (url: string) => {
+const loadFonts = () => {
+  const loadFont = (path: string) => {
     try {
-      const response = await fetch(url)
-      if (!response.ok) {
-        throw new Error(`Failed to fetch font: ${response.statusText}`)
-      }
-      const buffer = await response.arrayBuffer()
-      console.log(
-        `Fetched font from ${url}:`,
-        new Uint8Array(buffer).slice(0, 100)
-      ) // Log the first 100 bytes for verification
-      return buffer
+      const fontPath = resolve(`public/fonts/${path}`)
+      return readFileSync(fontPath)
     } catch (error) {
-      console.error(`Error fetching font from URL: ${url}`, error)
+      console.error(`Error loading font from ${path}:`, error)
       throw error
     }
   }
 
   return {
-    fontMerriweatherRegular: await fetchFont(
-      "https://www.1001fonts.com/download/font/merriweather.regular.ttf"
-    ),
-    fontMerriweatherBold: await fetchFont(
-      "https://www.1001fonts.com/download/font/merriweather.bold.ttf"
-    ),
-    fontLatoRegular: await fetchFont(
-      "https://www.1001fonts.com/download/font/lato.regular.ttf"
-    ),
-    fontLatoBold: await fetchFont(
-      "https://www.1001fonts.com/download/font/lato.bold.ttf"
-    ),
+    fontMerriweatherRegular: loadFont("merriweather-regular.ttf"),
+    fontMerriweatherBold: loadFont("merriweather-bold.ttf"),
+    fontLatoRegular: loadFont("lato-regular.ttf"),
+    fontLatoBold: loadFont("lato-bold.ttf"),
   }
 }
 
@@ -44,7 +30,7 @@ const {
   fontMerriweatherBold,
   fontLatoRegular,
   fontLatoBold,
-} = await fetchFonts()
+} = loadFonts()
 
 const options: SatoriOptions = {
   width: 1200,

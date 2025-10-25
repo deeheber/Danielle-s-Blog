@@ -5,18 +5,26 @@ on:
     branches:
       - main
 
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   validate:
     runs-on: ubuntu-latest
+    permissions:
+      pull-requests: write
+      contents: read
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Setup Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v6
         with:
           node-version-file: .nvmrc
+          cache: "npm"
 
       - name: Install dependencies
         run: npm install
@@ -26,3 +34,31 @@ jobs:
 
       - name: Run lint check
         run: npm run lint:check
+
+      - name: Type check
+        run: npm run type-check
+
+      - name: Post testing checklist
+        if: success()
+        env:
+          GH_TOKEN: ${{ github.token }}
+          COMMENT_BODY: |
+            <!-- pr-validation-checklist -->
+            ## ✅ Build Successful!
+
+            Please test the following before merging:
+
+            - [ ] Main page
+            - [ ] About page
+            - [ ] Dark/Light mode toggle
+            - [ ] Search functionality
+            - [ ] Individual blog post
+            - [ ] RSS feed
+
+            _Last updated: TIMESTAMP_PLACEHOLDER_
+        run: |
+          TIMESTAMP=$(date -u +'%Y-%m-%d %H:%M:%S UTC')
+          FINAL_BODY="${COMMENT_BODY//TIMESTAMP_PLACEHOLDER_/$TIMESTAMP}"
+
+          # Edit last comment or create new one if none exist
+          gh pr comment ${{ github.event.pull_request.number }} --edit-last --create-if-none --body "$FINAL_BODY"

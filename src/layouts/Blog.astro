@@ -19,11 +19,17 @@ const { currentPage, totalPages, paginatedblog } = Astro.props
 
 <Layout title={`Blog | ${SITE.title}`}>
   <Header activeNav="blog" />
-  <Main pageTitle="Blog" pageDesc="All the articles I've posted.">
+  <Main
+    pageTitle="Blog"
+    pageDesc="All the articles I've posted."
+  >
     <ul>
       {
         paginatedblog.map(({ data, slug }) => (
-          <Card href={`/blog/${slug}/`} frontmatter={data} />
+          <Card
+            href={`/blog/${slug}/`}
+            frontmatter={data}
+          />
         ))
       }
     </ul>

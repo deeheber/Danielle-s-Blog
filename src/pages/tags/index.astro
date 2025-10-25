@@ -15,9 +15,19 @@ let tags = getUniqueTags(blog)
 
 <Layout title={`Tags | ${SITE.title}`}>
   <Header activeNav="tags" />
-  <Main pageTitle="Tags" pageDesc="All the tags used in blog.">
+  <Main
+    pageTitle="Tags"
+    pageDesc="All the tags used in blog."
+  >
     <ul>
-      {tags.map(({ tag }) => <Tag {tag} size="lg" />)}
+      {
+        tags.map(({ tag }) => (
+          <Tag
+            {tag}
+            size="lg"
+          />
+        ))
+      }
     </ul>
   </Main>
   <Footer />

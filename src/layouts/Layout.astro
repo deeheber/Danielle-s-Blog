@@ -29,7 +29,7 @@ const {
 
 const socialImageURL = new URL(
   ogImage ?? SITE.ogImage ?? "og.png",
-  Astro.url.origin
+  Astro.url.origin,
 ).href
 ---
 
@@ -40,10 +40,27 @@ const socialImageURL = new URL(
 >
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/Logo1(D).png" />
-    {canonicalURL && <link rel="canonical" href={canonicalURL} />}
-    <meta name="generator" content={Astro.generator} />
+    <meta
+      name="viewport"
+      content="width=device-width"
+    />
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="/Logo1(D).png"
+    />
+    {
+      canonicalURL && (
+        <link
+          rel="canonical"
+          href={canonicalURL}
+        />
+      )
+    }
+    <meta
+      name="generator"
+      content={Astro.generator}
+    />
 
     <!-- RSS feed auto discovery -->
     <!-- https://docs.astro.build/en/guides/rss/#enabling-rss-feed-auto-discovery -->
@@ -56,16 +73,40 @@ const socialImageURL = new URL(
 
     <!-- General Meta Tags -->
     <title>{title}</title>
-    <meta name="title" content={title} />
-    <meta name="description" content={description} />
-    <meta name="author" content={author} />
-    <link rel="sitemap" href="/sitemap-index.xml" />
+    <meta
+      name="title"
+      content={title}
+    />
+    <meta
+      name="description"
+      content={description}
+    />
+    <meta
+      name="author"
+      content={author}
+    />
+    <link
+      rel="sitemap"
+      href="/sitemap-index.xml"
+    />
 
     <!-- Open Graph / Facebook -->
-    <meta property="og:title" content={title} />
-    <meta property="og:description" content={description} />
-    <meta property="og:url" content={canonicalURL} />
-    <meta property="og:image" content={socialImageURL} />
+    <meta
+      property="og:title"
+      content={title}
+    />
+    <meta
+      property="og:description"
+      content={description}
+    />
+    <meta
+      property="og:url"
+      content={canonicalURL}
+    />
+    <meta
+      property="og:image"
+      content={socialImageURL}
+    />
 
     <!-- Article Published/Modified time -->
     {
@@ -86,15 +127,37 @@ const socialImageURL = new URL(
     }
 
     <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:url" content={canonicalURL} />
-    <meta property="twitter:title" content={title} />
-    <meta property="twitter:description" content={description} />
-    <meta property="twitter:image" content={socialImageURL} />
+    <meta
+      property="twitter:card"
+      content="summary_large_image"
+    />
+    <meta
+      property="twitter:url"
+      content={canonicalURL}
+    />
+    <meta
+      property="twitter:title"
+      content={title}
+    />
+    <meta
+      property="twitter:description"
+      content={description}
+    />
+    <meta
+      property="twitter:image"
+      content={socialImageURL}
+    />
 
     <!-- Google Font -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="preconnect"
+      href="https://fonts.googleapis.com"
+    />
+    <link
+      rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin
+    />
     <link
       href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&display=swap"
       rel="stylesheet"
@@ -104,7 +167,10 @@ const socialImageURL = new URL(
       rel="stylesheet"
     />
 
-    <meta name="theme-color" content="" />
+    <meta
+      name="theme-color"
+      content=""
+    />
 
     {
       // If PUBLIC_GOOGLE_SITE_VERIFICATION is set in the environment variable,
@@ -120,7 +186,10 @@ const socialImageURL = new URL(
 
     <ViewTransitions />
 
-    <script is:inline src="/toggle-theme.js"></script>
+    <script
+      is:inline
+      src="/toggle-theme.js"
+    ></script>
   </head>
   <body>
     <slot />

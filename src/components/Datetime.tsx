@@ -47,7 +47,7 @@ export default function Datetime({
 
 const FormattedDatetime = ({ pubDatetime, modDatetime }: DatetimesProps) => {
   const myDatetime = new Date(
-    modDatetime && modDatetime > pubDatetime ? modDatetime : pubDatetime
+    modDatetime && modDatetime > pubDatetime ? modDatetime : pubDatetime,
   )
 
   const date = myDatetime.toLocaleDateString(LOCALE.langTag, {
@@ -56,10 +56,10 @@ const FormattedDatetime = ({ pubDatetime, modDatetime }: DatetimesProps) => {
     day: "numeric",
   })
 
-  const time = myDatetime.toLocaleTimeString(LOCALE.langTag, {
-    hour: "2-digit",
-    minute: "2-digit",
-  })
+  // const time = myDatetime.toLocaleTimeString(LOCALE.langTag, {
+  //   hour: "2-digit",
+  //   minute: "2-digit",
+  // })
 
   return (
     <>
