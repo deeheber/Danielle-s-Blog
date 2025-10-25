@@ -57,17 +57,10 @@ jobs:
 
           _Last updated: $(date -u +'%Y-%m-%d %H:%M:%S UTC')_"
 
-          # Find existing comment
-          COMMENT_ID=$(gh pr view ${{ github.event.pull_request.number }} --json comments --jq '.comments[] | select(.body | contains("<!-- pr-validation-checklist -->")) | .id')
+          # Find and delete existing comment(s)
+          gh pr view ${{ github.event.pull_request.number }} --json comments --jq '.comments[] | select(.body | contains("<!-- pr-validation-checklist -->")) | .id' | while read -r COMMENT_ID; do
+            gh api --method DELETE "/repos/${{ github.repository }}/issues/comments/$COMMENT_ID" 2>/dev/null || true
+          done
 
-          if [ -n "$COMMENT_ID" ]; then
-            # Update existing comment
-            gh api \
-              --method PATCH \
-              -H "Accept: application/vnd.github+json" \
-              "/repos/${{ github.repository }}/issues/comments/$COMMENT_ID" \
-              -f body="$COMMENT_BODY"
-          else
-            # Create new comment
-            gh pr comment ${{ github.event.pull_request.number }} --body "$COMMENT_BODY"
-          fi
+          # Create new comment
+          gh pr comment ${{ github.event.pull_request.number }} --body "$COMMENT_BODY"
