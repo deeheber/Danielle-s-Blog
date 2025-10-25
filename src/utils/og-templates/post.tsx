@@ -1,7 +1,7 @@
 import { SITE } from "@config"
 import type { CollectionEntry } from "astro:content"
 
-export default (post: CollectionEntry<"blog">) => {
+const PostOgTemplate = (post: CollectionEntry<"blog">) => {
   return (
     <div
       style={{
@@ -78,7 +78,7 @@ export default (post: CollectionEntry<"blog">) => {
                   color: "transparent",
                 }}
               >
-                "
+                &quot;
               </span>
               <span style={{ overflow: "hidden", fontWeight: "bold" }}>
                 {post.data.author}
@@ -94,3 +94,5 @@ export default (post: CollectionEntry<"blog">) => {
     </div>
   )
 }
+
+export default PostOgTemplate

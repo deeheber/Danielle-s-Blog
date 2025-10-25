@@ -1,5 +1,5 @@
 import Fuse from "fuse.js"
-import { useEffect, useRef, useState, useMemo } from "react"
+import React, { useEffect, useRef, useState, useMemo } from "react"
 import Card from "@components/Card"
 import type { CollectionEntry } from "astro:content"
 
@@ -21,10 +21,13 @@ interface SearchResult {
 
 export default function SearchBar({ searchList }: Props) {
   const inputRef = useRef<HTMLInputElement>(null)
-  const [inputVal, setInputVal] = useState("")
-  const [searchResults, setSearchResults] = useState<SearchResult[] | null>(
-    null
-  )
+  const [inputVal, setInputVal] = useState(() => {
+    if (typeof window !== "undefined") {
+      const searchUrl = new URLSearchParams(window.location.search)
+      return searchUrl.get("q") || ""
+    }
+    return ""
+  })
 
   const handleChange = (e: React.FormEvent<HTMLInputElement>) => {
     setInputVal(e.currentTarget.value)
@@ -41,26 +44,20 @@ export default function SearchBar({ searchList }: Props) {
     [searchList]
   )
 
-  useEffect(() => {
-    // if URL has search query,
-    // insert that search query in input field
-    const searchUrl = new URLSearchParams(window.location.search)
-    const searchStr = searchUrl.get("q")
-    if (searchStr) setInputVal(searchStr)
+  const searchResults: SearchResult[] = useMemo(() => {
+    return inputVal.length > 1 ? fuse.search(inputVal) : []
+  }, [inputVal, fuse])
 
+  useEffect(() => {
     // put focus cursor at the end of the string
     setTimeout(function () {
       inputRef.current!.selectionStart = inputRef.current!.selectionEnd =
-        searchStr?.length || 0
+        inputVal.length
     }, 50)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   useEffect(() => {
-    // Add search result only if
-    // input value is more than one character
-    let inputResult = inputVal.length > 1 ? fuse.search(inputVal) : []
-    setSearchResults(inputResult)
-
     // Update search string in URL
     if (inputVal.length > 0) {
       const searchParams = new URLSearchParams(window.location.search)
@@ -83,13 +80,14 @@ export default function SearchBar({ searchList }: Props) {
           <span className="sr-only">Search</span>
         </span>
         <input
-          className="block w-full rounded border border-skin-fill 
+          className="block w-full rounded border border-skin-fill
         border-opacity-40 bg-skin-fill py-3 pl-10
-        pr-3 placeholder:italic placeholder:text-opacity-75 
+        pr-3 placeholder:italic placeholder:text-opacity-75
         focus:border-skin-accent focus:outline-none"
           placeholder="Search for anything..."
           type="text"
           name="search"
+          aria-label="Search"
           value={inputVal}
           onChange={handleChange}
           autoComplete="off"
@@ -104,7 +102,7 @@ export default function SearchBar({ searchList }: Props) {
           {searchResults?.length && searchResults?.length === 1
             ? " result"
             : " results"}{" "}
-          for '{inputVal}'
+          {`for '${inputVal}'`}
         </div>
       )}
 

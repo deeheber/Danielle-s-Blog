@@ -1,6 +1,6 @@
 import { SITE } from "@config"
 
-export default () => {
+const SiteOgTemplate = () => {
   return (
     <div
       style={{
@@ -85,3 +85,5 @@ export default () => {
     </div>
   )
 }
+
+export default SiteOgTemplate
