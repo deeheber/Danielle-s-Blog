@@ -1,12 +1,12 @@
 ---
 import { getCollection } from "astro:content"
 import BlogPosts from "@layouts/Blog.astro"
-import getsortedblog from "@utils/getSortedBlogPosts"
+import getSortedBlog from "@utils/getSortedBlogPosts"
 import getPagination from "@utils/getBlogPagination"
 
 const blog = await getCollection("blog")
 
-const sortedblog = getsortedblog(blog)
+const sortedblog = getSortedBlog(blog)
 
 const pagination = getPagination({
   blog: sortedblog,

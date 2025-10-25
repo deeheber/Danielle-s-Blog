@@ -51,8 +51,10 @@ export default function SearchBar({ searchList }: Props) {
   useEffect(() => {
     // put focus cursor at the end of the string
     setTimeout(function () {
-      inputRef.current!.selectionStart = inputRef.current!.selectionEnd =
-        inputVal.length
+      if (inputRef.current) {
+        inputRef.current.selectionStart = inputRef.current.selectionEnd =
+          inputVal.length
+      }
     }, 50)
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
