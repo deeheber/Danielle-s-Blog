@@ -3,6 +3,10 @@
   "compilerOptions": {
     "baseUrl": "src",
     "jsx": "react-jsx",
+    "noUncheckedIndexedAccess": true,
+    "exactOptionalPropertyTypes": true,
+    "allowUnusedLabels": false,
+    "allowUnreachableCode": false,
     "paths": {
       "@assets/*": ["assets/*"],
       "@config": ["config.ts"],
