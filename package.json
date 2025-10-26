@@ -3,16 +3,16 @@
   "version": "5.0.0",
   "private": false,
   "scripts": {
-    "dev": "astro dev",
-    "start": "astro dev",
-    "build": "astro build && jampack ./dist",
-    "preview": "astro preview",
-    "sync": "astro sync",
     "astro": "astro",
-    "format:check": "prettier --check .",
+    "build": "astro build && jampack ./dist",
+    "dev": "astro dev",
     "format": "prettier --write .",
-    "lint:check": "eslint .",
+    "format:check": "prettier --check .",
     "lint": "eslint . --fix",
+    "lint:check": "eslint .",
+    "preview": "astro preview",
+    "start": "astro dev",
+    "sync": "astro sync",
     "type-check": "tsc --noEmit"
   },
   "dependencies": {
