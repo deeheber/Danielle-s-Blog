@@ -1,21 +1,54 @@
-# Welcome to your new blog, Danielle!
+# Danielle's Blog
 
-#Demo
+A modern, fast blog built with Astro and React. PRs welcome - especially if you spot my typos!
 
-https://github.com/01001101CK/Danielle-s-Blog/assets/112290188/75d6d0b4-fc8f-44e4-9e48-c69d75fab494
+## 📋 Table of Contents
 
-# Content
+- [Demo](#-demo)
+- [Prerequisites](#-prerequisites)
+- [Getting Started](#-getting-started)
+- [Customization](#-customization)
+- [Available Commands](#️-available-commands)
+- [Tech Stack](#-tech-stack)
 
-## 🎨 Blog updates
+## 🎬 Demo
 
-- All blog posts are stored in `src/content/blog` directory.
+Check out the live site: https://danielleheberling.xyz/
+
+## 📦 Prerequisites
+
+**Node.js** - See `.nvmrc` file for required version
+
+## 🚀 Getting Started
+
+```bash
+npm install
+npm run dev
+```
+
+Your blog will be running at `localhost:4321`
+
+## ⚙️ Customization
+
+### Site Configuration
+
+Update the `src/config.ts` file to customize:
+
+- Site metadata (title, description, author)
+- Social media links
+- Logo settings
+- Locale settings
+
+### Blog Posts
+
+- All blog posts are stored in `src/content/blog` directory
 - Add Posts - [markdown](src/content/blog/adding-new-post.md)
 
-## 📣 Talks updates
+### Talks
 
-Update the `SpeakingData.json` file in `src/data` directory.
+Update the `speakingData.json` file in `src/data` directory
 
-## 🎖️ Commands
+## 🎖️ Available Commands
 
 All commands are run from the root of the project, from a terminal:
 
@@ -32,6 +65,7 @@ All commands are run from the root of the project, from a terminal:
 | `npm run sync`                       | Generates TypeScript types for all Astro modules. [Learn more](https://docs.astro.build/en/reference/cli-reference/#astro-sync). |
 | `npm run lint`                       | Lint with ESLint                                                                                                                 |
 | `npm run lint:check`                 | Check code linting with ESLint                                                                                                   |
+| `npm run type-check`                 | Run TypeScript type checking without emitting files                                                                              |
 | `docker compose up -d`               | Run on docker, You can access with the same hostname and port informed on `dev` command.                                         |
 | `docker compose run app npm install` | You can run any command above into the docker container.                                                                         |
 
@@ -41,10 +75,7 @@ All commands are run from the root of the project, from a terminal:
 **Type Checking** - [TypeScript](https://www.typescriptlang.org/)  
 **Component Framework** - [ReactJS](https://reactjs.org/)  
 **Styling** - [TailwindCSS](https://tailwindcss.com/)  
-**UI/UX** - [Figma](https://figma.com)  
 **Fuzzy Search** - [FuseJS](https://fusejs.io/)  
-**Icons** - [Boxicons](https://boxicons.com/) | [Tablers](https://tabler-icons.io/)  
-**Code Formatting** - [Prettier](https://prettier.io/)  
-**Deployment** - [Cloudflare Pages](https://pages.cloudflare.com/)  
-**Illustration in About Page** - [https://freesvgillustration.com](https://freesvgillustration.com/)  
+**Code Formatting** - [Prettier](https://prettier.io/)
 **Linting** - [ESLint](https://eslint.org)
+**Deployment** - [Cloudflare Pages](https://pages.cloudflare.com/)
