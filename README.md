@@ -2,15 +2,6 @@
 
 A modern, fast blog built with Astro and React. PRs welcome - especially if you spot my typos!
 
-## 📋 Table of Contents
-
-- [Demo](#-demo)
-- [Prerequisites](#-prerequisites)
-- [Getting Started](#-getting-started)
-- [Customization](#-customization)
-- [Available Commands](#️-available-commands)
-- [Tech Stack](#-tech-stack)
-
 ## 🎬 Demo
 
 Check out the live site: https://danielleheberling.xyz/
@@ -42,7 +33,7 @@ Update the `src/config.ts` file to customize:
 ### Blog Posts
 
 - All blog posts are stored in `src/content/blog` directory
-- Add Posts - [markdown](src/content/blog/adding-new-post.md)
+- Add new posts as markdown files in the `src/content/blog` directory
 
 ### Talks
 
@@ -69,13 +60,13 @@ All commands are run from the root of the project, from a terminal:
 | `docker compose up -d`               | Run on docker, You can access with the same hostname and port informed on `dev` command.                                         |
 | `docker compose run app npm install` | You can run any command above into the docker container.                                                                         |
 
-## 💻 Tech Stack
+## 💻 My Tech Stack
 
 **Main Framework** - [Astro](https://astro.build/)  
 **Type Checking** - [TypeScript](https://www.typescriptlang.org/)  
 **Component Framework** - [ReactJS](https://reactjs.org/)  
 **Styling** - [TailwindCSS](https://tailwindcss.com/)  
 **Fuzzy Search** - [FuseJS](https://fusejs.io/)  
-**Code Formatting** - [Prettier](https://prettier.io/)
-**Linting** - [ESLint](https://eslint.org)
+**Code Formatting** - [Prettier](https://prettier.io/)  
+**Linting** - [ESLint](https://eslint.org/)  
 **Deployment** - [Cloudflare Pages](https://pages.cloudflare.com/)
