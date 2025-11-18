@@ -3,7 +3,7 @@ layout: ../layouts/AboutLayout.astro
 title: "About"
 ---
 
-Hey, I'm Danielle. I build cloud infrastructure and specialize in serverless architecture, but I care just as much about the people and product decisions behind the tech. I write about the real stuff—running infrastructure on a budget, navigating pivotal career decisions, advocating for security work that no one demos in sprint reviews. My work touches technical leadership, developer advocacy, product thinking, and team management.
+Hey, I'm Danielle. I build software and specialize in serverless architecture, but I care just as much about the people and product decisions behind the tech. I write about the real stuff—running cloud infrastructure on a budget, navigating pivotal career decisions, advocating for security work that no one demos in sprint reviews. My work touches technical leadership, developer advocacy, product thinking, and team management.
 
 💻 **What I'm working with:** Serverless, Cloud Infrastructure, Infrastructure as Code, TypeScript, Python, and exploring AI applications in development workflows.
 
