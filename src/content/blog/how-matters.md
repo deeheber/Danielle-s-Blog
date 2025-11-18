@@ -23,3 +23,5 @@ Of course, pragmatic tradeoffs are part of the job. I can move fast when needed,
 In an age of viral videos for quick wins, I know it can be challenging to play the long game...but I encourage you to consider it.
 
 This approach has led me to opportunities and relationships I wouldn't trade for anything. If you're wondering whether it's worth it to take a more intentional approach - I'd say give it a shot and see where it takes you.
+
+&nbsp;
