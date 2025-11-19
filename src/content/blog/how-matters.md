@@ -1,16 +1,20 @@
 ---
 author: Danielle Heberling
-pubDatetime: 2025-11-18T15:12:03.284Z
+pubDatetime: 2025-11-19T15:12:03.284Z
 title: How You Do It Matters
 description: How You Do It Matters
 slug: how-matters
 ---
 
-I've learned something valuable in my career: the relationships and opportunities that have meant the most to me didn't come from optimizing for quick wins. They came from playing the long game.
+![Winding path](/assets/winding-path.jpg)
 
-How you do it matters just as much as what you do.
+> Photo by <a href="https://unsplash.com/@jack_anstey?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Jack Anstey</a> on <a href="https://unsplash.com/photos/aerial-photography-of-road-zS4lUqLEiNA?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
 
-Take professional networking, for example. I've found that showing up consistently to community events, contributing even when I don't need anything, has led to the most meaningful connections and opportunities. Similarly, I'm drawn to organizations where solving real user problems is at the heart of what we build.
+Looking back on my career, the connections and opportunities I value most weren't the result of optimizing for speed. They grew from taking the long view.
+
+_How_ you do it matters just as much as _what_ you do.
+
+Take professional networking, for example. I've found that showing up consistently to community events, contributing even when I don't need anything, has led to the most meaningful connections and opportunities. That might look like speaking at a meetup, volunteering to help organize one, reviewing someone's resume, or answering career questions in Slack. Similarly, I'm drawn to organizations where solving real user problems is at the heart of what we build.
 
 I once worked at a startup where the CEO's departing words really stuck with me. This man was far from perfect, but I enjoyed working with him professionally and did it twice, mostly because of our alignment on what matters.
 
