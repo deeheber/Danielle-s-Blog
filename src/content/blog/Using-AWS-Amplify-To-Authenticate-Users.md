@@ -113,7 +113,7 @@ Before we continue let’s go over a quick edge case. So if our user refreshes t
 So now the user is looking at the confirmation form and has their confirmation code to type in. We’ll need to render the confirmation form. Similar to the signup form it’ll look like a typical form with the exception being the function that is called whenever the user submits the confirmation form. The handleSubmit function for the confirmation form will look similar to this when using Amplify:
 
 ```javascript
-handleConfirmationSubmit = async event => {
+handleConfirmationSubmit = async (event) => {
   event.preventDefault()
 
   try {

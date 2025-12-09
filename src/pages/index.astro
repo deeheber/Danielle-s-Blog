@@ -16,8 +16,8 @@ const recentblog = sortedblog.filter(({ data }) => !data.featured)
 
 // Flatten and sort the speaking data
 const flattenedData: { title: string; link: string; year: string }[] =
-  speakingData.flatMap(yearData =>
-    yearData.content.map(content => ({
+  speakingData.flatMap((yearData) =>
+    yearData.content.map((content) => ({
       ...content,
       year: yearData.year,
     })),
@@ -68,7 +68,7 @@ const latestFive = sortedData.slice(0, 5)
         <section id="recent-talks">
           <h2 tabindex="0">Recent Talks</h2>
           <ul>
-            {latestFive.map(content => (
+            {latestFive.map((content) => (
               <li id="talk-list">
                 <a
                   href={content.link}

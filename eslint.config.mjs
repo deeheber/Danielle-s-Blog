@@ -9,6 +9,8 @@ import tsparser from "@typescript-eslint/parser"
 import react from "eslint-plugin-react"
 import reactHooks from "eslint-plugin-react-hooks"
 import jsxA11y from "eslint-plugin-jsx-a11y"
+import importPlugin from "eslint-plugin-import"
+import prettierConfig from "eslint-config-prettier"
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
@@ -40,12 +42,49 @@ export default [
   // TypeScript files
   {
     files: ["**/*.ts", "**/*.tsx"],
-    plugins: { "@typescript-eslint": tseslint },
+    plugins: {
+      "@typescript-eslint": tseslint,
+      import: importPlugin,
+    },
     languageOptions: {
       parser: tsparser,
       parserOptions: { project: "./tsconfig.json" },
     },
-    rules: tseslint.configs.recommended.rules,
+    settings: {
+      "import/resolver": {
+        typescript: {
+          alwaysTryTypes: true,
+          project: "./tsconfig.json",
+        },
+      },
+    },
+    rules: {
+      ...tseslint.configs.recommended.rules,
+      "@typescript-eslint/no-explicit-any": "error",
+      "@typescript-eslint/no-unused-vars": [
+        "warn",
+        {
+          argsIgnorePattern: "^_",
+          varsIgnorePattern: "^_",
+        },
+      ],
+      "import/order": [
+        "error",
+        {
+          groups: [
+            "builtin",
+            "external",
+            "internal",
+            ["parent", "sibling"],
+            "index",
+          ],
+          "newlines-between": "always",
+          alphabetize: { order: "asc", caseInsensitive: true },
+        },
+      ],
+      "import/no-duplicates": "error",
+      "import/newline-after-import": "error",
+    },
   },
   // React/TSX files
   {
@@ -82,4 +121,6 @@ export default [
     files: ["**/env.d.ts"],
     rules: { "@typescript-eslint/triple-slash-reference": "off" },
   },
+  // Prettier config to disable conflicting rules
+  prettierConfig,
 ]

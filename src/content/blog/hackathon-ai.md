@@ -342,8 +342,8 @@ export const handler = async (
       })
       const talksResult = await docClient.send(queryTalksCommand)
       if (talksResult.Items) {
-        talksResult.Items.forEach(talk => {
-          if (!talks.find(t => t.pk === talk.pk)) {
+        talksResult.Items.forEach((talk) => {
+          if (!talks.find((t) => t.pk === talk.pk)) {
             talks.push(talk as Talk)
           }
         })
@@ -351,15 +351,15 @@ export const handler = async (
     }
   }
 
-  talks.forEach(talk => {
-    const matchCount = (talk.tags || []).filter(t =>
+  talks.forEach((talk) => {
+    const matchCount = (talk.tags || []).filter((t) =>
       eventTags.includes(t),
     ).length
     talk.matches = matchCount
   })
 
   return talks
-    .filter(t => t.matches)
+    .filter((t) => t.matches)
     .sort((a, b) => (a.matches && b.matches && a.matches < b.matches ? 1 : -1))
     .slice(0, 10)
 }

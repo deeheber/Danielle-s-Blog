@@ -7,7 +7,7 @@ Hey, I'm Danielle. I build software and specialize in serverless architecture, b
 
 💻 **What I'm working with:** Serverless, Cloud Infrastructure, Infrastructure as Code, TypeScript, Python, and exploring AI applications in development workflows.
 
-📍 **Find me:** I'm an <a href="https://builder.aws.com/community/@deeheber" target="_blank">AWS Serverless Hero</a> and co-organize the <a href="https://www.believeinserverless.com/" target="_blank">Believe in Serverless Discord community</a>.
+📍 **Find me:** I'm an <a href="https://builder.aws.com/community/heroes/DanielleHeberling" target="_blank">AWS Serverless Hero</a> and co-organize the <a href="https://www.believeinserverless.com/" target="_blank">Believe in Serverless Discord community</a>.
 
 📣 All opinions here are my own and don't represent any organizations I'm affiliated with. Technology evolves quickly, so older posts may contain outdated information.
 

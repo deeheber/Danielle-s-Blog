@@ -71,7 +71,7 @@ Here’s what the code looks like written in nodeJS:
 const aws = require("aws-sdk")
 const sqs = new aws.SQS()
 
-exports.handler = async event => {
+exports.handler = async (event) => {
   // Log the event argument for debugging and for use in local development.
   console.log(JSON.stringify(event, undefined, 2))
 
