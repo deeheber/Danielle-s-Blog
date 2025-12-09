@@ -4,7 +4,7 @@
   "private": false,
   "scripts": {
     "astro": "astro",
-    "build": "astro build && jampack ./dist",
+    "build": "npm run type-check && astro build && jampack ./dist",
     "dev": "astro dev",
     "format": "prettier --write .",
     "format:check": "prettier --check .",

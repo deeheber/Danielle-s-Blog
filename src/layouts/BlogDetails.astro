@@ -124,7 +124,7 @@ const layoutProps = {
 </style>
 
 <script is:inline>
-  // Global reference to scroll handler for cleanup
+  /** @type {(() => void) | null} Global reference to scroll handler for cleanup */
   let scrollProgressHandler = null
 
   /** Update the progress bar when user scrolls */
@@ -219,6 +219,11 @@ const layoutProps = {
         })
       }
 
+      /**
+       * Copies code from a code block to the clipboard
+       * @param {HTMLPreElement} block - The pre element containing the code
+       * @param {HTMLButtonElement} button - The copy button element
+       */
       async function copyCode(block, button) {
         let code = block.querySelector("code")
         let text = code?.innerText
