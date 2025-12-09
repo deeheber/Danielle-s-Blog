@@ -66,7 +66,7 @@ Now that we have our `pathname` (including the optional `commit/<commit sha>` fr
 If there isn’t a hash present in the `pathname` this means that we just want to serve up the latest version of the app, so we'll return `null`.
 
 ```javascript
-const getHash = pathname => {
+const getHash = (pathname) => {
   const components = pathname.split("/").filter(Boolean)
   if (components[0] !== "commit") {
     return null
@@ -93,7 +93,7 @@ const s3 = new AWS.S3({
   region: "us-west-2",
 })
 
-const getIndexFile = hash => {
+const getIndexFile = (hash) => {
   let key = `${process.env.ENV}.html`
   if (hash) {
     key = `commit/${hash}/index.html`
@@ -105,14 +105,14 @@ const getIndexFile = hash => {
   return s3
     .getObject(params)
     .promise()
-    .then(result => {
+    .then((result) => {
       if (!result || !result.Body || !Buffer.isBuffer(result.Body)) {
         console.error("null data")
         return null
       }
       return result.Body.toString("utf8")
     })
-    .catch(err => {
+    .catch((err) => {
       console.error(err)
       return null
     })
@@ -140,7 +140,7 @@ const RESPONSE_HEADERS = {
   // Add desired headers here
 }
 
-const getIndexFile = hash => {
+const getIndexFile = (hash) => {
   let key = `${process.env.ENV}.html`
   if (hash) {
     key = `commit/${hash}/index.html`
@@ -152,20 +152,20 @@ const getIndexFile = hash => {
   return s3
     .getObject(params)
     .promise()
-    .then(result => {
+    .then((result) => {
       if (!result || !result.Body || !Buffer.isBuffer(result.Body)) {
         console.error("null data")
         return null
       }
       return result.Body.toString("utf8")
     })
-    .catch(err => {
+    .catch((err) => {
       console.error(err)
       return null
     })
 }
 
-const getHash = pathname => {
+const getHash = (pathname) => {
   const components = pathname.split("/").filter(Boolean)
   if (components[0] !== "commit") {
     return null
@@ -183,7 +183,7 @@ exports.handler = (event, ctx, cb) => {
   const hash = getHash(pathname)
 
   return getIndexFile(hash)
-    .then(body => {
+    .then((body) => {
       if (!body) {
         console.error(`could not find file: ${uri}`)
         cb(null, {
@@ -199,7 +199,7 @@ exports.handler = (event, ctx, cb) => {
         body,
       })
     })
-    .catch(err => {
+    .catch((err) => {
       console.error(err, `error with request uri: ${uri}`)
       cb(err)
     })

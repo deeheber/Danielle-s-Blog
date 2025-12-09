@@ -4,11 +4,11 @@ import speakingData from "../data/speakingData.json"
 
 <section>
   {
-    speakingData.map(year => (
+    speakingData.map((year) => (
       <section id="all-talks">
         <h3>{year.year}</h3>
         <ul>
-          {year.content.map(talk => (
+          {year.content.map((talk) => (
             <li>
               <a
                 href={talk.link}

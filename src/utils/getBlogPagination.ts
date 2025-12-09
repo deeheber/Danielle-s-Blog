@@ -1,4 +1,5 @@
 import { SITE } from "@config"
+
 import getPageNumbers from "./getBlogPageNumbers"
 
 interface GetPaginationProps<T> {

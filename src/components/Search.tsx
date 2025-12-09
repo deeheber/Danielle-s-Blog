@@ -1,7 +1,8 @@
+import type { CollectionEntry } from "astro:content"
 import Fuse from "fuse.js"
 import React, { useEffect, useRef, useState, useMemo } from "react"
+
 import Card from "@components/Card"
-import type { CollectionEntry } from "astro:content"
 
 export type SearchItem = {
   title: string

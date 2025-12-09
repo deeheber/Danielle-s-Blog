@@ -1,4 +1,5 @@
 import type { CollectionEntry } from "astro:content"
+
 import postFilter from "./postFilter"
 
 const getSortedBlog = (blog: CollectionEntry<"blog">[]) => {

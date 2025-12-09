@@ -1,9 +1,10 @@
 import rss from "@astrojs/rss"
-import sanitizeHtml from "sanitize-html"
-import MarkdownIt from "markdown-it"
 import { getCollection } from "astro:content"
-import getSortedBlog from "@utils/getSortedBlogPosts"
+import MarkdownIt from "markdown-it"
+import sanitizeHtml from "sanitize-html"
+
 import { SITE } from "@config"
+import getSortedBlog from "@utils/getSortedBlogPosts"
 
 export async function GET() {
   const blog = await getCollection("blog")
