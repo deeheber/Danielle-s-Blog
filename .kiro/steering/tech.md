@@ -25,6 +25,18 @@
 - **Prettier**: Code formatting with Astro and TailwindCSS plugins
 - **TypeScript**: Strict configuration with path aliases
 
+## Testing Strategy
+
+This is a personal blog without automated tests. Quality assurance relies on:
+- **TypeScript Type Checking**: Compile-time validation via `npm run type-check`
+- **ESLint**: Code quality and best practices enforcement
+- **Prettier**: Consistent code formatting
+- **Local Preview**: Testing changes via `npm run build && npm run preview`
+- **Build Validation**: CI/CD pipeline ensures successful builds before deployment
+- **Manual Review**: Visual inspection of blog posts and features before publishing
+
+The static nature of the site and Astro's build-time validation make automated tests less critical than for dynamic applications.
+
 ## Code Style & Formatting
 
 ### ESLint Configuration
@@ -80,6 +92,64 @@ npm run sync         # Generate TypeScript types for Astro modules
 ## Node.js Version
 Check `.nvmrc` file for the required Node.js version.
 
+## Dependencies Management
+
+### Checking for Updates
+```bash
+npm outdated              # Check for outdated packages
+npm outdated --long       # Detailed view with package types
+```
+
+### Update Strategy
+
+**Patch Updates** (e.g., 5.0.1 → 5.0.2)
+- Safe to update regularly
+- Run `npm update` to update within current minor versions
+- Review changes and test build before committing
+
+**Minor Updates** (e.g., 5.0.x → 5.1.x)
+- Generally backward compatible but review changelog
+- Update individually: `npm install package@latest`
+- Test thoroughly, especially for core dependencies (Astro, React)
+
+**Major Updates** (e.g., 5.x.x → 6.x.x)
+- Review migration guides before updating
+- Key packages requiring extra care:
+  - **Astro**: Check migration guide, may require config changes
+  - **React**: Review breaking changes, update React components
+  - **TailwindCSS**: Review breaking changes in utility classes
+  - **TypeScript**: May require tsconfig.json adjustments
+- Test all functionality after major updates
+- Update one major dependency at a time
+
+### Security Updates
+- Monitor GitHub security alerts
+- Prioritize security patches regardless of version type
+- Run `npm audit` regularly to check for vulnerabilities
+- Apply fixes with `npm audit fix` (review changes first)
+
+### Best Practices
+- **Before Updates**: Commit all current changes
+- **After Updates**: Run full quality checks
+  ```bash
+  npm run type-check
+  npm run lint:check
+  npm run format:check
+  npm run build
+  ```
+- **Update Regularly**: Monthly check for minor/patch updates
+- **Document Breaking Changes**: Note any config or code changes in commits
+- **Lock File**: Always commit `package-lock.json` changes with dependency updates
+
+## Environment Variables
+
+This project does not require environment variables for local development or production builds. All configuration is managed through:
+- **Site Configuration**: `src/config.ts` contains site metadata, social links, and global settings
+- **Astro Configuration**: `astro.config.ts` for framework and integration settings
+- **Build-time Values**: All values are static and embedded during the build process
+
+If environment-specific configuration is needed in the future (e.g., analytics IDs, API keys), use Astro's built-in `import.meta.env` and document them here.
+
 ## Development Workflow
 
 ### Before Starting Development
@@ -99,6 +169,3 @@ Check `.nvmrc` file for the required Node.js version.
 - **Styling Issues**: Ensure TailwindCSS classes are correct and custom CSS uses proper variables
 - **Import Errors**: Use path aliases consistently (`@components/*` not `../components/`)
 - **Content Errors**: Verify blog post frontmatter matches schema in `src/content/config.ts`
-
-## Docker Development
-Use `docker-compose up -d` for containerized development. Access at same port as local development.
