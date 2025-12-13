@@ -68,7 +68,9 @@
 }
 
 @utility font-mono {
-  font-family: IBM Plex Mono, monospace;
+  font-family:
+    IBM Plex Mono,
+    monospace;
 }
 
 @layer base {
@@ -101,7 +103,7 @@
   }
 
   body {
-    @apply flex min-h-[100svh] flex-col bg-skin-fill font-lato text-skin-base;
+    @apply bg-skin-fill font-lato text-skin-base flex min-h-[100svh] flex-col;
   }
 
   body ::selection {
@@ -121,11 +123,11 @@
   }
 
   a {
-    @apply focus-visible:outline-2 focus-visible:outline-offset-1 focus-visible:outline-skin-fill focus-visible:no-underline focus-visible:outline-dashed;
+    @apply focus-visible:outline-skin-fill focus-visible:no-underline focus-visible:outline-2 focus-visible:outline-offset-1 focus-visible:outline-dashed;
   }
 
   svg {
-    @apply inline-block h-6 w-6 fill-skin-base group-hover:fill-skin-accent;
+    @apply fill-skin-base group-hover:fill-skin-accent inline-block h-6 w-6;
   }
 
   svg.icon-tabler {
@@ -226,7 +228,7 @@
   }
 
   .prose details {
-    @apply inline-block cursor-pointer select-none text-skin-base;
+    @apply text-skin-base inline-block cursor-pointer select-none;
   }
 
   .prose summary {

@@ -56,10 +56,10 @@ const next = currentPage < totalPages ? "" : "disabled"
 <style>
   @reference "../styles/base.css";
   .pagination-wrapper {
-    @apply mb-8 mt-auto flex justify-center;
+    @apply mt-auto mb-8 flex justify-center;
   }
   .disabled {
-    @apply pointer-events-none select-none opacity-50 hover:text-skin-base group-hover:fill-skin-base;
+    @apply hover:text-skin-base group-hover:fill-skin-base pointer-events-none opacity-50 select-none;
   }
   .disabled-svg {
     @apply group-hover:!fill-skin-base;
