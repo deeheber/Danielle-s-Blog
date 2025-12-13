@@ -72,7 +72,7 @@ const latestFive = sortedData.slice(0, 5)
               <li id="talk-list">
                 <a
                   href={content.link}
-                  class="inline-block text-lg font-medium text-skin-accent decoration-dashed underline-offset-4 hover:underline focus-visible:no-underline focus-visible:underline-offset-0"
+                  class="external-link"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -101,9 +101,10 @@ const latestFive = sortedData.slice(0, 5)
 </Layout>
 
 <style>
+  @reference "../styles/base.css";
   /* ===== Hero Section ===== */
   #hero {
-    @apply pb-6 pt-8;
+    @apply pt-8 pb-6;
   }
   #hero h1 {
     @apply my-4 inline-block text-3xl font-bold sm:my-8 sm:text-5xl;
@@ -112,7 +113,7 @@ const latestFive = sortedData.slice(0, 5)
     @apply mb-6;
   }
   #hero .rss-icon {
-    @apply mb-2 h-6 w-6 scale-110 fill-skin-accent sm:mb-3 sm:scale-125;
+    @apply fill-skin-accent mb-2 h-6 w-6 scale-110 sm:mb-3 sm:scale-125;
   }
   #hero p {
     @apply my-2;
@@ -121,14 +122,14 @@ const latestFive = sortedData.slice(0, 5)
     @apply mt-4 flex flex-col sm:flex-row sm:items-center;
   }
   .social-links {
-    @apply mb-1 mr-2 whitespace-nowrap sm:mb-0;
+    @apply mr-2 mb-1 whitespace-nowrap sm:mb-0;
   }
 
   /* ===== Featured & Recent blog Sections ===== */
   #featured,
   #recent-blog,
   .talk-list {
-    @apply pb-6 pt-12;
+    @apply pt-12 pb-6;
   }
   #featured h2,
   #recent-blog h2,
@@ -140,6 +141,6 @@ const latestFive = sortedData.slice(0, 5)
   }
 
   #talk-list {
-    @apply my-4 font-merri sm:my-8 sm:text-xl;
+    @apply font-merri my-4 sm:my-8 sm:text-xl;
   }
 </style>

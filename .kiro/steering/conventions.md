@@ -56,6 +56,11 @@ npm run lint     # Auto-fix ESLint issues
 npm run format   # Auto-format code with Prettier
 ```
 
+### CI/CD Validation
+- **Pull Requests**: GitHub Actions automatically runs format, lint, and type checks
+- **Manual Testing**: PR checklist includes testing main pages, search, and RSS feed
+- **Ensure CI Passes**: Always verify GitHub Actions pass before merging PRs
+
 ### IDE Integration
 - **ESLint**: Configure your editor to show linting errors inline
 - **Prettier**: Enable format-on-save for automatic formatting

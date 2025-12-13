@@ -62,11 +62,13 @@ All commands are run from the root of the project, from a terminal:
 
 ## 💻 My Tech Stack
 
-**Main Framework** - [Astro](https://astro.build/)  
+**Main Framework** - [Astro 5.x](https://astro.build/)  
 **Type Checking** - [TypeScript](https://www.typescriptlang.org/)  
-**Component Framework** - [ReactJS](https://reactjs.org/)  
-**Styling** - [TailwindCSS](https://tailwindcss.com/)  
+**Component Framework** - [React 19.x](https://reactjs.org/)  
+**Styling** - [TailwindCSS 4.x](https://tailwindcss.com/)  
 **Fuzzy Search** - [FuseJS](https://fusejs.io/)  
+**Icons & Images** - [Satori](https://github.com/vercel/satori) & [@resvg/resvg-js](https://github.com/yisibl/resvg-js) for OpenGraph generation  
+**Build Optimization** - [Jampack](https://jampack.divriots.com/)  
 **Code Formatting** - [Prettier](https://prettier.io/)  
 **Linting** - [ESLint](https://eslint.org/)  
 **Deployment** - [Cloudflare Pages](https://pages.cloudflare.com/)

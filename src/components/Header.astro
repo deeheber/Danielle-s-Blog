@@ -92,7 +92,7 @@ const { activeNav } = Astro.props
         </button>
         <ul
           id="menu-items"
-          class="display-none sm:flex"
+          class="display-none sm:!flex"
         >
           <li>
             <a
@@ -134,7 +134,7 @@ const { activeNav } = Astro.props
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                class="scale-125 sm:scale-100"
+                class="h-6 w-6 scale-125 sm:scale-100"
                 tabindex="0"
                 role="img"
                 aria-label="search"
@@ -185,36 +185,42 @@ const { activeNav } = Astro.props
 </header>
 
 <style>
+  @reference "../styles/base.css";
   #skip-to-content {
-    @apply absolute -top-full left-16 z-50 bg-skin-accent px-3 py-2 text-skin-inverted transition-all focus:top-4;
+    @apply bg-skin-accent text-skin-inverted absolute -top-full left-16 z-50 px-3 py-2 transition-all focus:top-4;
   }
   .nav-container {
-    @apply mx-auto flex max-w-3xl flex-col items-center justify-between sm:flex-row;
+    @apply mx-auto flex max-w-4xl flex-col items-center justify-between sm:flex-row;
   }
   .top-nav-wrap {
     @apply relative flex w-full items-start justify-between p-4 sm:items-end sm:py-8;
   }
   .logo {
-    @apply absolute py-1 text-xl font-semibold sm:static sm:text-2xl;
+    @apply absolute h-auto w-full max-w-[50px] py-1 text-xl font-semibold sm:static sm:max-w-[350px] sm:text-2xl;
   }
   .hamburger-menu {
     @apply self-end p-2 sm:hidden;
   }
   .hamburger-menu svg {
-    @apply h-6 w-6 scale-125 fill-skin-base;
+    @apply fill-skin-base h-6 w-6 scale-125;
   }
 
   nav {
     @apply flex w-full flex-col items-center sm:ml-2 sm:flex-row sm:justify-end sm:space-x-4 sm:py-0;
   }
   nav ul {
-    @apply mt-4 grid w-44 grid-cols-2 grid-rows-4 gap-x-2 gap-y-2 sm:ml-0 sm:mt-0 sm:w-auto sm:gap-x-5 sm:gap-y-0;
+    @apply mt-4 w-44 grid-cols-2 grid-rows-4 gap-x-2 gap-y-2 sm:mt-0 sm:ml-0 sm:flex sm:w-auto sm:flex-row sm:gap-x-5 sm:gap-y-0;
+    display: grid;
+  }
+
+  nav ul.display-none {
+    @apply hidden sm:flex;
   }
   nav ul li {
-    @apply col-span-2 flex items-center justify-center;
+    @apply col-span-2 flex items-center justify-center sm:col-span-1;
   }
   nav ul li a {
-    @apply w-full px-4 py-3 text-center font-black hover:text-skin-accent sm:my-0 sm:px-2 sm:py-1;
+    @apply hover:text-skin-accent w-full px-4 py-3 text-center font-black sm:my-0 sm:px-2 sm:py-1;
   }
 
   nav ul li a::after {
@@ -223,7 +229,6 @@ const { activeNav } = Astro.props
 
   nav ul li a:hover::after {
     content: "}";
-    color: var(--tw-text-opacity, 1);
     @apply text-skin-accent;
   }
 
@@ -233,7 +238,6 @@ const { activeNav } = Astro.props
 
   nav ul li a:hover::before {
     content: "{";
-    color: var(--tw-text-opacity, 1);
     @apply text-skin-accent;
   }
 
@@ -255,13 +259,13 @@ const { activeNav } = Astro.props
     @apply p-1;
   }
   nav button svg {
-    @apply h-6 w-6 fill-skin-base hover:fill-skin-accent;
+    @apply fill-skin-base hover:fill-skin-accent h-6 w-6;
   }
   #theme-btn {
     @apply p-3 sm:p-1;
   }
   #theme-btn svg {
-    @apply scale-125 hover:rotate-12 sm:scale-100;
+    @apply h-6 w-6 scale-125 hover:rotate-12 sm:scale-100;
   }
 
   .menu-icon line {
@@ -275,15 +279,6 @@ const { activeNav } = Astro.props
   }
   .menu-icon.is-active .close {
     @apply opacity-100;
-  }
-  .logo {
-    @apply h-auto w-full max-w-350px;
-  }
-
-  @media (max-width: 640px) {
-    .logo {
-      max-width: 50px; /* For screens smaller than 640px, allow the image to take full width */
-    }
   }
 </style>
 
