@@ -3,10 +3,10 @@
 ## Core Framework
 - **Astro 5.x**: Static site generator with component islands architecture
 - **React 19.x**: Component framework for interactive elements
-- **TypeScript**: Strict type checking with exact optional property types
+- **TypeScript 5.x**: Strict type checking with exact optional property types
 
 ## Styling & UI
-- **TailwindCSS**: Utility-first CSS framework with custom theme
+- **TailwindCSS 4.x**: Utility-first CSS framework with custom theme and Vite integration
 - **Custom CSS Variables**: Theme system using CSS custom properties for colors
 - **Typography Plugin**: @tailwindcss/typography for markdown content styling
 
