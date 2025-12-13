@@ -1,20 +1,16 @@
 import react from "@astrojs/react"
 import sitemap from "@astrojs/sitemap"
+import tailwindcss from "@tailwindcss/vite"
 import { defineConfig } from "astro/config"
 import remarkCollapse from "remark-collapse"
 import remarkToc from "remark-toc"
 
 import { SITE } from "./src/config"
 
-import tailwindcss from "@tailwindcss/vite";
-
 // https://astro.build/config
 export default defineConfig({
   site: SITE.website,
-  integrations: [
-    react(),
-    sitemap(),
-  ],
+  integrations: [react(), sitemap()],
   markdown: {
     remarkPlugins: [
       remarkToc,

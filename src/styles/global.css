@@ -51,7 +51,7 @@
 
   /* Restore most of the original styling using standard CSS */
   body {
-    font-family: 'Lato', sans-serif;
+    font-family: "Lato", sans-serif;
     color: rgb(var(--color-text-base));
     background-color: rgb(var(--color-fill));
     min-height: 100svh;
@@ -59,12 +59,15 @@
     flex-direction: column;
   }
 
-  h1, h2, h3 {
-    font-family: 'Merriweather', serif;
+  h1,
+  h2,
+  h3 {
+    font-family: "Merriweather", serif;
     font-weight: bold;
   }
 
-  section, footer {
+  section,
+  footer {
     margin: 0 auto;
     max-width: 48rem; /* equivalent to max-w-3xl */
     padding: 0 1rem;
@@ -133,7 +136,8 @@
     background-color: rgb(var(--color-card-muted));
   }
 
-  code, blockquote {
+  code,
+  blockquote {
     word-wrap: break-word;
   }
 
@@ -215,12 +219,12 @@
   .display-none {
     display: none;
   }
-  
+
   .focus-outline {
     outline: 2px dashed transparent;
     outline-offset: 2px;
   }
-  
+
   .focus-outline:focus-visible {
     outline-style: dashed;
   }
@@ -230,14 +234,14 @@
     padding-bottom: 1.5rem;
     padding-top: 2rem;
   }
-  
+
   .hero-h1 {
     margin: 1rem 0;
     display: inline-block;
     font-size: 1.875rem;
     font-weight: bold;
   }
-  
+
   @media (min-width: 640px) {
     .hero-h1 {
       margin: 2rem 0;
