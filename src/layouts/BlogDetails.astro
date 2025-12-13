@@ -115,6 +115,7 @@ const layoutProps = {
 </Layout>
 
 <style>
+  @reference "../styles/base.css";
   main {
     @apply mx-auto w-full max-w-3xl px-4 pb-12;
   }
@@ -143,12 +144,20 @@ const layoutProps = {
 
   /** Initialize all functionality when DOM is ready */
   function initializePage() {
+    // Only run on blog detail pages
+    const isBlogDetailPage = document.querySelector("#article") !== null
+
     /** Create a progress indicator at the top */
     function createProgressBar() {
       // Remove existing progress bar to avoid duplicates
       const existingBar = document.querySelector(".progress-container")
       if (existingBar) {
         existingBar.remove()
+      }
+
+      // Only create progress bar on blog detail pages
+      if (!isBlogDetailPage) {
+        return
       }
 
       // Create the main container div

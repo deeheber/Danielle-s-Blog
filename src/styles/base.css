@@ -1,6 +1,75 @@
-@import "tailwindcss/base";
-@import "tailwindcss/components";
-@import "tailwindcss/utilities";
+@import "tailwindcss";
+@config "../../tailwind.config.js";
+@plugin "@tailwindcss/typography";
+
+/* Custom skin utilities */
+@utility bg-skin-fill {
+  background-color: rgb(var(--color-fill));
+}
+
+@utility bg-skin-accent {
+  background-color: rgb(var(--color-accent));
+}
+
+@utility bg-skin-inverted {
+  background-color: rgb(var(--color-text-base));
+}
+
+@utility bg-skin-card {
+  background-color: rgb(var(--color-card));
+}
+
+@utility bg-skin-card-muted {
+  background-color: rgb(var(--color-card-muted));
+}
+
+@utility text-skin-base {
+  color: rgb(var(--color-text-base));
+}
+
+@utility text-skin-accent {
+  color: rgb(var(--color-accent));
+}
+
+@utility text-skin-inverted {
+  color: rgb(var(--color-fill));
+}
+
+@utility outline-skin-fill {
+  outline-color: rgb(var(--color-accent));
+}
+
+@utility border-skin-line {
+  border-color: rgb(var(--color-border));
+}
+
+@utility border-skin-fill {
+  border-color: rgb(var(--color-text-base));
+}
+
+@utility border-skin-accent {
+  border-color: rgb(var(--color-accent));
+}
+
+@utility fill-skin-base {
+  fill: rgb(var(--color-text-base));
+}
+
+@utility fill-skin-accent {
+  fill: rgb(var(--color-accent));
+}
+
+@utility font-lato {
+  font-family: Lato, sans-serif;
+}
+
+@utility font-merri {
+  font-family: Merriweather, serif;
+}
+
+@utility font-mono {
+  font-family: IBM Plex Mono, monospace;
+}
 
 @layer base {
   :root,
@@ -32,7 +101,12 @@
   }
 
   body {
-    @apply flex min-h-[100svh] flex-col bg-skin-fill font-lato text-skin-base selection:bg-skin-accent selection:bg-opacity-70 selection:text-skin-inverted;
+    @apply flex min-h-[100svh] flex-col bg-skin-fill font-lato text-skin-base;
+  }
+
+  body ::selection {
+    background-color: rgba(var(--color-accent), 0.7);
+    color: rgb(var(--color-fill));
   }
 
   h1,
@@ -47,7 +121,7 @@
   }
 
   a {
-    @apply outline-2 outline-offset-1 outline-skin-fill focus-visible:no-underline focus-visible:outline-dashed;
+    @apply focus-visible:outline-2 focus-visible:outline-offset-1 focus-visible:outline-skin-fill focus-visible:no-underline focus-visible:outline-dashed;
   }
 
   svg {
@@ -58,12 +132,87 @@
     @apply inline-block h-6 w-6 scale-125 fill-transparent stroke-current stroke-2 opacity-90 group-hover:fill-transparent sm:scale-110;
   }
 
-  .prose {
-    @apply prose-headings:!mb-3 prose-headings:!text-skin-base prose-h3:italic prose-p:!text-skin-base prose-a:!text-skin-base prose-a:!decoration-dashed prose-a:underline-offset-8 hover:prose-a:text-skin-accent prose-blockquote:!border-l-skin-accent prose-blockquote:border-opacity-50 prose-blockquote:opacity-80 prose-figcaption:!text-skin-base prose-figcaption:opacity-70 prose-strong:!text-skin-base prose-code:rounded prose-code:bg-skin-card prose-code:bg-opacity-75 prose-code:p-1 prose-code:before:!content-none prose-code:after:!content-none prose-ol:!text-skin-base prose-ul:overflow-x-clip prose-ul:!text-skin-base prose-li:marker:!text-skin-accent prose-table:text-skin-base prose-th:border prose-th:border-skin-line prose-td:border prose-td:border-skin-line prose-img:!my-2 prose-img:mx-auto prose-img:border-2 prose-img:border-skin-line prose-hr:!border-skin-line;
+  .prose :where(h1, h2, h3, h4, h5, h6) {
+    margin-bottom: 0.75rem !important;
+    color: rgb(var(--color-text-base)) !important;
+    font-weight: bold;
   }
 
-  .prose a {
-    @apply break-words hover:!text-skin-accent;
+  .prose :where(h3) {
+    font-style: italic;
+  }
+
+  .prose :where(p) {
+    color: rgb(var(--color-text-base)) !important;
+  }
+
+  .prose :where(a) {
+    color: rgb(var(--color-text-base)) !important;
+    text-decoration-style: dashed !important;
+    text-underline-offset: 8px;
+    word-break: break-word;
+  }
+
+  .prose :where(a:hover) {
+    color: rgb(var(--color-accent)) !important;
+  }
+
+  .prose :where(blockquote) {
+    border-left-color: rgb(var(--color-accent)) !important;
+    border-left-width: 4px;
+    opacity: 0.8;
+  }
+
+  .prose :where(figcaption) {
+    color: rgb(var(--color-text-base)) !important;
+    opacity: 0.7;
+  }
+
+  .prose :where(strong) {
+    color: rgb(var(--color-text-base)) !important;
+  }
+
+  .prose :where(code) {
+    border-radius: 0.25rem;
+    background-color: rgba(var(--color-card), 0.75);
+    padding: 0.25rem;
+  }
+
+  .prose :where(code::before),
+  .prose :where(code::after) {
+    content: none !important;
+  }
+
+  .prose :where(ol, ul) {
+    color: rgb(var(--color-text-base)) !important;
+  }
+
+  .prose :where(ul) {
+    overflow-x: clip;
+  }
+
+  .prose :where(li::marker) {
+    color: rgb(var(--color-accent)) !important;
+  }
+
+  .prose :where(table) {
+    color: rgb(var(--color-text-base));
+  }
+
+  .prose :where(th, td) {
+    border: 1px solid rgb(var(--color-border));
+  }
+
+  .prose :where(img) {
+    margin-top: 0.5rem !important;
+    margin-bottom: 0.5rem !important;
+    margin-left: auto;
+    margin-right: auto;
+    border: 2px solid rgb(var(--color-border));
+  }
+
+  .prose :where(hr) {
+    border-color: rgb(var(--color-border)) !important;
   }
 
   .prose thead th:first-child,
@@ -123,11 +272,12 @@
   }
 }
 
-@layer components {
-  .display-none {
-    @apply hidden;
-  }
-  .focus-outline {
-    @apply focus-visible:outline-dashed;
+@utility display-none {
+  display: none;
+}
+
+@utility focus-outline {
+  &:focus-visible {
+    outline-style: dashed;
   }
 }
