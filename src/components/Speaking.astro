@@ -12,7 +12,7 @@ import speakingData from "../data/speakingData.json"
             <li>
               <a
                 href={talk.link}
-                class="text-skin-accent inline-block text-lg font-medium decoration-dashed underline-offset-4 hover:underline focus-visible:no-underline focus-visible:underline-offset-0"
+                class="external-link"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -28,10 +28,10 @@ import speakingData from "../data/speakingData.json"
   <style>
     @reference "../styles/base.css";
     section {
-      @apply mx-auto w-full max-w-4xl px-4 pb-4;
+      @apply w-full pb-4;
     }
     #all-talks {
-      @apply max-w-4xl px-4 pb-4;
+      @apply pb-4;
     }
     #all-talks h3 {
       @apply text-2xl font-semibold sm:text-3xl;

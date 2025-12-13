@@ -135,87 +135,94 @@
     @apply inline-block h-6 w-6 scale-125 fill-transparent stroke-current stroke-2 opacity-90 group-hover:fill-transparent sm:scale-110;
   }
 
-  .prose :where(h1, h2, h3, h4, h5, h6) {
-    margin-bottom: 0.75rem !important;
-    color: rgb(var(--color-text-base)) !important;
+  /* Prose text color - base */
+  .prose h1,
+  .prose h2,
+  .prose h3,
+  .prose h4,
+  .prose h5,
+  .prose h6,
+  .prose p,
+  .prose a,
+  .prose strong,
+  .prose figcaption,
+  .prose ol,
+  .prose ul,
+  .prose table {
+    color: rgb(var(--color-text-base));
+  }
+
+  /* Prose accent colors */
+  .prose a:hover,
+  .prose li::marker {
+    color: rgb(var(--color-accent));
+  }
+
+  /* Prose headings */
+  .prose h1,
+  .prose h2,
+  .prose h3,
+  .prose h4,
+  .prose h5,
+  .prose h6 {
+    margin-bottom: 0.75rem;
     font-weight: bold;
   }
 
-  .prose :where(h3) {
+  .prose h3 {
     font-style: italic;
   }
 
-  .prose :where(p) {
-    color: rgb(var(--color-text-base)) !important;
-  }
-
-  .prose :where(a) {
-    color: rgb(var(--color-text-base)) !important;
-    text-decoration-style: dashed !important;
+  /* Prose links */
+  .prose a {
+    text-decoration-style: dashed;
     text-underline-offset: 8px;
     word-break: break-word;
   }
 
-  .prose :where(a:hover) {
-    color: rgb(var(--color-accent)) !important;
-  }
-
-  .prose :where(blockquote) {
-    border-left-color: rgb(var(--color-accent)) !important;
+  /* Prose blockquotes */
+  .prose blockquote {
+    border-left-color: rgb(var(--color-accent));
     border-left-width: 4px;
     opacity: 0.8;
   }
 
-  .prose :where(figcaption) {
-    color: rgb(var(--color-text-base)) !important;
+  .prose figcaption {
     opacity: 0.7;
   }
 
-  .prose :where(strong) {
-    color: rgb(var(--color-text-base)) !important;
-  }
-
-  .prose :where(code) {
+  /* Prose code */
+  .prose code {
     border-radius: 0.25rem;
     background-color: rgba(var(--color-card), 0.75);
     padding: 0.25rem;
   }
 
-  .prose :where(code::before),
-  .prose :where(code::after) {
-    content: none !important;
+  .prose code::before,
+  .prose code::after {
+    content: none;
   }
 
-  .prose :where(ol, ul) {
-    color: rgb(var(--color-text-base)) !important;
-  }
-
-  .prose :where(ul) {
+  .prose ul {
     overflow-x: clip;
   }
 
-  .prose :where(li::marker) {
-    color: rgb(var(--color-accent)) !important;
-  }
-
-  .prose :where(table) {
-    color: rgb(var(--color-text-base));
-  }
-
-  .prose :where(th, td) {
+  /* Prose borders */
+  .prose th,
+  .prose td {
     border: 1px solid rgb(var(--color-border));
   }
 
-  .prose :where(img) {
-    margin-top: 0.5rem !important;
-    margin-bottom: 0.5rem !important;
+  .prose img {
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
     margin-left: auto;
     margin-right: auto;
     border: 2px solid rgb(var(--color-border));
   }
 
-  .prose :where(hr) {
-    border-color: rgb(var(--color-border)) !important;
+  .prose hr {
+    border-color: rgb(var(--color-border));
   }
 
   .prose thead th:first-child,
@@ -283,4 +290,87 @@
   &:focus-visible {
     outline-style: dashed;
   }
+}
+
+/* Reusable component utilities */
+@utility link-btn {
+  padding: 0.5rem;
+  &:hover {
+    rotate: 6deg;
+  }
+}
+
+@utility container-content {
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  max-width: 56rem; /* 4xl */
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+@utility flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@utility flex-center-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+@utility external-link {
+  display: inline-block;
+  font-size: 1.125rem; /* text-lg */
+  font-weight: 500; /* font-medium */
+  text-decoration-style: dashed;
+  text-underline-offset: 4px;
+  color: rgb(var(--color-accent));
+  &:hover {
+    text-decoration-line: underline;
+  }
+  &:focus-visible {
+    text-decoration-line: none;
+    text-underline-offset: 0;
+  }
+}
+
+/* Blog post utilities */
+@utility progress-container {
+  position: fixed;
+  top: 0;
+  z-index: 10;
+  height: 0.25rem; /* h-1 */
+  width: 100%;
+  background-color: rgb(var(--color-fill));
+}
+
+@utility progress-bar {
+  height: 0.25rem; /* h-1 */
+  width: 0;
+  background-color: rgb(var(--color-accent));
+}
+
+@utility heading-link {
+  display: none;
+  margin-left: 0.5rem; /* ml-2 */
+  .group:hover & {
+    display: inline-block;
+  }
+}
+
+@utility copy-code {
+  position: absolute;
+  right: 0.75rem; /* right-3 */
+  top: -0.75rem; /* -top-3 */
+  border-radius: 0.25rem;
+  background-color: rgb(var(--color-card));
+  padding: 0.25rem 0.5rem; /* px-2 py-1 */
+  font-size: 0.75rem; /* text-xs */
+  line-height: 1rem; /* leading-4 */
+  color: rgb(var(--color-text-base));
+  font-weight: 500; /* font-medium */
 }
