@@ -125,6 +125,7 @@
 
   a {
     @apply focus-visible:outline-skin-fill focus-visible:no-underline focus-visible:outline-2 focus-visible:outline-offset-1 focus-visible:outline-dashed;
+    cursor: pointer;
   }
 
   svg {
@@ -158,6 +159,7 @@
     border-bottom: 1px dashed rgb(var(--color-accent));
     padding-bottom: 2px;
     word-break: break-word;
+    cursor: pointer;
   }
 
   /* Prose accent colors */
@@ -196,6 +198,7 @@
     border-radius: 0.25rem;
     background-color: rgba(var(--color-card), 0.75);
     padding: 0.25rem;
+    color: rgb(var(--color-accent)) !important;
   }
 
   .prose code::before,
@@ -326,11 +329,15 @@
   display: inline-block;
   font-size: 1.125rem; /* text-lg */
   font-weight: 500; /* font-medium */
+  text-decoration-line: underline;
   text-decoration-style: dashed;
   text-underline-offset: 4px;
   color: rgb(var(--color-accent));
-  &:hover {
-    text-decoration-line: underline;
+  @media (min-width: 640px) {
+    text-decoration-line: none;
+    &:hover {
+      text-decoration-line: underline;
+    }
   }
   &:focus-visible {
     text-decoration-line: none;
