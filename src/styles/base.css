@@ -143,19 +143,26 @@
   .prose h5,
   .prose h6,
   .prose p,
-  .prose a,
   .prose strong,
   .prose figcaption,
   .prose ol,
   .prose ul,
   .prose table {
-    color: rgb(var(--color-text-base));
+    color: rgb(var(--color-text-base)) !important;
+  }
+
+  /* Prose links use accent color with dashed underline */
+  .prose a {
+    color: rgb(var(--color-accent)) !important;
+    text-decoration: none !important;
+    border-bottom: 1px dashed rgb(var(--color-accent));
+    padding-bottom: 2px;
+    word-break: break-word;
   }
 
   /* Prose accent colors */
-  .prose a:hover,
   .prose li::marker {
-    color: rgb(var(--color-accent));
+    color: rgb(var(--color-accent)) !important;
   }
 
   /* Prose headings */
@@ -171,13 +178,6 @@
 
   .prose h3 {
     font-style: italic;
-  }
-
-  /* Prose links */
-  .prose a {
-    text-decoration-style: dashed;
-    text-underline-offset: 8px;
-    word-break: break-word;
   }
 
   /* Prose blockquotes */
