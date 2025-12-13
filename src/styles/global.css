@@ -1,0 +1,247 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+@theme {
+  /* Font Families */
+  --font-family-mono: "IBM Plex Mono", monospace;
+  --font-family-merri: "Merriweather", serif;
+  --font-family-lato: "Lato", sans-serif;
+
+  /* Max Width Extensions */
+  --width-350px: 350px;
+
+  /* Custom Colors for skin theme system */
+  --color-skin-base: rgb(var(--color-text-base));
+  --color-skin-accent: rgb(var(--color-accent));
+  --color-skin-inverted: rgb(var(--color-fill));
+  --color-skin-fill: rgb(var(--color-fill));
+  --color-skin-card: rgb(var(--color-card));
+  --color-skin-card-muted: rgb(var(--color-card-muted));
+  --color-skin-line: rgb(var(--color-border));
+}
+
+@layer base {
+  :root,
+  html[data-theme="light"] {
+    --color-fill: 238, 232, 205;
+    --color-text-base: 4, 47, 46;
+    --color-accent: 4, 47, 46;
+    --color-card: 217, 209, 195;
+    --color-card-muted: 239, 216, 176;
+    --color-border: 4, 47, 46;
+  }
+
+  html[data-theme="dark"] {
+    --color-fill: 4, 47, 46;
+    --color-text-base: 238, 232, 205;
+    --color-accent: 238, 232, 205;
+    --color-card: 63, 75, 90;
+    --color-card-muted: 89, 107, 129;
+    --color-border: 59, 70, 85;
+  }
+
+  #sun-svg,
+  html[data-theme="dark"] #moon-svg {
+    display: none;
+  }
+  #moon-svg,
+  html[data-theme="dark"] #sun-svg {
+    display: block;
+  }
+
+  /* Restore most of the original styling using standard CSS */
+  body {
+    font-family: 'Lato', sans-serif;
+    color: rgb(var(--color-text-base));
+    background-color: rgb(var(--color-fill));
+    min-height: 100svh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  h1, h2, h3 {
+    font-family: 'Merriweather', serif;
+    font-weight: bold;
+  }
+
+  section, footer {
+    margin: 0 auto;
+    max-width: 48rem; /* equivalent to max-w-3xl */
+    padding: 0 1rem;
+  }
+
+  a {
+    outline: 2px solid transparent;
+    outline-offset: 1px;
+  }
+
+  a:focus-visible {
+    text-decoration: none;
+    outline: 2px dashed rgb(var(--color-fill));
+  }
+
+  svg {
+    display: inline-block;
+    height: 1.5rem;
+    width: 1.5rem;
+    fill: rgb(var(--color-text-base));
+  }
+
+  .group:hover svg {
+    fill: rgb(var(--color-accent));
+  }
+
+  svg.icon-tabler {
+    display: inline-block;
+    height: 1.5rem;
+    width: 1.5rem;
+    scale: 1.125;
+    fill: transparent;
+    stroke: currentColor;
+    stroke-width: 2;
+    opacity: 0.9;
+  }
+
+  .group:hover svg.icon-tabler {
+    fill: transparent;
+  }
+
+  @media (min-width: 640px) {
+    svg.icon-tabler {
+      scale: 1.1;
+    }
+  }
+
+  /* Scrollbar styling */
+  html {
+    overflow-y: scroll;
+  }
+
+  ::-webkit-scrollbar {
+    width: 0.75rem;
+  }
+
+  ::-webkit-scrollbar-track {
+    background-color: rgb(var(--color-fill));
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: rgb(var(--color-card));
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: rgb(var(--color-card-muted));
+  }
+
+  code, blockquote {
+    word-wrap: break-word;
+  }
+
+  pre > code {
+    white-space: pre;
+  }
+
+  /* Prose styling for typography plugin */
+  .prose {
+    /* Most prose styles will be handled by the typography plugin */
+    --tw-prose-body: rgb(var(--color-text-base));
+    --tw-prose-headings: rgb(var(--color-text-base));
+    --tw-prose-links: rgb(var(--color-text-base));
+    --tw-prose-links-hover: rgb(var(--color-accent));
+    --tw-prose-bold: rgb(var(--color-text-base));
+    --tw-prose-counters: rgb(var(--color-accent));
+    --tw-prose-bullets: rgb(var(--color-accent));
+    --tw-prose-hr: rgb(var(--color-border));
+    --tw-prose-quotes: rgb(var(--color-accent));
+    --tw-prose-quote-borders: rgb(var(--color-accent));
+    --tw-prose-captions: rgb(var(--color-text-base));
+    --tw-prose-code: rgb(var(--color-text-base));
+    --tw-prose-pre-code: inherit;
+    --tw-prose-pre-bg: rgb(var(--color-card));
+    --tw-prose-th-borders: rgb(var(--color-border));
+    --tw-prose-td-borders: rgb(var(--color-border));
+  }
+
+  .prose a {
+    text-decoration: underline;
+    text-decoration-style: dashed;
+    text-underline-offset: 8px;
+    word-break: break-words;
+  }
+
+  .prose a:hover {
+    color: rgb(var(--color-accent));
+  }
+
+  .prose h2#table-of-contents {
+    margin-bottom: 0.5rem;
+  }
+
+  .prose h2#table-of-contents + p {
+    display: none;
+  }
+
+  .prose details {
+    display: inline-block;
+    cursor: pointer;
+    user-select: none;
+    color: rgb(var(--color-text-base));
+  }
+
+  .prose code {
+    border-radius: 0.25rem;
+    background-color: rgba(var(--color-card), 0.75);
+    padding: 0.25rem;
+  }
+
+  .prose code:before,
+  .prose code:after {
+    content: none;
+  }
+
+  .prose img {
+    margin: 0.5rem auto;
+    border: 2px solid rgb(var(--color-border));
+  }
+
+  .prose thead th:first-child,
+  .prose tbody td:first-child,
+  .prose tfoot td:first-child {
+    padding-left: 0.5714286em;
+  }
+}
+
+@layer components {
+  .display-none {
+    display: none;
+  }
+  
+  .focus-outline {
+    outline: 2px dashed transparent;
+    outline-offset: 2px;
+  }
+  
+  .focus-outline:focus-visible {
+    outline-style: dashed;
+  }
+
+  /* Component styles moved from individual files */
+  .hero-section {
+    padding-bottom: 1.5rem;
+    padding-top: 2rem;
+  }
+  
+  .hero-h1 {
+    margin: 1rem 0;
+    display: inline-block;
+    font-size: 1.875rem;
+    font-weight: bold;
+  }
+  
+  @media (min-width: 640px) {
+    .hero-h1 {
+      margin: 2rem 0;
+      font-size: 3rem;
+    }
+  }
+}
