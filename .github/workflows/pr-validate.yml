@@ -60,17 +60,15 @@ jobs:
           TIMESTAMP=$(date -u +'%Y-%m-%d %H:%M:%S UTC')
           FINAL_BODY="${COMMENT_BODY//TIMESTAMP_PLACEHOLDER_/$TIMESTAMP}"
 
-          # Find the last comment made by github-actions bot with our marker
-          COMMENT_ID=$(gh api repos/${{ github.repository }}/issues/${{ github.event.pull_request.number }}/comments \
-            --jq '.[] | select(.user.login == "github-actions[bot]" and (.body | contains("<!-- pr-validation-checklist -->"))) | .id' \
+          # Find existing comment with our marker
+          COMMENT_ID=$(gh pr view ${{ github.event.pull_request.number }} --json comments \
+            --jq '.comments[] | select(.author.login == "github-actions[bot]" and (.body | contains("<!-- pr-validation-checklist -->"))) | .id' \
             | tail -1)
 
           if [ -n "$COMMENT_ID" ]; then
-            # Update existing bot comment
-            gh api repos/${{ github.repository }}/issues/comments/$COMMENT_ID \
-              -X PATCH \
-              -f body="$FINAL_BODY"
+            # Update existing comment
+            gh pr comment ${{ github.event.pull_request.number }} --edit $COMMENT_ID --body "$FINAL_BODY"
           else
-            # Create new comment if none exists
+            # Create new comment
             gh pr comment ${{ github.event.pull_request.number }} --body "$FINAL_BODY"
           fi
