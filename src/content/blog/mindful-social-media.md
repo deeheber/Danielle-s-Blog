@@ -1,6 +1,6 @@
 ---
 author: Danielle Heberling
-pubDatetime: 2026-01-15T10:12:03.284Z
+pubDatetime: 2026-01-17T10:12:03.284Z
 title: Use Social Media Mindfully
 description: Danielle's approach to social media in 2026
 ---
