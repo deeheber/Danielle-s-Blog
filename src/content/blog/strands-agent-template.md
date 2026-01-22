@@ -1,9 +1,13 @@
 ---
 author: Danielle Heberling
-title: A Strands Agent Template (For the Impatient)
+title: A Strands Agent Template for the Impatient
 pubDatetime: 2026-01-19T10:12:03.284Z
 description: A Template for Deploying Strands Agents on AWS
 ---
+
+![Puzzle](/assets/puzzle.jpg)
+
+> Photo by <a href="https://unsplash.com/@ttepavac?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Tanja Tepavac</a> on <a href="https://unsplash.com/photos/a-piece-of-a-puzzle-with-a-missing-piece-cWMhxNmQVq0?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
 
 Ever since AWS announced <a href="https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/agents-tools-runtime.html" target="_blank" rel="noopener noreferrer">Bedrock AgentCore Runtime</a> back in July 2025, I've been experimenting with deploying agents to production. The hype around "agentic AI" is everywhere, but most examples I found were either too simple or way too complex for what I actually needed.
 
