@@ -15,7 +15,7 @@ Here's what I wanted 👉 a way to go from zero to a deployed agent on AWS witho
 
 ## What I Built
 
-The <a href="https://github.com/deeheber/strands-agent-template" target="_blank" rel="noopener noreferrer">strands-agent-template</a> repo is a GitHub template that gives you everything you need to deploy a <a href="https://strandsagents.com/latest/" target="_blank" rel="noopener noreferrer">Strands agent</a> to AWS Bedrock AgentCore Runtime. Click "Use this template" and you're most of the way there.
+The <a href="https://github.com/deeheber/strands-agent-template" target="_blank" rel="noopener noreferrer">strands-agent-template</a> repo is a GitHub template that gives you everything you need to deploy a <a href="https://strandsagents.com/latest/" target="_blank" rel="noopener noreferrer">Strands agent</a> to Amazon Bedrock AgentCore Runtime. Click "Use this template" and you're most of the way there.
 
 What's included:
 
