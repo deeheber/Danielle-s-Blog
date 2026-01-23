@@ -2,6 +2,7 @@
   "name": "danielle-blog",
   "version": "5.0.0",
   "private": false,
+  "type": "module",
   "scripts": {
     "astro": "astro",
     "build": "npm run type-check && astro build && jampack ./dist",
