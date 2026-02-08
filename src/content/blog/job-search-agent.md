@@ -5,7 +5,9 @@ pubDatetime: 2026-02-08T09:12:03.284Z
 description: An AI agent that monitors your dream companies for open roles and emails you the results.
 ---
 
-> Stock photo here
+> Photo by <a href="https://unsplash.com/@markuswinkler?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Markus Winkler</a> on <a href="https://unsplash.com/photos/a-typewriter-with-a-job-application-printed-on-it-XKKuY4ottJ0?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+
+![Job Application Typewriter](/assets/job-application-typewriter.jpg)
 
 **Quick disclaimer before I get into this: I'm no longer actively job hunting. I started building this project during my last job search and decided to finish what I started. Partly because I wanted to learn more about agents and partly because I think it might be useful for someone else out there. With that out of the way, here's the story.**
 
@@ -29,7 +31,7 @@ You can also set it up to run on a schedule and optionally send you email alerts
 
 Here's how the architecture works at a high level:
 
-<!-- TODO: Add architecture diagram here -->
+![Job Search Architecture](/assets/job-search-architecture.png)
 
 **EventBridge Scheduler** kicks things off on whatever cadence you configure. This triggers the agent running in **AgentCore Runtime**, which is where the Strands agent lives. The agent does its thing (searching for jobs at the companies you've specified), and if you've provided one or more email addresses in the environment variables and there is a job posting, it sends the results via **SNS** as an email notification.
 
@@ -61,7 +63,7 @@ My workaround was to disable retries on the scheduler and set up a Dead Letter Q
 
 After getting Tavily integrated, the agent started returning real job listings with real links. I set up EventBridge to run the searches on a schedule and configured SNS to email me the results.
 
-<!-- TODO: Add screenshot of the email here -->
+![Job Search Results Email](/assets/job-search-email.png)
 
 The time savings were immediately obvious. Instead of spending 30+ minutes bouncing between career pages every few days, I'd get an email in my inbox with a summary of who's hiring and links directly to the postings. Even when nothing new showed up, it was nice to not wonder if I'd missed something.
 
