@@ -92,5 +92,3 @@ The full source code is on <a href="https://github.com/deeheber/job-search-agent
 If you're currently job hunting and this looks useful, take it for a spin. If you find bugs or have ideas for improvements, open an issue or submit a PR. I'm curious to hear what other folks build with it.
 
 Good luck out there 💪
-
-&nbsp;
