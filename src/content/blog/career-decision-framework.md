@@ -53,5 +53,3 @@ I'm pragmatic about tech—there's no perfect stack. But working with tools that
 This framework continues to evolve as I grow, and it's helped me find roles where I can commit deeply and do my best work. Interestingly, it's also helped me recognize when to _stay_ during challenging periods—if the core alignment is there, it's worth working through temporary difficulties.
 
 I'd love to hear from you! How do you decide when it's time to leave? What makes you want to stay?
-
-&nbsp;

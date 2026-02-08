@@ -75,5 +75,3 @@ This is meant to be a starting point, not a finished product. Take it, modify it
 You can find the template on <a href="https://github.com/deeheber/strands-agent-template" target="_blank" rel="noopener noreferrer">GitHub</a>.
 
 Let me know if you use it. I'm curious what works and what doesn't for other folks trying to deploy agents on AWS.
-
-&nbsp;
