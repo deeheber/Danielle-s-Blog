@@ -62,5 +62,3 @@ The plan is to complete the <a href="https://cloudresumechallenge.dev/docs/exten
 Honestly, it's been fun to be a beginner again.
 
 I'd love to hear from you: Have you learned outside your specialty? What pushed you to do it, and what did you learn in the process?
-
-&nbsp;

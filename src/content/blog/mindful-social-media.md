@@ -36,5 +36,3 @@ The goal is simple: be helpful. Connect with people who are thinking about simil
 Spend your time learning, reading, and building things. Use social media when it serves a purpose. Skip it when it doesn't.
 
 What's your approach? I'd be curious to hear how other people are thinking about this stuff.
-
-&nbsp;
