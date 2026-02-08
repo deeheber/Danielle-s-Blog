@@ -31,7 +31,7 @@ Here's how the architecture works at a high level:
 
 <!-- TODO: Add architecture diagram here -->
 
-**EventBridge Scheduler** kicks things off on whatever cadence you configure. This triggers the agent running in **AgentCore Runtime**, which is where the Strands agent lives. The agent does its thing (searching for jobs at the companies you've specified), and if you've provided one or more email addresses in the environment variables, it sends the results via **SNS** as an email notification.
+**EventBridge Scheduler** kicks things off on whatever cadence you configure. This triggers the agent running in **AgentCore Runtime**, which is where the Strands agent lives. The agent does its thing (searching for jobs at the companies you've specified), and if you've provided one or more email addresses in the environment variables and there is a job posting, it sends the results via **SNS** as an email notification.
 
 The infrastructure is all defined in CDK (TypeScript), and the agent code is Python. I talked about why I use that particular combo in my <a href="https://danielleheberling.xyz/blog/strands-agent-template/" target="_blank" rel="noopener noreferrer">strands-agent-template post</a>, but the short version is that each framework is strongest in its native language right now.
 
