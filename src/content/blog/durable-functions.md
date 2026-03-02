@@ -55,11 +55,11 @@ Here's the thing that surprised me: this version felt more natural to write. I w
 
 Durable functions require a **qualified ARN** for invocation, meaning a published version or alias. When I first wired up EventBridge Scheduler, I was using the unqualified ARN and couldn't figure out why it wasn't working.
 
-"No problem," I thought. "I'll just switch to `$LATEST`."
+The issue? The CDK `LambdaInvoke` scheduler target uses `functionArn` under the hood, which for a plain `Function` is the unqualified ARN — no version or alias suffix. Durable functions reject unqualified ARNs entirely.
 
-That didn't work either. Turns out `$LATEST` doesn't support resource-based policies, which EventBridge Scheduler needs in order to invoke the function.
+What ended up working was creating a Lambda alias in CDK and passing that to the scheduler target instead. Since an alias implements `IFunction`, the construct picks up its qualified ARN automatically.
 
-What ended up working was creating a Lambda alias in CDK that pointed to a published version. If you're getting started with durable functions and things aren't behaving as expected, check your invocation ARN first.
+If you're getting started with durable functions and things aren't behaving as expected, check your invocation ARN first.
 
 ## So Which One Should You Use?
 
