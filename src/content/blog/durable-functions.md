@@ -1,6 +1,6 @@
 ---
 author: Danielle Heberling
-pubDatetime: 2026-02-28T12:12:03.284Z
+pubDatetime: 2026-03-01T12:12:03.284Z
 title: I Rewrote My Step Function as a Durable Function
 description: My journey rewriting and old project to learn about Lambda Durable Functions
 ---
@@ -27,7 +27,7 @@ You define your workflow as a state machine, chaining together states like `Lamb
 
 The tradeoff is that CDK code for Step Functions can get verbose. Passing data between states and setting up error handling means understanding how Step Functions manages its JSON payload. You're giving up some control for the convenience of the service doing the heavy lifting.
 
-// TODO: add screenshot
+![step function view](/assets/step-function-view.png)
 
 ### Durable Functions
 
@@ -35,21 +35,21 @@ With durable functions, you write your workflow as plain TypeScript. Wrap your l
 
 Here's the thing that surprised me: this version felt more natural to write. I wasn't thinking about "states" or "transitions." I was just writing code. Since it's TypeScript with a thin SDK wrapper, it also feels more portable. If another cloud provider or open source project adopted a similar checkpoint/replay pattern, the mental model (and probably a good chunk of the code) would transfer over.
 
-// TODO: add screenshot
+![durable function view](/assets/durable-function-view.png)
 
 ### Side by Side
 
-| Concept             | Step Functions                              | Durable Functions                           |
-| ------------------- | ------------------------------------------- | ------------------------------------------- |
-| Workflow definition | JSON/YAML state machine (ASL)               | Plain TypeScript code                       |
-| State management    | Managed by the service                      | Automatic checkpointing via SDK             |
-| AWS service calls   | `CallAwsService` task or direct integration | Regular AWS SDK calls inside `ctx.step()`   |
-| HTTP calls          | `HttpInvoke` task + Connection resource     | Standard `fetch()` inside `ctx.step()`      |
-| Conditional logic   | `Choice` state                              | Plain `if` statement                        |
-| Parallel execution  | `Parallel` state                            | `ctx.parallel([...])`                       |
-| Scheduling          | EventBridge Scheduler -> Step Function      | EventBridge Scheduler -> Lambda             |
-| Infrastructure      | State Machine + Connection + Lambda(s)      | Single Lambda function                      |
-| Debugging           | Step Function execution history (visual)    | CloudWatch Logs + durable execution history |
+| Concept             | Step Functions                              | Durable Functions                         |
+| ------------------- | ------------------------------------------- | ----------------------------------------- |
+| Workflow definition | JSON/YAML state machine (ASL)               | Plain TypeScript code                     |
+| State management    | Managed by the service                      | Automatic checkpointing via SDK           |
+| AWS service calls   | `CallAwsService` task or direct integration | Regular AWS SDK calls inside `ctx.step()` |
+| HTTP calls          | `HttpInvoke` task + Connection resource     | Standard `fetch()` inside `ctx.step()`    |
+| Conditional logic   | `Choice` state                              | Plain `if` statement                      |
+| Parallel execution  | `Parallel` state                            | `ctx.parallel([...])`                     |
+| Scheduling          | EventBridge Scheduler -> Step Function      | EventBridge Scheduler -> Lambda           |
+| Infrastructure      | State Machine + Connection + Lambda(s)      | Single Lambda function                    |
+| Debugging           | Step Function execution history (visual)    | Durable execution history                 |
 
 ## The Gotcha That Got Me
 
@@ -63,13 +63,13 @@ What ended up working was creating a Lambda alias in CDK that pointed to a publi
 
 ## So Which One Should You Use?
 
-In my opinion, both approaches are solid for a workflow like this. It really comes down to developer experience and observability.
+In my opinion, both approaches are solid for a workflow like this. It really comes down to developer experience.
 
 **If you prefer writing workflows as code**, durable functions are going to feel great. The code reads like a normal application, the infrastructure footprint is smaller, and the patterns are more transferable if you ever need to move beyond AWS.
 
 **If you value visual debugging and a fully managed experience**, Step Functions has the edge right now. The console gives you a step-by-step view of every execution with clear status indicators. Durable functions have a visual for execution history too, but I prefer how Step Functions handles it.
 
-**If you need Distributed Map for massive fan-out scenarios** (up to 10,000 concurrent executions) or rely heavily on Step Functions' 220+ native service integrations, Step Functions is the more mature option.
+**If you need Distributed Map for massive fan-out scenarios** (up to 10,000 concurrent executions) or rely heavily on Step Functions' 220+ native service integrations, Step Functions is the better option.
 
 AWS also has <a href="https://docs.aws.amazon.com/lambda/latest/dg/durable-step-functions.html" target="_blank" rel="noopener noreferrer">official guidance</a>. One thing I found interesting is they mention that hybrid architectures are totally valid, using durable functions for application-level logic while Step Functions handles higher-level cross-service coordination.
 
