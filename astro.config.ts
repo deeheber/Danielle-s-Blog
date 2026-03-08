@@ -27,6 +27,7 @@ export default defineConfig({
     },
   },
   vite: {
+    // @ts-expect-error - vite version mismatch between @tailwindcss/vite (v7) and astro (v6)
     plugins: [tailwindcss()],
     optimizeDeps: {
       exclude: ["@resvg/resvg-js"],
