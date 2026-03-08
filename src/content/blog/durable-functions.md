@@ -2,10 +2,10 @@
 author: Danielle Heberling
 pubDatetime: 2026-03-01T12:12:03.284Z
 title: I Rewrote My Step Function as a Durable Function
-description: My journey rewriting and old project to learn about Lambda Durable Functions
+description: My journey rewriting and old project to learn about Lambda durable functions
 ---
 
-Ever since AWS announced <a href="https://docs.aws.amazon.com/lambda/latest/dg/durable-functions.html" target="_blank" rel="noopener noreferrer">Lambda Durable Functions</a> at re:Invent 2025, I've been wanting to try them on a real project. Not a cookie cutter tutorial, but something where I could actually compare the two approaches. I already had the perfect candidate: my <a href="https://github.com/deeheber/weather-site" target="_blank" rel="noopener noreferrer">weather site</a>.
+Ever since AWS announced <a href="https://docs.aws.amazon.com/lambda/latest/dg/durable-functions.html" target="_blank" rel="noopener noreferrer">Lambda durable functions</a> at re:Invent 2025, I've been wanting to try them on a real project. Not a cookie cutter tutorial, but something where I could actually compare the two approaches. I already had the perfect candidate: my <a href="https://github.com/deeheber/weather-site" target="_blank" rel="noopener noreferrer">weather site</a>.
 
 ## Quick Background
 
@@ -29,7 +29,7 @@ The tradeoff is that CDK code for Step Functions can get verbose. Passing data b
 
 ![step function view](/assets/step-function-view.png)
 
-### Durable Functions
+### Durable functions
 
 With durable functions, you write your workflow as plain TypeScript. Wrap your logic in `ctx.step()` calls, use regular `if` statements for branching, `ctx.parallel()` for parallel execution. Need to call an AWS service? Just use the SDK like you normally would inside a step.
 
@@ -39,7 +39,7 @@ Here's the thing that surprised me: this version felt more natural to write. I w
 
 ### Side by Side
 
-| Concept             | Step Functions                              | Durable Functions                         |
+| Concept             | Step Functions                              | Durable functions                         |
 | ------------------- | ------------------------------------------- | ----------------------------------------- |
 | Workflow definition | JSON/YAML state machine (ASL)               | Plain TypeScript code                     |
 | State management    | Managed by the service                      | Automatic checkpointing via SDK           |
@@ -80,6 +80,6 @@ If you're curious about durable functions, I'd encourage trying it with a projec
 Both repos are open source:
 
 - **Step Functions version:** <a href="https://github.com/deeheber/weather-site" target="_blank" rel="noopener noreferrer">github.com/deeheber/weather-site</a>
-- **Durable Functions version:** <a href="https://github.com/deeheber/durable-function-weather-site" target="_blank" rel="noopener noreferrer">github.com/deeheber/durable-function-weather-site</a>
+- **Durable functions version:** <a href="https://github.com/deeheber/durable-function-weather-site" target="_blank" rel="noopener noreferrer">github.com/deeheber/durable-function-weather-site</a>
 
 I'd love to hear from anyone else who's been experimenting with durable functions. Let me know what your experience has been! 🚀
