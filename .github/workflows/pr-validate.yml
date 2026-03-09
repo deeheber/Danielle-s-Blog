@@ -27,7 +27,7 @@ jobs:
           cache: "npm"
 
       - name: Install dependencies
-        run: npm install
+        run: npm ci
 
       - name: Run format check
         run: npm run format:check
@@ -41,5 +41,5 @@ jobs:
       - name: Install Playwright browsers
         run: npx playwright install chromium --with-deps
 
-      - name: Run smoke tests
+      - name: Build and run smoke tests
         run: npm run test:e2e
