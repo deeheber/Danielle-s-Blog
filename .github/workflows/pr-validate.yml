@@ -38,27 +38,27 @@ jobs:
       - name: Type check
         run: npm run type-check
 
-      - name: Post testing checklist
+      - name: Install Playwright browsers
+        run: npx playwright install chromium --with-deps
+
+      - name: Run smoke tests
+        run: npm run test:e2e
+
+      - name: Post automated checklist
         if: success()
         env:
           GH_TOKEN: ${{ github.token }}
-          COMMENT_BODY: |
-            <!-- pr-validation-checklist -->
-            ## ✅ Build Successful!
-
-            Please test the following before merging:
-
-            - [ ] Main page
-            - [ ] About page
-            - [ ] Dark/Light mode toggle
-            - [ ] Search functionality
-            - [ ] Individual blog post
-            - [ ] RSS feed
-
-            _Last updated: TIMESTAMP_PLACEHOLDER_
         run: |
-          TIMESTAMP=$(date -u +'%Y-%m-%d %H:%M:%S UTC')
-          FINAL_BODY="${COMMENT_BODY//TIMESTAMP_PLACEHOLDER_/$TIMESTAMP}"
+          gh pr comment ${{ github.event.pull_request.number }} --edit-last --create-if-none --body "$(cat <<'EOF'
+          <!-- pr-validation-checklist -->
+          ## ✅ Automated smoke tests verified:
 
-          # Edit last comment or create new one if none exist
-          gh pr comment ${{ github.event.pull_request.number }} --edit-last --create-if-none --body "$FINAL_BODY"
+          - [x] Main page
+          - [x] About page
+          - [x] Dark/Light mode toggle
+          - [x] Search functionality
+          - [x] Individual blog post
+          - [x] RSS feed
+          - [x] Blog pagination
+          EOF
+          )"

@@ -42,6 +42,7 @@ export default [
   // TypeScript files
   {
     files: ["**/*.ts", "**/*.tsx"],
+    ignores: ["e2e/**"],
     plugins: {
       "@typescript-eslint": tseslint,
       import: importPlugin,
@@ -114,6 +115,27 @@ export default [
         parser: "@typescript-eslint/parser",
         extraFileExtensions: [".astro"],
       },
+    },
+  },
+  // E2E test files
+  {
+    files: ["e2e/**/*.ts"],
+    plugins: {
+      "@typescript-eslint": tseslint,
+    },
+    languageOptions: {
+      parser: tsparser,
+    },
+    rules: {
+      ...tseslint.configs.recommended.rules,
+      "@typescript-eslint/no-explicit-any": "error",
+      "@typescript-eslint/no-unused-vars": [
+        "warn",
+        {
+          argsIgnorePattern: "^_",
+          varsIgnorePattern: "^_",
+        },
+      ],
     },
   },
   // Astro env.d.ts exception
