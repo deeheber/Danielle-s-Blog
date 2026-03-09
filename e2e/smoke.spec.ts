@@ -111,9 +111,7 @@ test("talks page lists talks", async ({ page }) => {
 
 test("404 page", async ({ page }) => {
   await page.goto("/this-page-does-not-exist/")
-  await expect(
-    page.locator('[aria-label="404 Not Found"]'),
-  ).toBeVisible()
+  await expect(page.locator('[aria-label="404 Not Found"]')).toBeVisible()
   await expect(page.getByText("Page Not Found")).toBeVisible()
 })
 
