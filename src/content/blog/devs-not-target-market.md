@@ -5,7 +5,7 @@ title: Devs are Not the Target Market for AI
 description: Devs are Not the Target Market for AI
 ---
 
-![robot devs](/assets/robotDevs.png)
+![robot devs](/assets/robotDevs.jpg)
 
 ## Background
 

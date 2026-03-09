@@ -6,7 +6,7 @@ description: Building a Better Product through Customer Service
 canonicalURL: https://www.stackery.io/blog/building-a-better-product-through-customer-service
 ---
 
-![Teamwork](/assets/teamwork.png)
+![Teamwork](/assets/teamwork.jpg)
 
 As an individual coming from a customer support background that knows the value of being on the front lines, I am ecstatic that Stackery focuses on the customer across all teams. Moreover, I’m excited by the impact of having the front line perspective ingrained in the product we build. After all, the customers are the reason why we work so hard at what we do. In this post, I’m going to highlight some of the major benefits that I’ve noticed as a software engineer working in a periodic customer service rotation capacity. Here at Stackery, we call this the “Support Hero” role.
 
