@@ -11,3 +11,5 @@
 !.prettierrc
 !eslint.config.mjs
 !README.md
+!/e2e
+!playwright.config.ts

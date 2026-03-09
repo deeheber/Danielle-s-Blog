@@ -56,9 +56,25 @@ All commands are run from the root of the project, from a terminal:
 | `npm run sync`                       | Generates TypeScript types for all Astro modules. [Learn more](https://docs.astro.build/en/reference/cli-reference/#astro-sync). |
 | `npm run lint`                       | Lint with ESLint                                                                                                                 |
 | `npm run lint:check`                 | Check code linting with ESLint                                                                                                   |
+| `npm run test:e2e`                   | Run end-to-end smoke tests with Playwright (see [E2E Tests](#-e2e-tests) below)                                                  |
 | `npm run type-check`                 | Run TypeScript type checking without emitting files                                                                              |
 | `docker compose up -d`               | Run on docker, You can access with the same hostname and port informed on `dev` command.                                         |
 | `docker compose run app npm install` | You can run any command above into the docker container.                                                                         |
+
+## 🧪 E2E Tests
+
+To run the Playwright smoke tests locally, you first need to install the Chromium browser binary (one-time setup):
+
+```bash
+npx playwright install chromium
+```
+
+Then build the site and run the tests:
+
+```bash
+npm run build
+npm run test:e2e
+```
 
 ## 💻 My Tech Stack
 
@@ -70,5 +86,6 @@ All commands are run from the root of the project, from a terminal:
 **Icons & Images** - [Satori](https://github.com/vercel/satori) & [@resvg/resvg-js](https://github.com/yisibl/resvg-js) for OpenGraph generation  
 **Build Optimization** - [Jampack](https://jampack.divriots.com/)  
 **Code Formatting** - [Prettier](https://prettier.io/)  
-**Linting** - [ESLint](https://eslint.org/)  
+**Linting** - [ESLint](https://eslint.org/)
+**End to End Testing** - [Playwright](https://playwright.dev/)
 **Deployment** - [Cloudflare Pages](https://pages.cloudflare.com/)
