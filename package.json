@@ -5,7 +5,8 @@
   "type": "module",
   "scripts": {
     "astro": "astro",
-    "build": "npm run type-check && astro build && jampack ./dist",
+    "build": "npm run type-check && astro build",
+    "compress-images": "bash scripts/compress-images.sh",
     "dev": "astro dev",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
@@ -30,12 +31,11 @@
     "typescript": "^5.9.3"
   },
   "devDependencies": {
-    "@playwright/test": "^1.58.2",
     "@astrojs/react": "^4.4.2",
     "@astrojs/sitemap": "^3.7.0",
-    "@divriots/jampack": "^0.34.0",
     "@eslint/eslintrc": "^3.3.4",
     "@eslint/js": "^9.39.3",
+    "@playwright/test": "^1.58.2",
     "@tailwindcss/typography": "^0.5.19",
     "@tailwindcss/vite": "^4.2.1",
     "@types/markdown-it": "^14.1.2",
