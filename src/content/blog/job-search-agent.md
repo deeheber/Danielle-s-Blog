@@ -1,5 +1,5 @@
 ---
-title: Let an AI Agent Do Your Job Searching UPDATE TEST
+title: Let an AI Agent Do Your Job Searching
 author: Danielle Heberling
 pubDatetime: 2026-02-08T09:12:03.284Z
 description: An AI agent that monitors your dream companies for open roles and emails you the results.
@@ -12,8 +12,6 @@ description: An AI agent that monitors your dream companies for open roles and e
 **Quick disclaimer before I get into this: I'm no longer actively job hunting. I started building this project during my last job search and decided to finish what I started. Partly because I wanted to learn more about agents and partly because I think it might be useful for someone else out there. With that out of the way, here's the story.**
 
 ## The Problem
-
-Update test
 
 Ever since I started my last job search, one thing kept bugging me. I had a list of "dream companies" that I wanted to work at, and I'd manually go check their career pages every few days to see if anything new popped up. Sometimes daily. Sometimes I'd forget for a week and miss a posting entirely.
 
