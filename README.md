@@ -86,5 +86,6 @@ npm run test:e2e
 **Icons & Images** - [Satori](https://github.com/vercel/satori) & [@resvg/resvg-js](https://github.com/yisibl/resvg-js) for OpenGraph generation  
 **Build Optimization** - [Jampack](https://jampack.divriots.com/)  
 **Code Formatting** - [Prettier](https://prettier.io/)  
-**Linting** - [ESLint](https://eslint.org/)  
+**Linting** - [ESLint](https://eslint.org/)
+**End to End Testing** - [Playwright](https://playwright.dev/)
 **Deployment** - [Cloudflare Pages](https://pages.cloudflare.com/)
