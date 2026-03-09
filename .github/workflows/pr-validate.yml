@@ -18,7 +18,7 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
 
       - name: Setup Node.js
         uses: actions/setup-node@v6
@@ -43,22 +43,3 @@ jobs:
 
       - name: Run smoke tests
         run: npm run test:e2e
-
-      - name: Post automated checklist
-        if: success()
-        env:
-          GH_TOKEN: ${{ github.token }}
-        run: |
-          gh pr comment ${{ github.event.pull_request.number }} --edit-last --create-if-none --body "$(cat <<'EOF'
-          <!-- pr-validation-checklist -->
-          ## ✅ Automated smoke tests verified:
-
-          - [x] Main page
-          - [x] About page
-          - [x] Dark/Light mode toggle
-          - [x] Search functionality
-          - [x] Individual blog post
-          - [x] RSS feed
-          - [x] Blog pagination
-          EOF
-          )"

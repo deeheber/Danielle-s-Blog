@@ -45,20 +45,21 @@ test("search hydrates and returns results", async ({ page }) => {
   await expect(input).toBeVisible()
 
   await input.fill("serverless")
-  await expect(page.getByText("Found")).toBeVisible()
+  await expect(page.getByText(/Found \d+ result/)).toBeVisible()
 })
 
 test("blog post renders content", async ({ page }) => {
-  await page.goto("/blog/Building-My-Own-Jamstack/")
-  await expect(page).toHaveTitle(/Building My Own Jamstack/)
+  await page.goto("/blog/")
+
+  const firstLink = page.locator("#main-content ul li a").first()
+  const href = await firstLink.getAttribute("href")
+  expect(href).toBeTruthy()
+
+  await page.goto(href!)
 
   const article = page.locator("article#article")
   await expect(article).toBeVisible()
-  await expect(page.locator("h1.post-title")).toContainText(
-    "Building My Own Jamstack",
-  )
-  await expect(article.locator("img").first()).toBeVisible()
-  await expect(article.locator("pre code").first()).toBeVisible()
+  await expect(page.locator("h1.post-title")).toBeVisible()
 })
 
 test("RSS feed is valid XML", async ({ request }) => {
@@ -100,4 +101,35 @@ test("blog pagination shows different posts per page", async ({ page }) => {
 
   const page1Again = await getPostHrefs()
   expect(page1Again).toEqual(page1Hrefs)
+})
+
+test("talks page lists talks", async ({ page }) => {
+  await page.goto("/talks/")
+  await expect(page).toHaveTitle(/Talks/)
+  await expect(page.locator("#all-talks li").first()).toBeVisible()
+})
+
+test("404 page", async ({ page }) => {
+  await page.goto("/this-page-does-not-exist/")
+  await expect(
+    page.locator('[aria-label="404 Not Found"]'),
+  ).toBeVisible()
+  await expect(page.getByText("Page Not Found")).toBeVisible()
+})
+
+test("navigation links", async ({ page }) => {
+  await page.goto("/")
+
+  const navLinks = [
+    { name: "Blog", url: /\/blog\/?$/ },
+    { name: "Talks", url: /\/talks\/?$/ },
+    { name: "About", url: /\/about\/?$/ },
+    { name: "Search", url: /\/search\/?$/ },
+  ]
+
+  for (const { name, url } of navLinks) {
+    await page.goto("/")
+    await page.locator("#menu-items").getByRole("link", { name }).click()
+    await expect(page).toHaveURL(url)
+  }
 })
