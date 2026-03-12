@@ -4,6 +4,7 @@ pubDatetime: 2025-02-18T11:12:03.284Z
 title: AWS Fargate on a Budget
 description: AWS Fargate on a Budget
 slug: fargate-on-a-budget
+tags: ["aws", "devops"]
 ---
 
 ![Money counting](/assets/budget.jpg)

@@ -3,6 +3,7 @@ author: Danielle Heberling
 title: Real Time Interactions with Websockets
 pubDatetime: 2019-11-19T22:12:03.284Z
 description: Real Time Interactions with Websockets
+tags: ["aws", "serverless", "tutorial"]
 ---
 
 ![Phone](/assets/phone.jpg)

@@ -3,6 +3,7 @@ author: Danielle Heberling
 pubDatetime: 2020-10-25T22:12:03.284Z
 title: Using GitHub Actions to Build a Self Updating README
 description: Using GitHub Actions to Build a Self Updating README
+tags: ["devops", "tutorial"]
 ---
 
 ## The Project Idea

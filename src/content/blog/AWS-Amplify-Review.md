@@ -3,6 +3,7 @@ author: Danielle Heberling
 pubDatetime: 2019-11-06T22:12:03.284Z
 title: AWS Amplify Review
 description: AWS Amplify Review
+tags: ["aws", "opinion"]
 ---
 
 ![Glasses](/assets/glasses.jpg)

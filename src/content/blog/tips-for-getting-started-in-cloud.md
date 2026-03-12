@@ -6,6 +6,7 @@ featured: false
 draft: false
 description: Tips for Getting Started in Cloud
 slug: get-started-in-cloud
+tags: ["aws", "career"]
 ---
 
 ![Clouds Image](/assets/clouds.jpg)

@@ -4,6 +4,7 @@ pubDatetime: 2019-01-24T22:12:03.284Z
 title: Chaos Engineering Ideas For Serverless
 description: Chaos Engineering Ideas For Serverless
 canonicalURL: https://www.stackery.io/blog/chaos-engineering-serverless
+tags: ["aws", "serverless", "devops"]
 ---
 
 ![Chaos](/assets/chaos.jpg)

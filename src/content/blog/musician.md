@@ -3,6 +3,7 @@ author: Danielle Heberling
 pubDatetime: 2018-08-06T22:12:03.284Z
 title: How Being a Musician Has Made Me a Better Software Engineer
 description: How Being a Musician Has Made Me a Better Software Engineer
+tags: ["career", "opinion"]
 ---
 
 ![Headphones and Computer](/assets/headphones.jpeg)

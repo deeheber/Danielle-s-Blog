@@ -3,6 +3,7 @@ author: Danielle Heberling
 pubDatetime: 2020-07-03T22:12:03.284Z
 title: Lambda Layer Update
 description: Lambda Layer Update
+tags: ["aws", "serverless", "tutorial"]
 ---
 
 ![Layer Cake](/assets/layer-cake.jpg)

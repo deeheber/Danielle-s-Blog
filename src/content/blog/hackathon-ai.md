@@ -4,6 +4,7 @@ pubDatetime: 2023-06-29T22:12:03.284Z
 title: AWS Speakers Directory - Adding AI Functionality
 description: AWS Speakers Directory - Adding AI Functionality
 canonicalURL: https://dev.to/aws-builders/community-speakers-directory-adding-ai-functionality-3427
+tags: ["aws", "ai", "community"]
 ---
 
 ![Mountains](/assets/color-mountains.jpg)

@@ -4,6 +4,7 @@ pubDatetime: 2024-04-03T05:12:03.284Z
 title: How To Become An AWS Hero
 description: How To Become An AWS Hero
 slug: how-to-hero
+tags: ["aws", "career", "community"]
 ---
 
 ![We can be heroes neon sign](/assets/hero-neon.jpg)

@@ -4,6 +4,7 @@ title: Routing on the Edge
 pubDatetime: 2021-09-09T22:12:03.284Z
 description: Routing on the Edge
 canonicalURL: https://medium.com/developing-koan/routing-on-the-edge-913eb00da742
+tags: ["aws", "devops"]
 ---
 
 ![Feet dangling from roof](/assets/jake-ingle-s-t1oJXKYI4-unsplash.jpg)

@@ -3,6 +3,7 @@ author: Danielle Heberling
 title: On Home and Remote Work
 pubDatetime: 2021-11-23T22:12:03.284Z
 description: On Home and Remote Work
+tags: ["career", "opinion"]
 ---
 
 ![Crossroads](/assets/bridge-med.jpg)

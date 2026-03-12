@@ -3,6 +3,7 @@ author: Danielle Heberling
 pubDatetime: 2024-08-30T12:12:03.284Z
 title: Devs are Not the Target Market for AI
 description: Devs are Not the Target Market for AI
+tags: ["ai", "opinion"]
 ---
 
 ![robot devs](/assets/robotDevs.jpg)

@@ -3,6 +3,7 @@ author: Danielle Heberling
 pubDatetime: 2019-08-29T22:12:03.284Z
 title: Automated React Frontend Deploys
 description: Automated React Frontend Deploys
+tags: ["aws", "javascript", "tutorial"]
 ---
 
 As the frontend and backend are slowly merging closer together, more and more folks are writing full stack applications. While Serverless mostly is referring to the underlying infrastructure that tends to live a bit closer to the backend side, you can also use a serverless architecture to build and deploy the frontend portion of your application.

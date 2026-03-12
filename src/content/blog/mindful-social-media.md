@@ -3,6 +3,7 @@ author: Danielle Heberling
 pubDatetime: 2026-01-17T10:12:03.284Z
 title: Use Social Media Mindfully
 description: Danielle's approach to social media in 2026
+tags: ["opinion"]
 ---
 
 I quit Facebook in 2020 when a former coworker was spreading misinformation about what was happening in Portland, OR. He'd never been there and had no plans to visit. I was literally living in Portland at the time, telling him what I was seeing firsthand, but that didn't matter to him. That was it for me. I miss it sometimes, but mostly I don't.

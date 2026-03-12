@@ -3,6 +3,7 @@ author: Danielle Heberling
 title: A Strands Agent Template (For the Impatient)
 pubDatetime: 2026-01-23T10:12:03.284Z
 description: A Template for Deploying Strands Agents on AWS
+tags: ["aws", "ai", "tutorial"]
 ---
 
 ![Puzzle](/assets/puzzle.jpg)

@@ -3,6 +3,7 @@ author: Danielle Heberling
 pubDatetime: 2022-03-13T22:12:03.284Z
 title: Are You Paying Attention?
 description: Are You Paying Attention?
+tags: ["opinion"]
 ---
 
 Every time I go out in public, I've noticed a trend. People are on their phones almost everywhere I look. We hike to a beautiful waterfall, only to find a crowd of people standing there recording it on their phones for whatever social media site is popular. I go to a live show and the phones are out recording.

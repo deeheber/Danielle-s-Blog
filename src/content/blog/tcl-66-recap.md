@@ -4,6 +4,7 @@ pubDatetime: 2024-04-07T22:12:03.284Z
 title: The Collab Lab Team 66 Recap
 description: The Collab Lab Team 66 Recap
 canonicalURL: https://dev.to/the-collab-lab/collab-lab-66-recap-2cdp
+tags: ["community", "javascript"]
 ---
 
 ## Overview

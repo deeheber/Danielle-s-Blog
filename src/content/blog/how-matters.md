@@ -4,6 +4,7 @@ pubDatetime: 2025-11-19T15:12:03.284Z
 title: How You Do It Matters
 description: How You Do It Matters
 slug: how-matters
+tags: ["career", "opinion"]
 ---
 
 ![Winding path](/assets/winding-path.jpg)

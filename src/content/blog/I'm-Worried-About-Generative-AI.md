@@ -6,6 +6,7 @@ featured: false
 draft: false
 description: I'm Worried About Generative AI
 slug: generative-ai
+tags: ["ai", "opinion"]
 ---
 
 ![Clouds Image](/assets/drawer.jpg)
