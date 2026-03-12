@@ -21,7 +21,10 @@ const { currentPage, totalPages, paginatedblog, tag, tagName } = Astro.props
 const canonicalURL = new URL(`/tags/${tag}/`, Astro.site).href
 ---
 
-<Layout title={`Tag: ${tagName} | ${SITE.title}`} canonicalURL={canonicalURL}>
+<Layout
+  title={`Tag: ${tagName} | ${SITE.title}`}
+  canonicalURL={canonicalURL}
+>
   <Header activeNav="tags" />
   <Main
     pageTitle={[`Tag:`, `${tagName}`]}
