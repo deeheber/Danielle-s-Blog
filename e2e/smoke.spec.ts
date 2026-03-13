@@ -115,12 +115,42 @@ test("404 page", async ({ page }) => {
   await expect(page.getByText("Page Not Found")).toBeVisible()
 })
 
+test("tags index page lists tags", async ({ page }) => {
+  await page.goto("/tags/")
+  await expect(page).toHaveTitle(/Tags/)
+  await expect(
+    page.locator('#main-content a[href*="/tags/"]').first(),
+  ).toBeVisible()
+})
+
+test("tag detail page lists posts", async ({ page }) => {
+  await page.goto("/tags/")
+
+  const firstTag = page.locator('#main-content a[href*="/tags/"]').first()
+  await firstTag.click()
+
+  await expect(page).toHaveURL(/\/tags\/[^/]+\/?$/)
+  await expect(page.locator("#main-content ul li").first()).toBeVisible()
+})
+
+test("blog post shows tags", async ({ page }) => {
+  await page.goto("/blog/")
+
+  const firstLink = page.locator("#main-content ul li a").first()
+  const href = await firstLink.getAttribute("href")
+  expect(href).toBeTruthy()
+
+  await page.goto(href!)
+  await expect(page.locator('a[href^="/tags/"]').first()).toBeVisible()
+})
+
 test("navigation links", async ({ page }) => {
   await page.goto("/")
 
   const navLinks = [
     { name: "Blog", url: /\/blog\/?$/ },
     { name: "Talks", url: /\/talks\/?$/ },
+    { name: "Tags", url: /\/tags\/?$/ },
     { name: "About", url: /\/about\/?$/ },
     { name: "Search", url: /\/search\/?$/ },
   ]
