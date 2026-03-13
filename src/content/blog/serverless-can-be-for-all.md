@@ -5,6 +5,7 @@ pubDatetime: 2019-12-23T22:12:03.284Z
 description: Serverless *Can* be for Everyone - Let's Build it that Way
 canonicalURL: https://www.stackery.io/blog/serverless-can-be-for-everyone
 slug: serverless-can-be-for-all
+tags: ["serverless", "community", "opinion"]
 ---
 
 ![AWS re:Invent Booth Picture](/assets/boothpic.jpg)

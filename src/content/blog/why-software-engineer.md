@@ -3,6 +3,7 @@ author: Danielle Heberling
 title: Why I'm a Software Engineer
 pubDatetime: 2018-12-21T22:12:03.284Z
 description: Why I'm a Software Engineer
+tags: ["career"]
 ---
 
 ![Books](/assets/book.jpeg)

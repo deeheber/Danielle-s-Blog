@@ -2,7 +2,7 @@
 import Layout from "@layouts/Layout.astro"
 import Header from "@components/Header.astro"
 import Footer from "@components/Footer.astro"
-// import Tag from "@components/Tag.astro";
+import Tag from "@components/Tag.astro"
 import Datetime from "@components/Datetime"
 import type { CollectionEntry } from "astro:content"
 import { slugifyStr } from "@utils/slugify"
@@ -23,7 +23,7 @@ const {
   canonicalURL,
   pubDatetime,
   modDatetime,
-  // tags,
+  tags,
 } = post.data
 
 const { Content } = await post.render()
@@ -78,6 +78,9 @@ const layoutProps = {
       size="lg"
       className="my-2"
     />
+    <ul class="my-2 flex flex-wrap gap-x-1 gap-y-0">
+      {tags.map((tag) => <Tag tag={slugifyStr(tag)} />)}
+    </ul>
     <article
       id="article"
       role="article"
@@ -85,10 +88,6 @@ const layoutProps = {
     >
       <Content />
     </article>
-
-    <!-- <ul class="my-8">
-      {tags.map(tag => <Tag tag={slugifyStr(tag)} />)}
-    </ul> -->
 
     <div
       class="mt-8 flex flex-col-reverse items-center justify-between gap-6 sm:flex-row-reverse sm:items-end sm:gap-4"

@@ -6,6 +6,7 @@ featured: false
 draft: false
 description: Improved git workflows with graphite.dev
 slug: git-collaboration
+tags: ["devops"]
 ---
 
 ![Clouds Image](/assets/github-screen.jpg)

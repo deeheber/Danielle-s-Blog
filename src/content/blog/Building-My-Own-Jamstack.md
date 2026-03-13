@@ -3,6 +3,7 @@ author: Danielle Heberling
 pubDatetime: 2020-06-26T22:12:03.284Z
 title: Building My Own Jamstack
 description: Building My Own Jamstack
+tags: ["aws", "devops", "tutorial"]
 ---
 
 The trend of the frontend and backend coming closer together is continuing and even has a name now...the <a href="https://jamstack.org/" target="_blank" rel="noopener noreferrer">Jam stack</a>.

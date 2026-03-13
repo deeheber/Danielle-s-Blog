@@ -3,6 +3,7 @@ author: Danielle Heberling
 title: Learning Outside Your Specialty | Why I Got a Kubernetes Cert
 pubDatetime: 2025-10-12T10:12:03.284Z
 description: On learning K8s as a serverless developer and why specialization doesn't mean staying in one lane forever
+tags: ["career", "devops"]
 ---
 
 Earlier this month I took the exam for the <a href="https://training.linuxfoundation.org/certification/kubernetes-cloud-native-associate/" target="_blank">Kubernetes and Cloud Native Associate (KCNA) certification</a> and passed.

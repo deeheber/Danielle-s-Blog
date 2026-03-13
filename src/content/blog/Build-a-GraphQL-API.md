@@ -4,6 +4,7 @@ pubDatetime: 2021-06-13T22:12:03.284Z
 title: Build a GraphQL API with TypeScript, AWS AppSync, and CDK
 description: Build a GraphQL API with TypeScript, AWS AppSync, and CDK
 slug: appsync-cdk
+tags: ["aws", "serverless", "tutorial"]
 ---
 
 ## What We're Building

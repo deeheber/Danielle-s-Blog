@@ -3,6 +3,7 @@ title: Upgrading to CDK v2 for Typescript
 author: Danielle Heberling
 pubDatetime: 2022-01-18T22:12:03.284Z
 description: Upgrading to CDK v2 for Typescript
+tags: ["aws", "devops", "tutorial"]
 ---
 
 As of re:Invent 2021, CDK v2 is <a href="https://aws.amazon.com/about-aws/whats-new/2021/12/aws-cloud-development-kit-cdk-generally-available/" target="_blank" rel="noopener noreferrer">now generally available</a>. 🎉

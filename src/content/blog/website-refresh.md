@@ -3,6 +3,7 @@ title: Website Refresh With Gatsby
 author: Danielle Heberling
 pubDatetime: 2019-03-13T22:12:03.284Z
 description: Website Refresh With Gatsby
+tags: ["javascript", "tutorial"]
 ---
 
 ![Computer](/assets/computer.jpg)

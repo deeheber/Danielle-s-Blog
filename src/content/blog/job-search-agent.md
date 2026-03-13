@@ -3,6 +3,7 @@ title: Let an AI Agent Do Your Job Searching
 author: Danielle Heberling
 pubDatetime: 2026-02-08T09:12:03.284Z
 description: An AI agent that monitors your dream companies for open roles and emails you the results.
+tags: ["ai", "tutorial"]
 ---
 
 > Photo by <a href="https://unsplash.com/@markuswinkler?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Markus Winkler</a> on <a href="https://unsplash.com/photos/a-typewriter-with-a-job-application-printed-on-it-XKKuY4ottJ0?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>

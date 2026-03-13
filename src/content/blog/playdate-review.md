@@ -4,6 +4,7 @@ pubDatetime: 2024-09-28T05:12:03.284Z
 title: Playdate Review
 description: Playdate review
 slug: playdate-review
+tags: ["opinion"]
 ---
 
 ## What is a Playdate?

@@ -3,6 +3,7 @@ author: Danielle Heberling
 pubDatetime: 2026-03-01T12:12:03.284Z
 title: I Rewrote My Step Function as a Durable Function
 description: My journey rewriting and old project to learn about Lambda durable functions
+tags: ["aws", "serverless", "tutorial"]
 ---
 
 Ever since AWS announced <a href="https://docs.aws.amazon.com/lambda/latest/dg/durable-functions.html" target="_blank" rel="noopener noreferrer">Lambda durable functions</a> at re:Invent 2025, I've been wanting to try them on a real project. Not a cookie cutter tutorial, but something where I could actually compare the two approaches. I already had the perfect candidate: my <a href="https://github.com/deeheber/weather-site" target="_blank" rel="noopener noreferrer">weather site</a>.

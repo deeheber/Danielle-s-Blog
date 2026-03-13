@@ -3,6 +3,7 @@ author: Danielle Heberling
 pubDatetime: 2020-12-30T22:12:03.284Z
 title: 5 Things I Learned from Advent of Code
 description: 5 Things I Learned from Advent of Code
+tags: ["tutorial", "opinion"]
 ---
 
 ![Advent of Code](/assets/advent-of-code-2020.jpeg)

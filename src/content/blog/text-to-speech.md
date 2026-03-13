@@ -3,6 +3,7 @@ title: Building a Text to Speech Converter with AWS Polly
 author: Danielle Heberling
 pubDatetime: 2019-05-06T22:12:03.284Z
 description: Building a Text to Speech Converter with AWS Polly
+tags: ["aws", "serverless", "tutorial"]
 ---
 
 Recently, I spent some time building my own serverless text to speech converter and thought it might be helpful to share a bit about what I’ve learned during the process.

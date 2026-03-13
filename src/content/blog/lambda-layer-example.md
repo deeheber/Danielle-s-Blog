@@ -3,6 +3,7 @@ author: Danielle Heberling
 pubDatetime: 2020-01-22T22:12:03.284Z
 title: Create Your Own Lambda Layer with NodeJS
 description: Create Your Own Lambda Layer with NodeJS
+tags: ["aws", "serverless", "tutorial"]
 ---
 
 ![Mountains](/assets/layer-header.jpg)

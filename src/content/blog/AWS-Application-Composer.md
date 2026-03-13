@@ -6,6 +6,7 @@ featured: false
 draft: false
 description: AWS Application Composer, the App Building Future We Need
 slug: aws-application-composer
+tags: ["aws", "serverless", "opinion"]
 ---
 
 ![AWS Application Composer](/assets/app-composer.png)

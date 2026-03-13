@@ -3,6 +3,7 @@ author: Danielle Heberling
 title: Serverless Weather Reporting with AWS Step Functions and CDK
 pubDatetime: 2023-03-05T10:12:03.284Z
 description: Serverless Weather Reporting with AWS Step Functions and CDK
+tags: ["aws", "serverless", "tutorial"]
 ---
 
 ![Snow on evergreen trees](/assets/snow-trees.jpg)

@@ -4,6 +4,7 @@ pubDatetime: 2023-07-17T22:10:03.284Z
 title: My Personal Blog Site's CI/CD
 description: My Personal Blog Site's CI/CD
 slug: blog-ci-cd
+tags: ["devops", "tutorial"]
 ---
 
 ![Tools](/assets/tools.jpg)

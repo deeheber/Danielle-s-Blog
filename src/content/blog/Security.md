@@ -3,6 +3,7 @@ author: Danielle Heberling
 title: Most Valuable When Least Visible | The Security Paradox
 pubDatetime: 2025-06-18T10:12:03.284Z
 description: Security -- The Most Important Work You’ll Never See in a Sprint Demo
+tags: ["devops", "opinion"]
 ---
 
 ![Computer Lock](/assets/computer-padlock.jpg)

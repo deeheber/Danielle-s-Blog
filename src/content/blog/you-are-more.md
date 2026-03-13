@@ -3,6 +3,7 @@ author: Danielle Heberling
 title: You Are More Than Your Tech Choices
 pubDatetime: 2021-05-22T21:12:03.284Z
 description: You Are More Than Your Tech Choices
+tags: ["career", "opinion"]
 ---
 
 If you know me, you've probably noticed that my technical specialities lately have been JavaScript and AWS Serverless.

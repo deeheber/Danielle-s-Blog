@@ -3,6 +3,7 @@ author: Danielle Heberling
 pubDatetime: 2020-09-08T22:12:03.284Z
 title: Computer Science for Everyone - Queues
 description: Computer Science for Everyone - Queues
+tags: ["tutorial", "javascript"]
 ---
 
 ![Bubbles](/assets/queue.jpg)

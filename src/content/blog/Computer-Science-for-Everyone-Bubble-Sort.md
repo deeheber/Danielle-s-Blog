@@ -3,6 +3,7 @@ author: Danielle Heberling
 pubDatetime: 2020-04-10T22:12:03.284Z
 title: Computer Science for Everyone - Bubble Sort
 description: Computer Science for Everyone - Bubble Sort
+tags: ["tutorial", "javascript"]
 ---
 
 ![Bubbles](/assets/bubbles.jpg)

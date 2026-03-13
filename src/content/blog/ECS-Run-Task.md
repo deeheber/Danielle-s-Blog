@@ -4,6 +4,7 @@ pubDatetime: 2024-11-07T15:12:03.284Z
 title: Ephemeral Jobs Longer than the Lambda Timeout
 description: Ephemeral Jobs Longer than the Lambda Timeout
 slug: ecs-run-task
+tags: ["aws", "devops", "tutorial"]
 ---
 
 ![horse race](/assets/horse-race.jpg)

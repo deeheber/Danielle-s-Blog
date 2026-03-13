@@ -3,6 +3,7 @@ author: Danielle Heberling
 pubDatetime: 2019-07-03T22:12:03.284Z
 title: Rekognition - Facing My Artificial Intelligence Fears
 description: Rekognition - Facing My Artificial Intelligence Fears
+tags: ["aws", "ai", "tutorial"]
 ---
 
 ![Me in rekognition](/assets/rekognition-me.png)
