@@ -188,6 +188,12 @@
     border-left-width: 4px;
     opacity: 0.8;
   }
+  .prose blockquote p:first-of-type::before {
+    content: none !important;
+  }
+  .prose blockquote p:last-of-type::after {
+    content: none !important;
+  }
 
   .prose figcaption {
     opacity: 0.7;
