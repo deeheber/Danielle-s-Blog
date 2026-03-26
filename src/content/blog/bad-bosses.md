@@ -7,7 +7,7 @@ slug: bad-bosses-what-i-look-for-now
 tags: ["career", "opinion"]
 ---
 
-Over the course of my career I've had some genuinely great managers. I've also had some bad ones. The signals were almost always there in the interview process. I just didn't know what I was looking at.
+Over the course of my career, I've had some genuinely great managers. I've also had some bad ones. The signals were almost always there in the interview process. I just didn't know what I was looking at.
 
 Here's what I look for now. I hope it helps you avoid some of what I learned the hard way.
 
@@ -29,19 +29,25 @@ This one shows up in what a manager says, but also in what they don't.
 
 Here's the pattern: there's no definition of done. No shared understanding of what good work actually looks like. Ownership of systems and responsibilities stays fuzzy. Then one day someone's told they're underperforming, with no specifics about what they did wrong or how to fix it.
 
-In engineering I've seen this show up in a particularly frustrating way. A manager who starts treating GitHub activity as a proxy for productivity. Not accuracy. Not quality. Not whether the work actually solved the problem. Just...were you visibly committing enough, consistently enough, to prove you were working. And if you weren't, that became the performance conversation.
+In engineering, I've seen this show up in a particularly frustrating way. A manager who starts treating GitHub activity as a proxy for productivity. Not accuracy. Not quality. Not whether the work actually solved the problem. Just...were you visibly committing enough, consistently enough, to prove you were working. And if you weren't, that became the performance conversation.
 
 That's not a performance problem. That's a management problem.
 
 > **Ask directly 💬:** "How does your team define done? What does good work look like here and how is that communicated?" A real answer is specific. Watch for answers that are vague, circular, or that put the entire burden of figuring it out on you.
 
-## Signal 3: The Moving Goalpost
+## Signal 3: The Moving Goalposts
 
 This one took me the longest to recognize, because it's so easy to second-guess yourself when it's happening.
 
-Here's the pattern: policies and technical decisions exist, but they're vague enough that management can reinterpret them however is convenient. No announcement, no conversation, no acknowledgment that anything changed. If you raise it, the original understanding gets reframed or denied.
+Here's how it works: policies and technical decisions exist, but they're vague enough that management can reinterpret them however is convenient. No announcement, no conversation, no acknowledgment that anything changed. If you raise it, the original understanding gets reframed or denied.
 
-Real examples I've seen: an informal PTO policy that everyone understood and followed, until one day the written policy was enforced without warning or conversation. A remote role that slowly accumulated passive frustration about people not being local. An architecture direction the team aligned on, quietly abandoned in favor of something else with no discussion about why. Nothing officially changed. It just did.
+Real examples I've seen:
+
+- An informal PTO policy that everyone understood and followed, until one day the written policy was enforced without warning or conversation
+- A remote role that slowly accumulated passive frustration about people not being local
+- An architecture direction the team aligned on, quietly abandoned in favor of something else with no discussion about why
+
+_Nothing officially changed. It just did._
 
 Once you've lived this a couple of times, you start to recognize it. Vague policies and decisions that get selectively enforced or reversed are a feature, not an accident.
 
