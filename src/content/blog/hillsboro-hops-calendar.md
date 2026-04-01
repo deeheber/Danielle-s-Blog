@@ -1,6 +1,6 @@
 ---
 author: Danielle Heberling
-pubDatetime: 2026-04-01T15:12:03.284Z
+pubDatetime: 2026-03-31T15:12:03.284Z
 title: I Built a Bookmarklet for Hillsboro Hops Fans
 description: A browser bookmarklet that exports Hillsboro Hops games to your calendar
 tags: ["javascript", "community", "tutorial"]
