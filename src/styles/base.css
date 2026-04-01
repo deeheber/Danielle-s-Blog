@@ -148,7 +148,8 @@
   .prose figcaption,
   .prose ol,
   .prose ul,
-  .prose table {
+  .prose table,
+  .prose th {
     color: rgb(var(--color-text-base)) !important;
   }
 
@@ -197,6 +198,12 @@
 
   .prose figcaption {
     opacity: 0.7;
+  }
+
+  .prose p,
+  .prose li {
+    font-size: 1.25rem;
+    line-height: 1.8;
   }
 
   /* Prose code */
