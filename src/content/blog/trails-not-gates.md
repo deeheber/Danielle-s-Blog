@@ -1,6 +1,6 @@
 ---
 author: Danielle Heberling
-pubDatetime: 2026-04-12T22:12:03.284Z
+pubDatetime: 2026-04-12T00:00:00.000Z
 title: Good DevOps Engineers Leave Trails Not Gates
 description: Why the best DevOps engineers focus on clearing paths instead of guarding gates, and how to choose enablement over gatekeeping in platform and infrastructure roles.
 tags: ["devops", "career", "opinion"]
