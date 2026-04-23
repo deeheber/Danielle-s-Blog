@@ -5,6 +5,9 @@ on:
   # Runs on git reference deletion (branch or tag)
   delete:
 
+permissions:
+  contents: read
+
 jobs:
   dispatch:
     runs-on: ubuntu-latest
