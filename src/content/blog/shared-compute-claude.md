@@ -2,7 +2,7 @@
 author: Danielle Heberling
 title: Getting Claude Code off my laptop and onto shared compute
 pubDatetime: 2026-05-23T10:12:03.284Z
-description: A story about an imperfect solution to a problem
+description: How I got Claude Code onto shared compute so broken deploys don't wait on one person.
 tags: ["aws", "ai", "devops", "claude", "cloudformation"]
 ---
 
