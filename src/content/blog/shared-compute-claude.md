@@ -16,9 +16,7 @@ So I decided to build my way out of it. I'd give the team a starting point on a 
 
 ## What I built
 
-Most of my time went to building the wrapper around the model. The prompt, the MCP config, the plumbing to run it on shared compute.
-
-The result is a tool I'm calling the cfn-investigator. I put a thinned down version on GitHub as [headless-claude-on-aws](https://github.com/deeheber/headless-claude-on-aws). It's narrowed to CloudFormation only and meant as a jumping-off point, not a copy of what I run at work. Same idea, rebuilt from scratch. It's close enough that you could follow it, learn from it, or fork it as a base.
+The result is a tool I'm calling the cfn-investigator. I put a thinned down version on GitHub as <a href="https://github.com/deeheber/headless-claude-on-aws" target="_blank" rel="noopener noreferrer">headless-claude-on-aws</a>. It's narrowed to CloudFormation only and meant as a jumping-off point, not a copy of what I run at work. Same idea, rebuilt from scratch. It's close enough that you could follow it, learn from it, or fork it as a base.
 
 The shape is small. It's a CodeBuild project that runs Claude Code headlessly. You hand it a failing stack name, optionally with the commit you suspect. It reads the stack state through the AWS MCP server with a read only role, works out the likely cause, and writes a short analysis. The example logs it to CloudWatch with a one line spot to forward it anywhere. Mine posts it in the Slack thread where the alert fired, right under the question.
 
@@ -36,9 +34,9 @@ If I'm being real, the biggest factor was knowing I'd be the only one responsibl
 
 This is the part I actually care about.
 
-The repo is a monstrosity of YAML and bash. The IAM is broader than it should be (it uses AWS managed `ReadOnlyAccess`, which you'd want to scope down). The tools get installed fresh on every run instead of baked into an image. The two role split scopes the MCP server's AWS calls, not Claude itself.
+The repo is a pile of YAML and bash. The IAM is broader than it should be (it uses AWS managed `ReadOnlyAccess`, which you'd want to scope down). The tools get installed fresh on every run instead of baked into an image. The two role split scopes the MCP server's AWS calls, not Claude itself.
 
-And it works. A broken deploy comes with a starting point attached now, so the next move doesn't wait on one person.
+And it works. Last week a deploy failed and the investigator flagged a missing environment variable on a Fargate task definition. The developer saw the message, added the variable, and redeployed without pinging anyone. A broken deploy comes with a starting point attached now, so the next move doesn't wait on one person.
 
 In my opinion we've gotten a little precious about reference architectures. There's a strong pull to wait until you can build the clean, fully managed, perfectly scoped version. But the clean version often doesn't exist yet, or isn't mature, or would take three times as long to ship. Meanwhile the messy version that you actually understand and can keep running yourself is sitting right there, solving the real problem today.
 
@@ -46,12 +44,12 @@ In my opinion we've gotten a little precious about reference architectures. Ther
 
 The reason I had to write all that YAML is that the managed options either didn't exist or weren't mature when I started.
 
-That's changed. Before I write more YAML next time, I want to look at [Claude on AWS](https://aws.amazon.com/about-aws/whats-new/2026/05/claude-platform-aws/), [Claude Managed Agents](https://platform.claude.com/docs/en/managed-agents/overview), and the [Claude Agent SDK](https://code.claude.com/docs/en/agent-sdk/overview). Any of those would let you skip most of the plumbing I built by hand. I haven't used them for real yet, so I can't tell you how they hold up, but they're the first place I'd look now.
+That's changed. Before I write more YAML next time, I want to look at <a href="https://aws.amazon.com/about-aws/whats-new/2026/05/claude-platform-aws/" target="_blank" rel="noopener noreferrer">Claude on AWS</a>, <a href="https://platform.claude.com/docs/en/managed-agents/overview" target="_blank" rel="noopener noreferrer">Claude Managed Agents</a>, and the <a href="https://code.claude.com/docs/en/agent-sdk/overview" target="_blank" rel="noopener noreferrer">Claude Agent SDK</a>. Any of those would let you skip most of the plumbing I built by hand. I haven't used them for real yet, so I can't tell you how they hold up, but they're the first place I'd look now.
 
 I'm sharing my version for the cases where the managed path isn't a fit, and as a concrete example you can pull apart.
 
 ## Take a look
 
-The code is up at [github.com/deeheber/headless-claude-on-aws](https://github.com/deeheber/headless-claude-on-aws). The README walks through deploying it, populating the secrets, and kicking off a run.
+The code is up at <a href="https://github.com/deeheber/headless-claude-on-aws" target="_blank" rel="noopener noreferrer">github.com/deeheber/headless-claude-on-aws</a>. The README walks through deploying it, populating the secrets, and kicking off a run.
 
 If you build something like this, I'd love to hear how it went. Especially the parts that didn't work.
