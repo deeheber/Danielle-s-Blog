@@ -4,6 +4,7 @@ title: Getting Claude Code off my laptop and onto shared compute
 pubDatetime: 2026-05-23T10:12:03.284Z
 description: How I got Claude Code onto shared compute so broken deploys don't wait on one person.
 tags: ["aws", "ai", "devops", "claude", "cloudformation"]
+slug: headless-claude-on-aws
 ---
 
 Running Claude Code on my own machine was easy. Getting it onto shared compute my whole team could trigger was the hard part. There's plenty written about the local side. A lot less about the team side.
