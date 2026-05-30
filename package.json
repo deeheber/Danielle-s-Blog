@@ -35,7 +35,7 @@
     "@astrojs/sitemap": "^3.7.2",
     "@eslint/eslintrc": "^3.3.5",
     "@eslint/js": "^9.39.4",
-    "@playwright/test": "^1.59.1",
+    "@playwright/test": "^1.60.0",
     "@tailwindcss/typography": "^0.5.19",
     "@tailwindcss/vite": "^4.2.4",
     "@types/markdown-it": "^14.1.2",
