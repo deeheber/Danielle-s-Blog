@@ -2,7 +2,7 @@
 title: Signal and Noise
 author: Danielle Heberling
 pubDatetime: 2026-06-06T01:12:03.284Z
-description: A reflection on the current state of tech and seperating the signal from the noise.
+description: The AI hype is loud. Here's what I think actually matters underneath it.
 tags: ["opinion", "career", "community", "ai"]
 slug: signal-and-noise
 ---
