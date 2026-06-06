@@ -22,7 +22,7 @@ I've been chewing on this for a year or two, mostly trying to tell what's real h
 
 ## The bad
 
-- Some are too confident and don't check what the model hands back.
+- It's easy to trust what the model hands back without checking it, right up until it breaks something.
 - Laziness is setting in. Not the good kind where you automate the boring tasks. The kind where you outsource your thinking and slowly forget how to do it yourself.
 - There's slop everywhere. Ugly generated images, walls of text nobody can get through.
 - We're shipping more code than we can understand, without the guardrails to catch it.
@@ -43,9 +43,9 @@ Writing code got cheap. Everything around it didn't, and that's the part AI can'
 
 Fundamentals are one unglamorous thing people skip for the shiny stuff. How you ship is another. Most teams focus on application features. That makes sense, since it's why you're building in the first place. The trouble starts when that's all you watch.
 
-I once spent a few hours cleaning up after vibe coded changes someone shipped without understanding them. Nothing stopped it, because the focus and the investment had gone to features instead. Solid automated tests and a sturdy pipeline would have caught that automatically, before it ever reached production. That's confidence you can't really get any other way today.
+I once spent a few hours cleaning up after vibe coded changes someone shipped without understanding them. Nothing stopped it, because the focus and the investment had gone to features instead. Solid automated tests and a sturdy pipeline would have caught that automatically, before it ever reached production. That's confidence you can't get any other way today.
 
-Get that right and you might not even need to read every line. Without the guardrails, that's just shipping code nobody understands. With them, you can step back and let the pipeline do its job.
+Get that right and you might not even need to read every line. The guardrails buy you confidence it works, not an excuse to stop thinking. Without them, that's just shipping code nobody understands. With them, you can step back and let the pipeline do its job.
 
 None of this is glamorous, and nobody notices it when it's working. It's like roads. Nobody thinks about them until they're full of potholes. Putting time in here feels slow at the start. It pays off later. I've watched it happen.
 
