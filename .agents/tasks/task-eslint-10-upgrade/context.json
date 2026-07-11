@@ -1,0 +1,24 @@
+{
+  "project_type": "Astro 5.x blog with React components, TypeScript, Tailwind CSS",
+  "language": "TypeScript",
+  "build_system": "npm with Astro build pipeline. Scripts: 'npm run build' runs type-check then astro build.",
+  "test_framework": "Playwright for E2E tests (in e2e/ directory). No unit test framework.",
+  "build_command": "source ~/.nvm/nvm.sh && nvm use 22 && cd /projects/sandbox/Danielle-s-Blog && npm run build",
+  "test_command": "source ~/.nvm/nvm.sh && nvm use 22 && cd /projects/sandbox/Danielle-s-Blog && npm run lint:check",
+  "verification_instructions": "1. npm run lint:check (must pass with no plugin-loading errors). 2. npm run build (confirms type-check and astro build still work). 3. Spot-check --print-config on a .tsx file to confirm react, hooks, a11y, and import rules still trigger.",
+  "snapshot_or_generated_files": null,
+  "setup_instructions": "source ~/.nvm/nvm.sh && nvm use 22 && cd /projects/sandbox/Danielle-s-Blog && npm ci",
+  "environment_constraints": "Node.js available via nvm (v22.22.3). Must prefix all commands with 'source ~/.nvm/nvm.sh && nvm use 22'. Network mode is OPEN_INTERNET. ESLint 10 requires Node ^20.19.0 || ^22.13.0 || >=24 - current Node v22.22.3 satisfies this.",
+  "contribution_requirements": "Quality assurance: npm run type-check, npm run lint:check, npm run format:check, and npm run build must all pass. .nvmrc is currently set to v24.",
+  "key_patterns": "ESLint flat config in eslint.config.mjs. Uses FlatCompat from @eslint/eslintrc for plugin:astro/recommended extension. TypeScript parsed with @typescript-eslint/parser. React/TSX files get react, react-hooks, jsx-a11y plugins. Import ordering enforced via eslint-plugin-import.",
+  "relevant_files": [
+    "package.json",
+    "eslint.config.mjs",
+    ".nvmrc",
+    "tsconfig.json",
+    ".github/workflows/pr-validate.yml",
+    "src/components/Card.tsx",
+    "src/components/Search.tsx"
+  ],
+  "directory_structure": "Root: config files (eslint, tsconfig, astro, tailwind, playwright). src/: source code with components/, content/, pages/, layouts/, utils/, styles/. e2e/: Playwright tests. .github/workflows/: CI configs (pr-validate.yml, e2e-tests.yml, dispatch.yml). public/: static assets."
+}
