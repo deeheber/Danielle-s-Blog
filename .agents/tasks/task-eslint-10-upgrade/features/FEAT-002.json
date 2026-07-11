@@ -1,0 +1,33 @@
+{
+  "id": "FEAT-002",
+  "type": "chore",
+  "description": "Upgrade ESLint from v9 to v10 and update eslint.config.mjs to use @eslint/compat fixupPluginRules for plugins that do not yet declare ESLint 10 support (eslint-plugin-react, eslint-plugin-jsx-a11y, eslint-plugin-import).",
+  "status": "completed",
+  "steps": [
+    "Create a new git branch named 'eslint-10-upgrade' from main.",
+    "Update package.json: change 'eslint' from '^9.39.5' to '^10.0.0' and '@eslint/js' from '^9.39.5' to '^10.0.0'. Add '@eslint/compat' as a devDependency (latest version).",
+    "Run: source ~/.nvm/nvm.sh && nvm use 22 && cd /projects/sandbox/Danielle-s-Blog && npm install (to update package-lock.json with the new versions).",
+    "Update eslint.config.mjs: (a) Add import for fixupPluginRules from '@eslint/compat'. (b) In the React/TSX config block (files: ['**/*.tsx']), wrap 'react' and 'jsx-a11y' plugins with fixupPluginRules(). Change 'react: react' to 'react: fixupPluginRules(react)' and 'jsx-a11y: jsxA11y' to '\"jsx-a11y\": fixupPluginRules(jsxA11y)'. (c) In the TypeScript files config block (files: ['**/*.ts', '**/*.tsx']), wrap the import plugin: change 'import: importPlugin' to 'import: fixupPluginRules(importPlugin)'. Note: reactHooks does NOT need wrapping since eslint-plugin-react-hooks@7.1.1 already declares eslint ^10.0.0 support.",
+    "Run: npm run lint:check -- must pass with no plugin-loading errors.",
+    "Run: npm run build -- must pass.",
+    "Verify rules are still active: run 'npx eslint --print-config src/components/Card.tsx' and confirm react/, jsx-a11y/, and import/ rules appear in the output.",
+    "Commit all changes (package.json, package-lock.json, eslint.config.mjs) with message: 'chore: upgrade ESLint from v9 to v10'."
+  ],
+  "acceptance_criteria": [
+    "eslint --version reports v10.x",
+    "npm run lint:check passes with exit code 0 and no plugin-loading errors",
+    "npm run build passes with exit code 0",
+    "eslint --print-config on a .tsx file shows react/, jsx-a11y/, and import/ rules are active",
+    "Changes are committed on a branch named 'eslint-10-upgrade'"
+  ],
+  "verification": [
+    "source ~/.nvm/nvm.sh && nvm use 22 && cd /projects/sandbox/Danielle-s-Blog && npx eslint --version",
+    "source ~/.nvm/nvm.sh && nvm use 22 && cd /projects/sandbox/Danielle-s-Blog && npm run lint:check",
+    "source ~/.nvm/nvm.sh && nvm use 22 && cd /projects/sandbox/Danielle-s-Blog && npm run build",
+    "source ~/.nvm/nvm.sh && nvm use 22 && cd /projects/sandbox/Danielle-s-Blog && npx eslint --print-config src/components/Card.tsx | grep -c 'react/'",
+    "source ~/.nvm/nvm.sh && nvm use 22 && cd /projects/sandbox/Danielle-s-Blog && npx eslint --print-config src/components/Card.tsx | grep -c 'jsx-a11y/'",
+    "source ~/.nvm/nvm.sh && nvm use 22 && cd /projects/sandbox/Danielle-s-Blog && npx eslint --print-config src/components/Card.tsx | grep -c 'import/'"
+  ],
+  "blocked_reason": null,
+  "findings": "Confirmed via testing: eslint-plugin-react@7.37.5 breaks on ESLint 10 due to removed context.getFilename() API. Fix: wrap with fixupPluginRules from @eslint/compat. Same applies to eslint-plugin-jsx-a11y and eslint-plugin-import. eslint-plugin-react-hooks@7.1.1 already supports eslint ^10.0.0. eslint-plugin-astro@1.7.0 has peerDep eslint >=8.57.0 (supports 10). @typescript-eslint@8.63.0 supports eslint ^10.0.0. eslint-config-prettier@10.1.8 supports eslint >=7.0.0. Node v22.22.3 satisfies ESLint 10 requirement of ^22.13.0. .nvmrc is set to v24 which also satisfies."
+}

@@ -1,0 +1,14 @@
+{
+  "task_id": "task-eslint-10-upgrade",
+  "task_description": "Upgrade ESLint from v9 to v10. The three plugins that lack formal ESLint 10 support (eslint-plugin-react, eslint-plugin-jsx-a11y, eslint-plugin-import) will be wrapped with fixupPluginRules from @eslint/compat to maintain compatibility. Node version (.nvmrc v24) and CI (pr-validate.yml uses .nvmrc) already satisfy ESLint 10 requirements.",
+  "status": "completed",
+  "feature_order": ["FEAT-001", "FEAT-002"],
+  "blocked_reason": null,
+  "verification": {
+    "build": "pass",
+    "tests": "pass",
+    "test_quality": "pass",
+    "docker_build": "skipped",
+    "summary": "npm run lint:check passes (ESLint 10.7.0, no plugin-loading errors). npm run build passes (110 pages built). All react/ (38), react-hooks/ (16), jsx-a11y/ (34), and import/ (3) rules confirmed active via --print-config on src/components/Card.tsx. The react/display-name rule that was crashing on ESLint 10 now works via fixupPluginRules compat layer."
+  }
+}
