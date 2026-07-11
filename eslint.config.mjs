@@ -4,6 +4,7 @@ import path from "node:path"
 import { fileURLToPath } from "node:url"
 import js from "@eslint/js"
 import { FlatCompat } from "@eslint/eslintrc"
+import { fixupPluginRules } from "@eslint/compat"
 import tseslint from "@typescript-eslint/eslint-plugin"
 import tsparser from "@typescript-eslint/parser"
 import react from "eslint-plugin-react"
@@ -45,7 +46,7 @@ export default [
     ignores: ["e2e/**"],
     plugins: {
       "@typescript-eslint": tseslint,
-      import: importPlugin,
+      import: fixupPluginRules(importPlugin),
     },
     languageOptions: {
       parser: tsparser,
@@ -91,9 +92,9 @@ export default [
   {
     files: ["**/*.tsx"],
     plugins: {
-      react,
+      react: fixupPluginRules(react),
       "react-hooks": reactHooks,
-      "jsx-a11y": jsxA11y,
+      "jsx-a11y": fixupPluginRules(jsxA11y),
     },
     settings: {
       react: { version: "detect" },
