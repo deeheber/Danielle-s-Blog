@@ -102,36 +102,10 @@ const latestFive = sortedData.slice(0, 5)
 
 <style>
   @reference "../styles/base.css";
-  /* ===== Hero Section ===== */
-  #hero {
-    @apply pt-8 pb-6;
-  }
-  #hero h1 {
-    @apply my-4 inline-block text-3xl font-bold sm:my-8 sm:text-5xl;
-  }
-  #hero .rss-link {
-    @apply mb-6;
-  }
-  #hero .rss-icon {
-    @apply fill-skin-accent mb-2 h-6 w-6 scale-110 sm:mb-3 sm:scale-125;
-  }
-  #hero p {
-    @apply my-2;
-  }
-  .social-wrapper {
-    @apply mt-4 flex flex-col sm:flex-row sm:items-center;
-  }
-  .social-links {
-    @apply mr-2 mb-1 whitespace-nowrap sm:mb-0;
-  }
-
-  /* ===== Featured & Recent blog Sections ===== */
-  #featured,
-  #recent-blog,
-  .talk-list {
+  /* ===== Recent blog Section ===== */
+  #recent-blog {
     @apply pt-12 pb-6;
   }
-  #featured h2,
   #recent-blog h2,
   #recent-talks h2 {
     @apply text-2xl tracking-wide;

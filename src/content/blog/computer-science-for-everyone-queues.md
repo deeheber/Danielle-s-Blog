@@ -14,7 +14,7 @@ tags: ["tutorial", "javascript"]
 
 TL;DR. I come from a non-traditional background and never knew basic computer science concepts before getting into the industry. As I interviewed for software engineering roles, I found this to be a blocker at some companies. So, I've decided to see what all the hype was about and do some self study to improve myself and want to share what I learned with the hopes that it may help others too.
 
-This is part 2 of a ??? part series. If you're interested check out what we covered last time <a href="https://www.danielleheberling.xyz/blog/cs-bubble-sort/" target="_blank" rel="noopener noreferrer">here</a>.
+This is part 2 of a ??? part series. If you're interested check out what we covered last time <a href="https://www.danielleheberling.xyz/blog/computer-science-for-everyone-bubble-sort/" target="_blank" rel="noopener noreferrer">here</a>.
 
 ## Let's get to the second topic - Queues
 

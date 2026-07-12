@@ -63,7 +63,7 @@ I also added a login screen by using the aws-amplify `withAuthenticator` higher 
 
 #### Frontend Deploy
 
-To host the frontend on AWS, the choice most folks go with is uploading their frontend code to an S3 Bucket and sometimes adding a CloudFront CDN in front of the S3 Bucket. This seems like it should be simple to automate, but it really isn't quite yet. With Amplify it’s easy. All you need to do is `amplify add hosting` and `amplify publish` then you’re done! Much nicer than writing a <a href="https://www.danielleheberling.xyz/blog/deploy-frontend/" target="_blank" rel="noopener noreferrer">weird Lambda Function</a> to do this.
+To host the frontend on AWS, the choice most folks go with is uploading their frontend code to an S3 Bucket and sometimes adding a CloudFront CDN in front of the S3 Bucket. This seems like it should be simple to automate, but it really isn't quite yet. With Amplify it’s easy. All you need to do is `amplify add hosting` and `amplify publish` then you’re done! Much nicer than writing a <a href="https://www.danielleheberling.xyz/blog/automated-react-frontend-deploys/" target="_blank" rel="noopener noreferrer">weird Lambda Function</a> to do this.
 
 #### Summary
 

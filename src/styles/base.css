@@ -11,10 +11,6 @@
   background-color: rgb(var(--color-accent));
 }
 
-@utility bg-skin-inverted {
-  background-color: rgb(var(--color-text-base));
-}
-
 @utility bg-skin-card {
   background-color: rgb(var(--color-card));
 }
@@ -43,10 +39,6 @@
   border-color: rgb(var(--color-border));
 }
 
-@utility border-skin-fill {
-  border-color: rgb(var(--color-text-base));
-}
-
 @utility border-skin-accent {
   border-color: rgb(var(--color-accent));
 }
@@ -65,12 +57,6 @@
 
 @utility font-merri {
   font-family: Merriweather, serif;
-}
-
-@utility font-mono {
-  font-family:
-    IBM Plex Mono,
-    monospace;
 }
 
 @layer base {
@@ -307,19 +293,6 @@
   max-width: 56rem; /* 4xl */
   padding-left: 1rem;
   padding-right: 1rem;
-}
-
-@utility flex-center {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-@utility flex-center-col {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
 }
 
 @utility external-link {

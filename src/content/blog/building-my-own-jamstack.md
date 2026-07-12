@@ -8,7 +8,7 @@ tags: ["aws", "devops", "tutorial"]
 
 The trend of the frontend and backend coming closer together is continuing and even has a name now...the <a href="https://jamstack.org/" target="_blank" rel="noopener noreferrer">Jam stack</a>.
 
-[Last year](https://danielleheberling.xyz/blog/deploy-frontend/), I discussed my excitment about the backend and frontend slowly merging closer together and did a walk through on how to deploy a JavaScript based frontend to an S3 bucket with website hosting enabled.
+[Last year](https://danielleheberling.xyz/blog/automated-react-frontend-deploys/), I discussed my excitment about the backend and frontend slowly merging closer together and did a walk through on how to deploy a JavaScript based frontend to an S3 bucket with website hosting enabled.
 
 Building and deploying websites still continues to be a very common use case with folks using AWS, but I personally wanted a more "push button" solution that would also allow me to connect my Stackery backend resources easily. So I've decided to iterate on what we built the last time to make it better.
 

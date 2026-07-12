@@ -46,7 +46,7 @@ Like any architecture decision, there are always pros and cons. The important th
 
 ## Additional Things to Keep in Mind
 
-I didn't discuss this in detail here, but it's a good practice to have a "dead letter queue" (DLQ) on each queue setup, so you can retry failed events. You can read more about how to do this in this <a href="https://www.danielleheberling.xyz/blog/dlq-messages/" target="_blank" rel="noopener noreferrer">blog post</a>.
+I didn't discuss this in detail here, but it's a good practice to have a "dead letter queue" (DLQ) on each queue setup, so you can retry failed events. You can read more about how to do this in this <a href="https://www.danielleheberling.xyz/blog/the-secret-lives-of-failed-sqs-messages/" target="_blank" rel="noopener noreferrer">blog post</a>.
 
 In our example architecture, we focused on SNS -> SQS -> Lambda; however, there are many other ways that you can achieve a "fan out" architecture. For example: <a href="https://aws.amazon.com/eventbridge/" target="_blank" rel="noopener noreferrer">Amazon EventBridge</a> or <a href="https://aws.amazon.com/step-functions/" target="_blank" rel="noopener noreferrer">AWS Step Functions</a>.
 
