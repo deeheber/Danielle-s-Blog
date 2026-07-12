@@ -4,7 +4,6 @@
   "private": false,
   "type": "module",
   "scripts": {
-    "astro": "astro",
     "build": "npm run type-check && astro build",
     "compress-images": "bash scripts/compress-images.sh",
     "dev": "astro dev",
@@ -13,7 +12,6 @@
     "lint": "eslint . --fix",
     "lint:check": "eslint .",
     "preview": "astro preview",
-    "start": "astro dev",
     "sync": "astro sync",
     "test:e2e": "npm run build && playwright test",
     "test:e2e:ui": "npm run build && playwright test --ui",
