@@ -13,7 +13,7 @@ Check out the live site: https://danielleheberling.xyz/
 ## 🚀 Getting Started
 
 ```bash
-npm install
+npm ci
 npm run dev
 ```
 
@@ -43,23 +43,19 @@ Update the `speakingData.json` file in `src/data` directory
 
 All commands are run from the root of the project, from a terminal:
 
-> **_Note!_** For `Docker` commands we must have it [installed](https://docs.docker.com/engine/install/) in your machine.
-
-| Command                              | Action                                                                                                                           |
-| :----------------------------------- | :------------------------------------------------------------------------------------------------------------------------------- |
-| `npm install`                        | Installs dependencies                                                                                                            |
-| `npm run dev`                        | Starts local dev server at `localhost:4321`                                                                                      |
-| `npm run build`                      | Build your production site to `./dist/`                                                                                          |
-| `npm run preview`                    | Preview your build locally, before deploying                                                                                     |
-| `npm run format:check`               | Check code format with Prettier                                                                                                  |
-| `npm run format`                     | Format codes with Prettier                                                                                                       |
-| `npm run sync`                       | Generates TypeScript types for all Astro modules. [Learn more](https://docs.astro.build/en/reference/cli-reference/#astro-sync). |
-| `npm run lint`                       | Lint with ESLint                                                                                                                 |
-| `npm run lint:check`                 | Check code linting with ESLint                                                                                                   |
-| `npm run test:e2e`                   | Run end-to-end smoke tests with Playwright (see [E2E Tests](#-e2e-tests) below)                                                  |
-| `npm run type-check`                 | Run TypeScript type checking without emitting files                                                                              |
-| `docker compose up -d`               | Run on docker, You can access with the same hostname and port informed on `dev` command.                                         |
-| `docker compose run app npm install` | You can run any command above into the docker container.                                                                         |
+| Command                | Action                                                                                                                           |
+| :--------------------- | :------------------------------------------------------------------------------------------------------------------------------- |
+| `npm install`          | Installs dependencies                                                                                                            |
+| `npm run dev`          | Starts local dev server at `localhost:4321`                                                                                      |
+| `npm run build`        | Build your production site to `./dist/`                                                                                          |
+| `npm run preview`      | Preview your build locally, before deploying                                                                                     |
+| `npm run format:check` | Check code format with Prettier                                                                                                  |
+| `npm run format`       | Format codes with Prettier                                                                                                       |
+| `npm run sync`         | Generates TypeScript types for all Astro modules. [Learn more](https://docs.astro.build/en/reference/cli-reference/#astro-sync). |
+| `npm run lint`         | Lint with ESLint                                                                                                                 |
+| `npm run lint:check`   | Check code linting with ESLint                                                                                                   |
+| `npm run test:e2e`     | Run end-to-end smoke tests with Playwright (see [E2E Tests](#-e2e-tests) below)                                                  |
+| `npm run type-check`   | Run TypeScript type checking without emitting files                                                                              |
 
 ## 🧪 E2E Tests
 
@@ -78,13 +74,12 @@ npm run test:e2e
 
 ## 💻 My Tech Stack
 
-**Main Framework** - [Astro 5.x](https://astro.build/)  
+**Main Framework** - [Astro 6.x](https://astro.build/)  
 **Type Checking** - [TypeScript](https://www.typescriptlang.org/)  
 **Component Framework** - [React 19.x](https://reactjs.org/)  
 **Styling** - [TailwindCSS 4.x](https://tailwindcss.com/)  
 **Fuzzy Search** - [FuseJS](https://fusejs.io/)  
 **Icons & Images** - [Satori](https://github.com/vercel/satori) & [@resvg/resvg-js](https://github.com/yisibl/resvg-js) for OpenGraph generation  
-**Build Optimization** - [Jampack](https://jampack.divriots.com/)  
 **Code Formatting** - [Prettier](https://prettier.io/)  
 **Linting** - [ESLint](https://eslint.org/)
 **End to End Testing** - [Playwright](https://playwright.dev/)
