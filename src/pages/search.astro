@@ -13,11 +13,11 @@ const blog = await getCollection("blog", ({ data }) => !data.draft)
 const sortedblog = getSortedBlog(blog)
 
 // List of items to search in
-const searchList = sortedblog.map(({ data, slug }) => ({
+const searchList = sortedblog.map(({ data, id }) => ({
   title: data.title,
   description: data.description,
   data,
-  slug,
+  slug: id,
 }))
 ---
 

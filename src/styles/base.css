@@ -247,22 +247,6 @@
     padding-left: 0.5714286em;
   }
 
-  .prose h2#table-of-contents {
-    @apply mb-2;
-  }
-
-  .prose details {
-    @apply text-skin-base inline-block cursor-pointer select-none;
-  }
-
-  .prose summary {
-    @apply focus-outline;
-  }
-
-  .prose h2#table-of-contents + p {
-    @apply hidden;
-  }
-
   /* ===== scrollbar ===== */
   html {
     overflow-y: scroll;

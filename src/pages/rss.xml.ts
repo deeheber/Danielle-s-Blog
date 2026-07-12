@@ -15,12 +15,12 @@ export async function GET() {
     title: SITE.title,
     description: SITE.desc,
     site: SITE.website,
-    items: sortedblog.map(({ body, data, slug }) => ({
+    items: sortedblog.map(({ body, data, id }) => ({
       ...data,
-      content: sanitizeHtml(parser.render(body), {
+      content: sanitizeHtml(parser.render(body ?? ""), {
         allowedTags: sanitizeHtml.defaults.allowedTags.concat(["img"]),
       }),
-      link: `blog/${slug}/`,
+      link: `blog/${id}/`,
       pubDate: new Date(data.modDatetime ?? data.pubDatetime),
     })),
   })

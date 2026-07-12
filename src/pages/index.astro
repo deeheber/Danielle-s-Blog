@@ -38,10 +38,10 @@ const latestFive = sortedData.slice(0, 5)
           <h2 tabindex="0">Recent Blog Posts</h2>
           <ul>
             {recentblog.map(
-              ({ data, slug }, index) =>
+              ({ data, id }, index) =>
                 index < 5 && (
                   <Card
-                    href={`/blog/${slug}/`}
+                    href={`/blog/${id}/`}
                     frontmatter={data}
                     secHeading={false}
                   />

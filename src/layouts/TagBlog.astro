@@ -39,9 +39,9 @@ const canonicalURL = new URL(`/tags/${tag}/`, Astro.site).href
     </h1>
     <ul>
       {
-        paginatedblog.map(({ data, slug }) => (
+        paginatedblog.map(({ data, id }) => (
           <Card
-            href={`/blog/${slug}/`}
+            href={`/blog/${id}/`}
             frontmatter={data}
           />
         ))
