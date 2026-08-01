@@ -84,7 +84,7 @@ Scheduler gets `{"status": "accepted"}` in well under a second. The search runs 
 
 In the original post I disabled retries, because Scheduler retrying a "failed" invocation meant duplicate agent runs and duplicate emails. The CDK target default is 185 retries with exponential backoff over up to 24 hours, so every scheduled search was set up to keep re-running (and re-billing) until I caught it.
 
-With the async path, I turned retries back on (`retryAttempts: 0` to `2`). A retry now only happens if the ack itself failed, which means the agent almost certainly never got started. The failure mode that made retries dangerous doesn't exist anymore.
+With the async path, I turned retries back on (`retryAttempts: 0` to `2`). Now Scheduler gets an ack right away, so it won’t keep retrying while the search is still running. There’s still a small chance of a duplicate if the ack gets lost, but that’s a trade-off I’m comfortable with here.
 
 There's a tradeoff here. Scheduler now only confirms your agent started. It says nothing about whether the search actually worked. If the search blows up 40 seconds in, Scheduler is happy and your DLQ stays empty. You need logs, metrics, or the notification itself to know the work finished. For me a missing email is a loud signal. If your silence is more ambiguous, plan for that.
 
