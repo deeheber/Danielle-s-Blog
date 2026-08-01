@@ -7,7 +7,7 @@ description: EventBridge Scheduler kept DLQing successful invokeAgentRuntime cal
 tags: ["ai", "aws", "serverless", "tutorial"]
 ---
 
-A while back I wrote about [letting an AI agent do your job searching](https://danielleheberling.xyz/blog/job-search-agent/). That post ended with a quirk I couldn't explain. EventBridge Scheduler would invoke my agent, the agent would run fine, I'd get the email, and the invocation would land in the dead letter queue anyway. Every single time.
+A while back I wrote about [letting an AI agent do your job searching](/blog/job-search-agent/). That post ended with a quirk I couldn't explain. EventBridge Scheduler would invoke my agent, the agent would run fine, I'd get the email, and the invocation would land in the dead letter queue anyway. Every single time.
 
 I figured I was either doing something wrong or hitting an AgentCore bug. Turns out it was neither.
 
