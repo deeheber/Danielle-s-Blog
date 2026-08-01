@@ -13,7 +13,7 @@ I figured I was either doing something wrong or hitting an AgentCore bug. Turns 
 
 ## The Actual Problem
 
-EventBridge Scheduler universal targets (the feature that lets Scheduler call almost any AWS API action directly, no Lambda in between) are synchronous. Scheduler makes the API call and waits for a response before deciding whether the invocation succeeded. The docs describe this as [at-least-once delivery](https://docs.aws.amazon.com/scheduler/latest/UserGuide/what-is-scheduler.html), where at least one delivery succeeds _with a response from the target_. I glossed over that last part.
+EventBridge Scheduler universal targets (the feature that lets Scheduler call almost any AWS API action directly, no Lambda in between) are synchronous. Scheduler makes the API call and waits for a response before deciding whether the invocation succeeded. The docs describe this as <a href="https://docs.aws.amazon.com/scheduler/latest/UserGuide/what-is-scheduler.html" target="_blank" rel="noopener noreferrer">at-least-once delivery</a>, where at least one delivery succeeds _with a response from the target_. I glossed over that last part.
 
 My schedule was calling the Bedrock AgentCore `invokeAgentRuntime` action, which blocks until the agent finishes. A search takes 30 to 75 seconds. Scheduler gives up around the 30 second mark and marks the invocation failed. The agent, which has no idea any of this happened, keeps going, finishes the search, and publishes to SNS. I get my email. The "failed" invocation goes to the DLQ. Here's what one of those messages looks like:
 
@@ -23,9 +23,9 @@ Everything downstream worked. The only broken part was Scheduler's opinion of it
 
 ## About That 30 Seconds
 
-I went looking for this in the docs and could not find it. The [EventBridge Scheduler quotas page](https://docs.aws.amazon.com/scheduler/latest/UserGuide/scheduler-quotas.html) covers number of schedules, API request rates, and invocation throughput. Nothing about how long Scheduler waits for a target to respond.
+I went looking for this in the docs and could not find it. The <a href="https://docs.aws.amazon.com/scheduler/latest/UserGuide/scheduler-quotas.html" target="_blank" rel="noopener noreferrer">EventBridge Scheduler quotas page</a> covers number of schedules, API request rates, and invocation throughput. Nothing about how long Scheduler waits for a target to respond.
 
-The one timeout you _can_ configure is `MaximumEventAgeInSeconds` in the [retry policy](https://docs.aws.amazon.com/scheduler/latest/APIReference/API_Target.html). That's the maximum age of an event across retries, not a per-call limit. Different thing.
+The one timeout you _can_ configure is `MaximumEventAgeInSeconds` in the <a href="https://docs.aws.amazon.com/scheduler/latest/APIReference/API_Target.html" target="_blank" rel="noopener noreferrer">retry policy</a>. That's the maximum age of an event across retries, not a per-call limit. Different thing.
 
 So treat ~30 seconds as an observed number, not a contract. In my opinion the safer bet is designing against "Scheduler will not wait long" rather than a specific value.
 
@@ -33,9 +33,9 @@ So treat ~30 seconds as an observed number, not a contract. In my opinion the sa
 
 Instead of making the search faster, I made the response faster. The entrypoint now kicks the search off as a background task and returns immediately, so Scheduler gets its response well inside the window and the agent runs for as long as it needs to (up to AgentCore's 8 hour session cap, which my searches are nowhere near).
 
-AgentCore has first-class support for this. You register the background work with `add_async_task`, the runtime reports `HealthyBusy` on `/ping` while it's in flight, and the session stays alive instead of getting reaped. That last part matters because AgentCore terminates sessions after 15 minutes of idle, and without task tracking your background work looks exactly like idle. The [async processing docs](https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/runtime-long-run.html) cover the pattern.
+AgentCore has first-class support for this. You register the background work with `add_async_task`, the runtime reports `HealthyBusy` on `/ping` while it's in flight, and the session stays alive instead of getting reaped. That last part matters because AgentCore terminates sessions after 15 minutes of idle, and without task tracking your background work looks exactly like idle. The <a href="https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/runtime-long-run.html" target="_blank" rel="noopener noreferrer">async processing docs</a> cover the pattern.
 
-Here's the relevant part of the [entrypoint](https://github.com/deeheber/job-search-agent/pull/51):
+Here's the relevant part of the entrypoint:
 
 ```python
 # strong refs: asyncio only weakly references tasks
@@ -72,11 +72,11 @@ async def invoke(payload: dict[str, Any] | None = None) -> dict[str, Any]:
 
 Scheduler gets `{"status": "accepted"}` in well under a second. The search runs in the background. No more DLQ.
 
-## Three Things That Bit Me
+## A Few Things to Watch For
 
 **The Strands call has to be awaited.** I was calling `agent(prompt)` inside an `async def` entrypoint, which blocks the event loop. Survivable when the entrypoint blocked anyway. But once the runtime needs to answer health checks mid-search, a blocking call starves everything. Switching to `await agent.invoke_async(prompt)` was required, not a style preference.
 
-**Hold a reference to the task.** `asyncio` only weakly references tasks from [`create_task`](https://docs.python.org/3/library/asyncio-task.html#asyncio.create_task), so an unreferenced task can get garbage collected mid-run. That's the `_background_tasks` set above, lifted straight from the pattern in the Python docs. It usually works fine right up until it doesn't.
+**Hold a reference to the task.** `asyncio` only weakly references tasks from <a href="https://docs.python.org/3/library/asyncio-task.html#asyncio.create_task" target="_blank" rel="noopener noreferrer"><code>create_task</code></a>, so an unreferenced task can get garbage collected mid-run. That's the `_background_tasks` set above, lifted straight from the pattern in the Python docs. It usually works fine right up until it doesn't.
 
 **Keep a synchronous path.** Fire and forget is great for the scheduler and terrible for local development. A `"sync": true` flag in the payload runs the search inline and returns the full result. That's what I use for curl and the AgentCore playground.
 
@@ -97,7 +97,7 @@ If you're invoking AgentCore Runtime from an EventBridge schedule and seeing DLQ
 3. Wrap the real work in `add_async_task` / `complete_async_task` so the runtime knows to keep the session alive.
 4. Make sure nothing in that background path blocks the event loop.
 
-Code is in the [job-search-agent repo](https://github.com/deeheber/job-search-agent) and the change is [PR #51](https://github.com/deeheber/job-search-agent/pull/51) if you want to see the whole diff.
+Code is in the <a href="https://github.com/deeheber/job-search-agent" target="_blank" rel="noopener noreferrer">job-search-agent repo</a> and the change is <a href="https://github.com/deeheber/job-search-agent/pull/51" target="_blank" rel="noopener noreferrer">PR #51</a> if you want to see the whole diff.
 
 None of this is AgentCore specific. Any long-running universal target invoked from EventBridge Scheduler has the same problem. Agents just happen to be really good at being slow. 😅
 
