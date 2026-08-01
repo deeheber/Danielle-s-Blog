@@ -60,7 +60,7 @@ If you leave retries enabled, the scheduler will retry the invocation multiple t
 
 My workaround was to disable retries on the scheduler and set up a Dead Letter Queue (DLQ) to capture these "failed" invocations so I can monitor them. I'm honestly not sure if this is something I'm doing wrong or if it's a quirk on the AWS side that'll get fixed eventually. AgentCore is still pretty new, so it's possible this just hasn't been ironed out yet. If you've run into something similar, I'd love to hear about it.
 
-> Update (Aug 2026). Mystery solved. It was a ~30 second timeout on the Scheduler side that I couldn't find documented anywhere. I wrote up the cause and the fix, including turning retries back on, in a follow-up post.
+> Update (Aug 2026). Mystery solved. It was a ~30 second timeout on the Scheduler side that I couldn't find documented anywhere. I wrote up the cause and the fix, including turning retries back on, in a [follow-up post](/blog/scheduler-dlq-followup/).
 
 ## The Outcome
 
