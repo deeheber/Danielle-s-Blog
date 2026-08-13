@@ -1,7 +1,7 @@
 ---
 title: Not All AI Builders Are Doing the Same Work
 author: Danielle Heberling
-pubDatetime: 2026-08-08T09:12:03.284Z
+pubDatetime: 2026-08-13T09:12:03.284Z
 description: An opinion on the current landscape of what being a builder looks like in the ever evolving age of AI.
 slug: types-of-ai-builders
 tags: ["ai", "career", "opinion"]
@@ -23,7 +23,7 @@ This is by far the most common profile I come across.
 
 These are folks who use AI coding assistants such as Codex or Claude to plan, write, or review code. AI is a tool in their workflow, but it isn’t part of the system they’re creating.
 
-There are also people in traditionally non-engineering roles using the same tools. Think product managers, people in marketing, and customer service teams. Sometimes they use these tools to write code without fully understanding what the code is doing.
+There are also people in traditionally non-engineering roles using the same tools, like product managers, marketers, and customer service teams. Sometimes they use these tools to write code without fully understanding what the code is doing.
 
 My opinion: this is fine for a proof of concept. It can be a quick way to test an idea and learn whether it’s worth pursuing.
 
@@ -31,9 +31,9 @@ It shouldn’t be shipped to production without an engineer who knows what they�
 
 ## 2. The builder who _builds with AI_
 
-This group is less common, but they do exist!
+This group is less common, but they do exist.
 
-These are often engineers building purpose-specific agents, software factories, or applications that use LLM output as part of the product. They might also be experimenting with running local models.
+These are often engineers building purpose-specific agents, software factories (automated pipelines that use AI to generate and assemble parts of a product), or applications that use LLM output as part of the product. They might also be experimenting with running local models.
 
 The biggest difference between this group and category 1 is that AI isn’t only helping create the software. AI is part of how the software works.
 
@@ -47,7 +47,7 @@ A local demo can teach you a lot. Deploying an AI-powered system for other peopl
 
 This is the smallest group in my experience.
 
-These are the folks building and training the models themselves. Think AI researchers or engineers at companies like Anthropic and OpenAI who work on the models and supporting tools used by millions of people.
+These are the folks building and training the models themselves. Think AI researchers or engineers at companies like Anthropic and OpenAI who work on the models and supporting tools used by millions of people. Their day-to-day looks less like shipping product features and more like running training experiments, evaluating model behavior, and building the infrastructure other builders eventually rely on.
 
 ## Where I fall
 
@@ -69,7 +69,7 @@ To be clear, I’m not saying every engineer in category 1 is in trouble. Plenty
 
 I’m talking about the folks whose main skill is getting an AI tool to produce something that looks right.
 
-Those builders will probably still find jobs, but I think they’ll have fewer choices. This will be especially true when it comes to good engineering teams where they’d actually want to work. The people with more options will be able to tell when the AI is wrong, fix what it produced, and own the result when it reaches production.
+Those builders will probably still find jobs, but I think they’ll have fewer choices. This will be especially true for the engineering teams they’d actually want to work at. The people with more options will be able to tell when the AI is wrong, fix what it produced, and own the result when it reaches production.
 
 I also think builders in categories 2 and 3 will have more options. They’re creating the systems and capabilities that everyone else is using. That requires more than knowing how to prompt a tool.
 
