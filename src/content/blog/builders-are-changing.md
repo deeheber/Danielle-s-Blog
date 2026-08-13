@@ -1,8 +1,9 @@
 ---
-title: The Builders Are Changing. Building Isn’t Going Away.
+title: Not All AI Builders Are Doing the Same Work
 author: Danielle Heberling
 pubDatetime: 2026-08-08T09:12:03.284Z
 description: An opinion on the current landscape of what being a builder looks like in the ever evolving age of AI.
+slug: types-of-ai-builders
 tags: ["ai", "career", "opinion"]
 ---
 
