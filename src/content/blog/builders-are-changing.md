@@ -53,19 +53,11 @@ These are the folks building and training the models themselves. Think AI resear
 
 My work currently spans categories 1 and 2. I use AI assistants for regular engineering work, but I’m especially interested in building systems where AI is part of how the product works.
 
-At work, I built a tool that helps developers investigate failed CloudFormation deployments without immediately needing to ping me, the only DevOps engineer on the team.
+At work, I built a tool that uses Claude Code to help developers investigate failed CloudFormation deployments. It runs on shared compute and posts its analysis in Slack, so the team can use it without my laptop or me being available.
 
-The tool runs Claude Code headlessly in AWS CodeBuild. When a deployment fails, it inspects the stack through an AWS MCP server, works out the likely cause, and posts a short analysis in the Slack thread where the failure was reported.
-
-It isn’t a reference architecture, and I didn’t build it as if it were one. I chose CodeBuild because it got me to a working prototype quickly and was boring enough for one person to maintain. I also told Claude to admit when it was unsure and rank possible causes instead of inventing one confident answer.
-
-Then a deployment failed because of a missing environment variable. The tool pointed the developer toward it, and they fixed the problem without waiting for me.
-
-That’s what category 2 looks like to me. AI is part of the tool. It runs on shared compute, and the team can use it without my laptop or me being available.
+That’s what category 2 looks like to me. AI isn’t only helping me build the tool. AI is part of how the tool works.
 
 I wrote more about the architecture and its imperfect parts in [Getting Claude Code off my laptop and onto shared compute](https://danielleheberling.xyz/blog/headless-claude-on-aws/).
-
-I still use AI assistants for regular engineering work. Sometimes that’s the right tool for the job. There’s nothing wrong with category 1, but I don’t want using the tool to be the end of what I know how to do.
 
 ## Prediction
 
