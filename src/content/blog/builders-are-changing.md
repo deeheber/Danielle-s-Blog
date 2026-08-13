@@ -57,7 +57,7 @@ At work, I built a tool that uses Claude Code to help developers investigate fai
 
 That’s what category 2 looks like to me. AI isn’t only helping me build the tool. AI is part of how the tool works.
 
-I wrote more about the architecture and its imperfect parts in [Getting Claude Code off my laptop and onto shared compute](https://danielleheberling.xyz/blog/headless-claude-on-aws/).
+I wrote more about the architecture and its imperfect parts in <a href="https://danielleheberling.xyz/blog/headless-claude-on-aws/" target="_blank" rel="noopener noreferrer">Getting Claude Code off my laptop and onto shared compute</a>.
 
 ## Prediction
 
