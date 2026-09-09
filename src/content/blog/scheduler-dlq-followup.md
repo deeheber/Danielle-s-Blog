@@ -3,19 +3,15 @@ title: "EventBridge Scheduler DLQ'd My Successful Invokes"
 author: Danielle Heberling
 pubDatetime: 2026-08-01T18:00:00Z
 slug: scheduler-dlq-followup
-description: EventBridge Scheduler kept DLQing successful invokeAgentRuntime calls. The cause was a ~30 second timeout I couldn't find in the docs. Here's the async AgentCore fix.
+description: EventBridge Scheduler kept DLQing successful invokeAgentRuntime calls. Async didn't fix the timeouts. Here's what I learned and why I disabled retries.
 tags: ["ai", "aws", "serverless", "tutorial"]
 ---
 
-> **Update:** The async changes below didn’t fix my Scheduler timeout issue. I’m keeping this post for historical reasons because I learned a lot about async execution with AgentCore and Strands.
+> **Update (September 8, 2026):** Async didn’t fix the timeouts. I still don’t know why they happen, but I’m leaving this post up for what I learned about async in AgentCore and Strands.
 >
-> I thought it worked because an existing DLQ message kept the alarm in its alarm state, and I hadn’t had searches that triggered new job alerts. I missed the duplicate-email behavior.
+> The DLQ alarm was already triggered, and no new job alerts meant I missed the duplicate emails. I [disabled retries and removed the DLQ and alarm](https://github.com/deeheber/job-search-agent/pull/66). I’m okay with risking a missed search here.
 >
-> I ended up disabling Scheduler retries and removing the DLQ and CloudWatch alarm, accepting the risk of a missed search.
->
-> My AgentCore application code sends error notifications and success emails, including when there are no matches.
->
-> Silence tells me to investigate. It could mean the search failed or the notification didn’t arrive.
+> I now get emails for errors, matches, and no matches. No email means I should check whether the search or the notification failed.
 
 A while back I wrote about [letting an AI agent do your job searching](/blog/job-search-agent/). That post ended with a quirk I couldn't explain. EventBridge Scheduler would invoke my agent, the agent would run fine, I'd get the email, and the invocation would land in the dead letter queue anyway. Every single time.
 
