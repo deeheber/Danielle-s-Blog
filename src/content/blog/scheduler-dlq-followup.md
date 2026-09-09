@@ -7,6 +7,16 @@ description: EventBridge Scheduler kept DLQing successful invokeAgentRuntime cal
 tags: ["ai", "aws", "serverless", "tutorial"]
 ---
 
+> **Update:** The async changes below didn’t fix my Scheduler timeout issue. I’m keeping this post for historical reasons because I learned a lot about async execution with AgentCore and Strands.
+>
+> I thought it worked because an existing DLQ message kept the alarm in its alarm state, and I hadn’t had searches that triggered new job alerts. I missed the duplicate-email behavior.
+>
+> I ended up disabling Scheduler retries and removing the DLQ and CloudWatch alarm, accepting the risk of a missed search.
+>
+> My AgentCore application code sends error notifications and success emails, including when there are no matches.
+>
+> Silence tells me to investigate. It could mean the search failed or the notification didn’t arrive.
+
 A while back I wrote about [letting an AI agent do your job searching](/blog/job-search-agent/). That post ended with a quirk I couldn't explain. EventBridge Scheduler would invoke my agent, the agent would run fine, I'd get the email, and the invocation would land in the dead letter queue anyway. Every single time.
 
 I figured I was either doing something wrong or hitting an AgentCore bug. Turns out it was neither.
