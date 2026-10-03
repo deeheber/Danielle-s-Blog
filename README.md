@@ -1,86 +1,46 @@
 # Danielle's Blog
 
-A modern, fast blog built with Astro and React. PRs welcome - especially if you spot my typos!
+[My blog](https://danielleheberling.xyz/), built with Astro and React. PRs welcome, especially if you spot my typos!
 
-## 🎬 Demo
+## Local development
 
-Check out the live site: https://danielleheberling.xyz/
-
-## 📦 Prerequisites
-
-**Node.js** - See `.nvmrc` file for required version
-
-## 🚀 Getting Started
+Use the Node.js version in [.nvmrc](.nvmrc).
 
 ```bash
 npm ci
 npm run dev
 ```
 
-Your blog will be running at `localhost:4321`
+Open http://localhost:4321/.
 
-## ⚙️ Customization
+## Editing content
 
-### Site Configuration
+- Blog posts: `src/content/blog/`. Frontmatter is defined in `src/content.config.ts`.
+- Talks: `src/data/speakingData.json`.
+- Site metadata, social links, and locale: `src/config.ts`.
+- Image requirements and the macOS compression script: [AGENTS.md](AGENTS.md#images).
 
-Update the `src/config.ts` file to customize:
+## Checks
 
-- Site metadata (title, description, author)
-- Social media links
-- Logo settings
-- Locale settings
+```bash
+npm run format:check
+npm run lint:check
+npm run build
+```
 
-### Blog Posts
+The build includes type checking and writes to `dist/`. Use `npm run preview` to serve it locally. `npm run format` and `npm run lint` modify files.
 
-- All blog posts are stored in `src/content/blog` directory
-- Add new posts as markdown files in the `src/content/blog` directory
-
-### Talks
-
-Update the `speakingData.json` file in `src/data` directory
-
-## 🎖️ Available Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                | Action                                                                                                                           |
-| :--------------------- | :------------------------------------------------------------------------------------------------------------------------------- |
-| `npm install`          | Installs dependencies                                                                                                            |
-| `npm run dev`          | Starts local dev server at `localhost:4321`                                                                                      |
-| `npm run build`        | Build your production site to `./dist/`                                                                                          |
-| `npm run preview`      | Preview your build locally, before deploying                                                                                     |
-| `npm run format:check` | Check code format with Prettier                                                                                                  |
-| `npm run format`       | Format codes with Prettier                                                                                                       |
-| `npm run sync`         | Generates TypeScript types for all Astro modules. [Learn more](https://docs.astro.build/en/reference/cli-reference/#astro-sync). |
-| `npm run lint`         | Lint with ESLint                                                                                                                 |
-| `npm run lint:check`   | Check code linting with ESLint                                                                                                   |
-| `npm run test:e2e`     | Run end-to-end smoke tests with Playwright (see [E2E Tests](#-e2e-tests) below)                                                  |
-| `npm run type-check`   | Run TypeScript type checking without emitting files                                                                              |
-
-## 🧪 E2E Tests
-
-To run the Playwright smoke tests locally, you first need to install the Chromium browser binary (one-time setup):
+For E2E tests, install Chromium after installing or updating Playwright, then run:
 
 ```bash
 npx playwright install chromium
-```
-
-Then build the site and run the tests:
-
-```bash
-npm run build
 npm run test:e2e
 ```
 
-## 💻 My Tech Stack
+The E2E command builds the site and starts a preview server. Stop any existing server on port 4321 first; local tests otherwise reuse it. Use `npm run test:e2e:ui` for the interactive runner.
 
-**Main Framework** - [Astro 6.x](https://astro.build/)  
-**Type Checking** - [TypeScript](https://www.typescriptlang.org/)  
-**Component Framework** - [React 19.x](https://reactjs.org/)  
-**Styling** - [TailwindCSS 4.x](https://tailwindcss.com/)  
-**Fuzzy Search** - [FuseJS](https://fusejs.io/)  
-**Icons & Images** - [Satori](https://github.com/vercel/satori) & [@resvg/resvg-js](https://github.com/yisibl/resvg-js) for OpenGraph generation  
-**Code Formatting** - [Prettier](https://prettier.io/)  
-**Linting** - [ESLint](https://eslint.org/)
-**End to End Testing** - [Playwright](https://playwright.dev/)
-**Deployment** - [Cloudflare Pages](https://pages.cloudflare.com/)
+PR validation runs formatting, lint, and build checks. Run the separate **E2E Tests** workflow manually in GitHub Actions, selecting the branch to test.
+
+## Deployment and dependencies
+
+Cloudflare Pages deploys `main` automatically. See [AGENTS.md](AGENTS.md#dependencies) for repairing a lockfile that installs locally but fails on Linux.
