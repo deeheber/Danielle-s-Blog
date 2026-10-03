@@ -24,7 +24,8 @@ export default defineConfig({
   // TODO: add a workflow to run these against Cloudflare branch deploys
   ...(!process.env.PLAYWRIGHT_BASE_URL && {
     webServer: {
-      command: "npm run preview",
+      // Keep Astro in the foreground so Playwright owns the server lifecycle.
+      command: "npm run preview -- --ignore-lock",
       url: "http://localhost:4321",
       reuseExistingServer: !isCI,
     },
