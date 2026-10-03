@@ -9,6 +9,8 @@ slug: aws-application-composer
 tags: ["aws", "serverless", "opinion"]
 ---
 
+> **Update (October 2, 2026):** AWS is retiring the standalone Infrastructure Composer console on December 7, 2026. Visual authoring will still be available in the VS Code toolkit. I wrote about the news and what Stackery meant to me in [Pour one out for Infrastructure Composer](/blog/pour-one-out-for-infrastructure-composer/).
+
 ![AWS Application Composer](/assets/app-composer.png)
 
 At re:Invent 2022, Werner Vogels announced the preview of <a href="https://aws.amazon.com/application-composer/" target="_blank" rel="noopener noreferrer">AWS Application Composer</a>.
