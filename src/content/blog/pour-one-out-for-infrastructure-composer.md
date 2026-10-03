@@ -18,9 +18,9 @@ So consider this part eulogy, part celebration, and a little bit of me being bit
 
 My first reaction to the notice was "huh." My second reaction was "yeah, that tracks."
 
-In my opinion AWS has never been great at helping people actually do serverless. They're excellent at primitives. Wiring it together, getting IAM right, deploying it, knowing what you built once it's running? That's on you. It was clunky when I started, and it's still clunky now.
+In my opinion AWS has never been great at helping people actually do serverless. They're excellent at the individual building blocks: functions, queues, databases. Wiring it together, getting IAM right, deploying it, knowing what you built once it's running? That's on you. It was clunky when I started, and it's still clunky now.
 
-Plenty of people want to write code or define product. Not many want to go deep on shipping it, and most places run on AWS. That gap is a big part of why I have a job, so I can't complain too loudly.
+Plenty of people want to build something useful without becoming an expert in deploying it on AWS. I think that's a reasonable thing to want. Helping teams figure that out is a big part of why I have a job, so I can't complain too loudly.
 
 The way I saw it, Stackery existed to bridge that gap.
 
@@ -40,13 +40,13 @@ When the AWS version launched, nearly all the hype went to the visualization. Dr
 
 There's a sync button in the VS Code toolkit that runs sam sync for you, but the pipeline and team pieces didn't come with it. Nobody promised they would. I just hoped.
 
-After that it mostly sat still. That's what happens when a small product gets absorbed into a big company made up of "two pizza teams" and loses its priority.
+After that it mostly sat still. From the outside, it looked to me like a small product that got absorbed into a big company and lost its priority.
 
 The visual authoring piece lives on in the VS Code toolkit, and existing templates and stacks aren't affected.
 
-## The part that was actually worth it
+## What stayed with me
 
-In hindsight, the product was never the important part. The journey was.
+The product mattered to me. It still does. But looking back, the people and what I learned along the way are what stayed with me.
 
 I grew more as a professional at Stackery than anywhere else, because I loved what I was doing and the people around it: customers, community, coworkers. Serverless was new, the patterns weren't written down yet, and we figured them out by shipping. Then I got to share it: blogging, speaking, standing at the booth explaining why cold starts mostly don't matter to strangers.
 
@@ -54,7 +54,7 @@ I grew more as a professional at Stackery than anywhere else, because I loved wh
 
 > My re:Invent 2019 badge from the Stackery days.
 
-And the people. Colleagues who became lifelong friends. Job leads years later from someone I sat next to. My first engineering manager role. Speaking and organizing in the wider tech community. Nearly every good thing in my career since has a thread back to that office.
+And the people. Colleagues who became lifelong friends. Stackery's former CEO later hired me at another company and promoted me to my first engineering manager role. Nearly every good thing in my career since has a thread back to that office.
 
 It's also super cool to say I contributed to something that became an AWS product. Even if it didn't fully reflect what we built. Even if it's reaching end of support.
 
@@ -62,6 +62,6 @@ It's also super cool to say I contributed to something that became an AWS produc
 
 So, pour one out for Infrastructure Composer. It deserved a better steward than it got.
 
-But the problem it was solving is still here. I believe in serverless and managed services as much as I ever did. They're not as easy to implement as the marketing makes them look. AWS serverless, and AWS in general, is still user hostile. Not to mention doing it with a team. So I've got more work to do.
+But the problem it was solving is still here. I believe in serverless and managed services as much as I ever did. Getting permissions right, managing environments, and shipping with a team are still harder than they should be. I'd love for the developer experience to catch up with the marketing. So I've got more work to do.
 
 If you're building something you're proud of right now, pay attention to the people in the room with you. That's the part you get to keep. ❤️
