@@ -8,6 +8,7 @@ import { SITE } from "./src/config"
 // https://astro.build/config
 export default defineConfig({
   site: SITE.website,
+  compressHTML: true,
   integrations: [react(), sitemap()],
   markdown: {
     shikiConfig: {
