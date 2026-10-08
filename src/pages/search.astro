@@ -23,14 +23,13 @@ const searchList = sortedblog.map(({ data, id }) => ({
 
 <Layout title={`Search | ${SITE.title}`}>
   <Header activeNav="search" />
-  <Main
-    pageTitle="Search"
-    pageDesc="Search any article ..."
-  >
-    <SearchBar
-      client:load
-      searchList={searchList}
-    />
+  <Main pageTitle="Search">
+    <div class="mt-6">
+      <SearchBar
+        client:load
+        searchList={searchList}
+      />
+    </div>
   </Main>
   <Footer />
 </Layout>

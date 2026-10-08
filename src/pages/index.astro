@@ -32,69 +32,77 @@ const latestFive = sortedData.slice(0, 5)
   <main id="main-content">
     <Hr />
 
-    {
-      recentblog.length > 0 && (
-        <section id="recent-blog">
-          <h2 tabindex="0">Recent Blog Posts</h2>
-          <ul>
-            {recentblog.map(
-              ({ data, id }, index) =>
-                index < 5 && (
-                  <Card
-                    href={`/blog/${id}/`}
-                    frontmatter={data}
-                    secHeading={false}
-                  />
-                ),
-            )}
-          </ul>
-        </section>
-      )
-    }
+    <section aria-labelledby="writing-speaking">
+      <h2
+        id="writing-speaking"
+        tabindex="0"
+      >
+        Writing &amp; Speaking
+      </h2>
+      {
+        recentblog.length > 0 && (
+          <section id="recent-blog">
+            <h3 tabindex="0">Recent Writing</h3>
+            <ul>
+              {recentblog.map(
+                ({ data, id }, index) =>
+                  index < 5 && (
+                    <Card
+                      href={`/blog/${id}/`}
+                      frontmatter={data}
+                      secHeading={false}
+                    />
+                  ),
+              )}
+            </ul>
+          </section>
+        )
+      }
 
-    <div class="all-blog-btn-wrapper">
-      <LinkButton href="/blog/">
-        All blog posts
-        <svg xmlns="http://www.w3.org/2000/svg"
-          ><path
-            d="m11.293 17.293 1.414 1.414L19.414 12l-6.707-6.707-1.414 1.414L15.586 11H6v2h9.586z"
-          ></path>
-        </svg>
-      </LinkButton>
-    </div>
+      <div class="all-blog-btn-wrapper">
+        <LinkButton href="/blog/">
+          All writing
+          <svg xmlns="http://www.w3.org/2000/svg"
+            ><path
+              d="m11.293 17.293 1.414 1.414L19.414 12l-6.707-6.707-1.414 1.414L15.586 11H6v2h9.586z"
+            ></path>
+          </svg>
+        </LinkButton>
+      </div>
 
-    {
-      (
-        <section id="recent-talks">
-          <h2 tabindex="0">Recent Talks</h2>
-          <ul>
-            {latestFive.map((content) => (
-              <li id="talk-list">
-                <a
-                  href={content.link}
-                  class="external-link"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  {content.title} ({content.year})
-                </a>
-              </li>
-            ))}
-          </ul>
-        </section>
-      )
-    }
+      {
+        (
+          <section id="recent-talks">
+            <h3 tabindex="0">Recent Speaking</h3>
+            <ul>
+              {latestFive.map((content) => (
+                <li id="talk-list">
+                  <a
+                    href={content.link}
+                    class="external-link"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    {content.title} ({content.year})
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </section>
+        )
+      }
 
-    <div class="all-blog-btn-wrapper">
-      <LinkButton href="/talks/">
-        All Talks
-        <svg xmlns="http://www.w3.org/2000/svg"
-          ><path
-            d="m11.293 17.293 1.414 1.414L19.414 12l-6.707-6.707-1.414 1.414L15.586 11H6v2h9.586z"
-          ></path>
-        </svg>
-      </LinkButton>
-    </div>
+      <div class="all-blog-btn-wrapper">
+        <LinkButton href="/talks/">
+          All speaking
+          <svg xmlns="http://www.w3.org/2000/svg"
+            ><path
+              d="m11.293 17.293 1.414 1.414L19.414 12l-6.707-6.707-1.414 1.414L15.586 11H6v2h9.586z"
+            ></path>
+          </svg>
+        </LinkButton>
+      </div>
+    </section>
   </main>
 
   <Footer />
@@ -102,12 +110,14 @@ const latestFive = sortedData.slice(0, 5)
 
 <style>
   @reference "../styles/base.css";
-  /* ===== Recent blog Section ===== */
-  #recent-blog {
-    @apply pt-12 pb-6;
+  #writing-speaking {
+    @apply pt-12 text-3xl tracking-wide;
   }
-  #recent-blog h2,
-  #recent-talks h2 {
+  #recent-blog {
+    @apply pt-8;
+  }
+  #recent-blog h3,
+  #recent-talks h3 {
     @apply text-2xl tracking-wide;
   }
   .all-blog-btn-wrapper {
