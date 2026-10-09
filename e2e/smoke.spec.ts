@@ -10,7 +10,7 @@ test("main page loads with selected writing and recent talks", async ({
   await expect(selectedWriting.locator(":scope > h2")).toHaveText(
     "Selected Writing",
   )
-  await expect(selectedWriting.locator("li")).toHaveCount(6)
+  await expect(selectedWriting.locator("li")).toHaveCount(5)
   await expect(selectedWriting.locator("li").first()).toBeVisible()
 
   const recentTalks = page.locator("#recent-talks")
