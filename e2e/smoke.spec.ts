@@ -1,12 +1,17 @@
 import { test, expect } from "@playwright/test"
 
-test("main page loads with recent posts and talks", async ({ page }) => {
+test("main page loads with selected writing and recent talks", async ({
+  page,
+}) => {
   await page.goto("/")
   await expect(page).toHaveTitle(/Danielle/)
 
-  const recentBlog = page.locator("#recent-blog")
-  await expect(recentBlog.locator(":scope > h2")).toHaveText("Recent Writing")
-  await expect(recentBlog.locator("li").first()).toBeVisible()
+  const selectedWriting = page.locator("#selected-writing")
+  await expect(selectedWriting.locator(":scope > h2")).toHaveText(
+    "Selected Writing",
+  )
+  await expect(selectedWriting.locator("li")).toHaveCount(6)
+  await expect(selectedWriting.locator("li").first()).toBeVisible()
 
   const recentTalks = page.locator("#recent-talks")
   await expect(recentTalks.locator(":scope > h2")).toHaveText("Recent Speaking")

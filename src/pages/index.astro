@@ -5,13 +5,26 @@ import Header from "@components/Header.astro"
 import Footer from "@components/Footer.astro"
 import LinkButton from "@components/LinkButton.astro"
 import Card from "@components/Card"
-import getSortedBlog from "@utils/getSortedBlogPosts"
+import postFilter from "@utils/postFilter"
 import speakingData from "../data/speakingData.json"
 
 const blog = await getCollection("blog")
 
-const sortedblog = getSortedBlog(blog)
-const recentblog = sortedblog.filter(({ data }) => !data.featured)
+const selectedWritingIds = [
+  "headless-claude-on-aws",
+  "trails-not-gates",
+  "fargate-on-a-budget",
+  "event-driven-background-processes",
+  "serverless-weather-reporting",
+  "pour-one-out-for-infrastructure-composer",
+]
+const publishedBlog = blog.filter(postFilter)
+const selectedWriting = selectedWritingIds.map((id) => {
+  const post = publishedBlog.find((post) => post.id === id)
+  if (!post)
+    throw new Error(`Selected writing post is missing or unpublished: ${id}`)
+  return post
+})
 
 // Flatten and sort the speaking data
 const flattenedData: { title: string; link: string; year: string }[] =
@@ -48,20 +61,17 @@ const latestFive = sortedData.slice(0, 5)
 
     <section>
       {
-        recentblog.length > 0 && (
-          <section id="recent-blog">
-            <h2 tabindex="0">Recent Writing</h2>
+        selectedWriting.length > 0 && (
+          <section id="selected-writing">
+            <h2 tabindex="0">Selected Writing</h2>
             <ul>
-              {recentblog.map(
-                ({ data, id }, index) =>
-                  index < 5 && (
-                    <Card
-                      href={`/blog/${id}/`}
-                      frontmatter={data}
-                      secHeading={false}
-                    />
-                  ),
-              )}
+              {selectedWriting.map(({ data, id }) => (
+                <Card
+                  href={`/blog/${id}/`}
+                  frontmatter={data}
+                  secHeading={false}
+                />
+              ))}
             </ul>
           </section>
         )
@@ -118,10 +128,10 @@ const latestFive = sortedData.slice(0, 5)
 
 <style>
   @reference "../styles/base.css";
-  #recent-blog {
+  #selected-writing {
     @apply pt-8;
   }
-  #recent-blog h2,
+  #selected-writing h2,
   #recent-talks h2 {
     @apply text-2xl tracking-wide;
   }
