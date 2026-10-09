@@ -4,16 +4,12 @@ test("main page loads with recent posts and talks", async ({ page }) => {
   await page.goto("/")
   await expect(page).toHaveTitle(/Danielle/)
 
-  await expect(
-    page.getByRole("heading", { name: "Writing & Speaking" }),
-  ).toBeVisible()
-
   const recentBlog = page.locator("#recent-blog")
-  await expect(recentBlog.locator(":scope > h3")).toHaveText("Recent Writing")
+  await expect(recentBlog.locator(":scope > h2")).toHaveText("Recent Writing")
   await expect(recentBlog.locator("li").first()).toBeVisible()
 
   const recentTalks = page.locator("#recent-talks")
-  await expect(recentTalks.locator(":scope > h3")).toHaveText("Recent Speaking")
+  await expect(recentTalks.locator(":scope > h2")).toHaveText("Recent Speaking")
   await expect(recentTalks.locator("li#talk-list").first()).toBeVisible()
 })
 

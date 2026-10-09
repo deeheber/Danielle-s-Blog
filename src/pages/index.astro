@@ -4,7 +4,6 @@ import Layout from "@layouts/Layout.astro"
 import Header from "@components/Header.astro"
 import Footer from "@components/Footer.astro"
 import LinkButton from "@components/LinkButton.astro"
-import Hr from "@components/Hr.astro"
 import Card from "@components/Card"
 import getSortedBlog from "@utils/getSortedBlogPosts"
 import speakingData from "../data/speakingData.json"
@@ -30,19 +29,28 @@ const latestFive = sortedData.slice(0, 5)
 <Layout>
   <Header />
   <main id="main-content">
-    <Hr />
-
-    <section aria-labelledby="writing-speaking">
-      <h2
-        id="writing-speaking"
-        tabindex="0"
+    <section
+      aria-labelledby="introduction"
+      class="pt-12 pb-4"
+    >
+      <h1
+        id="introduction"
+        class="text-3xl tracking-wide sm:text-4xl"
       >
-        Writing &amp; Speaking
-      </h2>
+        Make ship <span class="whitespace-nowrap">happen 🚢</span>
+      </h1>
+      <p class="mt-6 max-w-2xl leading-relaxed">
+        I’m Danielle. I help teams spend less time fighting their tools and more
+        time shipping software. My background is in cloud infrastructure, mostly
+        AWS.
+      </p>
+    </section>
+
+    <section>
       {
         recentblog.length > 0 && (
           <section id="recent-blog">
-            <h3 tabindex="0">Recent Writing</h3>
+            <h2 tabindex="0">Recent Writing</h2>
             <ul>
               {recentblog.map(
                 ({ data, id }, index) =>
@@ -73,7 +81,7 @@ const latestFive = sortedData.slice(0, 5)
       {
         (
           <section id="recent-talks">
-            <h3 tabindex="0">Recent Speaking</h3>
+            <h2 tabindex="0">Recent Speaking</h2>
             <ul>
               {latestFive.map((content) => (
                 <li id="talk-list">
@@ -110,14 +118,11 @@ const latestFive = sortedData.slice(0, 5)
 
 <style>
   @reference "../styles/base.css";
-  #writing-speaking {
-    @apply pt-12 text-3xl tracking-wide;
-  }
   #recent-blog {
     @apply pt-8;
   }
-  #recent-blog h3,
-  #recent-talks h3 {
+  #recent-blog h2,
+  #recent-talks h2 {
     @apply text-2xl tracking-wide;
   }
   .all-blog-btn-wrapper {
