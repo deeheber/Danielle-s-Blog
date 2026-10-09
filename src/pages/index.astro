@@ -12,11 +12,11 @@ const blog = await getCollection("blog")
 
 const selectedWritingIds = [
   "headless-claude-on-aws",
+  "pour-one-out-for-infrastructure-composer",
   "trails-not-gates",
   "fargate-on-a-budget",
-  "event-driven-background-processes",
   "serverless-weather-reporting",
-  "pour-one-out-for-infrastructure-composer",
+  "event-driven-background-processes",
 ]
 const publishedBlog = blog.filter(postFilter)
 const selectedWriting = selectedWritingIds.map((id) => {
