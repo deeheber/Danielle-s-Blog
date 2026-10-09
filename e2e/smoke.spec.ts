@@ -4,12 +4,16 @@ test("main page loads with recent posts and talks", async ({ page }) => {
   await page.goto("/")
   await expect(page).toHaveTitle(/Danielle/)
 
+  await expect(
+    page.getByRole("heading", { name: "Writing & Speaking" }),
+  ).toBeVisible()
+
   const recentBlog = page.locator("#recent-blog")
-  await expect(recentBlog.locator("h2")).toHaveText("Recent Blog Posts")
+  await expect(recentBlog.locator(":scope > h3")).toHaveText("Recent Writing")
   await expect(recentBlog.locator("li").first()).toBeVisible()
 
   const recentTalks = page.locator("#recent-talks")
-  await expect(recentTalks.locator("h2")).toHaveText("Recent Talks")
+  await expect(recentTalks.locator(":scope > h3")).toHaveText("Recent Speaking")
   await expect(recentTalks.locator("li#talk-list").first()).toBeVisible()
 })
 
@@ -105,7 +109,7 @@ test("blog pagination shows different posts per page", async ({ page }) => {
 
 test("talks page lists talks", async ({ page }) => {
   await page.goto("/talks/")
-  await expect(page).toHaveTitle(/Talks/)
+  await expect(page).toHaveTitle(/Speaking/)
   await expect(page.locator("#all-talks li").first()).toBeVisible()
 })
 
@@ -147,10 +151,13 @@ test("blog post shows tags", async ({ page }) => {
 test("navigation links", async ({ page }) => {
   await page.goto("/")
 
+  await expect(
+    page.locator("#menu-items").getByRole("link", { name: "Tags" }),
+  ).toHaveCount(0)
+
   const navLinks = [
-    { name: "Blog", url: /\/blog\/?$/ },
-    { name: "Talks", url: /\/talks\/?$/ },
-    { name: "Tags", url: /\/tags\/?$/ },
+    { name: "Writing", url: /\/blog\/?$/ },
+    { name: "Speaking", url: /\/talks\/?$/ },
     { name: "About", url: /\/about\/?$/ },
     { name: "Search", url: /\/search\/?$/ },
   ]
