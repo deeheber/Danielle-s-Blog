@@ -1,8 +1,6 @@
 import { test, expect } from "@playwright/test"
 
-test("main page loads with selected writing and recent talks", async ({
-  page,
-}) => {
+test("main page loads with selected writing and speaking", async ({ page }) => {
   await page.goto("/")
   await expect(page).toHaveTitle(/Danielle/)
 
@@ -13,9 +11,19 @@ test("main page loads with selected writing and recent talks", async ({
   await expect(selectedWriting.locator("li")).toHaveCount(5)
   await expect(selectedWriting.locator("li").first()).toBeVisible()
 
-  const recentTalks = page.locator("#recent-talks")
-  await expect(recentTalks.locator(":scope > h2")).toHaveText("Recent Speaking")
-  await expect(recentTalks.locator("li#talk-list").first()).toBeVisible()
+  const selectedSpeaking = page.locator("#selected-speaking")
+  await expect(selectedSpeaking.locator(":scope > h2")).toHaveText(
+    "Selected Speaking",
+  )
+  await expect(selectedSpeaking.locator("li a")).toHaveText([
+    "Rethinking Serverless - AWS Community Day Bay Area (2024)",
+    "CI/CD with the AWS CDK and GitHub Actions at a Startup (2025)",
+    "AWS Anti-Patterns That Will Cost You Later (2025)",
+    "Serverless Chats Ep. 25 (2019)",
+  ])
+  await expect(
+    page.getByRole("link", { name: "All speaking" }),
+  ).toHaveAttribute("href", "/talks/")
 })
 
 test("about page", async ({ page }) => {

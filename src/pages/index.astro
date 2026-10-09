@@ -25,17 +25,23 @@ const selectedWriting = selectedWritingIds.map((id) => {
   return post
 })
 
-// Flatten and sort the speaking data
-const flattenedData: { title: string; link: string; year: string }[] =
-  speakingData.flatMap((yearData) =>
-    yearData.content.map((content) => ({
-      ...content,
-      year: yearData.year,
-    })),
+const selectedSpeakingTitles = [
+  "Rethinking Serverless - AWS Community Day Bay Area",
+  "CI/CD with the AWS CDK and GitHub Actions at a Startup",
+  "AWS Anti-Patterns That Will Cost You Later",
+  "Serverless Chats Ep. 25",
+]
+const allSpeaking = speakingData.flatMap(({ year, content }) =>
+  content.map((appearance) => ({ ...appearance, year })),
+)
+const selectedSpeaking = selectedSpeakingTitles.map((title) => {
+  const appearance = allSpeaking.find(
+    (appearance) => appearance.title === title,
   )
-
-const sortedData = flattenedData.sort((a, b) => Number(b.year) - Number(a.year))
-const latestFive = sortedData.slice(0, 5)
+  if (!appearance)
+    throw new Error(`Selected speaking appearance is missing: ${title}`)
+  return appearance
+})
 ---
 
 <Layout>
@@ -89,11 +95,11 @@ const latestFive = sortedData.slice(0, 5)
 
       {
         (
-          <section id="recent-talks">
-            <h2 tabindex="0">Recent Speaking</h2>
+          <section id="selected-speaking">
+            <h2 tabindex="0">Selected Speaking</h2>
             <ul>
-              {latestFive.map((content) => (
-                <li id="talk-list">
+              {selectedSpeaking.map((content) => (
+                <li class="talk-list">
                   <a
                     href={content.link}
                     class="external-link"
@@ -131,14 +137,14 @@ const latestFive = sortedData.slice(0, 5)
     @apply pt-8;
   }
   #selected-writing h2,
-  #recent-talks h2 {
+  #selected-speaking h2 {
     @apply text-2xl tracking-wide;
   }
   .all-blog-btn-wrapper {
     @apply my-8 text-center;
   }
 
-  #talk-list {
+  .talk-list {
     @apply font-merri my-4 sm:my-8 sm:text-xl;
   }
 </style>
