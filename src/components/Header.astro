@@ -4,7 +4,7 @@ import Hr from "./Hr.astro"
 import LinkButton from "./LinkButton.astro"
 
 export interface Props {
-  activeNav?: "blog" | "tags" | "about" | "search" | "talks"
+  activeNav?: "projects" | "blog" | "tags" | "about" | "search" | "talks"
 }
 
 const { activeNav } = Astro.props
@@ -94,6 +94,14 @@ const { activeNav } = Astro.props
           id="menu-items"
           class="display-none sm:!flex"
         >
+          <li>
+            <a
+              href="/projects/"
+              class={activeNav === "projects" ? "active" : ""}
+            >
+              Projects
+            </a>
+          </li>
           <li>
             <a
               href="/blog/"
@@ -218,22 +226,11 @@ const { activeNav } = Astro.props
     @apply hover:text-skin-accent w-full px-4 py-3 text-center font-black sm:my-0 sm:px-2 sm:py-1;
   }
 
-  nav ul li a::after {
-    content: "";
+  nav ul li a:is(.active, :hover) {
+    @apply underline decoration-wavy decoration-2 underline-offset-8;
   }
-
-  nav ul li a:hover::after {
-    content: "}";
-    @apply text-skin-accent;
-  }
-
-  nav ul li a::before {
-    content: "";
-  }
-
-  nav ul li a:hover::before {
-    content: "{";
-    @apply text-skin-accent;
+  nav ul li a:not(.active):hover {
+    text-decoration-color: rgba(var(--color-accent), 0.55);
   }
 
   nav ul li:nth-last-child(2) a {
@@ -242,9 +239,6 @@ const { activeNav } = Astro.props
   nav ul li:nth-last-child(1),
   nav ul li:nth-last-child(2) {
     @apply col-span-1;
-  }
-  nav a.active {
-    @apply underline decoration-wavy decoration-2 underline-offset-8;
   }
   nav a.active svg {
     @apply fill-skin-accent;
