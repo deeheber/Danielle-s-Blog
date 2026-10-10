@@ -21,7 +21,6 @@ export const LOGO_IMAGE = {
   height: 500,
 }
 
-// Split so the full address never appears in the HTML; Socials.astro joins it client-side.
 export const EMAIL = {
   user: "danielle",
   domain: "danielleheberling.com",
