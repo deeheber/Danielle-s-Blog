@@ -1,9 +1,10 @@
 import { test, expect } from "@playwright/test"
 import speakingData from "../src/data/speakingData.json" with { type: "json" }
+import { EMAIL, SITE } from "../src/config"
 
 test("main page loads with selected writing and speaking", async ({ page }) => {
   await page.goto("/")
-  await expect(page).toHaveTitle(/Danielle/)
+  await expect(page).toHaveTitle("Danielle Heberling")
 
   const selectedWriting = page.locator("#selected-writing")
   await expect(selectedWriting.locator(":scope > h2")).toHaveText(
@@ -19,6 +20,46 @@ test("main page loads with selected writing and speaking", async ({ page }) => {
   await expect(
     page.getByRole("link", { name: "All speaking" }),
   ).toHaveAttribute("href", "/talks/")
+})
+
+test("page head has its own description and canonical URL", async ({
+  page,
+}) => {
+  await page.goto("/about/")
+  await expect(page).toHaveTitle("About | Danielle Heberling")
+
+  const url = new URL("/about/", SITE.website).href
+  await expect(page.locator('link[rel="canonical"]')).toHaveAttribute(
+    "href",
+    url,
+  )
+  await expect(page.locator('meta[property="og:url"]')).toHaveAttribute(
+    "content",
+    url,
+  )
+  const description = page.locator('meta[name="description"]')
+  const aboutDescription = await description.getAttribute("content")
+  await page.goto("/")
+  const homeDescription = await description.getAttribute("content")
+  expect(aboutDescription).toBeTruthy()
+  expect(homeDescription).toBeTruthy()
+  expect(aboutDescription).not.toBe(homeDescription)
+})
+
+test("footer email address is only built on click", async ({ page }) => {
+  const address = `${EMAIL.user}@${EMAIL.domain}`
+  const html = await (await page.request.get("/")).text()
+  expect(html).not.toContain(address)
+
+  await page.goto("/")
+  // Stop the mailto: navigation; this listener runs after the link's own handler
+  await page.evaluate(() =>
+    window.addEventListener("click", (e) => e.preventDefault()),
+  )
+  const email = page.locator("footer .email-link")
+  await expect(email).toHaveAttribute("href", "#")
+  await email.click()
+  await expect(email).toHaveAttribute("href", `mailto:${address}`)
 })
 
 test("about page", async ({ page }) => {
