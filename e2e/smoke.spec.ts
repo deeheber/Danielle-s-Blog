@@ -1,5 +1,5 @@
 import { test, expect } from "@playwright/test"
-import speakingData from "../src/data/speakingData.json"
+import speakingData from "../src/data/speakingData.json" with { type: "json" }
 
 test("main page loads with selected writing and speaking", async ({ page }) => {
   await page.goto("/")
