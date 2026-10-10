@@ -1,6 +1,7 @@
 ---
 layout: ../layouts/AboutLayout.astro
 title: "About"
+description: "How I work as an engineer and a manager, and how I got here."
 ---
 
 I care about whether people can understand, deploy, and maintain what we're building. The code matters, but so do the decisions and tools that shape everyone's day-to-day work.
