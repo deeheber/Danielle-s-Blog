@@ -1,5 +1,5 @@
 ---
-import { SOCIALS } from "@config"
+import { EMAIL, SITE, SOCIALS } from "@config"
 import LinkButton from "./LinkButton.astro"
 import socialIcons from "@assets/socialIcons"
 
@@ -11,6 +11,16 @@ const { centered = false } = Astro.props
 ---
 
 <div class={`social-icons ${centered ? "flex" : ""}`}>
+  <a
+    class="link-button email-link"
+    href="#"
+    data-user={EMAIL.user}
+    data-domain={EMAIL.domain}
+    title={`Email ${SITE.author}`}
+  >
+    <Fragment set:html={socialIcons.Mail} />
+    <span class="sr-only">Email {SITE.author}</span>
+  </a>
   {
     SOCIALS.map((social) => (
       <LinkButton
@@ -49,6 +59,22 @@ const { centered = false } = Astro.props
     <span class="sr-only">RSS Feed</span>
   </a>
 </div>
+
+<script>
+  // Join the address on click, so bots that never click don't see it.
+  function setupEmailLinks() {
+    document.querySelectorAll(".email-link").forEach((link) => {
+      link.addEventListener("click", () => {
+        const user = link.getAttribute("data-user")
+        const domain = link.getAttribute("data-domain")
+        link.setAttribute("href", `mailto:${user}@${domain}`)
+      })
+    })
+  }
+
+  // Runs on initial load and after view transitions navigation
+  document.addEventListener("astro:page-load", setupEmailLinks)
+</script>
 
 <style>
   @reference "../styles/base.css";

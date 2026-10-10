@@ -24,14 +24,10 @@ const { activeNav } = Astro.props
       >
         <img
           id="logo"
-          src="/Logo1(D).png"
-          alt={SITE.title}
+          src="/logo.png"
+          alt={SITE.author}
           width={LOGO_IMAGE.width}
           height={LOGO_IMAGE.height}
-          alt="Logo"
-          tabindex="0"
-          role="img"
-          aria-label="Logo"
         />
       </a>
       <nav id="nav-menu">
@@ -199,7 +195,7 @@ const { activeNav } = Astro.props
     @apply relative flex w-full items-start justify-between p-4 sm:items-end sm:py-8;
   }
   .logo {
-    @apply absolute h-auto w-full max-w-[50px] py-1 text-xl font-semibold sm:static sm:max-w-[350px] sm:text-2xl;
+    @apply absolute h-auto w-full max-w-[50px] py-1 text-xl font-semibold sm:static sm:max-w-[100px] sm:text-2xl;
   }
   .hamburger-menu {
     @apply self-end p-2 sm:hidden;

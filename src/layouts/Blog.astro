@@ -17,7 +17,10 @@ export interface Props {
 const { currentPage, totalPages, paginatedblog } = Astro.props
 ---
 
-<Layout title={`Writing | ${SITE.title}`}>
+<Layout
+  title={`Writing | ${SITE.title}`}
+  description="Writing on AWS, serverless, infrastructure as code, and developer tooling, mistakes included."
+>
   <Header activeNav="blog" />
   <Main pageTitle="Writing">
     <ul>

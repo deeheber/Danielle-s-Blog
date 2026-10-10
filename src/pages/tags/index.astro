@@ -13,7 +13,10 @@ const blog = await getCollection("blog")
 let tags = getUniqueTags(blog)
 ---
 
-<Layout title={`Tags | ${SITE.title}`}>
+<Layout
+  title={`Tags | ${SITE.title}`}
+  description="All the tags used in my writing."
+>
   <Header activeNav="tags" />
   <Main
     pageTitle="Tags"

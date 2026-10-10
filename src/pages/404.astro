@@ -6,7 +6,11 @@ import Footer from "@components/Footer.astro"
 import LinkButton from "@components/LinkButton.astro"
 ---
 
-<Layout title={`404 Not Found | ${SITE.title}`}>
+<Layout
+  title={`404 Not Found | ${SITE.title}`}
+  description="This page doesn't exist."
+  canonicalURL={null}
+>
   <Header />
 
   <main id="main-content">

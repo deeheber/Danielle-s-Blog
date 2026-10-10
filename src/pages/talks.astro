@@ -7,7 +7,10 @@ import Speaking from "@components/Speaking.astro"
 import { SITE } from "@config"
 ---
 
-<Layout title={`Speaking | ${SITE.title}`}>
+<Layout
+  title={`Speaking | ${SITE.title}`}
+  description="Conference talks and podcast episodes, mostly about serverless and AWS."
+>
   <Header activeNav="talks" />
   <Main pageTitle="Speaking" />
   <Speaking />

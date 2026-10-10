@@ -41,8 +41,8 @@ function reflectPreference() {
 
     // Set the background color in <meta theme-color ... />
     document
-      .querySelector("meta[name='theme-color']")
-      ?.setAttribute("content", bgColor)
+      .querySelectorAll("meta[name='theme-color']")
+      .forEach((meta) => meta.setAttribute("content", bgColor))
   }
 }
 
