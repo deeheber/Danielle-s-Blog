@@ -92,6 +92,6 @@ Here's how mine turned out
 
 ![Github README](/assets/github-readme.png)
 
-[Here's my code](https://github.com/deeheber/deeheber) if you want to take a look and try to build something similar yourself.
+<a href="https://github.com/deeheber/deeheber" target="_blank" rel="noopener noreferrer">Here's my code</a> if you want to take a look and try to build something similar yourself.
 
 I'd encourage you to check this out. Even if you aren't in the DevOps yaml writing land like I am...I think Github has done a fantastic job with documentation to make this approachable for newcomers.

@@ -11,7 +11,7 @@ tags: ["ai", "opinion"]
 
 ![Clouds Image](/assets/drawer.jpg)
 
-> Photo by <a href="https://unsplash.com/@dearseymour?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Ksenia Makagonova</a> on <a href="https://unsplash.com/photos/opened-white-wooden-drawer-bngKirnA1EE?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
+> Photo by <a href="https://unsplash.com/@dearseymour?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash" target="_blank" rel="noopener noreferrer">Ksenia Makagonova</a> on <a href="https://unsplash.com/photos/opened-white-wooden-drawer-bngKirnA1EE?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash" target="_blank" rel="noopener noreferrer">Unsplash</a>
 
 I'm worried about generative AI. I say this as someone who uses AI to help with work tasks daily. I do believe there are some neat things that AI can do and there is high potential for it in the future as it improves, but I have concerns.
 

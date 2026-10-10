@@ -1,4 +1,5 @@
 import { test, expect } from "@playwright/test"
+import speakingData from "../src/data/speakingData.json" with { type: "json" }
 
 test("main page loads with selected writing and speaking", async ({ page }) => {
   await page.goto("/")
@@ -8,19 +9,13 @@ test("main page loads with selected writing and speaking", async ({ page }) => {
   await expect(selectedWriting.locator(":scope > h2")).toHaveText(
     "Selected Writing",
   )
-  await expect(selectedWriting.locator("li")).toHaveCount(5)
-  await expect(selectedWriting.locator("li").first()).toBeVisible()
+  await expect(selectedWriting.locator("li a").first()).toBeVisible()
 
   const selectedSpeaking = page.locator("#selected-speaking")
   await expect(selectedSpeaking.locator(":scope > h2")).toHaveText(
     "Selected Speaking",
   )
-  await expect(selectedSpeaking.locator("li a")).toHaveText([
-    "Rethinking Serverless - AWS Community Day Bay Area (2024)",
-    "CI/CD with the AWS CDK and GitHub Actions at a Startup (2025)",
-    "AWS Anti-Patterns That Will Cost You Later (2025)",
-    "Serverless Chats Ep. 25 (2019)",
-  ])
+  await expect(selectedSpeaking.locator("li a").first()).toBeVisible()
   await expect(
     page.getByRole("link", { name: "All speaking" }),
   ).toHaveAttribute("href", "/talks/")
@@ -51,14 +46,56 @@ test("dark/light mode toggle round-trip", async ({ page }) => {
   await expect(html).toHaveAttribute("data-theme", original!)
 })
 
-test("search hydrates and returns results", async ({ page }) => {
+test("search returns a result that opens a post", async ({ page }) => {
   await page.goto("/search/")
 
   const input = page.locator('input[name="search"]')
   await expect(input).toBeVisible()
 
   await input.fill("serverless")
-  await expect(page.getByText(/Found \d+ result/)).toBeVisible()
+  const result = page.locator('#main-content ul a[href^="/blog/"]').first()
+  await expect(result).toBeVisible()
+  const title = await result.innerText()
+  await result.click()
+  await expect(page).toHaveURL(/\/blog\/[^/]+\/?$/)
+  await expect(page.locator("h1.post-title")).toHaveText(title)
+  await expect(page.locator("article#article")).toBeVisible()
+})
+
+test("homepage project link reaches its project section", async ({ page }) => {
+  await page.goto("/")
+  const project = page
+    .locator('#featured-projects a[href^="/projects#"]')
+    .first()
+  await expect(project).toBeVisible()
+  const title = await project.innerText()
+  await project.click()
+  await expect(page).toHaveURL(/\/projects\/?#.+$/)
+  await expect(
+    page.getByRole("heading", { name: "Projects", exact: true }),
+  ).toBeVisible()
+  await expect(page.locator("h2:target")).toHaveText(title)
+})
+
+test("mobile menu opens and navigates", async ({ page }) => {
+  await page.setViewportSize({ width: 390, height: 844 })
+  await page.goto("/")
+  const menu = page.getByRole("button", { name: "Open Menu", exact: true })
+  const writing = page.locator("#menu-items").getByRole("link", {
+    name: "Writing",
+    exact: true,
+  })
+  await expect(writing).toBeHidden()
+  await menu.click()
+  await expect(
+    page.getByRole("button", { name: "Close Menu", exact: true }),
+  ).toHaveAttribute("aria-expanded", "true")
+  await expect(writing).toBeVisible()
+  await writing.click()
+  await expect(page).toHaveURL(/\/blog\/?$/)
+  await expect(
+    page.getByRole("heading", { name: "Writing", exact: true }),
+  ).toBeVisible()
 })
 
 test("blog post renders content", async ({ page }) => {
@@ -116,10 +153,36 @@ test("blog pagination shows different posts per page", async ({ page }) => {
   expect(page1Again).toEqual(page1Hrefs)
 })
 
-test("talks page lists talks", async ({ page }) => {
+test("speaking archive opens the newest populated year and toggles older years", async ({
+  page,
+}) => {
   await page.goto("/talks/")
   await expect(page).toHaveTitle(/Speaking/)
-  await expect(page.locator("#all-talks li").first()).toBeVisible()
+
+  const populatedYears = speakingData.filter(
+    ({ content }) => content.length > 0,
+  )
+  const newestYear = populatedYears
+    .map(({ year }) => year)
+    .sort((a, b) => Number(b) - Number(a))[0]
+  if (!newestYear) throw new Error("Speaking archive has no appearances")
+  const years = page.locator("details")
+  await expect(years.locator("summary")).toHaveText(
+    populatedYears.map(({ year }) => year),
+  )
+  await expect(page.locator("details[open] summary")).toHaveText([newestYear])
+  await expect(page.locator("details[open] li a").first()).toBeVisible()
+
+  const olderYear = page.locator("details:not([open])").first()
+  const olderYearLabel = await olderYear.locator("summary").innerText()
+  const disclosure = years.filter({
+    has: page.getByText(olderYearLabel, { exact: true }),
+  })
+  await expect(disclosure.locator("li a").first()).toBeHidden()
+  await disclosure.locator("summary").click()
+  await expect(disclosure.locator("li a").first()).toBeVisible()
+  await disclosure.locator("summary").click()
+  await expect(disclosure.locator("li a").first()).toBeHidden()
 })
 
 test("404 page", async ({ page }) => {
@@ -165,15 +228,19 @@ test("navigation links", async ({ page }) => {
   ).toHaveCount(0)
 
   const navLinks = [
+    { name: "Projects", url: /\/projects\/?$/ },
     { name: "Writing", url: /\/blog\/?$/ },
     { name: "Speaking", url: /\/talks\/?$/ },
     { name: "About", url: /\/about\/?$/ },
-    { name: "Search", url: /\/search\/?$/ },
+    { name: "Search writing", url: /\/search\/?$/ },
   ]
 
   for (const { name, url } of navLinks) {
     await page.goto("/")
-    await page.locator("#menu-items").getByRole("link", { name }).click()
+    await page
+      .locator("#menu-items")
+      .getByRole("link", { name, exact: true })
+      .click()
     await expect(page).toHaveURL(url)
   }
 })

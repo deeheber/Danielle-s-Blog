@@ -42,4 +42,4 @@ A pretty neat trend I’ve seen is folks writing their own libraries to inject l
 
 If you’d like to go into more detail on implementation, I’d suggest checking out <a href="https://medium.com/@adhorn/injecting-chaos-to-aws-lambda-functions-using-lambda-layers-2963f996e0ba" target="_blank" rel="noopener noreferrer">this article</a> to see some code. This <a href="https://github.com/dastergon/awesome-chaos-engineering" target="_blank" rel="noopener noreferrer">GitHub repo</a> also has some great resources on the overall topic of Chaos Engineering. I hope this post gave you some ideas and inspiration on different ways you can test your serverless environment to ensure system reliability for your customers!
 
-> Note: This post was originally published on https://www.stackery.io/
+> Note: This post was originally published on <a href="https://www.stackery.io/" target="_blank" rel="noopener noreferrer">https<span>://</span>w<span>ww</span>.stackery.io/</a>

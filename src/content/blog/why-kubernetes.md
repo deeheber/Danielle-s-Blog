@@ -6,7 +6,7 @@ description: On learning K8s as a serverless developer and why specialization do
 tags: ["career", "devops"]
 ---
 
-Earlier this month I took the exam for the <a href="https://training.linuxfoundation.org/certification/kubernetes-cloud-native-associate/" target="_blank">Kubernetes and Cloud Native Associate (KCNA) certification</a> and passed.
+Earlier this month I took the exam for the <a href="https://training.linuxfoundation.org/certification/kubernetes-cloud-native-associate/" target="_blank" rel="noopener noreferrer">Kubernetes and Cloud Native Associate (KCNA) certification</a> and passed.
 
 <div class="flex justify-center">
 <div data-iframe-width="150" data-iframe-height="270" data-share-badge-id="f26feb24-7931-4b02-b6cc-c60c77a24f83" data-share-badge-host="https://www.credly.com"></div><script type="text/javascript" async src="//cdn.credly.com/assets/utilities/embed.js"></script>
@@ -58,7 +58,7 @@ That's what this K8s certification represents for me. Not abandoning serverless 
 
 ## What's Next
 
-The plan is to complete the <a href="https://cloudresumechallenge.dev/docs/extensions/kubernetes-challenge/" target="_blank">Kubernetes Resume Challenge</a> and build some personal projects. The goal is practical knowledge, not just cert credentials.
+The plan is to complete the <a href="https://cloudresumechallenge.dev/docs/extensions/kubernetes-challenge/" target="_blank" rel="noopener noreferrer">Kubernetes Resume Challenge</a> and build some personal projects. The goal is practical knowledge, not just cert credentials.
 
 Honestly, it's been fun to be a beginner again.
 

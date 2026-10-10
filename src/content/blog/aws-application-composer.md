@@ -15,7 +15,7 @@ tags: ["aws", "serverless", "opinion"]
 
 At re:Invent 2022, Werner Vogels announced the preview of <a href="https://aws.amazon.com/application-composer/" target="_blank" rel="noopener noreferrer">AWS Application Composer</a>.
 
-I don't want to write an overview or "getting started" guide, because you can read <a href="https://dev.to/aws-builders/overview-of-aws-application-composer-3j34" target="\_blank" rel="noopener noreferrer">fantastic ones from people in the community</a>. The focus of this post will be an overview of the problems that I see this service solving and what I'd want for the future.
+I don't want to write an overview or "getting started" guide, because you can read <a href="https://dev.to/aws-builders/overview-of-aws-application-composer-3j34" target="_blank" rel="noopener noreferrer">fantastic ones from people in the community</a>. The focus of this post will be an overview of the problems that I see this service solving and what I'd want for the future.
 
 ## The Problem
 

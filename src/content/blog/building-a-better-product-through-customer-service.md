@@ -53,4 +53,4 @@ This type of process may not be appropriate for all organizations, but I thought
 
 Want to benefit from a direct line of communication with Stackery’s serverless engineers? There are a variety of ways you can ask us questions, but one of the most fun is to join our team’s weekly livestream on Wednesdays at 10 AM PDT. Sometimes there are topics and guest hosts and sometimes we leave it as an open demo. Either way, it’s a great chance to get to know Team Stackery and ask us anything!
 
-> Note: This post was originally published on https://www.stackery.io/
+> Note: This post was originally published on <a href="https://www.stackery.io/" target="_blank" rel="noopener noreferrer">https<span>://</span>w<span>ww</span>.stackery.io/</a>

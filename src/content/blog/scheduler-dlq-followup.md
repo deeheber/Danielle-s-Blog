@@ -9,7 +9,7 @@ tags: ["ai", "aws", "serverless", "tutorial"]
 
 > **Update (September 8, 2026):** Async didn’t fix the timeouts. I still don’t know why they happen, but I’m leaving this post up for what I learned about async in AgentCore and Strands.
 >
-> The DLQ alarm was already triggered, and no new job alerts meant I missed the duplicate emails. I [disabled retries and removed the DLQ and alarm](https://github.com/deeheber/job-search-agent/pull/66). I’m okay with risking a missed search here.
+> The DLQ alarm was already triggered, and no new job alerts meant I missed the duplicate emails. I <a href="https://github.com/deeheber/job-search-agent/pull/66" target="_blank" rel="noopener noreferrer">disabled retries and removed the DLQ and alarm</a>. I’m okay with risking a missed search here.
 >
 > I now get emails for errors, matches, and no matches. No email means I should check whether the search or the notification failed.
 

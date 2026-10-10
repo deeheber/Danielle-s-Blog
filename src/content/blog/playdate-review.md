@@ -15,16 +15,16 @@ With dimensions of 76 × 74 × 9 mm, the console can easily fit into most pocket
 
 ![playdate](/assets/playdate.jpeg)
 
-[Panic](https://panic.com/) is the company that created the Playdate. You might have heard of Panic from playing [Untitled Goose Game](https://goose.game/) or [Firewatch](https://www.firewatchgame.com/). Or you might have used Mac apps such as [Transmit](https://panic.com/transmit/) or [Coda (renamed to Nova)](https://nova.app/).
+<a href="https://panic.com/" target="_blank" rel="noopener noreferrer">Panic</a> is the company that created the Playdate. You might have heard of Panic from playing <a href="https://goose.game/" target="_blank" rel="noopener noreferrer">Untitled Goose Game</a> or <a href="https://www.firewatchgame.com/" target="_blank" rel="noopener noreferrer">Firewatch</a>. Or you might have used Mac apps such as <a href="https://panic.com/transmit/" target="_blank" rel="noopener noreferrer">Transmit</a> or <a href="https://nova.app/" target="_blank" rel="noopener noreferrer">Coda (renamed to Nova)</a>.
 
-The CEO and co-founder of Panic gave [an in depth talk](https://gdcvault.com/play/1034707/The-Playdate-Story-What-Was) about the story behind the creation of the Playdate which is entertaining and informative if you would like to go deeper.
+The CEO and co-founder of Panic gave <a href="https://gdcvault.com/play/1034707/The-Playdate-Story-What-Was" target="_blank" rel="noopener noreferrer">an in depth talk</a> about the story behind the creation of the Playdate which is entertaining and informative if you would like to go deeper.
 
 ## Nice!
 
 These are some things that I enjoyed about the Playdate:
 
 - You get 24 free games (also called "season one") 2 games delievered each week until you have them all. It's delightful to see that notification light that there's new games to play at the beginning of owning this game system.
-- Games aren't limited to their catalog, you can also build your own games using [their SDK](https://play.date/dev/) or side load games from places such as [itch.io](https://itch.io/).
+- Games aren't limited to their catalog, you can also build your own games using <a href="https://play.date/dev/" target="_blank" rel="noopener noreferrer">their SDK</a> or side load games from places such as <a href="https://itch.io/" target="_blank" rel="noopener noreferrer">itch.io</a>.
 - The crank as an input device is surpisingly delightful and unique.
 - Most games have enhanced details. We're talking beautiful storytelling, visuals, and music.
 - This game system is minimally connected to the internet to allow downloading of games, but otherwise there aren't distractions that would exist on a smart phone.
@@ -42,7 +42,7 @@ These are some things that I think could be improved with the Playdate:
 
 ## Where and how to buy
 
-I'm seeing a few resellers, but the official place to buy and where I bought one was from [the official playdate shop](https://play.date/shop/).
+I'm seeing a few resellers, but the official place to buy and where I bought one was from <a href="https://play.date/shop/" target="_blank" rel="noopener noreferrer">the official playdate shop</a>.
 
 ## My opinion
 

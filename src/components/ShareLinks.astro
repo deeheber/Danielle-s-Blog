@@ -42,6 +42,7 @@ const shareLinks = [
           href={`${social.href}${URL.href}`}
           className="link-button"
           title={social.linkTitle}
+          newTab={social.name !== "Mail"}
         >
           <Fragment set:html={socialIcons[social.name]} />
           <span class="sr-only">{social.linkTitle}</span>

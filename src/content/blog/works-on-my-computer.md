@@ -37,7 +37,7 @@ Where this falls apart is when integrating another AWS service such as S3. I've 
 
 ![Clouds Image](/assets/confused-face.jpg)
 
-> Photo by <a href="https://unsplash.com/@sammywilliams?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Sander Sammy</a> on <a href="https://unsplash.com/photos/ufgOEVZuHgM?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+> Photo by <a href="https://unsplash.com/@sammywilliams?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText" target="_blank" rel="noopener noreferrer">Sander Sammy</a> on <a href="https://unsplash.com/photos/ufgOEVZuHgM?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText" target="_blank" rel="noopener noreferrer">Unsplash</a>
 
 8. Someone more experienced with IAM recognizes that the permissions on the cloud and the local environment differ.
 9. The more experienced person fixes the permissions issues in the cloud. 🚀

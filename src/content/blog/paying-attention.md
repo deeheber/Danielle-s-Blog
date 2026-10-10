@@ -26,15 +26,15 @@ In the meantime, I still need to live in this world the way it is. Here's some t
 
 ### Take a break from computer screens
 
-It's super easy to start scrolling and just lose track of time. I really like the pomodoro timer app [flow](https://flowapp.info/) to remind me it's time to take a break.
+It's super easy to start scrolling and just lose track of time. I really like the pomodoro timer app <a href="https://flowapp.info/" target="_blank" rel="noopener noreferrer">flow</a> to remind me it's time to take a break.
 
 ### Go on walks
 
-Getting outside is great, but it's also good to do this without a phone. Just let your mind wander as you walk around and it'll help you to unwind as well as come up with some [shower thought](https://www.therighttoshower.com/ethical-living/what-are-shower-thoughts-and-why-we-have-them) ideas.
+Getting outside is great, but it's also good to do this without a phone. Just let your mind wander as you walk around and it'll help you to unwind as well as come up with some <a href="https://www.therighttoshower.com/ethical-living/what-are-shower-thoughts-and-why-we-have-them" target="_blank" rel="noopener noreferrer">shower thought</a> ideas.
 
 ### Meditation
 
-Taking some time out of the day to just focus on breathing has been helpful for me. It calms me down and helps to center my mind. There's lots of ways you can do this. I personally enjoy using [headspace](https://www.headspace.com/).
+Taking some time out of the day to just focus on breathing has been helpful for me. It calms me down and helps to center my mind. There's lots of ways you can do this. I personally enjoy using <a href="https://www.headspace.com/" target="_blank" rel="noopener noreferrer">headspace</a>.
 
 ### Read books and physically write down notes
 
@@ -42,7 +42,7 @@ The medium in which you consume content influences how you consume it. For examp
 
 Whenever I need to take notes, I find physically writing things down helps me to retain the information. If I type it out on my computer, I find myself opening a second tab and navigating to various websites.
 
-For reading and note taking I use a [Boox Nova 3](https://onyxboox.com/boox_nova3) with very few apps installed on it, because I don't like having many pieces of paper and notebooks laying around.
+For reading and note taking I use a <a href="https://onyxboox.com/boox_nova3" target="_blank" rel="noopener noreferrer">Boox Nova 3</a> with very few apps installed on it, because I don't like having many pieces of paper and notebooks laying around.
 
 ### Chase flow states
 
@@ -52,4 +52,4 @@ Have you ever started working on a task and just had so much fun with it that ti
 
 If you're like me and are having troubles focusing on things that matter in your life, know that you're not alone and it's not completely your fault. There are small things that you can do; however, we need a big societal change as well.
 
-This post was inspired from my life experience as well as from reading [Stolen Focus](https://stolenfocusbook.com/). If you're interested in learning more, this book is a great place to start. All of the products I mentioned in this post are things that have helped me in my life, and I am not getting compensated to endorse.
+This post was inspired from my life experience as well as from reading <a href="https://stolenfocusbook.com/" target="_blank" rel="noopener noreferrer">Stolen Focus</a>. If you're interested in learning more, this book is a great place to start. All of the products I mentioned in this post are things that have helped me in my life, and I am not getting compensated to endorse.

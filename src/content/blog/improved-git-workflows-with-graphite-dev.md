@@ -11,11 +11,11 @@ tags: ["devops"]
 
 ![Clouds Image](/assets/github-screen.jpg)
 
-> Photo by <a href="https://unsplash.com/@richygreat?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Richy Great</a> on <a href="https://unsplash.com/s/photos/github?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+> Photo by <a href="https://unsplash.com/@richygreat?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText" target="_blank" rel="noopener noreferrer">Richy Great</a> on <a href="https://unsplash.com/s/photos/github?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText" target="_blank" rel="noopener noreferrer">Unsplash</a>
 
 ## Current Landscape
 
-[Git](https://git-scm.com/) is a tool that many tech people use. It's great for the most part. There are some pain points that could improve the experience. My issues revolve around collaboration with others. Here's some examples.
+<a href="https://git-scm.com/" target="_blank" rel="noopener noreferrer">Git</a> is a tool that many tech people use. It's great for the most part. There are some pain points that could improve the experience. My issues revolve around collaboration with others. Here's some examples.
 
 As someone requesting a code review, so I can merge my changes:
 
@@ -30,7 +30,7 @@ As someone doing code reviews for my teammates:
 
 ## Solution
 
-Upon joining my most recent company, my onboarding buddy told me about how they use [graphite](https://graphite.dev/).
+Upon joining my most recent company, my onboarding buddy told me about how they use <a href="https://graphite.dev/" target="_blank" rel="noopener noreferrer">graphite</a>.
 
 Graphite utilizes something they're calling a "stack." What used to be one huge PR is now many branches that build off of each other with each branch being its own PR.
 

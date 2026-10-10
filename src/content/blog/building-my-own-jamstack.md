@@ -14,7 +14,7 @@ Building and deploying websites still continues to be a very common use case wit
 
 ### What We Built Last Time
 
-<a href="https://www.danielleheberling.xyz/blog/text-to-speech/" target="_blank" rel="noopener noreferrer">Previously</a>, I wrote an application that translates written text to speech. I was getting tired of having to recall the different API endpoints to hit and wanted a nice UI to better manage these files...so I got to work on building a frontend.
+<a href="https://www.danielleheberling.xyz/blog/text-to-speech/">Previously</a>, I wrote an application that translates written text to speech. I was getting tired of having to recall the different API endpoints to hit and wanted a nice UI to better manage these files...so I got to work on building a frontend.
 
 Then I got tired of manually building and uploading those files to S3 for website hosting, so I wrote a Lambda function to do this for me. Here's what the final architecture looked like
 

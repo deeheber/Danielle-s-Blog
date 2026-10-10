@@ -9,18 +9,18 @@ tags: ["aws", "serverless", "devops"]
 
 ![AWS Application Composer Canvas](/assets/app-composer-canvas.png)
 
-Originally, I wanted to blog about my favorite [re:Invent](https://reinvent.awsevents.com/) announcements. But as I started, I saw a higher level theme and decided to write on that instead.
+Originally, I wanted to blog about my favorite <a href="https://reinvent.awsevents.com/" target="_blank" rel="noopener noreferrer">re:Invent</a> announcements. But as I started, I saw a higher level theme and decided to write on that instead.
 
 _Disclaimer that this post contains my individual opinions and yours might differ. I welcome your polite/engaged feedback and encourage you to continue this conversation._
 
 ## Relevant Announcements
 
-- [AWS Step Functions Workflow Studio is now available in AWS Application Composer](https://aws.amazon.com/blogs/aws/aws-step-functions-workflow-studio-is-now-available-in-aws-application-composer/)
-- [AWS Application Composer IDE extension](https://aws.amazon.com/blogs/aws/ide-extension-for-aws-application-composer-enhances-visual-modern-applications-development-with-ai-generated-iac/)
+- <a href="https://aws.amazon.com/blogs/aws/aws-step-functions-workflow-studio-is-now-available-in-aws-application-composer/" target="_blank" rel="noopener noreferrer">AWS Step Functions Workflow Studio is now available in AWS Application Composer</a>
+- <a href="https://aws.amazon.com/blogs/aws/ide-extension-for-aws-application-composer-enhances-visual-modern-applications-development-with-ai-generated-iac/" target="_blank" rel="noopener noreferrer">AWS Application Composer IDE extension</a>
 
 ## A Lightbulb Moment
 
-My time spent as a software engineer at `$day_job` is mostly writing Infrastructure as Code (IaC). When reflecting on the [Serverless mindset](https://ben11kehoe.medium.com/serverless-is-a-state-of-mind-717ef2088b42), I believe that some aspects of this mindset conflict with how I spend most of my time at `$day_job`.
+My time spent as a software engineer at `$day_job` is mostly writing Infrastructure as Code (IaC). When reflecting on the <a href="https://ben11kehoe.medium.com/serverless-is-a-state-of-mind-717ef2088b42" target="_blank" rel="noopener noreferrer">Serverless mindset</a>, I believe that some aspects of this mindset conflict with how I spend most of my time at `$day_job`.
 
 ✅ _Pros of the status quo:_ writing IaC is repeatable, scalable, fun, and I'm good at it! 🙂
 
@@ -28,13 +28,13 @@ My time spent as a software engineer at `$day_job` is mostly writing Infrastruct
 
 Then a thought occurred to me: **What if we didn't have to write IaC? Why not have a deployable diagram of the application instead?**
 
-This is where I think tools such as [AWS Application Composer](https://aws.amazon.com/application-composer/) and [AWS Step Functions Workflow Studio](https://docs.aws.amazon.com/step-functions/latest/dg/workflow-studio.html) are headed in a positive direction via their drag and drop visual interfaces.
+This is where I think tools such as <a href="https://aws.amazon.com/application-composer/" target="_blank" rel="noopener noreferrer">AWS Application Composer</a> and <a href="https://docs.aws.amazon.com/step-functions/latest/dg/workflow-studio.html" target="_blank" rel="noopener noreferrer">AWS Step Functions Workflow Studio</a> are headed in a positive direction via their drag and drop visual interfaces.
 
 ![Danielle Tweet](/assets/danielle-tweet.png)
 
 ## To a Brighter Future
 
-[Werner Vogels](https://www.allthingsdistributed.com/about.html) said in his keynote that "the most dangerous phrase in the English language is: 'we've always done it this way'." I think this applies to how we've historically approached IaC with Serverless development.
+<a href="https://www.allthingsdistributed.com/about.html" target="_blank" rel="noopener noreferrer">Werner Vogels</a> said in his keynote that "the most dangerous phrase in the English language is: 'we've always done it this way'." I think this applies to how we've historically approached IaC with Serverless development.
 
 ![Grace Hopper Quote](/assets/hopper-quote.jpg)
 

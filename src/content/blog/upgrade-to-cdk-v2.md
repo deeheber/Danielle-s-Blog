@@ -8,7 +8,7 @@ tags: ["aws", "devops", "tutorial"]
 
 As of re:Invent 2021, CDK v2 is <a href="https://aws.amazon.com/about-aws/whats-new/2021/12/aws-cloud-development-kit-cdk-generally-available/" target="_blank" rel="noopener noreferrer">now generally available</a>. 🎉
 
-This post includes a brief walkthrough on upgrading a project from v1 -> v2 as well as some personal opinions. I'll be using <a href="https://www.danielleheberling.xyz/blog/appsync-cdk/" target="_blank" rel="noopener noreferrer">this notes app</a> that we build previously to demo. If you want to skip ahead, the finished source code is <a href="https://github.com/deeheber/note-service-next-generation/tree/blog-post-2" target="_blank" rel="noopener noreferrer">on Github</a>.
+This post includes a brief walkthrough on upgrading a project from v1 -> v2 as well as some personal opinions. I'll be using <a href="https://www.danielleheberling.xyz/blog/appsync-cdk/">this notes app</a> that we build previously to demo. If you want to skip ahead, the finished source code is <a href="https://github.com/deeheber/note-service-next-generation/tree/blog-post-2" target="_blank" rel="noopener noreferrer">on Github</a>.
 
 Here's we go. Let's upgrade the application!
 

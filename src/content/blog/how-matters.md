@@ -9,7 +9,7 @@ tags: ["career", "opinion"]
 
 ![Winding path](/assets/winding-path.jpg)
 
-> Photo by <a href="https://unsplash.com/@jack_anstey?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Jack Anstey</a> on <a href="https://unsplash.com/photos/aerial-photography-of-road-zS4lUqLEiNA?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+> Photo by <a href="https://unsplash.com/@jack_anstey?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText" target="_blank" rel="noopener noreferrer">Jack Anstey</a> on <a href="https://unsplash.com/photos/aerial-photography-of-road-zS4lUqLEiNA?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText" target="_blank" rel="noopener noreferrer">Unsplash</a>
 
 Looking back on my career, the connections and opportunities I value most weren't the result of optimizing for speed. They grew from taking the long view.
 

@@ -78,13 +78,13 @@ You can then find the layer ARN here...copy/paste this for use later.
 
 ![Layer Arn](/assets/layerarn.png)
 
-If you prefer to use the AWS CLI instead of the console, you can also do that by following <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html#configuration-layers-manage" target="_blank" target="_blank" rel="noopener noreferrer">these directions</a>.
+If you prefer to use the AWS CLI instead of the console, you can also do that by following <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html#configuration-layers-manage" target="_blank" rel="noopener noreferrer">these directions</a>.
 
-<a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-layerversion.html" target="_blank" target="_blank" rel="noopener noreferrer">Cloudformation</a> also offers the ability to set this up; however, be careful about creating the layer in the same stack that has dependencies on the layer. It’s my personal opinion that keeping dependencies in a separate repo/stack might be a better practice to imitate how npm and other package registries work.
+<a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-layerversion.html" target="_blank" rel="noopener noreferrer">Cloudformation</a> also offers the ability to set this up; however, be careful about creating the layer in the same stack that has dependencies on the layer. It’s my personal opinion that keeping dependencies in a separate repo/stack might be a better practice to imitate how npm and other package registries work.
 
 ## Create a Function that Uses that Layer
 
-I personally like to use Stackery in order to add my resources since it adds all the necessary permissions and connection for me via a drag and drop interface, so these instructions will show how to do that. Keep in mind if you wish to set it up using another method, be sure to remember to add the <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html#configuration-layers-permissions" target="_blank" target="_blank" rel="noopener noreferrer">correct permissions</a>.
+I personally like to use Stackery in order to add my resources since it adds all the necessary permissions and connection for me via a drag and drop interface, so these instructions will show how to do that. Keep in mind if you wish to set it up using another method, be sure to remember to add the <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html#configuration-layers-permissions" target="_blank" rel="noopener noreferrer">correct permissions</a>.
 
 Head over to the canvas and double click your function to open up this dialog. You’ll then want to paste your layer ARN here:
 
@@ -92,7 +92,7 @@ Head over to the canvas and double click your function to open up this dialog. Y
 
 Note: you need to do this everytime you update the layer version.
 
-Not overly necessary for this example, but if you have multiple environments that rely on different layers you can <a href="https://docs.stackery.io/docs/using-stackery/environments/#setting-configuration-store-values" target="_blank" target="_blank" rel="noopener noreferrer">setup a parameter</a> to reference this layer that will be dependent on which environment you’re deployed into.
+Not overly necessary for this example, but if you have multiple environments that rely on different layers you can <a href="https://docs.stackery.io/docs/using-stackery/environments/#setting-configuration-store-values" target="_blank" rel="noopener noreferrer">setup a parameter</a> to reference this layer that will be dependent on which environment you’re deployed into.
 
 Also keep in mind that as of my writing this, AWS has a limit of 5 layers per function.
 
@@ -122,6 +122,6 @@ The important thing to note here is the first line where we require from `/opt/n
 
 Once deployed, go ahead and invoke the function. You should see the original string reversed in the function response.
 
-Check out the full code example in <a href="https://github.com/deeheber/lambda-layer-example/tree/original-blog-post" target="_blank" target="_blank" rel="noopener noreferrer">this repo</a>.
+Check out the full code example in <a href="https://github.com/deeheber/lambda-layer-example/tree/original-blog-post" target="_blank" rel="noopener noreferrer">this repo</a>.
 
-All of the official documentation from AWS about Lambda layers can be found <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html" target="_blank" target="_blank" rel="noopener noreferrer">here</a>.
+All of the official documentation from AWS about Lambda layers can be found <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html" target="_blank" rel="noopener noreferrer">here</a>.

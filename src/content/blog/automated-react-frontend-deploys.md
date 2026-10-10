@@ -12,7 +12,7 @@ As the frontend and backend are slowly merging closer together, more and more fo
 
 ## What We're Building
 
-<a href="https://www.danielleheberling.xyz/blog/text-to-speech/" target="_blank" rel="noopener noreferrer">Previously</a>, I wrote an application that translates written text to speech. I was getting tired of having to recall the different API endpoints to hit and wanted a nice UI to better manage these files...so I got to work on building a frontend.
+<a href="https://www.danielleheberling.xyz/blog/text-to-speech/">Previously</a>, I wrote an application that translates written text to speech. I was getting tired of having to recall the different API endpoints to hit and wanted a nice UI to better manage these files...so I got to work on building a frontend.
 
 I decided to keep it simple/minimal in style as this is for personal use...so here’s how it ended up looking at the end.
 
@@ -44,7 +44,7 @@ PopulateFrontendDeployTrigger:
 
 So when the Type property starts with Custom::, CloudFormation then looks at the ServiceToken field and sends a request to the resource specified on every deploy. In this case, the requests will go to my PopulateFrontend function. Anything after Custom:: can be whatever you'd like. Personally, I'd suggest naming it something that makes sense as to what it does...but that's totally up to you.
 
-When using custom resources, it is very important to send back success and failure messages from the resource that was requested by CloudFormation. If you do not do this, then often times CloudFormation will hang for hours in a state that is difficult to exit. There are a few ways to go about doing this, but I decided to use the <a href="https://www.npmjs.com/package/cfn-custom-resource" target="_blank" rel="noopener noreferrer">cfn-custom-resource npm package</a>. Here is where I’m using this library to send my success or error message response back to CloudFormation: https://github.com/deeheber/text-to-speech-converter/blob/blog-post-2/src/PopulateFrontend/index.js#L25-L30.
+When using custom resources, it is very important to send back success and failure messages from the resource that was requested by CloudFormation. If you do not do this, then often times CloudFormation will hang for hours in a state that is difficult to exit. There are a few ways to go about doing this, but I decided to use the <a href="https://www.npmjs.com/package/cfn-custom-resource" target="_blank" rel="noopener noreferrer">cfn-custom-resource npm package</a>. Here is where I’m using this library to send my success or error message response back to CloudFormation: <a href="https://github.com/deeheber/text-to-speech-converter/blob/blog-post-2/src/PopulateFrontend/index.js#L25-L30" target="_blank" rel="noopener noreferrer">https<span>:</span>//github.com/deeheber/text-to-speech-converter/blob/blog-post-2/src/PopulateFrontend/index.js#L25-L30</a>.
 
 ## Populate Frontend - Contents
 
@@ -58,7 +58,7 @@ So on every deploy this function is triggered via the request sent to the functi
 4. Runs `npm install` and `npm build`
 5. Npm build puts all of the built files in a folder called `/build`, so we then send all of those built files to our FrontEnd s3 bucket. Since the s3 bucket is enabled to static website hosting, it should “just work.”
 
-Here's the final code for that function if you'd like to take a look: https://github.com/deeheber/text-to-speech-converter/blob/blog-post-2/src/PopulateFrontend/index.js
+Here's the final code for that function if you'd like to take a look: <a href="https://github.com/deeheber/text-to-speech-converter/blob/blog-post-2/src/PopulateFrontend/index.js" target="_blank" rel="noopener noreferrer">https<span>:</span>//github.com/deeheber/text-to-speech-converter/blob/blog-post-2/src/PopulateFrontend/index.js</a>
 
 ## More on the Config File
 
@@ -76,6 +76,6 @@ export default {
 
 ## Closing
 
-Hopefully this post gave you a nice example of how to implement an automated build/deploy of your frontend code with every stack deploy. You can see all of the code I referenced this this post here: https://github.com/deeheber/text-to-speech-converter/tree/blog-post-2.
+Hopefully this post gave you a nice example of how to implement an automated build/deploy of your frontend code with every stack deploy. You can see all of the code I referenced this this post here: <a href="https://github.com/deeheber/text-to-speech-converter/tree/blog-post-2" target="_blank" rel="noopener noreferrer">https<span>:</span>//github.com/deeheber/text-to-speech-converter/tree/blog-post-2</a>.
 
 If you want something more customized or complex, I’d recommend checking out AWS’s <a href="https://aws.amazon.com/codebuild/" target="_blank" rel="noopener noreferrer">code-build</a> and/or <a href="https://aws.amazon.com/codepipeline/" target="_blank" rel="noopener noreferrer">code-pipeline</a> services. If time permits, perhaps I’ll do another blog post or blog on those services.
