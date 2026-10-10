@@ -26,11 +26,11 @@ There is a lot of hype around <a href="https://www.gatsbyjs.org/" target="_blank
 
 ## Gatsby Features I Think Are Cool
 
-If you're new to React and/or just don't want to build everything completely from scratch there are many <a href="https://www.gatsbyjs.org/starters/?v=2" target="_blank" rel="noopeener noreferrer">starter templates</a> to choose from. These are created by Gatsby employees and members of the community. I think you can also start from scratch though if you want, but am not overly sure.
+If you're new to React and/or just don't want to build everything completely from scratch there are many <a href="https://www.gatsbyjs.org/starters/?v=2" target="_blank" rel="noopener noreferrer">starter templates</a> to choose from. These are created by Gatsby employees and members of the community. I think you can also start from scratch though if you want, but am not overly sure.
 
-Gatsby also has great <a href="https://www.gatsbyjs.org/docs/" target="_blank" rel="noopeener noreferrer">documentation </a> and an active <a href="https://github.com/gatsbyjs/gatsby/issues" target="_blank" rel="noopeener noreferrer">GitHub repository</a> where you can file an issue to ask for help on something or file a bug.
+Gatsby also has great <a href="https://www.gatsbyjs.org/docs/" target="_blank" rel="noopener noreferrer">documentation </a> and an active <a href="https://github.com/gatsbyjs/gatsby/issues" target="_blank" rel="noopener noreferrer">GitHub repository</a> where you can file an issue to ask for help on something or file a bug.
 
-I am personally not a huge fan of React router, so I was delighted when I learned that <a href="https://reach.tech/router" target="_blank" rel="noopeener noreferrer">Reach Router</a> comes with Gatsby. Major bonus is that it is highly accessible, since Reach Router was created with accessible navigation at its core.
+I am personally not a huge fan of React router, so I was delighted when I learned that <a href="https://reach.tech/router" target="_blank" rel="noopener noreferrer">Reach Router</a> comes with Gatsby. Major bonus is that it is highly accessible, since Reach Router was created with accessible navigation at its core.
 
 Gatsby has a great plugin eecosystem. Some of these plugins are maintained by Gatsby while others are maintained by various open source developers. Here are a few that I like...though there are many more to explore:
 
@@ -39,7 +39,7 @@ Gatsby has a great plugin eecosystem. Some of these plugins are maintained by Ga
 - <a href="https://www.gatsbyjs.org/packages/gatsby-plugin-offline/" target="_blank" rel="noopener noreferrer">Offline </a>adds a service worker to your site to allow it work offline and when there are bad network connections.
 - <a href="https://www.gatsbyjs.org/packages/gatsby-plugin-feed/" target="_blank" rel="noopener noreferrer">Feed </a>creats an RSS feed or feeds for your site.
 
-You can deploy a Gatsby site nearly anywhere you want. There are plugins to make deploying to an S3 bucket or on Netflify super easy. <a href="https://www.gatsbyjs.org/docs/deploying-and-hosting/" target="_blank" rel="noopeener noreferrer">The docs</a> have a list of ideas for hosting if you aren't sure with instructions on how to deploy to those different platforms.
+You can deploy a Gatsby site nearly anywhere you want. There are plugins to make deploying to an S3 bucket or on Netflify super easy. <a href="https://www.gatsbyjs.org/docs/deploying-and-hosting/" target="_blank" rel="noopener noreferrer">The docs</a> have a list of ideas for hosting if you aren't sure with instructions on how to deploy to those different platforms.
 
 ## Challenges I ran into
 
@@ -47,11 +47,11 @@ This one is mostly a first world problem, but the starter template that I decide
 
 I think this may possibly have been due to the service worker, but I found that my site was very aggressibely cached. Lots of times when I made a change, it would not show on localhost until I did a hard refresh.
 
-Not directly Gatsby related, but I attempted to use <a href="https://www.netlify.com/docs/form-handling/" target="_blank" rel="noopeener noreferrer">Netlify forms</a>, followed the docs, and still could not get the form the reliably submit. I filed an issue with Gatsby. They were amazing and replied super fast. We eventually decided the issue most likely was something on Netfliy's side. After more troubleshooting and talking with Netlify's support, I decided to give up on that since I wanted to ensure my form would reliably submit as I did not want to miss any messages and there are many other options out there to create a form.
+Not directly Gatsby related, but I attempted to use <a href="https://www.netlify.com/docs/form-handling/" target="_blank" rel="noopener noreferrer">Netlify forms</a>, followed the docs, and still could not get the form the reliably submit. I filed an issue with Gatsby. They were amazing and replied super fast. We eventually decided the issue most likely was something on Netfliy's side. After more troubleshooting and talking with Netlify's support, I decided to give up on that since I wanted to ensure my form would reliably submit as I did not want to miss any messages and there are many other options out there to create a form.
 
 ## The Future
 
-I view pretty much every project of mine as a living, breathing entity that is never complete. I'm keeping track of ideas of things I'd like to implement in the future on <a href="https://github.com/deeheber/danielle-heberling-dot-xyz/issues" target="_blank" rel="noopeener noreferrer">GitHub</a>. Feel free to contribute if you'd like.
+I view pretty much every project of mine as a living, breathing entity that is never complete. I'm keeping track of ideas of things I'd like to implement in the future on <a href="https://github.com/deeheber/danielle-heberling-dot-xyz/issues" target="_blank" rel="noopener noreferrer">GitHub</a>. Feel free to contribute if you'd like.
 
 In addition to my issues listed on GitHub, I also think I'd like to deploy the site to an S3 bucket (it is currently hosted on Netlify) to make integration with other AWS services easier. For now, I think thinking I'd like to put that bucket behind a CloudFront distribution that can talk to a Lambda which processes the form and then sends me a customized email with the form submission info via SES and utilizes Cloud Monkey. Ok now I'm just making up fictional AWS services, I'll stop.
 

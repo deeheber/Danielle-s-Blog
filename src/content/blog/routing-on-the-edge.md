@@ -9,7 +9,7 @@ tags: ["aws", "devops"]
 
 ![Feet dangling from roof](/assets/jake-ingle-s-t1oJXKYI4-unsplash.jpg)
 
-At [Koan](https://www.koan.co/?utm_campaign=edgerouter&utm_medium=blog&utm_source=medium), our application’s frontend is a [React](https://reactjs.org/) [Single Page Application](https://developer.mozilla.org/en-US/docs/Glossary/SPA) running in two distinct environments (Staging and Production).
+At <a href="https://www.koan.co/?utm_campaign=edgerouter&amp;utm_medium=blog&amp;utm_source=medium" target="_blank" rel="noopener noreferrer">Koan</a>, our application’s frontend is a <a href="https://reactjs.org/" target="_blank" rel="noopener noreferrer">React</a> <a href="https://developer.mozilla.org/en-US/docs/Glossary/SPA" target="_blank" rel="noopener noreferrer">Single Page Application</a> running in two distinct environments (Staging and Production).
 
 In addition to viewing the Staging and Production versions of our frontend, we also need to serve up a version of the frontend based off of a git commit in our Staging environment. Doing this gives Koan developers a “live preview” URL to review what the frontend looks like after committing changes but before they’re merged.
 
@@ -17,7 +17,7 @@ In addition to viewing the Staging and Production versions of our frontend, we a
 
 Our solution has the following high level steps:
 
-1. Code changes are merged into our `main` branch. This action kicks off our [CI system](https://circleci.com/)
+1. Code changes are merged into our `main` branch. This action kicks off our <a href="https://circleci.com/" target="_blank" rel="noopener noreferrer">CI system</a>
 2. The CI builds the code and places the build artifacts (static HTML/JavaScript/CSS files) into S3 buckets
 3. A CloudFront CDN is in front of one of those S3 buckets
 4. Our staging app domain is pointed at this CloudFront CDN
@@ -35,7 +35,7 @@ Each `index.html` file in this S3 bucket references static assets (CSS/JS files)
 
 ### Inside the Lambda "router" function
 
-Whenever that developer requests a specific version of the app, the request hits CloudFront as an `origin-request`. Our Lambda@Edge function receives a [message event](https://docs.amazonaws.cn/en_us/AmazonCloudFront/latest/DeveloperGuide/lambda-event-structure.html#example-origin-request) from CloudFront and then proceeds to do the following:
+Whenever that developer requests a specific version of the app, the request hits CloudFront as an `origin-request`. Our Lambda@Edge function receives a <a href="https://docs.amazonaws.cn/en_us/AmazonCloudFront/latest/DeveloperGuide/lambda-event-structure.html#example-origin-request" target="_blank" rel="noopener noreferrer">message event</a> from CloudFront and then proceeds to do the following:
 
 1. Gets the git commit hash from the pathname in the request. If there isn’t a commit hash in the URL, then we assume we want the latest version.
 2. Gets the requested index file
@@ -45,7 +45,7 @@ Whenever that developer requests a specific version of the app, the request hits
 
 > Gets the git commit hash from the pathname in the request
 
-Whenever someone makes an HTTP request to the CDN, the CDN then sends an event object to our Lambda@Edge function. The shape looks something like [this](https://docs.amazonaws.cn/en_us/AmazonCloudFront/latest/DeveloperGuide/lambda-event-structure.html#example-origin-request).
+Whenever someone makes an HTTP request to the CDN, the CDN then sends an event object to our Lambda@Edge function. The shape looks something like <a href="https://docs.amazonaws.cn/en_us/AmazonCloudFront/latest/DeveloperGuide/lambda-event-structure.html#example-origin-request" target="_blank" rel="noopener noreferrer">this</a>.
 
 We then pull the `pathname` off of that event object:
 
@@ -120,7 +120,7 @@ const getIndexFile = (hash) => {
 }
 ```
 
-A possible next step to improve this might be using Lambda@Edge memory. Since the index file is immutable, we should only need to retrieve it from S3 once (or if Edge memory is dumped). https://aws.amazon.com/blogs/networking-and-content-delivery/leveraging-external-data-in-lambdaedge/
+A possible next step to improve this might be using Lambda@Edge memory. Since the index file is immutable, we should only need to retrieve it from S3 once (or if Edge memory is dumped). <a href="https://aws.amazon.com/blogs/networking-and-content-delivery/leveraging-external-data-in-lambdaedge/" target="_blank" rel="noopener noreferrer">https<span>:</span>//aws.amazon.com/blogs/networking-and-content-delivery/leveraging-external-data-in-lambdaedge/</a>
 
 ...
 
@@ -211,8 +211,8 @@ exports.handler = (event, ctx, cb) => {
 
 While there are opportunities for improvement, this setup works well for our team, and we thought that sharing this approach might give you and your team some ideas to iterate on.
 
-More recently, AWS released [CloudFront Functions](https://aws.amazon.com/blogs/aws/introducing-cloudfront-functions-run-your-code-at-the-edge-with-low-latency-at-any-scale/). Stay tuned as we evaluate if that’s a good solution for us to use instead of our existing Lambda@Edge functions. It’s highly possible we could re-architect this to completely bypass the S3 GET and/or further utilize the edge caching.
+More recently, AWS released <a href="https://aws.amazon.com/blogs/aws/introducing-cloudfront-functions-run-your-code-at-the-edge-with-low-latency-at-any-scale/" target="_blank" rel="noopener noreferrer">CloudFront Functions</a>. Stay tuned as we evaluate if that’s a good solution for us to use instead of our existing Lambda@Edge functions. It’s highly possible we could re-architect this to completely bypass the S3 GET and/or further utilize the edge caching.
 
-> Thanks to [Daniel Kaczmarczyk](https://dev.to/danielkaczmarczyk) and [RJ Zaworski](https://dev.to/rjz) for reviewing drafts of this article.
+> Thanks to <a href="https://dev.to/danielkaczmarczyk" target="_blank" rel="noopener noreferrer">Daniel Kaczmarczyk</a> and <a href="https://dev.to/rjz" target="_blank" rel="noopener noreferrer">RJ Zaworski</a> for reviewing drafts of this article.
 
-> Note: This post was originally published on the [Koan dev blog](https://medium.com/developing-koan/routing-on-the-edge-913eb00da742)
+> Note: This post was originally published on the <a href="https://medium.com/developing-koan/routing-on-the-edge-913eb00da742" target="_blank" rel="noopener noreferrer">Koan dev blog</a>

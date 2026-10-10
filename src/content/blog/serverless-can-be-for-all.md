@@ -70,4 +70,4 @@ This was an amazing and humbling opportunity that I’m still stoked about! But 
 
 Next up is Tennessee for <a href="https://serverlessnashville.io/" target="_blank" rel="noopener noreferrer">Serverless Days Nashville</a>. The topic? Encouraging people to take the first (or umpteenth) step in their serverless journey by using Stackery. If you can/will be in the area in February, I’d love to see you there. Want to connect about serverless and Stackery (or share any sweet tips about Nashville)? <a href="https://twitter.com/deeheber" target="_blank" rel="noopener noreferrer">Reach out to me on Twitter</a>.
 
-> Note: This post was originally published on https://www.stackery.io/
+> Note: This post was originally published on <a href="https://www.stackery.io/" target="_blank" rel="noopener noreferrer">https<span>://</span>w<span>ww</span>.stackery.io/</a>

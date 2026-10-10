@@ -9,7 +9,7 @@ tags: ["aws", "devops"]
 
 ![Money counting](/assets/budget.jpg)
 
-> Photo by <a href="https://unsplash.com/@sharonmccutcheon?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Alexander Grey</a> on <a href="https://unsplash.com/photos/focus-photography-of-person-counting-dollar-banknotes--8a5eJ1-mmQ?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
+> Photo by <a href="https://unsplash.com/@sharonmccutcheon?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash" target="_blank" rel="noopener noreferrer">Alexander Grey</a> on <a href="https://unsplash.com/photos/focus-photography-of-person-counting-dollar-banknotes--8a5eJ1-mmQ?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash" target="_blank" rel="noopener noreferrer">Unsplash</a>
 
 ## The Business Problem
 
@@ -38,7 +38,7 @@ Here's the high level architecture diagram of this solution.
 
 ![Fargate Scheduler Architecture](/assets/fargate-scheduler-arch-diagram.png)
 
-Example code with instructions on how to deploy this into your AWS account, can be found in [this GitHub repo](https://github.com/deeheber/fargate-on-a-budget-demo).
+Example code with instructions on how to deploy this into your AWS account, can be found in <a href="https://github.com/deeheber/fargate-on-a-budget-demo" target="_blank" rel="noopener noreferrer">this GitHub repo</a>.
 
 **Disclaimer: in this example, we are using a demo Docker image. If you are setting up an application that contains information that shouldn't be open to the public internet, ensure that authentication is in place. Authentication has been intentionally omitted, because it is not the focus of this article.**
 
@@ -55,13 +55,13 @@ Fargate is the standard which gives you on-demand access to containerized comput
 
 Fargate Spot is similar to Fargate, but cheaper (advertised as up to 70% discounted) and can be interrupted by AWS. The reason for this is because AWS operates at a massive scale and lots of times there are instances available that will run and cost AWS money regardless. In order to make money off of this extra capacity, AWS offers this extra capacity as Spot instances at a discounted rate. Because AWS might need this capacity back as demand rises, they reserve the right to give you a two minute warning before shutting down your instance to put it back into the regular Fargate on-demand pool.
 
-[The launch blog post](https://aws.amazon.com/blogs/aws/aws-fargate-spot-now-generally-available/) has an excellent overview for an AWS official description.
+<a href="https://aws.amazon.com/blogs/aws/aws-fargate-spot-now-generally-available/" target="_blank" rel="noopener noreferrer">The launch blog post</a> has an excellent overview for an AWS official description.
 
 Launching a Fargate Spot instance involves 1. launching it and 2. setting up the container to handle a graceful shutdown given a two minute warning from AWS.
 
 ### Launch the Instance
 
-The example code uses the [`ApplicationLoadBalancedFargateService`](https://docs.aws.amazon.com/cdk/api/v2/docs/aws-cdk-lib.aws_ecs_patterns.ApplicationLoadBalancedFargateService.html) CDK construct.
+The example code uses the <a href="https://docs.aws.amazon.com/cdk/api/v2/docs/aws-cdk-lib.aws_ecs_patterns.ApplicationLoadBalancedFargateService.html" target="_blank" rel="noopener noreferrer"><code>ApplicationLoadBalancedFargateService</code></a> CDK construct.
 
 You can specify one or multiple capacity providers with the `capacityProviderStrategies` property with weights. The higher the weight, the more often that launch type will be utilized.
 
@@ -92,7 +92,7 @@ In the example code, this is done in two places:
 
 In the example, there are two EventBridge Scheduler schedules - "up" and "down".
 
-This is accomplished by using an AWS CLI command to set the `desiredCount` on the ECS Service to either `1` (on/up) or `0` (off/down). Here's [the official documentation for the command](https://awscli.amazonaws.com/v2/documentation/api/2.1.21/reference/ecs/update-service.html).
+This is accomplished by using an AWS CLI command to set the `desiredCount` on the ECS Service to either `1` (on/up) or `0` (off/down). Here's <a href="https://awscli.amazonaws.com/v2/documentation/api/2.1.21/reference/ecs/update-service.html" target="_blank" rel="noopener noreferrer">the official documentation for the command</a>.
 
 If this command were run on the command line via the AWS CLI it would look something like:
 
@@ -100,7 +100,7 @@ If this command were run on the command line via the AWS CLI it would look somet
 aws ecs update-service --cluster <cluster-name> --service <service-name> --desired-count <desired-count-int>
 ```
 
-For this app, we're using [EventBridge's Universal Targets](https://docs.aws.amazon.com/scheduler/latest/UserGuide/managing-targets-universal.html) feature. Universal Targets allow you to run most (not all - see the link to view unsupported commands) AWS CLI commands directly in an EventBridge Schedule without the need to add (and pay for) compute (such as Lambda).
+For this app, we're using <a href="https://docs.aws.amazon.com/scheduler/latest/UserGuide/managing-targets-universal.html" target="_blank" rel="noopener noreferrer">EventBridge's Universal Targets</a> feature. Universal Targets allow you to run most (not all - see the link to view unsupported commands) AWS CLI commands directly in an EventBridge Schedule without the need to add (and pay for) compute (such as Lambda).
 
 In our example, we have one Schedule that sets the `desiredCount` to `1` (on/up) at 9am PT Mon-Fri and another that sets the `desiredCount` to `0` (off/down) at 5pm PT Mon-Fri.
 
@@ -110,7 +110,7 @@ These cron expressions can be adjusted...be sure to ask your stakeholder(s) when
 
 This was a walkthrough of a solution that allows us to run a Fargate instance on a budget. The solution utilizes Fargate Spot and EventBridge Scheduler to periodically shut down the Fargate Tasks during periods of no usage.
 
-The example code repository can be found [on GitHub](https://github.com/deeheber/fargate-on-a-budget-demo).
+The example code repository can be found <a href="https://github.com/deeheber/fargate-on-a-budget-demo" target="_blank" rel="noopener noreferrer">on GitHub</a>.
 
 What tips and tricks do you have for saving money with Fargate?
 

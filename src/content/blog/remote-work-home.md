@@ -8,7 +8,7 @@ tags: ["career", "opinion"]
 
 ![Crossroads](/assets/bridge-med.jpg)
 
-> Photo by <a href="https://unsplash.com/@cutnshoot?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Jonathan Rivera</a> on <a href="https://unsplash.com/s/photos/western-pennsylvania?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+> Photo by <a href="https://unsplash.com/@cutnshoot?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText" target="_blank" rel="noopener noreferrer">Jonathan Rivera</a> on <a href="https://unsplash.com/s/photos/western-pennsylvania?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText" target="_blank" rel="noopener noreferrer">Unsplash</a>
 
 I spent the first 22 years of my life in a part of the United States that many would call "flyover country." To most people this is an insignificant small town that peaked in the 1950s. As my father likes to say "This town was so much better when the mafia ran everything."
 
@@ -29,7 +29,7 @@ After high school graduation, I attended a state school in the area to earn a Ba
 
 ![Crossroads](/assets/crossroads-med.jpg)
 
-> Photo by <a href="https://unsplash.com/@ivalex?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Ivan Aleksic</a> on <a href="https://unsplash.com/s/photos/crossroads?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+> Photo by <a href="https://unsplash.com/@ivalex?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText" target="_blank" rel="noopener noreferrer">Ivan Aleksic</a> on <a href="https://unsplash.com/s/photos/crossroads?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText" target="_blank" rel="noopener noreferrer">Unsplash</a>
 
 I chose option #2 in the end. Through many twists and turns, I am no longer a music teacher, nor have I moved back. Nowhere that I've lived since the initial move has felt like home.
 

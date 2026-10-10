@@ -59,6 +59,6 @@ Most engineers spend a lot of time preparing to answer interview questions and n
 
 It took me longer than I'd like to admit to really internalize that.
 
-If any of this resonates, or you're weighing an offer and something is nagging at you, come find me in the [Believe in Serverless](https://www.believeinserverless.com/community) community or engage with me on the social media links below.
+If any of this resonates, or you're weighing an offer and something is nagging at you, come find me in the <a href="https://www.believeinserverless.com/community" target="_blank" rel="noopener noreferrer">Believe in Serverless</a> community or engage with me on the social media links below.
 
 Good luck out there. 💪🏻

@@ -41,4 +41,4 @@ IaC is helpful for many reasons, including but not limited to:
 
 Getting started in serverless and IaC can feel very daunting at first. It can be tempting to just click through the AWS console to create your cloud resources like many of the “getting started” tutorials recommend; however, I encourage you to sign up for a free trial of Stackery and give us a try. Your teammates, customers, and future self will be happy you made that choice.
 
-> Note: This post was originally published on https://www.stackery.io/
+> Note: This post was originally published on <a href="https://www.stackery.io/" target="_blank" rel="noopener noreferrer">https<span>://</span>w<span>ww</span>.stackery.io/</a>

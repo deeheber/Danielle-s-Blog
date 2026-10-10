@@ -9,7 +9,7 @@ tags: ["aws", "career", "community"]
 
 ![We can be heroes neon sign](/assets/hero-neon.jpg)
 
-Photo by <a href="https://unsplash.com/@gabrielbassino?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Gabriel Bassino</a> on <a href="https://unsplash.com/photos/yellow-neon-light-signage-zEawlLdVloo?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
+Photo by <a href="https://unsplash.com/@gabrielbassino?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash" target="_blank" rel="noopener noreferrer">Gabriel Bassino</a> on <a href="https://unsplash.com/photos/yellow-neon-light-signage-zEawlLdVloo?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash" target="_blank" rel="noopener noreferrer">Unsplash</a>
 
 Ever since I was named an AWS Hero, lots of people have been asking me how they can become an AWS Hero.
 

@@ -15,10 +15,16 @@ interface ArrayTitleProp {
 export type Props = StringTitleProp | ArrayTitleProp
 
 const { props } = Astro
+const showBreadcrumbs =
+  /^\/blog(?:\/|$)/.test(Astro.url.pathname) ||
+  /^\/tags\/[^/]+/.test(Astro.url.pathname)
 ---
 
-<Breadcrumbs />
-<main id="main-content">
+{showBreadcrumbs && <Breadcrumbs />}
+<main
+  id="main-content"
+  class:list={{ "mt-8": !showBreadcrumbs }}
+>
   {
     "titleTransition" in props ? (
       <h1>

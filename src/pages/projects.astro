@@ -3,7 +3,6 @@ import { getCollection, render } from "astro:content"
 import { SITE } from "@config"
 import Layout from "@layouts/Layout.astro"
 import Header from "@components/Header.astro"
-import Breadcrumbs from "@components/Breadcrumbs.astro"
 import Footer from "@components/Footer.astro"
 
 const projects = (await getCollection("projects")).sort(
@@ -20,10 +19,9 @@ const renderedProjects = await Promise.all(
   canonicalURL={new URL("/projects/", Astro.site).href}
 >
   <Header activeNav="projects" />
-  <Breadcrumbs />
   <main
     id="main-content"
-    class="container-content mb-28"
+    class="container-content mt-8 mb-28"
   >
     <div class="prose max-w-3xl">
       <h1 class="text-skin-accent text-2xl tracking-wider sm:text-3xl">
@@ -72,6 +70,7 @@ const renderedProjects = await Promise.all(
 </Layout>
 
 <style>
+  @reference "../styles/base.css";
   section {
     padding: 0;
   }
@@ -82,24 +81,12 @@ const renderedProjects = await Promise.all(
     scroll-margin-top: 2rem;
   }
   .featured-project > h2 {
-    font-size: 1.75rem;
-    line-height: 1.3;
+    @apply text-xl leading-[1.3] sm:text-2xl;
   }
-  @media (min-width: 640px) {
-    .featured-project > h2 {
-      font-size: 2rem;
-    }
+  .prose :global(h3) {
+    @apply text-lg/[1.6] sm:text-xl/[1.6];
   }
   .prose :global(summary) {
-    padding-block: 0.75rem;
-    cursor: pointer;
-    color: rgb(var(--color-text-base));
-    font-size: 1.25rem;
-    font-weight: 700;
-    line-height: 1.8;
-  }
-  .prose :global(summary:focus-visible) {
-    outline: 2px dashed rgb(var(--color-accent));
-    outline-offset: 4px;
+    @apply disclosure-summary;
   }
 </style>

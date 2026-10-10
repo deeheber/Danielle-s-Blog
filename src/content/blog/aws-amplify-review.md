@@ -59,11 +59,11 @@ type Todo @model @auth(rules: [{allow: owner}]) {
 
 You can also make this more complicated if you want. There are also the options to only allow specific groups, only allow certain types of operations (i.e. read, update etc), and add field level auth rules too. Probably more that I didn't end up using.
 
-I also added a login screen by using the aws-amplify `withAuthenticator` higher order component. I chose not to customize it, but it is flexible to allow for customization (https://aws-amplify.github.io/docs/js/authentication#customize-withauthenticator). Overall it took me minutes to setup what once took me hours (and sometimes days) to do.
+I also added a login screen by using the aws-amplify `withAuthenticator` higher order component. I chose not to customize it, but it is flexible to allow for customization (<a href="https://aws-amplify.github.io/docs/js/authentication#customize-withauthenticator" target="_blank" rel="noopener noreferrer">https<span>://</span>aws-amplify.github.io/docs/js/authentication#customize-withauthenticator</a>). Overall it took me minutes to setup what once took me hours (and sometimes days) to do.
 
 #### Frontend Deploy
 
-To host the frontend on AWS, the choice most folks go with is uploading their frontend code to an S3 Bucket and sometimes adding a CloudFront CDN in front of the S3 Bucket. This seems like it should be simple to automate, but it really isn't quite yet. With Amplify it’s easy. All you need to do is `amplify add hosting` and `amplify publish` then you’re done! Much nicer than writing a <a href="https://www.danielleheberling.xyz/blog/automated-react-frontend-deploys/" target="_blank" rel="noopener noreferrer">weird Lambda Function</a> to do this.
+To host the frontend on AWS, the choice most folks go with is uploading their frontend code to an S3 Bucket and sometimes adding a CloudFront CDN in front of the S3 Bucket. This seems like it should be simple to automate, but it really isn't quite yet. With Amplify it’s easy. All you need to do is `amplify add hosting` and `amplify publish` then you’re done! Much nicer than writing a <a href="https://www.danielleheberling.xyz/blog/automated-react-frontend-deploys/">weird Lambda Function</a> to do this.
 
 #### Summary
 
@@ -71,4 +71,4 @@ Amplify is a great choice if you want to get started with GraphQL/Appsync. It’
 
 A downside that I noticed was there didn’t seem to be a way to eject from the framework. This could be problematic if down the line I decided I wanted to use <a href="https://aws.amazon.com/serverless/sam/" target="_blank" rel="noopener noreferrer">AWS SAM</a> or the <a href="https://serverless.com/" target="_blank" rel="noopener noreferrer">Serverless framework</a> instead. Also as someone who likes to understand how things work in the event of error messages...it seemed like AWS  Amplify performed a lot of “magic” under the hood and I could not discern how the framework was doing things. It would be amazing if the framework did all the stuff it does and then gives an option to output a CloudFormation template or something could be used to port to another framework.
 
-Anyway give it a shot and let me know what you think. You won’t regret it. If you want to see my completed todo app, check it out here: https://github.com/deeheber/amplify-todo.
+Anyway give it a shot and let me know what you think. You won’t regret it. If you want to see my completed todo app, check it out here: <a href="https://github.com/deeheber/amplify-todo" target="_blank" rel="noopener noreferrer">https<span>:</span>//github.com/deeheber/amplify-todo</a>.

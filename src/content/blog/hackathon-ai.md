@@ -9,24 +9,24 @@ tags: ["aws", "ai", "community"]
 
 ![Mountains](/assets/color-mountains.jpg)
 
-> Photo by <a href="https://unsplash.com/@8moments?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Simon Berger</a> on <a href="https://unsplash.com/s/photos/rainbow-mountain?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+> Photo by <a href="https://unsplash.com/@8moments?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText" target="_blank" rel="noopener noreferrer">Simon Berger</a> on <a href="https://unsplash.com/s/photos/rainbow-mountain?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText" target="_blank" rel="noopener noreferrer">Unsplash</a>
 
 ## Background
 
-In June 2023, [Johannes Koch](https://dev.to/lockhead), [Matt Morgan](https://dev.to/elthrasher), [Julian Michel](https://dev.to/jumic), and myself participated in the AI themed hackathon for the AWS Community Builders. The hackathon challenge was to create a tool using the [Transformer Tools](https://huggingface.co/docs/transformers/main/transformers_agents) framework.
+In June 2023, <a href="https://dev.to/lockhead" target="_blank" rel="noopener noreferrer">Johannes Koch</a>, <a href="https://dev.to/elthrasher" target="_blank" rel="noopener noreferrer">Matt Morgan</a>, <a href="https://dev.to/jumic" target="_blank" rel="noopener noreferrer">Julian Michel</a>, and myself participated in the AI themed hackathon for the AWS Community Builders. The hackathon challenge was to create a tool using the <a href="https://huggingface.co/docs/transformers/main/transformers_agents" target="_blank" rel="noopener noreferrer">Transformer Tools</a> framework.
 
 ## The Project
 
-Johannes had the idea that we agreed to implement. We ended up building an AWS community focused [speaker directory website](https://speakers.awscommunitybuilders.org/#/). Think an awesome AWS focused version of [sessionize](https://sessionize.com/) where event organizers can create an event. Speakers can create a speaker profile and use the site to submit talks to the various events. For more details on the project, take a look at [Matt's overview post](https://dev.to/aws-builders/presenting-aws-speakers-directory-an-ai-hackathon-project-19je).
+Johannes had the idea that we agreed to implement. We ended up building an AWS community focused <a href="https://speakers.awscommunitybuilders.org/#/" target="_blank" rel="noopener noreferrer">speaker directory website</a>. Think an awesome AWS focused version of <a href="https://sessionize.com/" target="_blank" rel="noopener noreferrer">sessionize</a> where event organizers can create an event. Speakers can create a speaker profile and use the site to submit talks to the various events. For more details on the project, take a look at <a href="https://dev.to/aws-builders/presenting-aws-speakers-directory-an-ai-hackathon-project-19je" target="_blank" rel="noopener noreferrer">Matt's overview post</a>.
 
 This post focuses on how we utilized the Hugging Face transformers agent to add functionality to our speaker directory.
 
 Here's links to blog by my teammates on other topics related to the project
 
-- [Overview](https://dev.to/aws-builders/presenting-aws-speakers-directory-an-ai-hackathon-project-19je)
-- [How we used Amplify/Flutter](https://dev.to/aws-builders/amplify-sdk-for-flutter-developer-experience-and-challenges-in-a-hackathon-2e15)
-- [How we used CodeCatalyst](https://dev.to/aws-builders/a-real-project-with-codecatalyst-our-hackathon-gave-us-a-good-insight-into-what-works-and-what-doesnt-1e79)
-- [How we used AppSync merged APIs](https://dev.to/aws-builders/appsync-merged-api-our-real-project-experience-as-part-of-our-hackathon-2m96)
+- <a href="https://dev.to/aws-builders/presenting-aws-speakers-directory-an-ai-hackathon-project-19je" target="_blank" rel="noopener noreferrer">Overview</a>
+- <a href="https://dev.to/aws-builders/amplify-sdk-for-flutter-developer-experience-and-challenges-in-a-hackathon-2e15" target="_blank" rel="noopener noreferrer">How we used Amplify/Flutter</a>
+- <a href="https://dev.to/aws-builders/a-real-project-with-codecatalyst-our-hackathon-gave-us-a-good-insight-into-what-works-and-what-doesnt-1e79" target="_blank" rel="noopener noreferrer">How we used CodeCatalyst</a>
+- <a href="https://dev.to/aws-builders/appsync-merged-api-our-real-project-experience-as-part-of-our-hackathon-2m96" target="_blank" rel="noopener noreferrer">How we used AppSync merged APIs</a>
 
 ## AI Functionality
 
@@ -52,7 +52,7 @@ For feature #3, we set up a GQL mutation that accepts an array of tags and queri
 
 Everyone on the team was new to the world of AI/ML, one thing we quickly realized was that these Functions were very heavy in terms of the size/number of dependencies needed and in terms of the compute power needed to complete these complex AI processing tasks.
 
-Inspired by [this blog post](https://aws.amazon.com/blogs/compute/hosting-hugging-face-models-on-aws-lambda/), we decided to utilize an EFS file system to cache some artifacts to lessen cold start on subsequent requests to these AI processor Functions. Due to the number of dependencies needed, we decided to take advantage of packing our Function code using Docker containers instead of .zip files to take advantage of the [higher size limit](https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html).
+Inspired by <a href="https://aws.amazon.com/blogs/compute/hosting-hugging-face-models-on-aws-lambda/" target="_blank" rel="noopener noreferrer">this blog post</a>, we decided to utilize an EFS file system to cache some artifacts to lessen cold start on subsequent requests to these AI processor Functions. Due to the number of dependencies needed, we decided to take advantage of packing our Function code using Docker containers instead of .zip files to take advantage of the <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html" target="_blank" rel="noopener noreferrer">higher size limit</a>.
 
 Matt also learned that sometimes maintainers are not great at updating the dependencies in their Docker images, and he ended up creating a custom Docker image based off of the image used in that linked blog post with updated Python and gradio-tools (we needed it for image generation).
 
@@ -378,7 +378,7 @@ We wrote a ticket to AWS support and were told that these limits are in place on
 
 Given the timeline for this hackathon (30 days) and the fact that no one on this team had extensive experience with AI/ML, we took some shortcuts when it came to the talk recommendations feature. Overall, I'm happy with how it came out. Post hackathon, we plan to explore creating and training our own custom data model based off of what was entered into our DDB table in order to see if we can further lean on AI/ML and get more specific (beyond tags) recommendations.
 
-I would've liked to go beyond the Hugging Face transformers and see if some of this could be implemented using [SageMaker endpoints](https://docs.aws.amazon.com/sagemaker/latest/dg/realtime-endpoints.html) or another AI platform. Potential benefits that I saw with SageMaker endpoints over our implementation was that this is in the AWS ecosystem for a (hopefully) tighter integration and being able to speed up processing. I learned from this hackathon that Hugging Face is great, but there might also be other tools out there that better suit our needs. We won't know for sure until we try!
+I would've liked to go beyond the Hugging Face transformers and see if some of this could be implemented using <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/realtime-endpoints.html" target="_blank" rel="noopener noreferrer">SageMaker endpoints</a> or another AI platform. Potential benefits that I saw with SageMaker endpoints over our implementation was that this is in the AWS ecosystem for a (hopefully) tighter integration and being able to speed up processing. I learned from this hackathon that Hugging Face is great, but there might also be other tools out there that better suit our needs. We won't know for sure until we try!
 
 ## Closing
 
@@ -386,4 +386,4 @@ Overall this was a fun collaboration. It feels good to contribute to building so
 
 On a personal level, life got in the way and I did not have as much time as I would've liked to have to dedicate to this project. I thank my team mates for their hard work via ideas and implementation. Major props to Matt for doing a lot of the AI implementation. 🙌🏻
 
-If you would like to participate with us building out the [AWS Speaker Directory](https://speakers.awscommunitybuilders.org/#/) to help AWS User Group leaders find speakers, please reach out of any of us.
+If you would like to participate with us building out the <a href="https://speakers.awscommunitybuilders.org/#/" target="_blank" rel="noopener noreferrer">AWS Speaker Directory</a> to help AWS User Group leaders find speakers, please reach out of any of us.

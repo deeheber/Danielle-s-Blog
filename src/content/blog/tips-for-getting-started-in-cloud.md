@@ -11,7 +11,7 @@ tags: ["aws", "career"]
 
 ![Clouds Image](/assets/clouds.jpg)
 
-> Photo by <a href="https://unsplash.com/@billy_huy?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Billy Huynh</a> on <a href="https://unsplash.com/photos/cloudy-sky-at-daytime-v9bnfMCyKbg?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
+> Photo by <a href="https://unsplash.com/@billy_huy?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash" target="_blank" rel="noopener noreferrer">Billy Huynh</a> on <a href="https://unsplash.com/photos/cloudy-sky-at-daytime-v9bnfMCyKbg?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash" target="_blank" rel="noopener noreferrer">Unsplash</a>
 
 ## Who am I?
 
@@ -35,7 +35,7 @@ I also started my career as a "Full Stack JavaScript" developer and thus was ori
 
 This is often the first question I am asked and many folks (some with monetary incentives) have shared their advice on the internet. Here is my biased opinion.
 
-As a Frontend focused engineer, I had no idea what any of the AWS alphabet soup of managed services did or their names. I started my journey by obtaining the [AWS Certified Solutions Architect - Associate](https://aws.amazon.com/certification/certified-solutions-architect-associate/) certification.
+As a Frontend focused engineer, I had no idea what any of the AWS alphabet soup of managed services did or their names. I started my journey by obtaining the <a href="https://aws.amazon.com/certification/certified-solutions-architect-associate/" target="_blank" rel="noopener noreferrer">AWS Certified Solutions Architect - Associate</a> certification.
 
 I used my knowledge gained from studying for that exam as a jumping off point to start building my own projects. Lately, I've mostly been learning new things through hands on projects.
 
@@ -55,36 +55,36 @@ There's lots of arguments across the internet about which one is the best. Some 
 
 Some commonly used ones with AWS are:
 
-- [Terraform](https://www.terraform.io/)
-- [AWS SAM](https://aws.amazon.com/serverless/sam/)
-- [AWS CDK](https://aws.amazon.com/cdk/)
+- <a href="https://www.terraform.io/" target="_blank" rel="noopener noreferrer">Terraform</a>
+- <a href="https://aws.amazon.com/serverless/sam/" target="_blank" rel="noopener noreferrer">AWS SAM</a>
+- <a href="https://aws.amazon.com/cdk/" target="_blank" rel="noopener noreferrer">AWS CDK</a>
 
-[AWS Application Composer](https://aws.amazon.com/application-composer/) might also be a good starting point because it is a drag and drop interface for your cloud resources, but you also have full access to the IaC that it generates.
+<a href="https://aws.amazon.com/application-composer/" target="_blank" rel="noopener noreferrer">AWS Application Composer</a> might also be a good starting point because it is a drag and drop interface for your cloud resources, but you also have full access to the IaC that it generates.
 
-Along the lines of IaC, you should also look into [CI/CD](https://martinfowler.com/articles/continuousIntegration.html). There are lots of tools to accomplish this, but one that I've been using lately on the job has been [GitHub Actions](https://github.com/features/actions). Again, I recommend you find one and use it. The principles and higher level ideas are transferrable across different CI/CD platforms.
+Along the lines of IaC, you should also look into <a href="https://martinfowler.com/articles/continuousIntegration.html" target="_blank" rel="noopener noreferrer">CI/CD</a>. There are lots of tools to accomplish this, but one that I've been using lately on the job has been <a href="https://github.com/features/actions" target="_blank" rel="noopener noreferrer">GitHub Actions</a>. Again, I recommend you find one and use it. The principles and higher level ideas are transferrable across different CI/CD platforms.
 
 ## Recommended resources
 
-Here's a list of resources that I recommend. As new material comes out, I will do my best to keep this updated. Disclaimer that these are all things that I've used or are created by folks whom I respect. No one paid, sponsored, or asked me to add their content to this list. Also note that some of these resources have [Discord](https://discord.com/) communities where you can interact with fellow learners and ask for help.
+Here's a list of resources that I recommend. As new material comes out, I will do my best to keep this updated. Disclaimer that these are all things that I've used or are created by folks whom I respect. No one paid, sponsored, or asked me to add their content to this list. Also note that some of these resources have <a href="https://discord.com/" target="_blank" rel="noopener noreferrer">Discord</a> communities where you can interact with fellow learners and ask for help.
 
 ### Free resources
 
-- [AWS Cloud Complete Bootcamp Course](https://www.youtube.com/watch?v=zA8guDqfv40)
-- [Open up the Cloud](https://openupthecloud.com/start-here/)
-- [Learn to Cloud](https://learntocloud.guide/)
-- [Event Driven Architecture on AWS - Course for Beginners](https://www.youtube.com/watch?v=Zr6fnhvJKlw)
+- <a href="https://www.youtube.com/watch?v=zA8guDqfv40" target="_blank" rel="noopener noreferrer">AWS Cloud Complete Bootcamp Course</a>
+- <a href="https://openupthecloud.com/start-here/" target="_blank" rel="noopener noreferrer">Open up the Cloud</a>
+- <a href="https://learntocloud.guide/" target="_blank" rel="noopener noreferrer">Learn to Cloud</a>
+- <a href="https://www.youtube.com/watch?v=Zr6fnhvJKlw" target="_blank" rel="noopener noreferrer">Event Driven Architecture on AWS - Course for Beginners</a>
 
 ### Mix of free and paid resources
 
-- [The Cloud Resume Challenge](https://cloudresumechallenge.dev/)
-- [Tutorials Dojo](https://tutorialsdojo.com/)
-- [AWS Newbies](https://awsnewbies.com/)
-- [Exam Pro](https://www.exampro.co/)
+- <a href="https://cloudresumechallenge.dev/" target="_blank" rel="noopener noreferrer">The Cloud Resume Challenge</a>
+- <a href="https://tutorialsdojo.com/" target="_blank" rel="noopener noreferrer">Tutorials Dojo</a>
+- <a href="https://awsnewbies.com/" target="_blank" rel="noopener noreferrer">AWS Newbies</a>
+- <a href="https://www.exampro.co/" target="_blank" rel="noopener noreferrer">Exam Pro</a>
 
 ### Paid resources
 
-- [Cloud Academy](https://cloudacademy.com/)
-- [A Cloud Guru](https://www.pluralsight.com/cloud-guru)
+- <a href="https://cloudacademy.com/" target="_blank" rel="noopener noreferrer">Cloud Academy</a>
+- <a href="https://www.pluralsight.com/cloud-guru" target="_blank" rel="noopener noreferrer">A Cloud Guru</a>
 
 ## Closing
 

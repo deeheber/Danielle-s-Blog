@@ -1,12 +1,15 @@
 ---
 import speakingData from "../data/speakingData.json"
+
+const years = speakingData.filter(({ content }) => content.length > 0)
+const latestYear = Math.max(...years.map(({ year }) => Number(year)))
 ---
 
 <section>
   {
-    speakingData.map((year) => (
-      <section id="all-talks">
-        <h3>{year.year}</h3>
+    years.map((year) => (
+      <details open={Number(year.year) === latestYear}>
+        <summary>{year.year}</summary>
         <ul>
           {year.content.map((talk) => (
             <li>
@@ -21,7 +24,7 @@ import speakingData from "../data/speakingData.json"
             </li>
           ))}
         </ul>
-      </section>
+      </details>
     ))
   }
 
@@ -30,14 +33,14 @@ import speakingData from "../data/speakingData.json"
     section {
       @apply w-full pb-4;
     }
-    #all-talks {
+    details {
       @apply pb-4;
     }
-    #all-talks h3 {
-      @apply text-2xl font-semibold sm:text-3xl;
+    summary {
+      @apply disclosure-summary;
     }
-    #all-talks li {
-      @apply mt-2 mb-6 text-xl font-medium italic focus-visible:outline-dashed;
+    li {
+      @apply mt-2 mb-6 text-xl font-medium;
     }
   </style>
 </section>

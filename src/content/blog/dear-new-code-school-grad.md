@@ -9,7 +9,7 @@ tags: ["career"]
 
 ![Diploma](/assets/diploma.jpg)
 
-> Photo by <a href="https://unsplash.com/@rutmiit?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">RUT MIIT</a> on <a href="https://unsplash.com/photos/people-in-black-academic-dress-standing-on-green-grass-field-during-daytime-hpRGrfOIybc?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
+> Photo by <a href="https://unsplash.com/@rutmiit?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash" target="_blank" rel="noopener noreferrer">RUT MIIT</a> on <a href="https://unsplash.com/photos/people-in-black-academic-dress-standing-on-green-grass-field-during-daytime-hpRGrfOIybc?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash" target="_blank" rel="noopener noreferrer">Unsplash</a>
 
 Over the years, many people have come to me for advice on doing a career change into software engineering. Here are my thoughts written down relevant to doing this in the year 2024 in the United States.
 

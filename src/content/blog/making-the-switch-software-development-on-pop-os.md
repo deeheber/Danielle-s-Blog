@@ -32,7 +32,7 @@ The last time I used a Windows machine was Windows XP. A lot has changed since t
 
 This is what gave me the idea to check out Linux. It's open source and there's many different distros one can choose. Plus, I was already familiar with the command line.
 
-I settled on [Pop!\_OS](https://pop.system76.com/) because:
+I settled on <a href="https://pop.system76.com/" target="_blank" rel="noopener noreferrer">Pop!_OS</a> because:
 
 - it's based on Ubuntu, a very common distro that has a lot of documentation and an active community
 - it had a very similar UI to macOS - what I'm already familiar with
@@ -42,11 +42,11 @@ I settled on [Pop!\_OS](https://pop.system76.com/) because:
 
 Here's what I installed on my new Pop!\_OS machine for software development:
 
-- [nvm](https://github.com/nvm-sh/nvm#installing-and-updating) - a tool to install and switch to different versions of node
-- [Visual Studio Code](https://code.visualstudio.com/) - a code editor that I downloaded from the Pop shop
-- [AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html)
-- [SAM CLI](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-sam-cli-install-linux.html) - the docs suggest using Homebrew, but the idea of using Homebrew on a Linux machine feels wrong. I downloaded the file and ran the install that way. Eric Johnson, an AWS employee provided [this gist](https://gist.github.com/singledigit/5f00ef69393b3b6f5dbfcf6cfada345e) for install scripts on Linux as an option.
-- [Docker](https://docs.docker.com/engine/install/ubuntu/) - I followed the instructions to install Docker Engine on Ubuntu; but, it looks like there's a Docker Desktop for Linux in GA now. 🎉 Also of note, `docker compose` performs way better on Linux machines (if you use that feature).
+- <a href="https://github.com/nvm-sh/nvm#installing-and-updating" target="_blank" rel="noopener noreferrer">nvm</a> - a tool to install and switch to different versions of node
+- <a href="https://code.visualstudio.com/" target="_blank" rel="noopener noreferrer">Visual Studio Code</a> - a code editor that I downloaded from the Pop shop
+- <a href="https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html" target="_blank" rel="noopener noreferrer">AWS CLI</a>
+- <a href="https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-sam-cli-install-linux.html" target="_blank" rel="noopener noreferrer">SAM CLI</a> - the docs suggest using Homebrew, but the idea of using Homebrew on a Linux machine feels wrong. I downloaded the file and ran the install that way. Eric Johnson, an AWS employee provided <a href="https://gist.github.com/singledigit/5f00ef69393b3b6f5dbfcf6cfada345e" target="_blank" rel="noopener noreferrer">this gist</a> for install scripts on Linux as an option.
+- <a href="https://docs.docker.com/engine/install/ubuntu/" target="_blank" rel="noopener noreferrer">Docker</a> - I followed the instructions to install Docker Engine on Ubuntu; but, it looks like there's a Docker Desktop for Linux in GA now. 🎉 Also of note, `docker compose` performs way better on Linux machines (if you use that feature).
 
 ## Conclusion
 

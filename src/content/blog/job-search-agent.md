@@ -6,7 +6,7 @@ description: An AI agent that monitors your dream companies for open roles and e
 tags: ["ai", "tutorial"]
 ---
 
-> Photo by <a href="https://unsplash.com/@markuswinkler?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Markus Winkler</a> on <a href="https://unsplash.com/photos/a-typewriter-with-a-job-application-printed-on-it-XKKuY4ottJ0?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+> Photo by <a href="https://unsplash.com/@markuswinkler?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText" target="_blank" rel="noopener noreferrer">Markus Winkler</a> on <a href="https://unsplash.com/photos/a-typewriter-with-a-job-application-printed-on-it-XKKuY4ottJ0?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText" target="_blank" rel="noopener noreferrer">Unsplash</a>
 
 ![Job Application Typewriter](/assets/job-application-typewriter.jpg)
 
@@ -36,7 +36,7 @@ Here's how the architecture works at a high level:
 
 **EventBridge Scheduler** kicks things off on whatever cadence you configure. This triggers the agent running in **AgentCore Runtime**, which is where the Strands agent lives. The agent does its thing (searching for jobs at the companies you've specified), and if you've provided one or more email addresses in the environment variables and there is a job posting, it sends the results via **SNS** as an email notification.
 
-The infrastructure is all defined in CDK (TypeScript), and the agent code is Python. I talked about why I use that particular combo in my <a href="https://danielleheberling.xyz/blog/strands-agent-template/" target="_blank" rel="noopener noreferrer">strands-agent-template post</a>, but the short version is that each framework is strongest in its native language right now.
+The infrastructure is all defined in CDK (TypeScript), and the agent code is Python. I talked about why I use that particular combo in my <a href="https://danielleheberling.xyz/blog/strands-agent-template/">strands-agent-template post</a>, but the short version is that each framework is strongest in its native language right now.
 
 Is this a bit over-engineered for what it does? Most likely. But I wanted to use the opportunity to build something I'd actually use while learning about agents and AgentCore. In my experience, the best way to learn new tech is to solve a real problem with it, even if the solution is fancier than it needs to be.
 

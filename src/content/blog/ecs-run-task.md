@@ -9,7 +9,7 @@ tags: ["aws", "devops", "tutorial"]
 
 ![horse race](/assets/horse-race.jpg)
 
-> Photo by <a href="https://unsplash.com/@cadop?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Mathew Schwartz</a> on <a href="https://unsplash.com/photos/equestrian-riding-horse-at-daytime-5qRWQEdK7Sg?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
+> Photo by <a href="https://unsplash.com/@cadop?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash" target="_blank" rel="noopener noreferrer">Mathew Schwartz</a> on <a href="https://unsplash.com/photos/equestrian-riding-horse-at-daytime-5qRWQEdK7Sg?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash" target="_blank" rel="noopener noreferrer">Unsplash</a>
 
 ## The Problem
 
@@ -23,13 +23,13 @@ You still want to run this ephemerally to save money and resources...so what can
 
 ## A Solution
 
-One option is to use [ECS run-task](https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_RunTask.html) with a [Fargate](https://aws.amazon.com/fargate/) launch type.
+One option is to use <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_RunTask.html" target="_blank" rel="noopener noreferrer">ECS run-task</a> with a <a href="https://aws.amazon.com/fargate/" target="_blank" rel="noopener noreferrer">Fargate</a> launch type.
 
 AWS Resources Needed:
 
-- [An ECS Cluster](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/clusters.html) - a logical grouping of tasks or services (in my example we're using the `default` cluster that comes with new AWS accounts)
-- [A Task Definition](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definitions.html) - a blueprint for your application which contains one or more containers and parameters to run
-- [A Container](https://aws.amazon.com/what-is/cloud-containers/) - a lightweight, standalone, executable package of software that includes everything needed to run an application. This is commonly used with [Docker](https://www.docker.com/).
+- <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/clusters.html" target="_blank" rel="noopener noreferrer">An ECS Cluster</a> - a logical grouping of tasks or services (in my example we're using the `default` cluster that comes with new AWS accounts)
+- <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definitions.html" target="_blank" rel="noopener noreferrer">A Task Definition</a> - a blueprint for your application which contains one or more containers and parameters to run
+- <a href="https://aws.amazon.com/what-is/cloud-containers/" target="_blank" rel="noopener noreferrer">A Container</a> - a lightweight, standalone, executable package of software that includes everything needed to run an application. This is commonly used with <a href="https://www.docker.com/" target="_blank" rel="noopener noreferrer">Docker</a>.
 
 Once those resources are deployed, the container can be triggered to run on demand with `ECS run-task`. Once the code is done running and the container exits, then the running ECS Task will disappear. The benefit is that you'll no longer be charged money for a running Fargate task.
 
@@ -53,9 +53,9 @@ aws ecs run-task \
 
 ## Show Me the Code
 
-There's a [full code example](https://github.com/deeheber/ecs-run-task-demo) of how to deploy these cloud resources and invoke the deployed task via ecs run-task with the AWS CLI.
+There's a <a href="https://github.com/deeheber/ecs-run-task-demo" target="_blank" rel="noopener noreferrer">full code example</a> of how to deploy these cloud resources and invoke the deployed task via ecs run-task with the AWS CLI.
 
-Take a look at [the `README` file](https://github.com/deeheber/ecs-run-task-demo/blob/main/README.md) for directions.
+Take a look at <a href="https://github.com/deeheber/ecs-run-task-demo/blob/main/README.md" target="_blank" rel="noopener noreferrer">the <code>README</code> file</a> for directions.
 
 ## Bonus
 
@@ -72,9 +72,9 @@ aws ecs run-task \
   --overrides '{"containerOverrides":[{"name":"my-container","command":["npm", "run", "migrate"]}]}'
 ```
 
-I've seen this used for one off commands that need to run every now and then such as database migrations, though I'm certain there are other good use cases. Here's [the full list](https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_TaskOverride.html) of what can be overridden.
+I've seen this used for one off commands that need to run every now and then such as database migrations, though I'm certain there are other good use cases. Here's <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_TaskOverride.html" target="_blank" rel="noopener noreferrer">the full list</a> of what can be overridden.
 
-Special thanks to [Chase Douglas](https://www.linkedin.com/in/chasedouglas/) for giving me this idea. 🙌🏻
+Special thanks to <a href="https://www.linkedin.com/in/chasedouglas/" target="_blank" rel="noopener noreferrer">Chase Douglas</a> for giving me this idea. 🙌🏻
 
 <br />
 <br />

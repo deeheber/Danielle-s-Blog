@@ -9,7 +9,7 @@ tags: ["career"]
 
 ![Compass](/assets/compass-hand.jpg)
 
-> Photo by <a href="https://unsplash.com/@jamie452?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Jamie Street</a> on <a href="https://unsplash.com/photos/person-holding-compass-facing-towards-green-pine-trees-_94HLr_QXo8?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+> Photo by <a href="https://unsplash.com/@jamie452?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText" target="_blank" rel="noopener noreferrer">Jamie Street</a> on <a href="https://unsplash.com/photos/person-holding-compass-facing-towards-green-pine-trees-_94HLr_QXo8?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText" target="_blank" rel="noopener noreferrer">Unsplash</a>
 
 ## The Framework
 

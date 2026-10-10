@@ -10,13 +10,13 @@ tags: ["aws", "serverless", "tutorial"]
 
 ## Background
 
-Earlier this year, I did a <a href="https://www.danielleheberling.xyz/blog/lambda-layer-example/" target="_blank" target="_blank" rel="noopener noreferrer">walk through demo</a> on how to use lambda layers with NodeJS. We build a helper function that takes in a string and returns the string backwards.
+Earlier this year, I did a <a href="https://www.danielleheberling.xyz/blog/lambda-layer-example/">walk through demo</a> on how to use lambda layers with NodeJS. We build a helper function that takes in a string and returns the string backwards.
 
-<a href="https://aws.amazon.com/blogs/compute/working-with-aws-lambda-and-lambda-layers-in-aws-sam/" target="_blank" target="_blank" rel="noopener noreferrer">Now that AWS SAM and the SAM CLI has support for building layers</a>, it's now easier to get this setup. The way in my prior post still works, but personally I recommend utilizing this method going forward.
+<a href="https://aws.amazon.com/blogs/compute/working-with-aws-lambda-and-lambda-layers-in-aws-sam/" target="_blank" rel="noopener noreferrer">Now that AWS SAM and the SAM CLI has support for building layers</a>, it's now easier to get this setup. The way in my prior post still works, but personally I recommend utilizing this method going forward.
 
 ## Setup
 
-In this demo, I am going to use <a href="https://www.stackery.io/" target="_blank" target="_blank" rel="noopener noreferrer">Stackery</a>. Be sure to have the following installed in order to guarantee this will work.
+In this demo, I am going to use <a href="https://www.stackery.io/" target="_blank" rel="noopener noreferrer">Stackery</a>. Be sure to have the following installed in order to guarantee this will work.
 
 - The lastest version of the SAM CLI
 - The lastest version of the Stackery CLI
@@ -59,6 +59,6 @@ You can still deploy a Layer in another stack and reference it by ARN. Some orga
 
 Personally I like this method better because it eliminate the manual process of zipping and uploading my Lambda Layer and then manually updating the layer version in my SAM template.
 
-Check out the full code example in <a href="https://github.com/deeheber/lambda-layer-example/tree/layer-resource" target="_blank" target="_blank" rel="noopener noreferrer">this repo</a>.
+Check out the full code example in <a href="https://github.com/deeheber/lambda-layer-example/tree/layer-resource" target="_blank" rel="noopener noreferrer">this repo</a>.
 
-All of the official documentation from AWS about Lambda layers can be found <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html" target="_blank" target="_blank" rel="noopener noreferrer">here</a>.
+All of the official documentation from AWS about Lambda layers can be found <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html" target="_blank" rel="noopener noreferrer">here</a>.

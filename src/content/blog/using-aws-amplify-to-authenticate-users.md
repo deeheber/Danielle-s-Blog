@@ -133,4 +133,4 @@ So it is taking in the form data, using Amplify to confirm the user’s email ad
 
 The complete docs for using the Auth feature of Amplify can be <a href="https://aws-amplify.github.io/docs/js/authentication" target="_blank" rel="noopener noreferrer">found here</a>. We’ve only scratched the surface in this post, so go forth and explore the all of the different features that Amplify has to offer. I’ve found it has a very nice declarative syntax and is very readable for folks who are new to a codebase. For building further on your React-based serverless applications, I highly recommend Stackery for <a href="https://www.stackery.io/product/" target="_blank" rel="noopener noreferrer">managing all of your serverless infrastructure</a> backed up by seamless, git-based version control.
 
-> Note: This post was originally published on https://www.stackery.io/
+> Note: This post was originally published on <a href="https://www.stackery.io/" target="_blank" rel="noopener noreferrer">https<span>://</span>w<span>ww</span>.stackery.io/</a>

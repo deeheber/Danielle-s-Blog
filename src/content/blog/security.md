@@ -8,13 +8,13 @@ tags: ["devops", "opinion"]
 
 ![Computer Lock](/assets/computer-padlock.jpg)
 
-> Photo by <a href="https://unsplash.com/@flyd2069?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">FlyD</a> on <a href="https://unsplash.com/photos/pink-and-silver-padlock-on-black-computer-keyboard-F7aZ8G7gGBQ?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
+> Photo by <a href="https://unsplash.com/@flyd2069?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash" target="_blank" rel="noopener noreferrer">FlyD</a> on <a href="https://unsplash.com/photos/pink-and-silver-padlock-on-black-computer-keyboard-F7aZ8G7gGBQ?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash" target="_blank" rel="noopener noreferrer">Unsplash</a>
 
 ## The Problem
 
 Tale as old as time: the friction between building out new features and the foundations necessary to deliver those features. By foundations, I'm referring to things such as but not limited to: security, testing, Continuous Integration/Continuous Delivery, observability, and Infrastructure as Code.
 
-Recently I attended [AWS re:Inforce](https://reinforce.awsevents.com/), an AWS security focused conference. Speaking with fellow attendees it was very common for people ask some variant of "how can I get people in my organization to care about security?"
+Recently I attended <a href="https://reinforce.awsevents.com/" target="_blank" rel="noopener noreferrer">AWS re:Inforce</a>, an AWS security focused conference. Speaking with fellow attendees it was very common for people ask some variant of "how can I get people in my organization to care about security?"
 
 Disclaimer that I do not consider myself a security person™️, but I do champion security initiatives often. Security is everyone's responsibility. Sometimes in the real world people get excited about new features and forget about less visible things such as security.
 
@@ -46,7 +46,7 @@ As tech professionals, it’s easy to find ourselves working in silos within our
 
 Why reinvent the wheel when we can learn from each other’s experiences - and share our own insights to help others grow? Engage in conversations, exchange ideas, and don’t hesitate to ask questions, even if they seem basic. Often, those “simple” questions lead to the most valuable discussions and solutions.
 
-In person conferences aren't your thing? Shameless plug to check out the [Believe in Serverless Community on Discord](https://www.believeinserverless.com/)!
+In person conferences aren't your thing? Shameless plug to check out the <a href="https://www.believeinserverless.com/" target="_blank" rel="noopener noreferrer">Believe in Serverless Community on Discord</a>!
 
 ## Closing
 

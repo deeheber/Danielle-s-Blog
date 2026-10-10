@@ -9,11 +9,11 @@ tags: ["aws", "serverless"]
 
 Disclaimer that this post contains my individual opinions and yours might differ. Let's get started!
 
-## 1. [SQS Partial Batch Retries in Lambda](https://aws.amazon.com/about-aws/whats-new/2021/11/aws-lambda-partial-batch-response-sqs-event-source/)
+## 1. <a href="https://aws.amazon.com/about-aws/whats-new/2021/11/aws-lambda-partial-batch-response-sqs-event-source/" target="_blank" rel="noopener noreferrer">SQS Partial Batch Retries in Lambda</a>
 
 ![Cookies](/assets/cookies.jpg)
 
-> Photo by <a href="https://unsplash.com/@farber?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Jonathan Farber</a> on <a href="https://unsplash.com/s/photos/batch?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+> Photo by <a href="https://unsplash.com/@farber?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText" target="_blank" rel="noopener noreferrer">Jonathan Farber</a> on <a href="https://unsplash.com/s/photos/batch?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText" target="_blank" rel="noopener noreferrer">Unsplash</a>
 
 ### What this means
 
@@ -23,11 +23,11 @@ This feature was announced during pre:Invent, but I think it still counts. Befor
 
 This allows me to delete some code that I wrote to ensure each message is idempotent and also allows me to reduce the number of API calls made to check if a message was processed before.
 
-## 2. [AWS Cloud Development Kit (CDK) v2 is Generally Available](https://aws.amazon.com/about-aws/whats-new/2021/12/aws-cloud-development-kit-cdk-generally-available/)
+## 2. <a href="https://aws.amazon.com/about-aws/whats-new/2021/12/aws-cloud-development-kit-cdk-generally-available/" target="_blank" rel="noopener noreferrer">AWS Cloud Development Kit (CDK) v2 is Generally Available</a>
 
 ![Tools](/assets/tools.jpg)
 
-> Photo by <a href="https://unsplash.com/@imattsmart?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">iMattSmart</a> on <a href="https://unsplash.com/s/photos/hammer?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+> Photo by <a href="https://unsplash.com/@imattsmart?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText" target="_blank" rel="noopener noreferrer">iMattSmart</a> on <a href="https://unsplash.com/s/photos/hammer?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText" target="_blank" rel="noopener noreferrer">Unsplash</a>
 
 ### What this means
 
@@ -36,18 +36,18 @@ CDK v2 has been in developer preview for a while and it brings in some exciting 
 Notable changes include:
 
 - One dependency library for all AWS services
-- Stable APIs are enforced via [semver](https://semver.org/)
-- Introduction of [`cdk watch`](https://aws.amazon.com/blogs/developer/increasing-development-speed-with-cdk-watch/) which auto-deploys code for you as you edit locally and save the changes. (Note that AWS does not recommend the use of this feature in production environments.)
+- Stable APIs are enforced via <a href="https://semver.org/" target="_blank" rel="noopener noreferrer">semver</a>
+- Introduction of <a href="https://aws.amazon.com/blogs/developer/increasing-development-speed-with-cdk-watch/" target="_blank" rel="noopener noreferrer"><code>cdk watch</code></a> which auto-deploys code for you as you edit locally and save the changes. (Note that AWS does not recommend the use of this feature in production environments.)
 
 ### Why it's exciting
 
 AWS took customer feedback and addressed some of the common painpoints with the original release of CDK. To me, these changes show maturity in the tool and increases my confidence in using it for production workloads.
 
-## 3. [Sustainability Pillar for AWS Well-Architected Framework](https://aws.amazon.com/blogs/aws/sustainability-pillar-well-architected-framework/)
+## 3. <a href="https://aws.amazon.com/blogs/aws/sustainability-pillar-well-architected-framework/" target="_blank" rel="noopener noreferrer">Sustainability Pillar for AWS Well-Architected Framework</a>
 
 ![Windmill](/assets/windmill.jpg)
 
-> Photo by <a href="https://unsplash.com/@karsten_wuerth?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Karsten Würth (➡️ @karsten.wuerth)</a> on <a href="https://unsplash.com/s/photos/environment?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+> Photo by <a href="https://unsplash.com/@karsten_wuerth?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText" target="_blank" rel="noopener noreferrer">Karsten Würth (➡️ @karsten.wuerth)</a> on <a href="https://unsplash.com/s/photos/environment?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText" target="_blank" rel="noopener noreferrer">Unsplash</a>
 
 ### What this means
 
@@ -61,6 +61,6 @@ Just because things are running in someone else's data center, doesn't mean that
 
 It was difficult to choose just three, because there were many great announcements during this conference. Overall, the announcements felt more incremental than innovative which I totally support. It's much better to improve on an existing service than to continually launch new services that aren't fully ready for production.
 
-I encourage you to check out all of the announcements [here](https://aws.amazon.com/blogs/aws/top-announcements-of-aws-reinvent-2021/). What were some of your favorite announcements and why?
+I encourage you to check out all of the announcements <a href="https://aws.amazon.com/blogs/aws/top-announcements-of-aws-reinvent-2021/" target="_blank" rel="noopener noreferrer">here</a>. What were some of your favorite announcements and why?
 
 > "Now go build" - Werner Vogels

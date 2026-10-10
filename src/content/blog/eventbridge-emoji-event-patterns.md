@@ -9,7 +9,7 @@ tags: ["aws", "serverless"]
 
 ![emoji](/assets/emoji.jpg)
 
-> Photo by <a href="https://unsplash.com/@denic?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Denis Cherkashin</a> on <a href="https://unsplash.com/photos/qIKSsOMIhpM?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+> Photo by <a href="https://unsplash.com/@denic?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText" target="_blank" rel="noopener noreferrer">Denis Cherkashin</a> on <a href="https://unsplash.com/photos/qIKSsOMIhpM?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText" target="_blank" rel="noopener noreferrer">Unsplash</a>
 
 ## Background
 
@@ -21,7 +21,7 @@ After that conversation, I couldn't stop thinking about it. So I threw together 
 
 ## Try it yourself
 
-I've made my quick CDK stack public [on Github](https://github.com/deeheber/eventbridge-emoji). You're welcome to test with mine.
+I've made my quick CDK stack public <a href="https://github.com/deeheber/eventbridge-emoji" target="_blank" rel="noopener noreferrer">on Github</a>. You're welcome to test with mine.
 
 **This stack contains**
 
@@ -33,7 +33,7 @@ I've made my quick CDK stack public [on Github](https://github.com/deeheber/even
 1. Clone the repo
 2. Configure your AWS credentials locally if you have not yet
 3. `npm i && npm run cdk deploy` to deploy the stack
-4. Put events on the default event bus with either the [CLI](https://awscli.amazonaws.com/v2/documentation/api/latest/reference/events/put-events.html), and AWS SDK, or in the AWS console. The event pattern is `detailType: ['💩']` and `source: ['🐶']`.
+4. Put events on the default event bus with either the <a href="https://awscli.amazonaws.com/v2/documentation/api/latest/reference/events/put-events.html" target="_blank" rel="noopener noreferrer">CLI</a>, and AWS SDK, or in the AWS console. The event pattern is `detailType: ['💩']` and `source: ['🐶']`.
 5. Check the Lambda's CloudWatch logs to see that it has been invoked
 
 ## Closing

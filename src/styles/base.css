@@ -127,19 +127,7 @@
   }
 
   /* Prose text color - base */
-  .prose h1,
-  .prose h2,
-  .prose h3,
-  .prose h4,
-  .prose h5,
-  .prose h6,
-  .prose p,
-  .prose strong,
-  .prose figcaption,
-  .prose ol,
-  .prose ul,
-  .prose table,
-  .prose th {
+  .prose :is(h1, h2, h3, h4, h5, h6, p, strong, figcaption, ol, ul, table, th) {
     color: rgb(var(--color-text-base)) !important;
   }
 
@@ -159,12 +147,7 @@
   }
 
   /* Prose headings */
-  .prose h1,
-  .prose h2,
-  .prose h3,
-  .prose h4,
-  .prose h5,
-  .prose h6 {
+  .prose :is(h1, h2, h3, h4, h5, h6) {
     margin-bottom: 0.75rem;
     font-weight: bold;
   }
@@ -179,9 +162,7 @@
     border-left-width: 4px;
     opacity: 0.8;
   }
-  .prose blockquote p:first-of-type::before {
-    content: none !important;
-  }
+  .prose blockquote p:first-of-type::before,
   .prose blockquote p:last-of-type::after {
     content: none !important;
   }
@@ -190,8 +171,7 @@
     opacity: 0.7;
   }
 
-  .prose p,
-  .prose li {
+  .prose :is(p, li) {
     font-size: 1.25rem;
     line-height: 1.8;
   }
@@ -214,8 +194,7 @@
   }
 
   /* Prose borders */
-  .prose th,
-  .prose td {
+  .prose :is(th, td) {
     border: 1px solid rgb(var(--color-border));
   }
 
@@ -231,9 +210,7 @@
     border-color: rgb(var(--color-border));
   }
 
-  .prose thead th:first-child,
-  tbody td:first-child,
-  tfoot td:first-child {
+  .prose :is(thead th, tbody td, tfoot td):first-child {
     padding-left: 0.5714286em;
   }
 
@@ -268,12 +245,9 @@
   }
 
   pre > code {
-    white-space: pre;
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
   }
-}
-
-@utility display-none {
-  display: none;
 }
 
 @utility focus-outline {
@@ -335,14 +309,6 @@
   background-color: rgb(var(--color-accent));
 }
 
-@utility heading-link {
-  display: none;
-  margin-left: 0.5rem; /* ml-2 */
-  .group:hover & {
-    display: inline-block;
-  }
-}
-
 @utility copy-code {
   position: absolute;
   right: 0.75rem; /* right-3 */
@@ -354,4 +320,17 @@
   line-height: 1rem; /* leading-4 */
   color: rgb(var(--color-text-base));
   font-weight: 500; /* font-medium */
+}
+
+@utility disclosure-summary {
+  padding-block: 0.75rem;
+  cursor: pointer;
+  color: rgb(var(--color-text-base));
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: 1.8;
+  &:focus-visible {
+    outline: 2px dashed rgb(var(--color-accent));
+    outline-offset: 4px;
+  }
 }
