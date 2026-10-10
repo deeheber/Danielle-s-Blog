@@ -1,85 +1,84 @@
+import { readFileSync } from "fs"
+import { resolve } from "path"
+
 import { SITE } from "@config"
+
+const logoSrc = `data:image/png;base64,${readFileSync(
+  resolve("public/logo.png"),
+).toString("base64")}`
 
 const SiteOgTemplate = () => {
   return (
     <div
       style={{
-        background: "#fefbfb",
+        background: "#fdf6e3",
+        color: "#042f2e",
         width: "100%",
         height: "100%",
         display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
+        padding: "48px",
       }}
     >
       <div
         style={{
-          position: "absolute",
-          top: "-1px",
-          right: "-1px",
-          border: "4px solid #000",
-          background: "#ecebeb",
-          opacity: "0.9",
+          border: "4px solid #042f2e",
           borderRadius: "4px",
           display: "flex",
-          justifyContent: "center",
-          margin: "2.5rem",
-          width: "88%",
-          height: "80%",
-        }}
-      />
-
-      <div
-        style={{
-          border: "4px solid #000",
-          background: "#fefbfb",
-          borderRadius: "4px",
-          display: "flex",
-          justifyContent: "center",
-          margin: "2rem",
-          width: "88%",
-          height: "80%",
+          flexDirection: "column",
+          justifyContent: "space-between",
+          width: "100%",
+          height: "100%",
+          padding: "64px 72px 48px",
         }}
       >
         <div
           style={{
             display: "flex",
-            flexDirection: "column",
+            alignItems: "center",
             justifyContent: "space-between",
-            margin: "20px",
-            width: "90%",
-            height: "90%",
+            gap: "40px",
           }}
         >
-          <div
-            style={{
-              display: "flex",
-              flexDirection: "column",
-              justifyContent: "center",
-              alignItems: "center",
-              height: "90%",
-              maxHeight: "90%",
-              overflow: "hidden",
-              textAlign: "center",
-            }}
-          >
-            <p style={{ fontSize: 72, fontWeight: "bold" }}>{SITE.title}</p>
-            <p style={{ fontSize: 28 }}>{SITE.desc}</p>
+          <div style={{ display: "flex", flexDirection: "column" }}>
+            <p
+              style={{
+                fontFamily: "Merriweather",
+                fontSize: 72,
+                fontWeight: 700,
+                margin: 0,
+              }}
+            >
+              {SITE.author}
+            </p>
+            <p
+              style={{
+                fontFamily: "Lato",
+                fontSize: 52,
+                margin: "28px 0 0",
+              }}
+            >
+              Make ship happen
+            </p>
           </div>
+          <img
+            src={logoSrc}
+            alt=""
+            width={168}
+            height={168}
+            style={{ flexShrink: 0 }}
+          />
+        </div>
 
-          <div
-            style={{
-              display: "flex",
-              justifyContent: "flex-end",
-              width: "100%",
-              marginBottom: "8px",
-              fontSize: 28,
-            }}
-          >
-            <span style={{ overflow: "hidden", fontWeight: "bold" }}>
-              {new URL(SITE.website).hostname}
-            </span>
-          </div>
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "flex-end",
+            fontFamily: "Lato",
+            fontSize: 32,
+            fontWeight: 700,
+          }}
+        >
+          {new URL(SITE.website).hostname}
         </div>
       </div>
     </div>

@@ -3,9 +3,9 @@ import type { Site, SocialObjects } from "./types"
 export const SITE: Site = {
   website: "https://danielleheberling.xyz/",
   author: "Danielle Heberling",
-  desc: "Danielle's Blog",
-  title: "Danielle's Blog",
-  ogImage: "Logo1(D).png",
+  desc: "I help teams spend less time fighting their tools and more time shipping software. Platform and cloud engineering, mostly AWS.",
+  title: "Danielle Heberling",
+  ogImage: "og.png",
   lightAndDarkMode: true,
   postPerPage: 10,
   scheduledPostMargin: 15 * 60 * 1000, // 15 minutes
@@ -17,25 +17,30 @@ export const LOCALE = {
 } as const
 
 export const LOGO_IMAGE = {
-  width: 300,
-  height: 400,
+  width: 500,
+  height: 500,
+}
+
+export const EMAIL = {
+  user: "danielle",
+  domain: "danielleheberling.com",
 }
 
 export const SOCIALS: SocialObjects = [
   {
     name: "Github",
     href: "https://github.com/deeheber",
-    linkTitle: ` ${SITE.title} on Github`,
+    linkTitle: `${SITE.author} on GitHub`,
   },
   {
     name: "LinkedIn",
     href: "https://www.linkedin.com/in/deeheber",
-    linkTitle: `${SITE.title} on LinkedIn`,
+    linkTitle: `${SITE.author} on LinkedIn`,
   },
   {
     name: "Bluesky",
     href: "https://bsky.app/profile/danielleheberling.xyz",
-    linkTitle: `${SITE.title} on Bluesky`,
+    linkTitle: `${SITE.author} on Bluesky`,
   },
   {
     name: "Discord",

@@ -10,7 +10,7 @@ export interface Props {
   author?: string
   description?: string
   ogImage?: string
-  canonicalURL?: string
+  canonicalURL?: string | null
   pubDatetime?: Date
   modDatetime?: Date | null
   scrollSmooth?: boolean
@@ -21,7 +21,7 @@ const {
   author = SITE.author,
   description = SITE.desc,
   ogImage = SITE.ogImage,
-  canonicalURL,
+  canonicalURL = new URL(Astro.url.pathname, Astro.site).href,
   pubDatetime,
   modDatetime,
   scrollSmooth = false,
@@ -46,8 +46,8 @@ const socialImageURL = new URL(
     />
     <link
       rel="icon"
-      type="image/svg+xml"
-      href="/Logo1(D).png"
+      type="image/png"
+      href="/logo.png"
     />
     {
       canonicalURL && (
@@ -99,10 +99,14 @@ const socialImageURL = new URL(
       property="og:description"
       content={description}
     />
-    <meta
-      property="og:url"
-      content={canonicalURL}
-    />
+    {
+      canonicalURL && (
+        <meta
+          property="og:url"
+          content={canonicalURL}
+        />
+      )
+    }
     <meta
       property="og:image"
       content={socialImageURL}
@@ -131,10 +135,14 @@ const socialImageURL = new URL(
       property="twitter:card"
       content="summary_large_image"
     />
-    <meta
-      property="twitter:url"
-      content={canonicalURL}
-    />
+    {
+      canonicalURL && (
+        <meta
+          property="twitter:url"
+          content={canonicalURL}
+        />
+      )
+    }
     <meta
       property="twitter:title"
       content={title}
@@ -169,7 +177,13 @@ const socialImageURL = new URL(
 
     <meta
       name="theme-color"
-      content=""
+      content="#fdf6e3"
+      media="(prefers-color-scheme: light)"
+    />
+    <meta
+      name="theme-color"
+      content="#002b36"
+      media="(prefers-color-scheme: dark)"
     />
 
     {

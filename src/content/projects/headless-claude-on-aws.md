@@ -15,7 +15,7 @@ When a CloudFormation deploy failed, someone usually messaged me to ask what wen
 
 I built cfn-investigator to run Claude Code headlessly on shared compute. The public repository is a simplified example, rebuilt from scratch and narrowed to CloudFormation. Give it a failing stack name and, optionally, a suspected commit. It reads stack state through the AWS MCP server and writes an analysis to CloudWatch Logs. There's a place to add forwarding to Slack or another destination.
 
-I chose CodeBuild because the job fit: clone source, run a script, and post the result somewhere. It gave me the shell tools and logging I needed without building a Lambda container or setting up Fargate networking. I used an Anthropic API key to avoid the Bedrock limitations described in the README. I was optimizing for a working prototype I could maintain alone.
+I chose CodeBuild because the job fit: clone source, run a script, and post the result somewhere. It gave me the shell tools and logging I needed without building a Lambda container or setting up Fargate networking. I used an Anthropic API key to avoid <a href="https://www.proactiveops.io/archive/amazon-bedrock-leaves-builders-stuck-in-1st-gear/" target="_blank" rel="noopener noreferrer">the limitations of running Claude through Bedrock</a>. I was optimizing for a working prototype I could maintain alone.
 
 <h3>Tradeoffs and lessons</h3>
 

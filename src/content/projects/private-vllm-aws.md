@@ -1,7 +1,7 @@
 ---
 title: "Running an open-weight model on AWS"
 order: 2
-summary: "I deployed vLLM on a GPU instance with CloudFormation and connected through Session Manager. Running a model for my own coding workflow taught me about the costs and limitations."
+summary: "I ran vLLM on a GPU instance in my own AWS account to see what self-hosting a coding model takes. GPUs were hard to get, and the results trailed hosted Claude."
 ---
 
 <a href="https://github.com/deeheber/private-vllm-aws" target="_blank" rel="noopener noreferrer">Repository</a> · <a href="https://github.com/deeheber/private-vllm-aws/blob/main/docs/deployment.md" target="_blank" rel="noopener noreferrer">Deployment guide</a>
@@ -19,7 +19,7 @@ I chose vLLM partly because I wanted a container-based setup. One container on a
 
 <h3>Tradeoffs and lessons</h3>
 
-I focused on getting the workflow working before choosing a final model. The default is gpt-oss-20b, and the project README notes noticeably weaker results than hosted Claude on multi-step tasks, especially with this default.
+I focused on getting the workflow working before choosing a final model. The default is gpt-oss-20b, and its results were noticeably weaker than hosted Claude's on multi-step tasks.
 
 Even On-Demand GPU capacity was hard to find in the US regions I tried. I wanted to stay in North America for latency, but Canadian regions didn't offer the instance types I needed at the time. I'd love to see enough capacity to make this reliable for everyday use.
 
@@ -27,6 +27,6 @@ And stopping the GPU doesn't stop every charge: the network and storage still co
 
 <h3>What I'd do next</h3>
 
-If I extended this into something a team depended on, I'd evaluate it against real coding tasks first.
+Before anyone else relied on it, I'd test it against real coding tasks and have a fallback for when GPUs aren't available.
 
 </details>

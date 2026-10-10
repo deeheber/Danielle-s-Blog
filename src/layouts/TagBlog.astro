@@ -23,6 +23,7 @@ const canonicalURL = new URL(`/tags/${tag}/`, Astro.site).href
 
 <Layout
   title={`Tag: ${tagName} | ${SITE.title}`}
+  description={`All the articles with the tag "${tagName}".`}
   canonicalURL={canonicalURL}
 >
   <Header activeNav="tags" />
