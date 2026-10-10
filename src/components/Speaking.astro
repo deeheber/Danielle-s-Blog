@@ -5,7 +5,7 @@ const years = speakingData.filter(({ content }) => content.length > 0)
 const latestYear = Math.max(...years.map(({ year }) => Number(year)))
 ---
 
-<section>
+<section id="all-talks">
   {
     years.map((year) => (
       <details open={Number(year.year) === latestYear}>

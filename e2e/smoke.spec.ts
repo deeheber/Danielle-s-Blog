@@ -173,7 +173,10 @@ test("navigation links", async ({ page }) => {
 
   for (const { name, url } of navLinks) {
     await page.goto("/")
-    await page.locator("#menu-items").getByRole("link", { name }).click()
+    await page
+      .locator("#menu-items")
+      .getByRole("link", { name, exact: true })
+      .click()
     await expect(page).toHaveURL(url)
   }
 })
