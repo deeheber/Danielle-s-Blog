@@ -1,4 +1,5 @@
 import { test, expect } from "@playwright/test"
+import speakingData from "../src/data/speakingData.json"
 
 test("main page loads with selected writing and speaking", async ({ page }) => {
   await page.goto("/")
@@ -116,10 +117,36 @@ test("blog pagination shows different posts per page", async ({ page }) => {
   expect(page1Again).toEqual(page1Hrefs)
 })
 
-test("talks page lists talks", async ({ page }) => {
+test("speaking archive opens the newest populated year and toggles older years", async ({
+  page,
+}) => {
   await page.goto("/talks/")
   await expect(page).toHaveTitle(/Speaking/)
-  await expect(page.locator("#all-talks li").first()).toBeVisible()
+
+  const populatedYears = speakingData.filter(
+    ({ content }) => content.length > 0,
+  )
+  const newestYear = populatedYears
+    .map(({ year }) => year)
+    .sort((a, b) => Number(b) - Number(a))[0]
+  if (!newestYear) throw new Error("Speaking archive has no appearances")
+  const years = page.locator("details")
+  await expect(years.locator("summary")).toHaveText(
+    populatedYears.map(({ year }) => year),
+  )
+  await expect(page.locator("details[open] summary")).toHaveText([newestYear])
+  await expect(page.locator("details[open] li a").first()).toBeVisible()
+
+  const olderYear = page.locator("details:not([open])").first()
+  const olderYearLabel = await olderYear.locator("summary").innerText()
+  const disclosure = years.filter({
+    has: page.getByText(olderYearLabel, { exact: true }),
+  })
+  await expect(disclosure.locator("li a").first()).toBeHidden()
+  await disclosure.locator("summary").click()
+  await expect(disclosure.locator("li a").first()).toBeVisible()
+  await disclosure.locator("summary").click()
+  await expect(disclosure.locator("li a").first()).toBeHidden()
 })
 
 test("404 page", async ({ page }) => {
