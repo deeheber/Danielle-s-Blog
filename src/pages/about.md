@@ -11,11 +11,11 @@ As a manager, I cared about helping engineers grow and using everyone's strength
 
 I didn't believe in meetings just to have meetings. We had clear agendas and used that time to work through problems or get on the same page. We worked async across time zones, with core working hours so we could also collaborate in real time. I enjoyed managing the team, and I'd do it again.
 
-At [Aspira](https://aspiraconnect.com/), I own my team's delivery pipeline, from infrastructure as code and CI/CD through monitoring and security. I work with IT Ops and Security on compliance, sharing resources, and making sure our policies line up. I also help product engineers work through cloud architecture and deployment decisions, and built an AI agent to help them diagnose broken pipeline builds and figure out what to do next. Most of my work is in TypeScript on AWS.
+At <a href="https://aspiraconnect.com/" target="_blank" rel="noopener noreferrer">Aspira</a>, I own my team's delivery pipeline, from infrastructure as code and CI/CD through monitoring and security. I work with IT Ops and Security on compliance, sharing resources, and making sure our policies line up. I also help product engineers work through cloud architecture and deployment decisions, and built an AI agent to help them diagnose broken pipeline builds and figure out what to do next. Most of my work is in TypeScript on AWS.
 
 Before software engineering, I was a musician, an elementary teacher, and worked in tech support. Those jobs gave me a lot of practice explaining things and helping people work through problems.
 
-I'm an <a href="https://builder.aws.com/community/heroes/DanielleHeberling" target="_blank">AWS Serverless Hero</a> and co-organize the <a href="https://www.believeinserverless.com/" target="_blank">Believe in Serverless Discord community</a>. I share what I'm learning, including the mistakes, in the hope that it makes things easier for someone else.
+I'm an <a href="https://builder.aws.com/community/heroes/DanielleHeberling" target="_blank" rel="noopener noreferrer">AWS Serverless Hero</a> and co-organize the <a href="https://www.believeinserverless.com/" target="_blank" rel="noopener noreferrer">Believe in Serverless Discord community</a>. I share what I'm learning, including the mistakes, in the hope that it makes things easier for someone else.
 
 ![waterfall](/assets/waterfall.jpg)
 
