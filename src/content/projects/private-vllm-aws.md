@@ -1,6 +1,7 @@
 ---
 title: "Running an open-weight model on AWS"
 order: 2
+summary: "I deployed vLLM on a GPU instance with CloudFormation and connected through Session Manager. Running a model for my own coding workflow taught me about the costs and limitations."
 ---
 
 <a href="https://github.com/deeheber/private-vllm-aws" target="_blank" rel="noopener noreferrer">Repository</a> · <a href="https://github.com/deeheber/private-vllm-aws/blob/main/docs/deployment.md" target="_blank" rel="noopener noreferrer">Deployment guide</a>

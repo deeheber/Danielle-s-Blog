@@ -1,6 +1,7 @@
 ---
 title: "Getting Claude Code onto shared compute"
 order: 1
+summary: "Developers shouldn’t have to wait for me to troubleshoot failed deploys. I built cfn-investigator with Claude Code, CodeBuild, and AWS MCP to help them investigate CloudFormation failures."
 ---
 
 <a href="https://github.com/deeheber/headless-claude-on-aws" target="_blank" rel="noopener noreferrer">Repository</a> · [Getting Claude Code off my laptop and onto shared compute](/blog/headless-claude-on-aws/)

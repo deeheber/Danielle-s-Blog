@@ -1,6 +1,7 @@
 ---
 title: "Is it snowing in Hillsboro?"
 order: 3
+summary: "Portland’s snow site wasn’t accurate for my area, so I built one for Hillsboro. It answers one question while giving me hands-on experience with Step Functions and AWS CDK."
 ---
 
 <a href="https://github.com/deeheber/weather-site" target="_blank" rel="noopener noreferrer">Repository</a> · [Serverless Weather Reporting with AWS Step Functions and CDK](/blog/serverless-weather-reporting/) · [I Rewrote My Step Function as a Durable Function](/blog/durable-functions/)
