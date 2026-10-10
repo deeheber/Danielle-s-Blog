@@ -168,7 +168,7 @@ test("navigation links", async ({ page }) => {
     { name: "Writing", url: /\/blog\/?$/ },
     { name: "Speaking", url: /\/talks\/?$/ },
     { name: "About", url: /\/about\/?$/ },
-    { name: "Search", url: /\/search\/?$/ },
+    { name: "Search writing", url: /\/search\/?$/ },
   ]
 
   for (const { name, url } of navLinks) {
