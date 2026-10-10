@@ -30,6 +30,7 @@ const projects = defineCollection({
   schema: z.object({
     title: z.string(),
     order: z.number().int().positive(),
+    summary: z.string(),
   }),
 })
 
