@@ -9,6 +9,9 @@ import postFilter from "@utils/postFilter"
 import speakingData from "../data/speakingData.json"
 
 const blog = await getCollection("blog")
+const featuredProjects = (await getCollection("projects")).sort(
+  (a, b) => a.data.order - b.data.order,
+)
 
 const selectedWritingIds = [
   "headless-claude-on-aws",
@@ -62,6 +65,41 @@ const selectedSpeaking = selectedSpeakingTitles.map((title) => {
         time shipping software. My focus is platform and cloud engineering,
         mostly AWS.
       </p>
+    </section>
+
+    <section
+      id="featured-projects"
+      aria-labelledby="featured-projects-heading"
+      class="pt-8"
+    >
+      <h2 id="featured-projects-heading">Selected Projects</h2>
+      <ul class="mt-6 space-y-10">
+        {
+          featuredProjects.map(({ id, data }) => (
+            <li>
+              <h3 class="text-xl leading-snug font-bold sm:text-2xl">
+                <a
+                  href={`/projects#${id}`}
+                  class="project-title"
+                >
+                  {data.title}
+                </a>
+              </h3>
+              <p class="mt-3 max-w-2xl leading-relaxed">{data.summary}</p>
+            </li>
+          ))
+        }
+      </ul>
+      <div class="all-blog-btn-wrapper">
+        <LinkButton href="/projects">
+          All projects
+          <svg xmlns="http://www.w3.org/2000/svg"
+            ><path
+              d="m11.293 17.293 1.414 1.414L19.414 12l-6.707-6.707-1.414 1.414L15.586 11H6v2h9.586z"
+            ></path>
+          </svg>
+        </LinkButton>
+      </div>
     </section>
 
     <section>
@@ -136,9 +174,13 @@ const selectedSpeaking = selectedSpeakingTitles.map((title) => {
   #selected-writing {
     @apply pt-8;
   }
+  #featured-projects h2,
   #selected-writing h2,
   #selected-speaking h2 {
     @apply text-2xl tracking-wide;
+  }
+  .project-title {
+    @apply text-skin-accent inline-block underline decoration-dashed underline-offset-4 hover:underline sm:no-underline;
   }
   .all-blog-btn-wrapper {
     @apply my-8 text-center;

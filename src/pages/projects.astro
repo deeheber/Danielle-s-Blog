@@ -1,0 +1,105 @@
+---
+import { getCollection, render } from "astro:content"
+import { SITE } from "@config"
+import Layout from "@layouts/Layout.astro"
+import Header from "@components/Header.astro"
+import Breadcrumbs from "@components/Breadcrumbs.astro"
+import Footer from "@components/Footer.astro"
+
+const projects = (await getCollection("projects")).sort(
+  (a, b) => a.data.order - b.data.order,
+)
+const renderedProjects = await Promise.all(
+  projects.map(async (project) => ({ project, ...(await render(project)) })),
+)
+---
+
+<Layout
+  title={`Projects | ${SITE.title}`}
+  description="Projects in AI developer tooling and serverless architecture, with the decisions, tradeoffs, and lessons behind them."
+  canonicalURL={new URL("/projects/", Astro.site).href}
+>
+  <Header activeNav="projects" />
+  <Breadcrumbs />
+  <main
+    id="main-content"
+    class="container-content mb-28"
+  >
+    <div class="prose max-w-3xl">
+      <h1 class="text-skin-accent text-2xl tracking-wider sm:text-3xl">
+        Projects
+      </h1>
+
+      {
+        renderedProjects.map(({ project, Content }) => (
+          <section
+            class="featured-project"
+            aria-labelledby={project.id}
+          >
+            <h2 id={project.id}>{project.data.title}</h2>
+            <Content />
+          </section>
+        ))
+      }
+
+      <section aria-labelledby="other-projects">
+        <h2 id="other-projects">More projects</h2>
+        <ul>
+          <li>
+            <strong
+              ><a
+                href="https://github.com/deeheber/job-search-agent"
+                target="_blank"
+                rel="noopener noreferrer"
+                >job-search-agent</a
+              >:</strong
+            > A Strands/Bedrock AgentCore example for finding open roles.
+            <a href="/blog/job-search-agent/">Read the write-up</a>.
+          </li>
+          <li>
+            <a
+              href="https://github.com/deeheber"
+              target="_blank"
+              rel="noopener noreferrer"
+              >More on GitHub</a
+            >
+          </li>
+        </ul>
+      </section>
+    </div>
+  </main>
+  <Footer />
+</Layout>
+
+<style>
+  section {
+    padding: 0;
+  }
+  section + section {
+    margin-top: 5rem;
+  }
+  h2 {
+    scroll-margin-top: 2rem;
+  }
+  .featured-project > h2 {
+    font-size: 1.75rem;
+    line-height: 1.3;
+  }
+  @media (min-width: 640px) {
+    .featured-project > h2 {
+      font-size: 2rem;
+    }
+  }
+  .prose :global(summary) {
+    padding-block: 0.75rem;
+    cursor: pointer;
+    color: rgb(var(--color-text-base));
+    font-size: 1.25rem;
+    font-weight: 700;
+    line-height: 1.8;
+  }
+  .prose :global(summary:focus-visible) {
+    outline: 2px dashed rgb(var(--color-accent));
+    outline-offset: 4px;
+  }
+</style>
