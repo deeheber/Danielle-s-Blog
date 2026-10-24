@@ -34,26 +34,24 @@ breadcrumbList[0] === "tags" &&
       <a href="/">Home</a>
       <span aria-hidden="true">&raquo;</span>
     </li>
-    {
-      breadcrumbList.map((breadcrumb, index) =>
-        index + 1 === breadcrumbList.length ? (
-          <li>
-            <span
-              class={`${index > 0 ? "lowercase" : "capitalize"}`}
-              aria-current="page"
-            >
-              {/* make the last part lowercase in Home > Tags > some-tag */}
-              {decodeURIComponent(breadcrumb)}
-            </span>
-          </li>
-        ) : (
-          <li>
-            <a href={`/${breadcrumb}/`}>{breadcrumb}</a>
-            <span aria-hidden="true">&raquo;</span>
-          </li>
-        ),
-      )
-    }
+    {breadcrumbList.map((breadcrumb, index) =>
+      index + 1 === breadcrumbList.length ? (
+        <li>
+          <span
+            class={`${index > 0 ? "lowercase" : "capitalize"}`}
+            aria-current="page"
+          >
+            {/* make the last part lowercase in Home > Tags > some-tag */}
+            {decodeURIComponent(breadcrumb)}
+          </span>
+        </li>
+      ) : (
+        <li>
+          <a href={`/${breadcrumb}/`}>{breadcrumb}</a>
+          <span aria-hidden="true">&raquo;</span>
+        </li>
+      ),
+    )}
   </ul>
 </nav>
 

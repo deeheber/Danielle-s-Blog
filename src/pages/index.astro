@@ -75,27 +75,23 @@ const selectedSpeaking = selectedSpeakingTitles.map((title) => {
     >
       <h2 id="featured-projects-heading">Selected Projects</h2>
       <ul class="mt-6 space-y-10">
-        {
-          featuredProjects.map(({ id, data }) => (
-            <li>
-              <h3 class="text-xl leading-snug font-bold">
-                <a
-                  href={`/projects#${id}`}
-                  class="project-title"
-                >
-                  {data.title}
-                </a>
-              </h3>
-              <p class="mt-3 max-w-2xl leading-relaxed">{data.summary}</p>
-            </li>
-          ))
-        }
+        {featuredProjects.map(({ id, data }) => <li>
+          <h3 class="text-xl leading-snug font-bold">
+            <a
+              href={`/projects#${id}`}
+              class="project-title"
+            >
+              {data.title}
+            </a>
+          </h3>
+          <p class="mt-3 max-w-2xl leading-relaxed">{data.summary}</p>
+        </li>)}
       </ul>
       <div class="all-blog-btn-wrapper">
         <LinkButton href="/projects">
           All projects
-          <svg xmlns="http://www.w3.org/2000/svg"
-            ><path
+          <svg xmlns="http://www.w3.org/2000/svg">
+            <path
               d="m11.293 17.293 1.414 1.414L19.414 12l-6.707-6.707-1.414 1.414L15.586 11H6v2h9.586z"
             ></path>
           </svg>
@@ -104,28 +100,24 @@ const selectedSpeaking = selectedSpeakingTitles.map((title) => {
     </section>
 
     <div>
-      {
-        selectedWriting.length > 0 && (
-          <section id="selected-writing">
-            <h2 tabindex="0">Selected Writing</h2>
-            <ul>
-              {selectedWriting.map(({ data, id }) => (
-                <Card
-                  href={`/blog/${id}/`}
-                  frontmatter={data}
-                  secHeading={false}
-                />
-              ))}
-            </ul>
-          </section>
-        )
-      }
+      {selectedWriting.length > 0 && <section id="selected-writing">
+        <h2 tabindex="0">Selected Writing</h2>
+        <ul>
+          {selectedWriting.map(({ data, id }) => (
+            <Card
+              href={`/blog/${id}/`}
+              frontmatter={data}
+              secHeading={false}
+            />
+          ))}
+        </ul>
+      </section>}
 
       <div class="all-blog-btn-wrapper">
         <LinkButton href="/blog/">
           All writing
-          <svg xmlns="http://www.w3.org/2000/svg"
-            ><path
+          <svg xmlns="http://www.w3.org/2000/svg">
+            <path
               d="m11.293 17.293 1.414 1.414L19.414 12l-6.707-6.707-1.414 1.414L15.586 11H6v2h9.586z"
             ></path>
           </svg>
@@ -133,32 +125,28 @@ const selectedSpeaking = selectedSpeakingTitles.map((title) => {
       </div>
 
       {
-        (
-          <section id="selected-speaking">
-            <h2 tabindex="0">Selected Speaking</h2>
-            <ul>
-              {selectedSpeaking.map((content) => (
-                <li class="talk-list">
-                  <a
-                    href={content.link}
-                    class="external-link"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    {content.title} ({content.year})
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </section>
-        )
+        <section id="selected-speaking">
+          <h2 tabindex="0">Selected Speaking</h2>
+          <ul>
+            {selectedSpeaking.map((content) => <li class="talk-list">
+              <a
+                href={content.link}
+                class="external-link"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {content.title} ({content.year})
+              </a>
+            </li>)}
+          </ul>
+        </section>
       }
 
       <div class="all-blog-btn-wrapper">
         <LinkButton href="/talks/">
           All speaking
-          <svg xmlns="http://www.w3.org/2000/svg"
-            ><path
+          <svg xmlns="http://www.w3.org/2000/svg">
+            <path
               d="m11.293 17.293 1.414 1.414L19.414 12l-6.707-6.707-1.414 1.414L15.586 11H6v2h9.586z"
             ></path>
           </svg>

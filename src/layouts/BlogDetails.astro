@@ -58,11 +58,12 @@ const layoutProps = {
       class="focus-outline mt-8 mb-2 flex hover:opacity-75"
       onclick="(() => (history.length === 1) ? window.location = '/' : history.back())()"
     >
-      <svg xmlns="http://www.w3.org/2000/svg"
-        ><path
+      <svg xmlns="http://www.w3.org/2000/svg">
+        <path
           d="M13.293 6.293 7.586 12l5.707 5.707 1.414-1.414L10.414 12l4.293-4.293z"
         ></path>
-      </svg><span>Go back</span>
+      </svg
+      ><span>Go back</span>
     </button>
   </div>
   <main id="main-content">
@@ -79,7 +80,9 @@ const layoutProps = {
       className="my-2"
     />
     <ul class="my-2 flex flex-wrap gap-x-1 gap-y-0">
-      {tags.map((tag) => <Tag tag={slugifyStr(tag)} />)}
+      {tags.map((tag) => (
+        <Tag tag={slugifyStr(tag)} />
+      ))}
     </ul>
     <article
       id="article"

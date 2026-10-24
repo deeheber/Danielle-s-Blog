@@ -6,27 +6,21 @@ const latestYear = Math.max(...years.map(({ year }) => Number(year)))
 ---
 
 <section>
-  {
-    years.map((year) => (
-      <details open={Number(year.year) === latestYear}>
-        <summary>{year.year}</summary>
-        <ul>
-          {year.content.map((talk) => (
-            <li>
-              <a
-                href={talk.link}
-                class="external-link"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                {talk.title}
-              </a>
-            </li>
-          ))}
-        </ul>
-      </details>
-    ))
-  }
+  {years.map((year) => <details open={Number(year.year) === latestYear}>
+    <summary>{year.year}</summary>
+    <ul>
+      {year.content.map((talk) => <li>
+        <a
+          href={talk.link}
+          class="external-link"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          {talk.title}
+        </a>
+      </li>)}
+    </ul>
+  </details>)}
 
   <style>
     @reference "../styles/base.css";
