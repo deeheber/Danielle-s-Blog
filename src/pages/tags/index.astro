@@ -23,14 +23,12 @@ let tags = getUniqueTags(blog)
     pageDesc="All the tags used in my writing."
   >
     <ul>
-      {
-        tags.map(({ tag }) => (
-          <Tag
-            {tag}
-            size="lg"
-          />
-        ))
-      }
+      {tags.map(({ tag }) => (
+        <Tag
+          {tag}
+          size="lg"
+        />
+      ))}
     </ul>
   </Main>
   <Footer />

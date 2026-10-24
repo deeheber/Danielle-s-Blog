@@ -24,14 +24,12 @@ const { currentPage, totalPages, paginatedblog } = Astro.props
   <Header activeNav="blog" />
   <Main pageTitle="Writing">
     <ul>
-      {
-        paginatedblog.map(({ data, id }) => (
-          <Card
-            href={`/blog/${id}/`}
-            frontmatter={data}
-          />
-        ))
-      }
+      {paginatedblog.map(({ data, id }) => (
+        <Card
+          href={`/blog/${id}/`}
+          frontmatter={data}
+        />
+      ))}
     </ul>
   </Main>
 

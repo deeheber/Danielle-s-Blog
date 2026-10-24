@@ -29,17 +29,13 @@ const renderedProjects = await Promise.all(
       </h1>
       <p>Here are a few things I've built and what I learned along the way.</p>
 
-      {
-        renderedProjects.map(({ project, Content }) => (
-          <section
-            class="featured-project"
-            aria-labelledby={project.id}
-          >
-            <h2 id={project.id}>{project.data.title}</h2>
-            <Content />
-          </section>
-        ))
-      }
+      {renderedProjects.map(({ project, Content }) => <section
+        class="featured-project"
+        aria-labelledby={project.id}
+      >
+        <h2 id={project.id}>{project.data.title}</h2>
+        <Content />
+      </section>)}
 
       <section aria-labelledby="other-projects">
         <h2 id="other-projects">More projects</h2>
@@ -52,7 +48,8 @@ const renderedProjects = await Promise.all(
                 rel="noopener noreferrer"
                 >job-search-agent</a
               >:</strong
-            > A Strands/Bedrock AgentCore example for finding open roles.
+            >
+            A Strands/Bedrock AgentCore example for finding open roles.
             <a href="/blog/job-search-agent/">Read the write-up</a>.
           </li>
           <li>

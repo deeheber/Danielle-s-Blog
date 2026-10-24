@@ -18,26 +18,24 @@ const {
 } = Astro.props
 ---
 
-{
-  disabled ? (
-    <span
-      class={`group inline-block ${className}`}
-      aria-label={ariaLabel}
-      title={title}
-      aria-disabled={disabled}
-    >
-      <slot />
-    </span>
-  ) : (
-    <a
-      {href}
-      class={`group hover:text-skin-accent inline-block ${className}`}
-      aria-label={ariaLabel}
-      title={title}
-      target={newTab ? "_blank" : undefined}
-      rel={newTab ? "noopener noreferrer" : undefined}
-    >
-      <slot />
-    </a>
-  )
-}
+{disabled ? (
+  <span
+    class={`group inline-block ${className}`}
+    aria-label={ariaLabel}
+    title={title}
+    aria-disabled={disabled}
+  >
+    <slot />
+  </span>
+) : (
+  <a
+    {href}
+    class={`group hover:text-skin-accent inline-block ${className}`}
+    aria-label={ariaLabel}
+    title={title}
+    target={newTab ? "_blank" : undefined}
+    rel={newTab ? "noopener noreferrer" : undefined}
+  >
+    <slot />
+  </a>
+)}
