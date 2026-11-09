@@ -1,30 +1,27 @@
 ---
-import Breadcrumbs from "@components/Breadcrumbs.astro"
+import BackButton from "@components/BackButton.astro"
 
 interface StringTitleProp {
   pageTitle: string
-  pageDesc?: string
+  backButton?: boolean
 }
 
 interface ArrayTitleProp {
   pageTitle: [string, string]
   titleTransition: string
-  pageDesc?: string
+  backButton?: boolean
 }
 
 export type Props = StringTitleProp | ArrayTitleProp
 
 const { props } = Astro
-const showBreadcrumbs =
-  /^\/blog(?:\/|$)/.test(Astro.url.pathname) ||
-  /^\/tags\/[^/]+/.test(Astro.url.pathname)
 ---
 
-{showBreadcrumbs && <Breadcrumbs />}
 <main
   id="main-content"
-  class:list={{ "mt-8": !showBreadcrumbs }}
+  class="mt-8"
 >
+  {props.backButton && <BackButton />}
   {"titleTransition" in props ? (
     <h1>
       {props.pageTitle[0]}
@@ -35,7 +32,6 @@ const showBreadcrumbs =
   ) : (
     <h1>{props.pageTitle}</h1>
   )}
-  {props.pageDesc && <p>{props.pageDesc}</p>}
   <slot />
 </main>
 
@@ -45,9 +41,6 @@ const showBreadcrumbs =
     @apply mx-auto w-full max-w-4xl px-4 pb-4;
   }
   #main-content h1 {
-    @apply text-2xl font-semibold sm:text-3xl;
-  }
-  #main-content p {
-    @apply mt-2 mb-6 italic;
+    @apply text-skin-accent mb-8 text-4xl leading-tight sm:mb-10 sm:text-5xl;
   }
 </style>
