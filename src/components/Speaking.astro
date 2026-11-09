@@ -12,7 +12,6 @@ const latestYear = Math.max(...years.map(({ year }) => Number(year)))
       {year.content.map((talk) => <li>
         <a
           href={talk.link}
-          class="external-link"
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -34,7 +33,10 @@ const latestYear = Math.max(...years.map(({ year }) => Number(year)))
       @apply disclosure-summary;
     }
     li {
-      @apply mt-2 mb-6 text-xl font-medium;
+      @apply py-3;
+    }
+    li a {
+      @apply font-merri text-skin-accent text-lg leading-snug underline-offset-4 hover:underline focus-visible:underline;
     }
   </style>
 </section>
