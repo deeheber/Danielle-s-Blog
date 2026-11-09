@@ -81,10 +81,26 @@ test("dark/light mode toggle round-trip", async ({ page }) => {
 
   const toggled = await html.getAttribute("data-theme")
   expect(toggled).not.toBe(original)
-  await expect(themeBtn).not.toHaveAttribute("aria-label", `${original}`)
+  await expect(themeBtn).toHaveAttribute(
+    "aria-pressed",
+    String(toggled === "dark"),
+  )
 
   await themeBtn.click()
   await expect(html).toHaveAttribute("data-theme", original!)
+})
+
+test("theme button reports dark state on load for dark-mode visitors", async ({
+  page,
+}) => {
+  await page.emulateMedia({ colorScheme: "dark" })
+  await page.goto("/")
+
+  await expect(page.locator("html")).toHaveAttribute("data-theme", "dark")
+  await expect(page.locator("#theme-btn")).toHaveAttribute(
+    "aria-pressed",
+    "true",
+  )
 })
 
 test("search returns a result that opens a post", async ({ page }) => {

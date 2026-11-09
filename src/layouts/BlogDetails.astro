@@ -86,7 +86,7 @@ const layoutProps = {
     >
       <button
         id="back-to-top"
-        class="focus-outline py-1 whitespace-nowrap hover:opacity-75"
+        class="focus-outline py-1 whitespace-nowrap underline-offset-4 hover:underline hover:decoration-2"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -184,6 +184,7 @@ const layoutProps = {
 
         let copyButton = document.createElement("button")
         copyButton.className = "copy-code"
+        copyButton.setAttribute("aria-live", "polite")
         copyButton.innerHTML = copyButtonLabel
         codeBlock.setAttribute("tabindex", "0")
         codeBlock.appendChild(copyButton)

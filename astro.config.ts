@@ -12,7 +12,9 @@ export default defineConfig({
   integrations: [react(), sitemap()],
   markdown: {
     shikiConfig: {
-      theme: "one-dark-pro",
+      /* Both pass WCAG AA on the site's backgrounds; base.css picks one per site theme */
+      themes: { light: "github-light-default", dark: "github-dark-default" },
+      defaultColor: false,
       wrap: true,
     },
   },

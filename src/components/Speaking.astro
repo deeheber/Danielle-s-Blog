@@ -5,7 +5,7 @@ const years = speakingData.filter(({ content }) => content.length > 0)
 const latestYear = Math.max(...years.map(({ year }) => Number(year)))
 ---
 
-<section>
+<div>
   {years.map((year) => <details open={Number(year.year) === latestYear}>
     <summary>{year.year}</summary>
     <ul>
@@ -23,7 +23,7 @@ const latestYear = Math.max(...years.map(({ year }) => Number(year)))
 
   <style>
     @reference "../styles/base.css";
-    section {
+    div {
       @apply w-full pb-4;
     }
     details {
@@ -36,7 +36,7 @@ const latestYear = Math.max(...years.map(({ year }) => Number(year)))
       @apply py-3;
     }
     li a {
-      @apply font-merri text-skin-accent text-lg leading-snug underline-offset-4 hover:underline focus-visible:underline [@media(hover:none)]:underline;
+      @apply text-skin-accent text-lg leading-snug font-medium underline-offset-4 hover:underline hover:decoration-2 focus-visible:underline [@media(hover:none)]:underline;
     }
   </style>
-</section>
+</div>

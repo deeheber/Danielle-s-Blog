@@ -17,7 +17,7 @@ export default function Datetime({
   className,
 }: Props) {
   return (
-    <div className={`flex items-center space-x-2 opacity-80 ${className}`}>
+    <div className={`text-skin-muted flex items-center space-x-2 ${className}`}>
       {modDatetime && modDatetime > pubDatetime ? (
         <span className={`italic ${size === "sm" ? "text-sm" : "text-base"}`}>
           Updated:
