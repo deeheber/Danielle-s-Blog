@@ -13,7 +13,7 @@ At <a href="https://www.koan.co/?utm_campaign=edgerouter&amp;utm_medium=blog&amp
 
 In addition to viewing the Staging and Production versions of our frontend, we also need to serve up a version of the frontend based off of a git commit in our Staging environment. Doing this gives Koan developers a “live preview” URL to review what the frontend looks like after committing changes but before they’re merged.
 
-### Our Solution
+## Our Solution
 
 Our solution has the following high level steps:
 
@@ -25,7 +25,7 @@ Our solution has the following high level steps:
 
 ![Architecture diagram](/assets/edge-router.png)
 
-### More Details on Build Artifacts
+## More Details on Build Artifacts
 
 Our CI process delivers build artifacts into S3 at `/commit/[commit sha]`.
 
@@ -33,7 +33,7 @@ When a developer wants to “live preview” their recent commit, they need to a
 
 Each `index.html` file in this S3 bucket references static assets (CSS/JS files) hosted on a separate `frontend-builds subdomain`. This domain pointed at a second CloudFront CDN with a second S3 bucket as its origin. Serving these as CDN-friendly, immutable assets saves significant compute (money) for resources that don't need Lambda@Edge.
 
-### Inside the Lambda "router" function
+## Inside the Lambda "router" function
 
 Whenever that developer requests a specific version of the app, the request hits CloudFront as an `origin-request`. Our Lambda@Edge function receives a <a href="https://docs.amazonaws.cn/en_us/AmazonCloudFront/latest/DeveloperGuide/lambda-event-structure.html#example-origin-request" target="_blank" rel="noopener noreferrer">message event</a> from CloudFront and then proceeds to do the following:
 
@@ -41,7 +41,7 @@ Whenever that developer requests a specific version of the app, the request hits
 2. Gets the requested index file
 3. Returns the index file as the body for our response
 
-### Let's see some code
+## Let's see some code
 
 > Gets the git commit hash from the pathname in the request
 
@@ -207,7 +207,7 @@ exports.handler = (event, ctx, cb) => {
 }
 ```
 
-### Closing
+## Closing
 
 While there are opportunities for improvement, this setup works well for our team, and we thought that sharing this approach might give you and your team some ideas to iterate on.
 

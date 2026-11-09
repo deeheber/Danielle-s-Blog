@@ -12,7 +12,7 @@ The trend of the frontend and backend coming closer together is continuing and e
 
 Building and deploying websites still continues to be a very common use case with folks using AWS, but I personally wanted a more "push button" solution that would also allow me to connect my Stackery backend resources easily. So I've decided to iterate on what we built the last time to make it better.
 
-### What We Built Last Time
+## What We Built Last Time
 
 <a href="https://www.danielleheberling.xyz/blog/text-to-speech/">Previously</a>, I wrote an application that translates written text to speech. I was getting tired of having to recall the different API endpoints to hit and wanted a nice UI to better manage these files...so I got to work on building a frontend.
 
@@ -31,7 +31,7 @@ Lucky for us, there's AWS CodeBuild!
 
 So I embarked on the journey of replacing my `PopulateFrontend` Lambda function with a CodeBuild Project.
 
-### The Easy Push Button Way of Doing this
+## The Easy Push Button Way of Doing this
 
 Stackery released the <a href="https://docs.stackery.io/docs/api/nodes/Website/" target="_blank" rel="noopener noreferrer">Website Resource</a>. Check it out...it's just a matter of dragging and dropping the resource into your stack and providing a few settings (Source Directory, Build Command, and Publish Directory).
 
@@ -39,7 +39,7 @@ Stackery released the <a href="https://docs.stackery.io/docs/api/nodes/Website/"
 
 We have a more detailed tutorial <a href="https://docs.stackery.io/docs/tutorials/react-spa-tutorial/" target="_blank" rel="noopener noreferrer">here</a>.
 
-### Connecting my Frontend to a Backend API
+## Connecting my Frontend to a Backend API
 
 Once your S3 Bucket and Website are on the canvas, add an API too (both HTTP API and original API Gateway work).
 
@@ -71,13 +71,13 @@ I added an npm script to my `package.json` that executes this script, titled it 
 
 ![build command setting](/assets/build-command.png)
 
-### Speeding up the Delivery with a CDN (Optional)
+## Speeding up the Delivery with a CDN (Optional)
 
 If you want to speed up the delevery of your website, I'd suggest adding a CDN in front of your S3 bucket using Amazon CloudFront. Connect your S3 Bucket to the CDN Origin like this.
 
 ![cdn](/assets/cdn.png)
 
-### The CodeBuild Job
+## The CodeBuild Job
 
 The rest of this post is going to be a technical deep dive under the hood for those who are interested.
 
@@ -167,7 +167,7 @@ Website:
         Value: Website Builder
 ```
 
-### Orchestrating the CodeBuild Job
+## Orchestrating the CodeBuild Job
 
 Now that the CodeBuild job is setup, we know how we're going to build the site and publish it to an S3 Bucket. The remaining question is how can we trigger the CodeBuild job to start when the CloudFormation stack is deployed?
 
@@ -221,7 +221,7 @@ WebsiteEvents:
 
 When the CodeBuild Project for our Website has a build status of SUCCEEDED, FAILED, FAULT, STOPPED, or TIMED_OUT, the configured CloudWatch Event reports this information back to my custom resource function. My custom resource function then sends the appropriate information to CloudFormation. Once CloudFormation gets a pass/fail response, it knows how to conintue with deploying the stack.
 
-### Closing
+## Closing
 
 Check out the entire code repository referenced <a href="https://github.com/deeheber/text-to-speech-converter/tree/blog-post-3" target="_blank" rel="noopener noreferrer">here</a>.
 

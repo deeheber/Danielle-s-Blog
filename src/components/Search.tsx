@@ -86,9 +86,10 @@ export default function SearchBar({ searchList }: Props) {
           <span className="sr-only">Search writing</span>
         </span>
         <input
-          className="bg-skin-fill focus:border-skin-accent block w-full rounded border py-3 pr-3 pl-10 placeholder:italic focus:outline-none"
+          className="bg-skin-fill focus-visible:outline-skin-fill placeholder:text-skin-muted block w-full rounded border py-3 pr-3 pl-10 placeholder:italic focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-solid"
           style={{
-            borderColor: `rgba(var(--color-text-base), 0.4)`,
+            // Muted token: 5.3:1 light / 6.7:1 dark, above the 3:1 needed for inputs
+            borderColor: `rgb(var(--color-text-muted))`,
           }}
           placeholder="Search writing..."
           type="text"
