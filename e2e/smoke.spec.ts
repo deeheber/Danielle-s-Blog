@@ -169,6 +169,21 @@ test("blog post renders content", async ({ page }) => {
   await expect(page.locator("h1.post-title")).toBeVisible()
 })
 
+test("copy button copies code and announces it to screen readers", async ({
+  page,
+  context,
+}) => {
+  await context.grantPermissions(["clipboard-read", "clipboard-write"])
+  await page.goto("/blog/routing-on-the-edge/")
+
+  const block = page.locator("article pre").first()
+  await block.locator(".copy-code").click()
+
+  await expect(page.locator("#copy-status")).toHaveText("Code copied")
+  const copied = await page.evaluate(() => navigator.clipboard.readText())
+  expect(copied).toBe(await block.locator("code").innerText())
+})
+
 test("RSS feed is valid XML", async ({ request }) => {
   const response = await request.get("/rss.xml")
   expect(response.status()).toBe(200)

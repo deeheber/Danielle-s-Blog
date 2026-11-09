@@ -80,6 +80,11 @@ const layoutProps = {
     >
       <Content />
     </article>
+    <p
+      id="copy-status"
+      class="sr-only"
+      role="status"
+    ></p>
 
     <div
       class="mt-8 flex flex-col-reverse items-center justify-between gap-6 sm:flex-row-reverse sm:items-end sm:gap-4"
@@ -184,7 +189,6 @@ const layoutProps = {
 
         let copyButton = document.createElement("button")
         copyButton.className = "copy-code"
-        copyButton.setAttribute("aria-live", "polite")
         copyButton.innerHTML = copyButtonLabel
         codeBlock.setAttribute("tabindex", "0")
         codeBlock.appendChild(copyButton)
@@ -211,9 +215,13 @@ const layoutProps = {
 
         // visual feedback that task is completed
         button.innerText = "Copied"
+        // screen readers don't reliably announce a focused button's text change
+        const status = document.querySelector("#copy-status")
+        if (status) status.textContent = "Code copied"
 
         setTimeout(() => {
           button.innerText = copyButtonLabel
+          if (status) status.textContent = ""
         }, 700)
       }
     }
