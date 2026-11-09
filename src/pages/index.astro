@@ -170,7 +170,7 @@ const selectedSpeaking = selectedSpeakingTitles.map((title) => {
     @apply font-lato text-sm font-bold tracking-widest uppercase opacity-70;
   }
   .item-link {
-    @apply text-skin-accent underline-offset-4 hover:underline focus-visible:underline;
+    @apply text-skin-accent underline-offset-4 hover:underline focus-visible:underline [@media(hover:none)]:underline;
   }
   .talk-row {
     @apply flex flex-col gap-1 py-3 sm:flex-row sm:items-baseline sm:justify-between sm:gap-6;

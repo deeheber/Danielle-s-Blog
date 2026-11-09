@@ -36,7 +36,7 @@ const latestYear = Math.max(...years.map(({ year }) => Number(year)))
       @apply py-3;
     }
     li a {
-      @apply font-merri text-skin-accent text-lg leading-snug underline-offset-4 hover:underline focus-visible:underline;
+      @apply font-merri text-skin-accent text-lg leading-snug underline-offset-4 hover:underline focus-visible:underline [@media(hover:none)]:underline;
     }
   </style>
 </section>
