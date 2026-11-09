@@ -37,3 +37,6 @@ pnpm-debug.log*
 # playwright
 test-results/
 playwright-report/
+
+# claude code local files
+.claude/
