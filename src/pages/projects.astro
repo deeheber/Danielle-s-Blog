@@ -24,10 +24,12 @@ const renderedProjects = await Promise.all(
     class="container-content mt-8 mb-28"
   >
     <div class="prose max-w-3xl">
-      <h1 class="text-skin-accent text-2xl tracking-wider sm:text-3xl">
+      <h1 class="text-skin-accent mb-4 text-4xl leading-tight sm:text-5xl">
         Projects
       </h1>
-      <p>Here are a few things I've built and what I learned along the way.</p>
+      <p class="intro">
+        Here are a few things I've built and what I learned along the way.
+      </p>
 
       {renderedProjects.map(({ project, Content }) => <section
         class="featured-project"
@@ -73,13 +75,23 @@ const renderedProjects = await Promise.all(
     padding: 0;
   }
   section + section {
-    margin-top: 5rem;
+    @apply mt-20 sm:mt-28;
+  }
+  .featured-project:first-of-type {
+    @apply mt-16 sm:mt-20;
   }
   h2 {
     scroll-margin-top: 2rem;
   }
   .featured-project > h2 {
-    @apply text-xl leading-[1.3] sm:text-2xl;
+    @apply mt-0 text-2xl leading-[1.3] sm:text-3xl;
+  }
+  .intro {
+    @apply mt-0 max-w-2xl opacity-85 sm:text-2xl;
+  }
+  /* Links line from the markdown (Repository · Write-up) */
+  .featured-project > :global(p:first-of-type) {
+    @apply text-base font-bold;
   }
   .prose :global(h3) {
     @apply text-lg/[1.6] sm:text-xl/[1.6];

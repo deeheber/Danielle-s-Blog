@@ -4,7 +4,7 @@ order: 1
 summary: "Developers shouldn’t have to wait for me to troubleshoot failed deploys. I built cfn-investigator with Claude Code, CodeBuild, and AWS MCP to help them investigate CloudFormation failures."
 ---
 
-<a href="https://github.com/deeheber/headless-claude-on-aws" target="_blank" rel="noopener noreferrer">Repository</a> · [Getting Claude Code off my laptop and onto shared compute](/blog/headless-claude-on-aws/)
+<a href="https://github.com/deeheber/headless-claude-on-aws" target="_blank" rel="noopener noreferrer">Repository</a> · [Write-up](/blog/headless-claude-on-aws/)
 
 When a CloudFormation deploy failed, someone usually messaged me to ask what went wrong. AWS isn't everyone's day to day, but troubleshooting that depends on one person doesn't scale. I wanted developers to get a starting point without waiting for me.
 

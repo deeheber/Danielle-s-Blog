@@ -329,8 +329,21 @@
   font-size: 1.25rem;
   font-weight: 700;
   line-height: 1.8;
+  width: fit-content;
+  list-style: none;
   &:focus-visible {
     outline: 2px dashed rgb(var(--color-accent));
     outline-offset: 4px;
+  }
+  /* Replace the browser's triangle with a + that becomes − when open */
+  &::-webkit-details-marker {
+    display: none;
+  }
+  &::after {
+    content: " +";
+    font-weight: 400;
+  }
+  details[open] > &::after {
+    content: " −";
   }
 }

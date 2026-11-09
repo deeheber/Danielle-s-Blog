@@ -18,10 +18,7 @@ let tags = getUniqueTags(blog)
   description="All the tags used in my writing."
 >
   <Header activeNav="tags" />
-  <Main
-    pageTitle="Tags"
-    pageDesc="All the tags used in my writing."
-  >
+  <Main pageTitle="Tags">
     <ul>
       {tags.map(({ tag }) => (
         <Tag

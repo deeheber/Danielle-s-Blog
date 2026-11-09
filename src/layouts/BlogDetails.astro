@@ -3,6 +3,7 @@ import Layout from "@layouts/Layout.astro"
 import Header from "@components/Header.astro"
 import Footer from "@components/Footer.astro"
 import Tag from "@components/Tag.astro"
+import BackButton from "@components/BackButton.astro"
 import Datetime from "@components/Datetime"
 import { type CollectionEntry, render } from "astro:content"
 import { slugifyStr } from "@utils/slugify"
@@ -53,20 +54,8 @@ const layoutProps = {
     <div class="progress-bar h-1 w-0 bg-skin-accent" id="myBar"></div>
   </div> -->
 
-  <div class="mx-auto flex w-full max-w-4xl justify-start px-2">
-    <button
-      class="focus-outline mt-8 mb-2 flex hover:opacity-75"
-      onclick="(() => (history.length === 1) ? window.location = '/' : history.back())()"
-    >
-      <svg xmlns="http://www.w3.org/2000/svg">
-        <path
-          d="M13.293 6.293 7.586 12l5.707 5.707 1.414-1.414L10.414 12l4.293-4.293z"
-        ></path>
-      </svg
-      ><span>Go back</span>
-    </button>
-  </div>
   <main id="main-content">
+    <BackButton />
     <h1
       transition:name={slugifyStr(title)}
       class="post-title"
@@ -77,9 +66,9 @@ const layoutProps = {
       pubDatetime={pubDatetime}
       modDatetime={modDatetime}
       size="lg"
-      className="my-2"
+      className="mt-4"
     />
-    <ul class="my-2 flex flex-wrap gap-x-1 gap-y-0">
+    <ul class="mt-4 flex flex-wrap gap-x-4 gap-y-1">
       {tags.map((tag) => (
         <Tag tag={slugifyStr(tag)} />
       ))}
@@ -119,10 +108,10 @@ const layoutProps = {
 <style>
   @reference "../styles/base.css";
   main {
-    @apply mx-auto w-full max-w-4xl px-4 pb-12;
+    @apply mx-auto w-full max-w-4xl px-4 pt-8 pb-12;
   }
   .post-title {
-    @apply text-skin-accent text-2xl font-semibold;
+    @apply text-skin-accent text-3xl leading-tight sm:text-4xl;
   }
 </style>
 

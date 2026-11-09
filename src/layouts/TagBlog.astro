@@ -30,7 +30,7 @@ const canonicalURL = new URL(`/tags/${tag}/`, Astro.site).href
   <Main
     pageTitle={[`Tag:`, `${tagName}`]}
     titleTransition={tag}
-    pageDesc={`All the articles with the tag "${tagName}".`}
+    backButton
   >
     <h1
       slot="title"
