@@ -119,6 +119,21 @@ test("search returns a result that opens a post", async ({ page }) => {
   await expect(page.locator("article#article")).toBeVisible()
 })
 
+test("search uses text entered before its script loads", async ({ page }) => {
+  const input = page.getByRole("textbox", { name: "Search writing" })
+  await page.route(/\/Search(?:\.[^/]+\.js|\.tsx)(?:\?.*)?$/, async (route) => {
+    await input.fill("serverless")
+    await route.continue()
+  })
+
+  await page.goto("/search/")
+  await expect(input).toHaveValue("serverless")
+  await expect(
+    page.locator('#main-content ul a[href^="/blog/"]').first(),
+  ).toBeVisible()
+  await expect(page).toHaveURL(/\?q=serverless$/)
+})
+
 test("homepage project link reaches its project section", async ({ page }) => {
   await page.goto("/")
   const project = page

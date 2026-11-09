@@ -1,6 +1,6 @@
 import type { CollectionEntry } from "astro:content"
 import Fuse from "fuse.js"
-import React, { useEffect, useRef, useState, useMemo } from "react"
+import React, { useCallback, useEffect, useState, useMemo } from "react"
 
 import Card from "@components/Card"
 
@@ -21,14 +21,13 @@ interface SearchResult {
 }
 
 export default function SearchBar({ searchList }: Props) {
-  const inputRef = useRef<HTMLInputElement>(null)
-  const [inputVal, setInputVal] = useState(() => {
-    if (typeof window !== "undefined") {
-      const searchUrl = new URLSearchParams(window.location.search)
-      return searchUrl.get("q") || ""
-    }
-    return ""
-  })
+  const [inputVal, setInputVal] = useState<string | null>(null)
+  const initializeInput = useCallback((input: HTMLInputElement | null) => {
+    if (!input) return
+    // The server-rendered field may already contain text when React attaches.
+    const query = new URLSearchParams(window.location.search).get("q")
+    setInputVal(input.value || query || "")
+  }, [])
 
   const handleChange = (e: React.FormEvent<HTMLInputElement>) => {
     setInputVal(e.currentTarget.value)
@@ -46,21 +45,11 @@ export default function SearchBar({ searchList }: Props) {
   )
 
   const searchResults: SearchResult[] = useMemo(() => {
-    return inputVal.length > 1 ? fuse.search(inputVal) : []
+    return inputVal && inputVal.length > 1 ? fuse.search(inputVal) : []
   }, [inputVal, fuse])
 
   useEffect(() => {
-    // put focus cursor at the end of the string
-    setTimeout(function () {
-      if (inputRef.current) {
-        inputRef.current.selectionStart = inputRef.current.selectionEnd =
-          inputVal.length
-      }
-    }, 50)
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [])
-
-  useEffect(() => {
+    if (inputVal === null) return
     // Update search string in URL
     if (inputVal.length > 0) {
       const searchParams = new URLSearchParams(window.location.search)
@@ -95,15 +84,14 @@ export default function SearchBar({ searchList }: Props) {
           type="text"
           name="search"
           aria-label="Search writing"
-          value={inputVal}
+          value={inputVal ?? ""}
           onChange={handleChange}
           autoComplete="off"
-          // autoFocus
-          ref={inputRef}
+          ref={initializeInput}
         />
       </label>
 
-      {inputVal.length > 1 && (
+      {inputVal && inputVal.length > 1 && (
         <div className="mt-8">
           Found {searchResults?.length}
           {searchResults?.length && searchResults?.length === 1
