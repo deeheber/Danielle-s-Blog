@@ -37,7 +37,7 @@ const socialImageURL = new URL(
 <!doctype html>
 <html
   lang=`${LOCALE.lang ?? "en"}`
-  class={`${scrollSmooth && "motion-safe:scroll-smooth"}`}
+  class={scrollSmooth ? "motion-safe:scroll-smooth" : undefined}
 >
   <head>
     <meta charset="UTF-8" />
