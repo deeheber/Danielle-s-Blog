@@ -4,7 +4,7 @@ order: 3
 summary: "Portland’s snow site wasn’t accurate for my area, so I built one for Hillsboro. It answers one question while giving me hands-on experience with Step Functions and AWS CDK."
 ---
 
-<a href="https://github.com/deeheber/weather-site" target="_blank" rel="noopener noreferrer">Repository</a> · [Serverless Weather Reporting with AWS Step Functions and CDK](/blog/serverless-weather-reporting/) · [I Rewrote My Step Function as a Durable Function](/blog/durable-functions/)
+<a href="https://github.com/deeheber/weather-site" target="_blank" rel="noopener noreferrer">Repository</a> · [Step Functions write-up](/blog/serverless-weather-reporting/) · [Durable Functions write-up](/blog/durable-functions/)
 
 After moving from Portland to the suburbs, I noticed the <a href="https://isitsnowinginpdx.com/" target="_blank" rel="noopener noreferrer">Portland snow site</a> wasn't accurate for my area. I built my own version to answer one question: is it snowing in Hillsboro? I also wanted hands-on experience building a state machine with Step Functions.
 
