@@ -80,13 +80,18 @@ const layoutProps = {
     >
       <Content />
     </article>
+    <p
+      id="copy-status"
+      class="sr-only"
+      role="status"
+    ></p>
 
     <div
       class="mt-8 flex flex-col-reverse items-center justify-between gap-6 sm:flex-row-reverse sm:items-end sm:gap-4"
     >
       <button
         id="back-to-top"
-        class="focus-outline py-1 whitespace-nowrap hover:opacity-75"
+        class="focus-outline py-1 whitespace-nowrap underline-offset-4 hover:underline hover:decoration-2"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -210,9 +215,13 @@ const layoutProps = {
 
         // visual feedback that task is completed
         button.innerText = "Copied"
+        // screen readers don't reliably announce a focused button's text change
+        const status = document.querySelector("#copy-status")
+        if (status) status.textContent = "Code copied"
 
         setTimeout(() => {
           button.innerText = copyButtonLabel
+          if (status) status.textContent = ""
         }, 700)
       }
     }

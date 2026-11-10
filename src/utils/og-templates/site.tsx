@@ -11,8 +11,9 @@ const SiteOgTemplate = () => {
   return (
     <div
       style={{
-        background: "#fdf6e3",
-        color: "#042f2e",
+        background: "#ffffff",
+        color: "#111111",
+        fontFamily: "Inter",
         width: "100%",
         height: "100%",
         display: "flex",
@@ -21,7 +22,7 @@ const SiteOgTemplate = () => {
     >
       <div
         style={{
-          border: "4px solid #042f2e",
+          border: "2px solid #111111",
           borderRadius: "4px",
           display: "flex",
           flexDirection: "column",
@@ -42,7 +43,7 @@ const SiteOgTemplate = () => {
           <div style={{ display: "flex", flexDirection: "column" }}>
             <p
               style={{
-                fontFamily: "Merriweather",
+                letterSpacing: "-0.02em",
                 fontSize: 72,
                 fontWeight: 700,
                 margin: 0,
@@ -52,12 +53,11 @@ const SiteOgTemplate = () => {
             </p>
             <p
               style={{
-                fontFamily: "Lato",
                 fontSize: 52,
                 margin: "28px 0 0",
               }}
             >
-              Make ship happen
+              Make ship happen.
             </p>
           </div>
           <img
@@ -73,7 +73,6 @@ const SiteOgTemplate = () => {
           style={{
             display: "flex",
             justifyContent: "flex-end",
-            fontFamily: "Lato",
             fontSize: 32,
             fontWeight: 700,
           }}

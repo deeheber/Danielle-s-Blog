@@ -81,10 +81,26 @@ test("dark/light mode toggle round-trip", async ({ page }) => {
 
   const toggled = await html.getAttribute("data-theme")
   expect(toggled).not.toBe(original)
-  await expect(themeBtn).not.toHaveAttribute("aria-label", `${original}`)
+  await expect(themeBtn).toHaveAttribute(
+    "aria-pressed",
+    String(toggled === "dark"),
+  )
 
   await themeBtn.click()
   await expect(html).toHaveAttribute("data-theme", original!)
+})
+
+test("theme button reports dark state on load for dark-mode visitors", async ({
+  page,
+}) => {
+  await page.emulateMedia({ colorScheme: "dark" })
+  await page.goto("/")
+
+  await expect(page.locator("html")).toHaveAttribute("data-theme", "dark")
+  await expect(page.locator("#theme-btn")).toHaveAttribute(
+    "aria-pressed",
+    "true",
+  )
 })
 
 test("search returns a result that opens a post", async ({ page }) => {
@@ -101,6 +117,21 @@ test("search returns a result that opens a post", async ({ page }) => {
   await expect(page).toHaveURL(/\/blog\/[^/]+\/?$/)
   await expect(page.locator("h1.post-title")).toHaveText(title)
   await expect(page.locator("article#article")).toBeVisible()
+})
+
+test("search uses text entered before its script loads", async ({ page }) => {
+  const input = page.getByRole("textbox", { name: "Search writing" })
+  await page.route(/\/Search(?:\.[^/]+\.js|\.tsx)(?:\?.*)?$/, async (route) => {
+    await input.fill("serverless")
+    await route.continue()
+  })
+
+  await page.goto("/search/")
+  await expect(input).toHaveValue("serverless")
+  await expect(
+    page.locator('#main-content ul a[href^="/blog/"]').first(),
+  ).toBeVisible()
+  await expect(page).toHaveURL(/\?q=serverless$/)
 })
 
 test("homepage project link reaches its project section", async ({ page }) => {
@@ -151,6 +182,21 @@ test("blog post renders content", async ({ page }) => {
   const article = page.locator("article#article")
   await expect(article).toBeVisible()
   await expect(page.locator("h1.post-title")).toBeVisible()
+})
+
+test("copy button copies code and announces it to screen readers", async ({
+  page,
+  context,
+}) => {
+  await context.grantPermissions(["clipboard-read", "clipboard-write"])
+  await page.goto("/blog/routing-on-the-edge/")
+
+  const block = page.locator("article pre").first()
+  await block.locator(".copy-code").click()
+
+  await expect(page.locator("#copy-status")).toHaveText("Code copied")
+  const copied = await page.evaluate(() => navigator.clipboard.readText())
+  expect(copied).toBe(await block.locator("code").innerText())
 })
 
 test("RSS feed is valid XML", async ({ request }) => {

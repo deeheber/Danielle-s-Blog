@@ -20,49 +20,20 @@ const loadFonts = () => {
   }
 
   return {
-    fontMerriweatherRegular: loadFont("merriweather-regular.ttf"),
-    fontMerriweatherBold: loadFont("merriweather-bold.ttf"),
-    fontLatoRegular: loadFont("lato-regular.ttf"),
-    fontLatoBold: loadFont("lato-bold.ttf"),
+    fontInterRegular: loadFont("inter-400.woff"),
+    fontInterBold: loadFont("inter-700.woff"),
   }
 }
 
-const {
-  fontMerriweatherRegular,
-  fontMerriweatherBold,
-  fontLatoRegular,
-  fontLatoBold,
-} = loadFonts()
+const { fontInterRegular, fontInterBold } = loadFonts()
 
 const options: SatoriOptions = {
   width: 1200,
   height: 630,
   embedFont: true,
   fonts: [
-    {
-      name: "Merriweather",
-      data: fontMerriweatherRegular,
-      weight: 400,
-      style: "normal",
-    },
-    {
-      name: "Merriweather",
-      data: fontMerriweatherBold,
-      weight: 700,
-      style: "normal",
-    },
-    {
-      name: "Lato",
-      data: fontLatoRegular,
-      weight: 400,
-      style: "normal",
-    },
-    {
-      name: "Lato",
-      data: fontLatoBold,
-      weight: 700,
-      style: "normal",
-    },
+    { name: "Inter", data: fontInterRegular, weight: 400, style: "normal" },
+    { name: "Inter", data: fontInterBold, weight: 700, style: "normal" },
   ],
 }
 function svgBufferToPngBuffer(svg: string) {

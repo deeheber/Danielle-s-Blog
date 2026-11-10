@@ -18,6 +18,6 @@ Before software engineering, I was a musician and an elementary teacher, and I w
 
 I'm an <a href="https://builder.aws.com/community/heroes/DanielleHeberling" target="_blank" rel="noopener noreferrer">AWS Serverless Hero</a> and co-organize the <a href="https://www.believeinserverless.com/" target="_blank" rel="noopener noreferrer">Believe in Serverless Discord community</a>. I share what I'm learning, including the mistakes, in the hope that it makes things easier for someone else.
 
-![waterfall](/assets/waterfall.jpg)
+![waterfall](/assets/waterfall-greyscale.jpg)
 
-> 📣 All opinions here are my own and don't represent any organizations I'm affiliated with. Technology evolves quickly, so older posts may contain outdated information.
+> All opinions here are my own and don't represent any organizations I'm affiliated with. Technology evolves quickly, so older posts may contain outdated information.

@@ -58,9 +58,9 @@ const selectedSpeaking = selectedSpeakingTitles.map((title) => {
         id="introduction"
         class="text-4xl leading-tight sm:text-5xl"
       >
-        Make ship <span class="whitespace-nowrap">happen 🚢</span>
+        Make ship happen.
       </h1>
-      <p class="mt-6 max-w-xl text-lg leading-relaxed opacity-85 sm:text-xl">
+      <p class="mt-6 max-w-xl text-lg leading-relaxed sm:text-xl">
         I’m Danielle. I help teams spend less time fighting their tools and more
         time shipping software. My focus is platform and cloud engineering,
         mostly AWS. I also co-organize the Believe in Serverless community, and
@@ -84,7 +84,7 @@ const selectedSpeaking = selectedSpeakingTitles.map((title) => {
               {data.title}
             </a>
           </h3>
-          <p class="mt-2 text-base leading-relaxed opacity-80">
+          <p class="text-skin-muted mt-2 text-base leading-relaxed">
             {data.summary}
           </p>
         </li>)}
@@ -106,7 +106,7 @@ const selectedSpeaking = selectedSpeakingTitles.map((title) => {
       class="mx-auto mt-16 mb-20 grid max-w-4xl gap-16 sm:mt-24 sm:mb-28 md:grid-cols-2 md:gap-x-8"
     >
       <section id="selected-writing">
-        <h2 tabindex="0">Selected Writing</h2>
+        <h2>Selected Writing</h2>
         <ul>
           {selectedWriting.map(({ data, id }) => (
             <Card
@@ -130,7 +130,7 @@ const selectedSpeaking = selectedSpeakingTitles.map((title) => {
       </section>
 
       <section id="selected-speaking">
-        <h2 tabindex="0">Selected Speaking</h2>
+        <h2>Selected Speaking</h2>
         <ul>
           {selectedSpeaking.map((content) => <li class="talk-row">
             <a
@@ -141,7 +141,7 @@ const selectedSpeaking = selectedSpeakingTitles.map((title) => {
             >
               {content.title}
             </a>
-            <span class="shrink-0 text-sm italic opacity-80"
+            <span class="text-skin-muted shrink-0 text-sm italic"
               >{content.year}</span
             >
           </li>)}
@@ -167,16 +167,16 @@ const selectedSpeaking = selectedSpeakingTitles.map((title) => {
 <style>
   @reference "../styles/base.css";
   main h2 {
-    @apply font-lato text-sm font-bold tracking-widest uppercase opacity-70;
+    @apply text-skin-muted text-sm font-semibold tracking-widest uppercase;
   }
   .item-link {
-    @apply text-skin-accent underline-offset-4 hover:underline focus-visible:underline [@media(hover:none)]:underline;
+    @apply text-skin-accent underline-offset-4 hover:underline hover:decoration-2 focus-visible:underline [@media(hover:none)]:underline;
   }
   .talk-row {
     @apply flex flex-col gap-1 py-3 sm:flex-row sm:items-baseline sm:justify-between sm:gap-6;
   }
   .talk-row a {
-    @apply font-merri text-lg leading-snug;
+    @apply text-lg leading-snug font-medium;
   }
   .all-link {
     @apply mt-6 flex w-fit items-center gap-1 text-base font-bold;

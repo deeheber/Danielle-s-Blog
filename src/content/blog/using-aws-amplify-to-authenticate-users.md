@@ -15,7 +15,7 @@ AWS-Amplify is an open source project managed by AWS described as “a declarati
 
 My favorite features of Amplify are: Authentication (via <a href="https://aws.amazon.com/cognito/" target="_blank" rel="noopener noreferrer">Cognito</a>), API (via API Gateway), and Storage (via S3), but this library has a lot more to offer than just those features. This post will focus on how to authenticate users from a React based frontend...more specifically user signup that has an email address verification step.
 
-#### The Setup
+## The Setup
 
 First you’ll need to setup a config file to reference your already created AWS resources (in this case the user pool, identity pool, and client id) in your /src folder. The `src/config.js` file will look something like this :
 
@@ -62,7 +62,7 @@ The `mandatorySignIn` property is optional, but is a good idea if you are using 
 
 Also note that for now having a separate config file might seem a bit overkill, but once you add in multiple resources (i.e. Storage, API, Pub Sub etc.) you’ll want that extra config file to keep things easy to manage.
 
-#### Implementation Overview
+## Implementation Overview
 
 The signup flow will look like this:
 
@@ -72,7 +72,7 @@ The signup flow will look like this:
 4. The user will check their email > get the code > type the code into the confirmation form.
 5. On submit, Amplify will send the information to Cognito which then confirms the signup. On successful confirmation, Amplify will sign the user into the application.
 
-#### Implementation Part 1
+## Implementation Part 1
 
 First in your signup form component, you’ll need to import Auth from the Amplify library like this:
 
@@ -109,7 +109,7 @@ On success, Amplify returns a user object after the signUp method is called, so 
 
 Before we continue let’s go over a quick edge case. So if our user refreshes the page when on the confirmation form and then tries to sign up again with the same email address, they’ll receive an error that the user already exists and will need to signup with a different email address. The catch block demonstrates one way of handling that possibility by resending the signup code to the user if that email is already present in Cognito. This will allow the user to continue using the same email address should they refresh the page or leave the site before entering the confirmation code.
 
-#### Implementation Part 2
+## Implementation Part 2
 
 So now the user is looking at the confirmation form and has their confirmation code to type in. We’ll need to render the confirmation form. Similar to the signup form it’ll look like a typical form with the exception being the function that is called whenever the user submits the confirmation form. The handleSubmit function for the confirmation form will look similar to this when using Amplify:
 

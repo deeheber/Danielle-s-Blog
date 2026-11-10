@@ -2,94 +2,57 @@ import type { CollectionEntry } from "astro:content"
 
 import { SITE } from "@config"
 
+// Same frame and colors as the site template (see ./site.tsx).
 const PostOgTemplate = (post: CollectionEntry<"blog">) => {
   return (
     <div
       style={{
-        background: "#fefbfb",
+        background: "#ffffff",
+        color: "#111111",
+        fontFamily: "Inter",
         width: "100%",
         height: "100%",
         display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
+        padding: "48px",
       }}
     >
       <div
         style={{
-          position: "absolute",
-          top: "-1px",
-          right: "-1px",
-          border: "4px solid #000",
-          background: "#ecebeb",
-          opacity: "0.9",
+          border: "2px solid #111111",
           borderRadius: "4px",
           display: "flex",
-          justifyContent: "center",
-          margin: "2.5rem",
-          width: "88%",
-          height: "80%",
-        }}
-      />
-
-      <div
-        style={{
-          border: "4px solid #000",
-          background: "#fefbfb",
-          borderRadius: "4px",
-          display: "flex",
-          justifyContent: "center",
-          margin: "2rem",
-          width: "88%",
-          height: "80%",
+          flexDirection: "column",
+          justifyContent: "space-between",
+          width: "100%",
+          height: "100%",
+          padding: "64px 72px 48px",
         }}
       >
+        <p
+          style={{
+            fontSize: 72,
+            fontWeight: 700,
+            letterSpacing: "-0.02em",
+            lineHeight: 1.15,
+            margin: 0,
+            maxHeight: "80%",
+            overflow: "hidden",
+          }}
+        >
+          {post.data.title}
+        </p>
+
         <div
           style={{
             display: "flex",
-            flexDirection: "column",
             justifyContent: "space-between",
-            margin: "20px",
-            width: "90%",
-            height: "90%",
+            fontSize: 32,
           }}
         >
-          <p
-            style={{
-              fontSize: 72,
-              fontWeight: "bold",
-              maxHeight: "84%",
-              overflow: "hidden",
-            }}
-          >
-            {post.data.title}
-          </p>
-          <div
-            style={{
-              display: "flex",
-              justifyContent: "space-between",
-              width: "100%",
-              marginBottom: "8px",
-              fontSize: 28,
-            }}
-          >
-            <span>
-              by{" "}
-              <span
-                style={{
-                  color: "transparent",
-                }}
-              >
-                &quot;
-              </span>
-              <span style={{ overflow: "hidden", fontWeight: "bold" }}>
-                {post.data.author}
-              </span>
-            </span>
-
-            <span style={{ overflow: "hidden", fontWeight: "bold" }}>
-              {SITE.title}
-            </span>
-          </div>
+          <span style={{ color: "#6b6b6b" }}>by {post.data.author}</span>
+          <span style={{ fontWeight: 700 }}>
+            {new URL(SITE.website).hostname}
+          </span>
         </div>
       </div>
     </div>
